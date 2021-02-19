@@ -84,7 +84,6 @@ class QuickAttack extends PhysicalMove{
     protected QuickAttack() {
         super(Type.NORMAL, 40,100);
     }
-    //Всегда срабатывает первой?
 }
 
 class TailWhip extends StatusMove{
@@ -111,7 +110,7 @@ class Confide extends StatusMove{
     }
     @Override
     protected String describe(){
-        return "Уменьшает атаку противника на 1 ступень"
+        return "Уменьшает атаку противника на 1 ступень";
     }
 }
 
@@ -119,20 +118,26 @@ class DreamEater extends SpecialMove{
     protected DreamEater() {
         super(Type.PSYCHIC,100,100);
     }
-    //Работает если оппонент спит!
-    //50% от нанесенного урона возвращается
+    @Override
+    protected void applySelfEffects(Pokemon p){
+        p.setMod(Stat.HP, 5);
+    }
 }
 
 class StunSpore extends SpecialMove{
     protected StunSpore() {
         super(Type.GRASS,0,75);
     }
-    //парализует противника
+    protected void applyOppEffects(Pokemon p){
+        Effect.paralyze(p);
+    }
 }
 
 class SweetScent extends StatusMove{
     protected SweetScent() {
         super(Type.NORMAL,0,100);
     }
-    //снижает уклонение противника на одну единицу
+    protected void applyOppEffects(Pokemon p){
+        p.setMod(Stat.EVASION, -5);
+    }
 }
