@@ -5,6 +5,6 @@ public class Roserade extends Pokemon{
         super(name, level);
         setStats(60,70,65,125,105,90);
         setType(Type.GRASS);
-        setMove(new Covet, new Absorb, new EnergyBall, new Superpower);
+        setMove( new ShadowBall(), new DazzlingGleam(), new StunSpore(), new SweetScent());
     }
 }

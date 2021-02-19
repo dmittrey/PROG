@@ -6,6 +6,6 @@ public class Eevee extends Pokemon{
         super(name,level);
         setStats(55,55,50,45,65,55);
         setType(Type.NORMAL);
-        setMove(new Covet, new Bite, new LastResort, new Swift);
+        setMove(new QuickAttack(), new TailWhip(), new Confide());
     }
 }

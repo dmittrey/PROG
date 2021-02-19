@@ -5,6 +5,6 @@ public class Roselia extends Pokemon {
         super(name, level);
         setStats(50,60,45,100,80,65);
         setType(Type.GRASS);
-        setMove(new Covet, new GigaDrain, new SeedBomb, new Snore);
+        setMove(new ShadowBall(), new DazzlingGleam(), new StunSpore());
     }
 }
