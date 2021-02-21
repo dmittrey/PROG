@@ -10,22 +10,30 @@ public class Main {
 
 
         Filee.Move("Кухня");
-        System.out.println(Filee.getName()+" находится в комнате: "+Filee.getLocation()+"!");
+        System.out.println(Filee.getName() + " находится в комнате: " + Filee.getLocation() + "!");
 
         Rulee.Open(b1);
-        if (b1.getOpenStatus() == true){
-        System.out.println(b1.getLocation()+" открылся!");
+        if (b1.getOpenStatus() == true) {
+            System.out.println(b1.getLocation() + " открылся!");
+            System.out.println(Rulee.getName() + " нашёл " + b1.GetContent() + "!");
+            System.out.println(Rulee.Whistle());
+            Rulee.Close(b1);
+            if (b1.getOpenStatus() == false){
+                System.out.println(b1.getLocation() + " закрылся!");
+            }
         }
 
-        System.out.println(Rulee.getName()+" нашёл "+b1.GetContent()+"!");
-        //System.out.println(Rulee.Whistle())
-        //!!!
 
         Rulee.Open(b2);
-        if (b2.getOpenStatus() == true){
-            System.out.println(b2.getLocation()+" открылся!");
+        if (b2.getOpenStatus() == true) {
+            System.out.println(b2.getLocation() + " открылся!");
+            System.out.println(Rulee.getName() + " нашёл " + b2.GetContent() + "!");
+            System.out.println(Rulee.Whistle());
+            Rulee.Close(b2);
+            if (b2.getOpenStatus() == false) {
+                System.out.println(b2.getLocation() + " закрылся!");
+            }
         }
-
 
         if (b2.GetContent().equals(ContentOfBox.RingsAndBrooch)){
             System.out.println(Rulee.Whistle());
@@ -40,8 +48,13 @@ public class Main {
         if (d.GetStatus() == true){
             ghost.setTypeLocation("Столовая");
             ghost.setTypeSay("издаёт страшные стоны");
-            System.out.println(ghost.getName()+" сейчас в комнате:"+ghost.getLocation()+"!");
+            System.out.println(ghost.getName()+" сейчас в комнате: "+ghost.getLocation()+"!");
             System.out.println(ghost.getName()+" "+ghost.getTypeSay()+"!");
+            d.Close();
+            if (d.GetStatus() == false){
+                System.out.println(d.getMembership()+" зыкрылись!");
+            }
+
         }
         else {
             System.out.println(Rulee.Whistle());
