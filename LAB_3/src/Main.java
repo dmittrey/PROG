@@ -13,79 +13,76 @@ public class Main {
         System.out.println(Filee.getName() + " находится в комнате: " + Filee.getLocation() + "!");
 
         Rulee.Open(b1);
+
         if (b1.getOpenStatus() == true) {
-            System.out.println(b1.getLocation() + " открылся!");
+            System.out.println(b1.getLocation() + " открылся руками " + Rulee.getName() + "!");
             System.out.println(Rulee.getName() + " нашёл " + b1.GetContent() + "!");
             System.out.println(Rulee.Whistle());
             Rulee.Close(b1);
-            if (b1.getOpenStatus() == false){
-                System.out.println(b1.getLocation() + " закрылся!");
+            if (b1.getOpenStatus() == false) {
+                System.out.println(b1.getLocation() + " закрылся руками " + Rulee.getName() + "!");
             }
         }
 
 
         Rulee.Open(b2);
         if (b2.getOpenStatus() == true) {
-            System.out.println(b2.getLocation() + " открылся!");
+            System.out.println(b2.getLocation() + " открылся руками " + Rulee.getName() + "!");
             System.out.println(Rulee.getName() + " нашёл " + b2.GetContent() + "!");
             System.out.println(Rulee.Whistle());
             Rulee.Close(b2);
             if (b2.getOpenStatus() == false) {
-                System.out.println(b2.getLocation() + " закрылся!");
+                System.out.println(b2.getLocation() + " закрылся руками " + Rulee.getName() + "!");
             }
         }
 
-        if (b2.GetContent().equals(ContentOfBox.RingsAndBrooch)){
+        if (b2.GetContent().equals(ContentOfBox.RingsAndBrooch)) {
             System.out.println(Rulee.Whistle());
         }
 
         d.Open();
 
-        if (d.GetStatus() == true){
-            System.out.println(d.getMembership()+" открылись!");
+        if (d.GetStatus() == true) {
+            System.out.println(d.getMembership() + " открылись!");
         }
 
-        if (d.GetStatus() == true){
+        if (d.GetStatus() == true) {
             ghost.setTypeLocation("Столовая");
             ghost.setTypeSay("издаёт страшные стоны");
-            System.out.println(ghost.getName()+" сейчас в комнате: "+ghost.getLocation()+"!");
-            System.out.println(ghost.getName()+" "+ghost.getTypeSay()+"!");
-            d.Close();
-            if (d.GetStatus() == false){
-                System.out.println(d.getMembership()+" зыкрылись!");
-            }
+            System.out.println(ghost.getName() + " сейчас в комнате: " + ghost.getLocation() + "!");
+            System.out.println(ghost.getName() + " " + ghost.getTypeSay() + "!");
 
-        }
-        else {
+
+        } else {
             System.out.println(Rulee.Whistle());
         }
 
         Rulee.MoveAround();
 
-        if (Rulee.getMoveAroundStatus() == true){
-            System.out.println(Rulee.getName()+" развернулся!");
+        if (Rulee.getMoveAroundStatus() == true) {
+            System.out.println(Rulee.getName() + " развернулся!");
             Rulee.GetScared();
         }
 
-        if (Rulee.ScareStatus() == true){
+        if (Rulee.ScareStatus() == true) {
             System.out.println(Rulee.Xruk());
             System.out.println(Rulee.Throw());
         }
 
-        if (d.GetStatus() == true){
-            System.out.println(ghost.getName()+" порхал в комнате: " + ghost.getLocation()+"!");
+        if (d.GetStatus() == true) {
+            System.out.println(ghost.getName() + " порхал в комнате: " + ghost.getLocation() + "!");
             ghost.setTypeSay("cтонет и вздыхает");
-            System.out.println(ghost.getName()+" "+ghost.getTypeSay()+"!");
+            System.out.println(ghost.getName() + " " + ghost.getTypeSay() + "!");
             ghost.setTypeLocation("Кухня");
-            System.out.println(ghost.getName()+" устремилось в комнату: "+ghost.getLocation()+"!");
+            System.out.println(ghost.getName() + " устремилось в комнату: " + ghost.getLocation() + "!");
         }
 
-        System.out.println(Filee.getName()+" пришел в комнату: "+Filee.getLocation()+"!");
-        if (ghost.getLocation() == "Кухня"){
+        System.out.println(Filee.getName() + " пришел в комнату: " + Filee.getLocation() + "!");
+        if (ghost.getLocation() == "Кухня") {
             Filee.GetScared();
         }
-        if (Filee.ScareStatus() == true){
-            System.out.println(Filee.getName()+" побледнел как полотно!");
+        if (Filee.ScareStatus() == true) {
+            System.out.println(Filee.getName() + " побледнел как полотно!");
         }
     }
 }

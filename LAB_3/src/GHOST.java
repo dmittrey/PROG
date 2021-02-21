@@ -5,7 +5,7 @@ public class GHOST {
     private String TypeLocation;
     //Конструктор
 
-    public GHOST(String a, String c, String d){
+    public GHOST(String a, String c, String d) {
         name = a;
         TypeSay = c;
         TypeLocation = d;
@@ -17,19 +17,19 @@ public class GHOST {
         return TypeSay;
     }
 
-    public String getLocation(){
+    public String getLocation() {
         return TypeLocation;
     }
 
-    public String getName(){
+    public String getName() {
         return name;
     }
 
-    public  void setTypeSay(String Say){
+    public void setTypeSay(String Say) {
         this.TypeSay = Say;
     }
 
-    public void setTypeLocation(String Location){
+    public void setTypeLocation(String Location) {
         this.TypeLocation = Location;
     }
 }

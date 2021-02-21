@@ -1,25 +1,25 @@
-public class Door implements NotAlive{
+public class Door implements NotAlive {
     private boolean OpenStatus;
     private String Membership;
 
-    public Door(boolean status, String member){
+    public Door(boolean status, String member) {
         OpenStatus = status;
         Membership = member;
     }
 
-    public void Open(){
+    public void Open() {
         this.OpenStatus = true;
     }
 
-    public void Close(){
+    public void Close() {
         this.OpenStatus = false;
     }
 
-    public String getMembership(){
+    public String getMembership() {
         return this.Membership;
     }
 
-    public boolean GetStatus(){
+    public boolean GetStatus() {
         return OpenStatus;
     }
 }
