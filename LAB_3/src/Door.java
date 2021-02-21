@@ -1,6 +1,6 @@
-public class Door {
-    boolean OpenStatus;
-    String Membership;
+public class Door implements NotAlive{
+    private boolean OpenStatus;
+    private String Membership;
 
     public Door(boolean status, String member){
         OpenStatus = status;
@@ -17,6 +17,10 @@ public class Door {
 
     public String getMembership(){
         return this.Membership;
+    }
+
+    public boolean GetStatus(){
+        return OpenStatus;
     }
 }
 //тут вроде закончил
