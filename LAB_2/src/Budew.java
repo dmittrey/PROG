@@ -1,4 +1,5 @@
 import ru.ifmo.se.pokemon.*;
+import PockemonMove.*;
 
 public class Budew extends Pokemon{
     public Budew(String name, int level){

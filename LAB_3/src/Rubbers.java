@@ -14,6 +14,7 @@ public class Rubbers extends HUMAN {
         return this.getName() + " Свистнул!";
     }
 
+
     public String Xruk() {
         return this.getName() + " хрюкнул от ужаса!";
     }
