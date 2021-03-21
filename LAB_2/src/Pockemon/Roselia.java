@@ -1,3 +1,5 @@
+package Pockemon;
+
 import ru.ifmo.se.pokemon.*;
 import PockemonMove.*;
 

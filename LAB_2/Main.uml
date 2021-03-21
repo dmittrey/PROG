@@ -3,215 +3,45 @@
   <ID>JAVA</ID>
   <OriginalElement>Main</OriginalElement>
   <nodes>
-    <node x="769.9166666666666" y="262.0">PockemonMove.IronDefense</node>
-    <node x="1935.6666666666665" y="398.0">Espeon</node>
-    <node x="2000.4141414141416" y="273.0">PockemonMove.DreamEater</node>
-    <node x="1656.4166666666665" y="136.0">PockemonMove.Confide</node>
-    <node x="1480.9166666666665" y="262.0">PockemonMove.Swagger</node>
-    <node x="1891.4141414141416" y="285.0">Eevee</node>
-    <node x="340.59747474747496" y="398.0">Roserade</node>
-    <node x="555.3575757575757" y="0.0">PockemonMove.ShadowBall</node>
-    <node x="1177.9166666666665" y="398.0">Regirock</node>
-    <node x="338.16666666666674" y="147.0">PockemonMove.StunSpore</node>
-    <node x="383.35757575757566" y="23.0">PockemonMove.DazzlingGleam</node>
-    <node x="1896.4166666666665" y="159.0">PockemonMove.QuickAttack</node>
-    <node x="0.0" y="273.0">PockemonMove.SweetScent</node>
-    <node x="623.5833333333334" y="285.0">Roselia</node>
-    <node x="1243.9166666666665" y="262.0">PockemonMove.RockPollish</node>
-    <node x="1006.9166666666666" y="262.0">PockemonMove.SuperPower</node>
-    <node x="686.0833333333334" y="159.0">Budew</node>
-    <node x="2062.9141414141413" y="136.0">PockemonMove.TailWhip</node>
-    <node x="975.4166666666666" y="488.0">Main</node>
+    <node x="265.0" y="356.0">PockemonMove.IronDefense</node>
+    <node x="157.0" y="80.0">Espeon</node>
+    <node x="265.0" y="598.0">PockemonMove.DreamEater</node>
+    <node x="298.0" y="0.0">PockemonMove.Confide</node>
+    <node x="0.0" y="235.0">PockemonMove.Swagger</node>
+    <node x="161.0" y="0.0">Eevee</node>
+    <node x="0.0" y="160.0">Roserade</node>
+    <node x="378.0" y="697.0">Regirock</node>
+    <node x="265.0" y="235.0">PockemonMove.ShadowBall</node>
+    <node x="0.0" y="697.0">PockemonMove.DazzlingGleam</node>
+    <node x="262.0" y="477.0">PockemonMove.StunSpore</node>
+    <node x="197.0" y="697.0">PockemonMove.QuickAttack</node>
+    <node x="0.0" y="598.0">PockemonMove.SweetScent</node>
+    <node x="4.0" y="80.0">Roselia</node>
+    <node x="527.0" y="356.0">PockemonMove.RockPollish</node>
+    <node x="12.0" y="0.0">Budew</node>
+    <node x="0.0" y="477.0">PockemonMove.SuperPower</node>
+    <node x="0.0" y="356.0">PockemonMove.TailWhip</node>
+    <node x="527.0" y="598.0">Main</node>
   </nodes>
   <notes />
   <edges>
-    <edge source="Main" target="Regirock">
-      <point x="12.25" y="-27.0" />
-      <point x="1061.1666666666665" y="448.0" />
-      <point x="1233.9166666666665" y="448.0" />
-      <point x="0.0" y="15.0" />
-    </edge>
     <edge source="Roserade" target="Roselia">
-      <point x="46.66666666666674" y="-15.0" />
-      <point x="443.2641414141417" y="378.0" />
-      <point x="675.5833333333334" y="378.0" />
-      <point x="0.0" y="15.0" />
-    </edge>
-    <edge source="Roserade" target="PockemonMove.DazzlingGleam">
-      <point x="-28.0" y="-15.0" />
-      <point x="368.59747474747496" y="368.0" />
-      <point x="230.5" y="368.0" />
-      <point x="230.5" y="106.0" />
-      <point x="408.6909090909089" y="106.0" />
-      <point x="-50.66666666666674" y="15.0" />
-    </edge>
-    <edge source="Roserade" target="PockemonMove.ShadowBall">
-      <point x="-9.333333333333258" y="-15.0" />
-      <point x="387.2641414141417" y="358.0" />
-      <point x="327.66666666666674" y="358.0" />
-      <point x="327.66666666666674" y="116.0" />
-      <point x="592.0242424242424" y="116.0" />
-      <point x="-73.33333333333326" y="38.0" />
-    </edge>
-    <edge source="Eevee" target="PockemonMove.Confide">
-      <point x="-29.333333333333258" y="-15.0" />
-      <point x="1906.0808080808083" y="242.0" />
-      <point x="1821.4166666666665" y="242.0" />
-      <point x="55.0" y="38.0" />
-    </edge>
-    <edge source="Main" target="Roserade">
-      <point x="-61.25" y="-27.0" />
-      <point x="987.6666666666666" y="468.0" />
-      <point x="396.59747474747496" y="468.0" />
-      <point x="0.0" y="15.0" />
-    </edge>
-    <edge source="Main" target="Budew">
-      <point x="-12.25" y="-27.0" />
-      <point x="1036.6666666666665" y="448.0" />
-      <point x="759.4166666666666" y="448.0" />
-      <point x="29.333333333333258" y="15.0" />
-    </edge>
-    <edge source="Eevee" target="PockemonMove.QuickAttack">
       <point x="0.0" y="-15.0" />
-      <point x="1935.4141414141416" y="242.0" />
-      <point x="1930.4166666666665" y="242.0" />
-      <point x="-34.0" y="15.0" />
-    </edge>
-    <edge source="Roselia" target="PockemonMove.DazzlingGleam">
-      <point x="-20.799999999999955" y="-15.0" />
-      <point x="654.7833333333334" y="232.0" />
-      <point x="568.6666666666667" y="232.0" />
-      <point x="568.6666666666667" y="106.0" />
-      <point x="459.35757575757566" y="106.0" />
       <point x="0.0" y="15.0" />
-    </edge>
-    <edge source="Regirock" target="PockemonMove.RockPollish">
-      <point x="14.0" y="-15.0" />
-      <point x="1247.9166666666665" y="368.0" />
-      <point x="1352.4166666666665" y="368.0" />
-      <point x="0.0" y="38.0" />
-    </edge>
-    <edge source="Roserade" target="PockemonMove.SweetScent">
-      <point x="-46.66666666666674" y="-15.0" />
-      <point x="349.9308080808082" y="378.0" />
-      <point x="110.0" y="378.0" />
-      <point x="0.0" y="27.0" />
-    </edge>
-    <edge source="Roselia" target="PockemonMove.ShadowBall">
-      <point x="0.0" y="-15.0" />
-      <point x="675.5833333333334" y="116.0" />
-      <point x="665.3575757575757" y="116.0" />
-      <point x="0.0" y="38.0" />
-    </edge>
-    <edge source="Espeon" target="PockemonMove.Confide">
-      <point x="-40.0" y="-15.0" />
-      <point x="1943.6666666666665" y="368.0" />
-      <point x="1711.4166666666665" y="368.0" />
-      <point x="-55.0" y="38.0" />
-    </edge>
-    <edge source="Regirock" target="PockemonMove.SuperPower">
-      <point x="-14.0" y="-15.0" />
-      <point x="1219.9166666666665" y="368.0" />
-      <point x="1115.4166666666665" y="368.0" />
-      <point x="0.0" y="38.0" />
-    </edge>
-    <edge source="Espeon" target="PockemonMove.DreamEater">
-      <point x="24.0" y="-15.0" />
-      <point x="2007.6666666666665" y="368.0" />
-      <point x="2108.9141414141413" y="368.0" />
-      <point x="0.0" y="27.0" />
     </edge>
     <edge source="Espeon" target="Eevee">
-      <point x="-24.0" y="-15.0" />
-      <point x="1959.6666666666665" y="358.0" />
-      <point x="1935.4141414141416" y="358.0" />
+      <point x="0.0" y="-15.0" />
       <point x="0.0" y="15.0" />
-    </edge>
-    <edge source="Main" target="Espeon">
-      <point x="61.25" y="-27.0" />
-      <point x="1110.1666666666665" y="468.0" />
-      <point x="1983.6666666666665" y="468.0" />
-      <point x="0.0" y="15.0" />
-    </edge>
-    <edge source="Regirock" target="PockemonMove.Swagger">
-      <point x="42.0" y="-15.0" />
-      <point x="1275.9166666666665" y="378.0" />
-      <point x="1590.9166666666665" y="378.0" />
-      <point x="0.0" y="38.0" />
-    </edge>
-    <edge source="Roselia" target="PockemonMove.StunSpore">
-      <point x="-41.59999999999991" y="-15.0" />
-      <point x="633.9833333333335" y="242.0" />
-      <point x="503.16666666666674" y="242.0" />
-      <point x="55.0" y="27.0" />
-    </edge>
-    <edge source="Budew" target="PockemonMove.DazzlingGleam">
-      <point x="-22.0" y="-15.0" />
-      <point x="708.0833333333334" y="96.0" />
-      <point x="510.0242424242424" y="96.0" />
-      <point x="50.66666666666674" y="15.0" />
     </edge>
     <edge source="Roselia" target="Budew">
-      <point x="20.799999999999955" y="-15.0" />
-      <point x="696.3833333333333" y="242.0" />
-      <point x="700.7500000000001" y="242.0" />
-      <point x="-29.333333333333258" y="15.0" />
-    </edge>
-    <edge source="Espeon" target="PockemonMove.TailWhip">
-      <point x="40.0" y="-15.0" />
-      <point x="2023.6666666666665" y="378.0" />
-      <point x="2227.9141414141413" y="378.0" />
-      <point x="55.0" y="38.0" />
-    </edge>
-    <edge source="Roserade" target="PockemonMove.StunSpore">
-      <point x="9.333333333333258" y="-15.0" />
-      <point x="405.9308080808082" y="378.0" />
-      <point x="393.16666666666674" y="378.0" />
-      <point x="-55.0" y="27.0" />
-    </edge>
-    <edge source="Budew" target="PockemonMove.ShadowBall">
-      <point x="22.0" y="-15.0" />
-      <point x="752.0833333333334" y="116.0" />
-      <point x="738.6909090909089" y="116.0" />
-      <point x="73.33333333333326" y="38.0" />
-    </edge>
-    <edge source="Main" target="Roselia">
-      <point x="-36.75" y="-27.0" />
-      <point x="1012.1666666666666" y="458.0" />
-      <point x="710.2500000000001" y="458.0" />
-      <point x="34.66666666666674" y="15.0" />
-    </edge>
-    <edge source="Eevee" target="PockemonMove.TailWhip">
-      <point x="29.333333333333485" y="-15.0" />
-      <point x="1964.747474747475" y="242.0" />
-      <point x="2117.9141414141413" y="242.0" />
-      <point x="-55.0" y="38.0" />
-    </edge>
-    <edge source="Main" target="Eevee">
-      <point x="36.75" y="-27.0" />
-      <point x="1085.6666666666665" y="458.0" />
-      <point x="1907.8333333333335" y="458.0" />
-      <point x="1907.8333333333335" y="378.0" />
-      <point x="1906.0808080808083" y="378.0" />
-      <point x="-29.333333333333258" y="15.0" />
-    </edge>
-    <edge source="Regirock" target="PockemonMove.IronDefense">
-      <point x="-42.0" y="-15.0" />
-      <point x="1191.9166666666665" y="378.0" />
-      <point x="878.4166666666666" y="378.0" />
-      <point x="0.0" y="38.0" />
-    </edge>
-    <edge source="Espeon" target="PockemonMove.QuickAttack">
-      <point x="8.0" y="-15.0" />
-      <point x="1991.6666666666665" y="378.0" />
-      <point x="1989.9141414141416" y="378.0" />
-      <point x="1989.9141414141416" y="232.0" />
-      <point x="1998.4166666666665" y="232.0" />
-      <point x="34.0" y="15.0" />
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="0.5000000000000001" x="1177.081081081082" y="268.02898550724626" />
-  <SelectedNodes />
+  <settings layout="Hierarchic Group" zoom="0.46504559270516715" x="1141.5" y="271.0" />
+  <SelectedNodes>
+    <node>Main</node>
+  </SelectedNodes>
   <Categories>
     <Category>Methods</Category>
   </Categories>

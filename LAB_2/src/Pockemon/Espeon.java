@@ -1,7 +1,9 @@
+package Pockemon;
+
 import ru.ifmo.se.pokemon.*;
 import PockemonMove.*;
 
-public class Espeon extends Eevee{
+public class Espeon extends Eevee {
     public Espeon(String name, int level){
         super(name, level);
         setStats(65,65, 60, 130,95,110);//

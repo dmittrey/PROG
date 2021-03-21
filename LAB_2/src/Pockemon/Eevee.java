@@ -1,6 +1,7 @@
+package Pockemon;
+
 import ru.ifmo.se.pokemon.*;
 import PockemonMove.*;
-
 
 public class Eevee extends Pokemon{
     public Eevee(String name, int level){
