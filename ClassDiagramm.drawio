@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-03-22T00:55:49.277Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.152 YaBrowser/21.2.3.100 Yowser/2.5 Safari/537.36" etag="rXxWpRCHs9QBOi_UOQTF" version="14.4.9" type="github">
+<mxfile host="app.diagrams.net" modified="2021-03-22T00:57:59.342Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.152 YaBrowser/21.2.3.100 Yowser/2.5 Safari/537.36" etag="4IDunc-if9dgDZB-D42v" version="14.4.9" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="870" dy="623" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -25,7 +25,7 @@
         <mxCell id="yLyiOO5jgL0NWsvrxr1y-16" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="yLyiOO5jgL0NWsvrxr1y-14" vertex="1">
           <mxGeometry y="90" width="180" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="yLyiOO5jgL0NWsvrxr1y-17" value="+ Crawl(): void&#xa;+ setMood(enum): void&#xa;+ pinch(Gunilla): void&#xa;+ makeNoise(): void&#xa;+ propHead(): void&#xa;+ shakeLeg(): void&#xa;+ shineEyes(): void&#xa;+ paintSheet(Sheet): String&#xa;+ cutSheetEyes(Sheet): void&#xa;+ wearSheet(Sheet): void&#xa;+ startFly(Place): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="yLyiOO5jgL0NWsvrxr1y-14" vertex="1">
+        <mxCell id="yLyiOO5jgL0NWsvrxr1y-17" value="+ setMood(enum): void&#xa;+ pinch(Gunilla): void&#xa;+ makeNoise(): void&#xa;+ propHead(): void&#xa;+ shakeLeg(): void&#xa;+ shineEyes(): void&#xa;+ paintSheet(Sheet): String&#xa;+ cutSheetEyes(Sheet): void&#xa;+ wearSheet(Sheet): void&#xa;+ startFly(Place): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="yLyiOO5jgL0NWsvrxr1y-14" vertex="1">
           <mxGeometry y="98" width="180" height="162" as="geometry" />
         </mxCell>
         <mxCell id="yLyiOO5jgL0NWsvrxr1y-18" value="enum Places" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
@@ -83,7 +83,7 @@
         <mxCell id="yLyiOO5jgL0NWsvrxr1y-32" value="interface Alive" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="637" y="820" width="140" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="yLyiOO5jgL0NWsvrxr1y-33" value="+ hearNoise&#xa;+ open&#xa;+ close&#xa;+ turnView&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="yLyiOO5jgL0NWsvrxr1y-32" vertex="1">
+        <mxCell id="yLyiOO5jgL0NWsvrxr1y-33" value="+ hearNoise&#xa;+ turnView&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="yLyiOO5jgL0NWsvrxr1y-32" vertex="1">
           <mxGeometry y="26" width="140" height="74" as="geometry" />
         </mxCell>
         <mxCell id="yLyiOO5jgL0NWsvrxr1y-36" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;entryX=0.011;entryY=0.264;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryPerimeter=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="Pf3YUpGVRyEl7sNkMcrn-26" target="yLyiOO5jgL0NWsvrxr1y-33" edge="1">
