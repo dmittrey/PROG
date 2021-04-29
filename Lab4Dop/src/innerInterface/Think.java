@@ -38,6 +38,17 @@ public class Think implements Inner {
     }
 
     @Override
+    public void setFeeling(String aFeeling) {
+        opinion = aFeeling;
+    }
+
+    @Override
+    public void setContent(String aContent) {
+        idea = aContent;
+    }
+
+
+    @Override
     public boolean equals(Object otherObject) {
         if (this == otherObject) return true;
 

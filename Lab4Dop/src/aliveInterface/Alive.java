@@ -20,9 +20,19 @@ import innerInterface.Think;
 public interface Alive {
     void goTo(Object aPlace);
 
-    String toSay(Phrase aPhrase);
+    void toSay(Phrase aPhrase);
 
-    String toThink(Think aThink);
+    void toThink(Think aThink);
 
     Object getCurrentPlace();
+
+    String getThinkFeeling();
+
+    String getThinkContent();
+
+    void setPhraseFeeling(String aFeeling);
+
+    String getPhraseContent();
+
+
 }

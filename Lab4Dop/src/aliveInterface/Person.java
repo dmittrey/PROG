@@ -44,6 +44,12 @@ public abstract class Person implements Alive {
 
     private Eyes eyes;
 
+    private Think think;
+
+    private Phrase phrase;
+
+    private boolean aliveStatus;
+
     public Person(String aName, String aGenus, EyeColor aColor, String aTarget) {
         name = aName;
         genus = aGenus;
@@ -63,6 +69,7 @@ public abstract class Person implements Alive {
     }
 
     public Person(String aName, String aGenus) {
+        aliveStatus = true;
         name = aName;
         genus = aGenus;
         eyes = new Eyes(EyeColor.brown, "");
@@ -78,7 +85,7 @@ public abstract class Person implements Alive {
             target = aTarget;
         }
 
-        private void changeTarget(String aTarget) {
+        private void changeTarget(Object aTarget) {
             target = aTarget;
         }
 
@@ -95,22 +102,11 @@ public abstract class Person implements Alive {
         return eyes.getTarget();
     }
 
-    public EyeColor getEyesColor() {
-        return eyes.getColor();
-    }
-
     public String getName() {
         return name;
     }
 
-    public String getGenus() {
-        return genus;
-    }
-
     public void setEyesTarget(Object aTarget) {
-
-// тут надо продумать момент, скорее всего пропишу просто исключение или првоерку на пустое значение
-        System.out.println("Меняем направление взгляда у " + this.name);
         eyes.changeTarget(aTarget);
     }
 
@@ -121,18 +117,45 @@ public abstract class Person implements Alive {
     }
 
     @Override
-    public String toSay(Phrase aPhrase) {
-        return name + " says '" + aPhrase.getContent() + "' with feeling " + aPhrase.getFeeling();
-    }
-
-    @Override
-    public String toThink(Think aThink) {
-        return name + " thought '" + aThink.getContent() + "' with feeling " + aThink.getFeeling();
-    }
-
-    @Override
     public Object getCurrentPlace() {
         return name + " near " + currentPlace + " right now";
+    }
+
+    @Override
+    public String getThinkFeeling(){
+        return think.getFeeling();
+    }
+
+    @Override
+    public String getThinkContent(){
+        return think.getContent();
+    }
+
+    @Override
+    public void setPhraseFeeling(String aContent){
+        phrase.setFeeling(aContent);
+    }
+
+    @Override
+    public String getPhraseContent(){
+        return phrase.getContent();
+    }
+
+
+    public boolean isExist(){
+        return aliveStatus;
+    }
+
+    @Override
+    public void toSay(Phrase aPhrase) {
+        phrase.setContent(aPhrase.getContent());
+        phrase.setFeeling(aPhrase.getFeeling());
+    }
+
+    @Override
+    public void toThink(Think aThink) {
+        think.setContent(aThink.getContent());
+        think.setFeeling(aThink.getFeeling());
     }
 
     @Override

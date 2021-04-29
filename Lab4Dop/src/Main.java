@@ -18,16 +18,14 @@ public class Main {
 
         crowd.goTo(christopherRobinHome);
 
-        if (crowd.getCurrentPlace().equals(christopherRobinHome)) crowd.toThink(new Think(
-                "We came to say goodbye", "They really, really didn't want to think about it" ));
+        if (crowd.getCurrentPlace().equals(christopherRobinHome)) crowd.toThink(new Think("We came to say goodbye", "They really, really didn't want to think about it" ));
 
         crowd.toSay(new Phrase("Hello", "They were calm"));
 
-        if (crowd.getThinkFeeling().equals("They came to say goodbye")) crowd.setPhraseContent(
+        if (crowd.getThinkFeeling().equals("They came to say goodbye")) crowd.setPhraseFeeling(
                 "Everyone felt somehow sad and uneasy");
 
-        if (crowd.getPhraseContent().equals("Everyone felt somehow sad and uneasy")){
-            crowd.setShapeStatus("Heap");
+        if (crowd.getPhraseContent().equals("Everyone felt somehow sad and uneasy")){crowd.setShapeStatus("Heap");
 
             crowd.toThink(new Think(
                     "We have to push each other", "They were waiting for someone else to speak"));
@@ -45,14 +43,14 @@ public class Main {
                 Ia.toThink(new Think("I need to wag my tail", "It will motivate him"));
             }
 
-            if (Ia.getThinkContent.equals("I need to wag my tail")){
+            if (Ia.getThinkContent().equals("I need to wag my tail")){
                 Ia.wagTail("Clockwise");
 
-                if (Ia.wagTailStatus()) Ia.toSay(new Phrase("Goodbye" + christopherRobin.getName(),
+                Ia.toSay(new Phrase("Goodbye" + christopherRobin.getName(),
                     "He was sorry"));
             }
 
-            if (Ia.getPhraseContent.equals("Goodbye" + christopherRobin.getName())) {
+            if (Ia.getPhraseContent().equals("Goodbye" + christopherRobin.getName())) {
             crowd.disband();
             }
         }

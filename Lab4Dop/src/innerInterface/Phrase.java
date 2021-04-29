@@ -42,6 +42,16 @@ public class Phrase implements Inner {
     }
 
     @Override
+    public void setFeeling(String aFeeling) {
+        intonation = aFeeling;
+    }
+
+    @Override
+    public void setContent(String aContent) {
+        text = aContent;
+    }
+
+    @Override
     public boolean equals(Object otherObject) {
         if (this == otherObject) return true;
 

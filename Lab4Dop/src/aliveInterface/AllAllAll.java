@@ -39,6 +39,8 @@ public class AllAllAll implements Alive {
 
     private Object currentPlace;
     private String shapeStatus;
+    private Think think;
+    private Phrase phrase;
 
 
     public AllAllAll(int crowdAmount) {
@@ -58,9 +60,11 @@ public class AllAllAll implements Alive {
 
             class Tail {
                 private String rotateDirection;
+                private boolean rotateStatus;
 
                 public Tail(String aRotateDirection) {
                     rotateDirection = aRotateDirection;
+                    rotateStatus = true;
                 }
 
                 public String wigTail() {
@@ -72,7 +76,6 @@ public class AllAllAll implements Alive {
             Tail tail = new Tail(direction);
 
             return tail.wigTail();
-
         }
     }
 
@@ -96,17 +99,39 @@ public class AllAllAll implements Alive {
     }
 
     @Override
-    public String toSay(Phrase aPhrase) {
-        return "They all said '" + aPhrase.getContent() + "' with feeling " + aPhrase.getFeeling();
+    public void toSay(Phrase aPhrase) {
+        phrase.setContent(aPhrase.getContent());
+        phrase.setFeeling(aPhrase.getFeeling());
     }
 
     @Override
-    public String toThink(Think aThink) {
-        return "They all thought '" + aThink.getContent() + "' with feeling " + aThink.getFeeling();
+    public void toThink(Think aThink) {
+        think.setContent(aThink.getContent());
+        think.setFeeling(aThink.getFeeling());
     }
 
     public String disband(){
         return "The crowd dispersed";
+    }
+
+    @Override
+    public String getThinkFeeling(){
+        return think.getFeeling();
+    }
+
+    @Override
+    public String getThinkContent(){
+        return think.getContent();
+    }
+
+    @Override
+    public void setPhraseFeeling(String aFeeling) {
+        phrase.setFeeling(aFeeling);
+    }
+
+    @Override
+    public String getPhraseContent(){
+        return phrase.getContent();
     }
 
     //переопределяем hashcode, toString, hashcode

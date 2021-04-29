@@ -16,6 +16,10 @@ public class ChristopherRobin extends Person {
         readStatus = false;
     }
 
+    public boolean isReading(){
+        return readStatus;
+    }
+
     @Override
     public boolean equals(Object otherObject) {
         if (this == otherObject) return true;
