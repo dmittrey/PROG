@@ -71,9 +71,9 @@ public abstract class Person implements Alive {
     private class Eyes {
         private EyeColor color;
 
-        private String target;
+        private Object target;
 
-        private Eyes(EyeColor aColor, String aTarget) {
+        private Eyes(EyeColor aColor, Object aTarget) {
             color = aColor;
             target = aTarget;
         }
@@ -82,7 +82,7 @@ public abstract class Person implements Alive {
             target = aTarget;
         }
 
-        private String getTarget() {
+        private Object getTarget() {
             return target;
         }
 
@@ -91,7 +91,7 @@ public abstract class Person implements Alive {
         }
     }
 
-    public String getEyesTarget() {
+    public Object getEyesTarget() {
         return eyes.getTarget();
     }
 
@@ -107,11 +107,10 @@ public abstract class Person implements Alive {
         return genus;
     }
 
-    public void setEyesTarget(String aTarget) {
+    public void setEyesTarget(Object aTarget) {
 
 // тут надо продумать момент, скорее всего пропишу просто исключение или првоерку на пустое значение
         System.out.println("Меняем направление взгляда у " + this.name);
-        if (aTarget.equals(""))
         eyes.changeTarget(aTarget);
     }
 
@@ -132,7 +131,7 @@ public abstract class Person implements Alive {
     }
 
     @Override
-    public String getCurrentPlace() {
+    public Object getCurrentPlace() {
         return name + " near " + currentPlace + " right now";
     }
 

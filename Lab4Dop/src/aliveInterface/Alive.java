@@ -24,5 +24,5 @@ public interface Alive {
 
     String toThink(Think aThink);
 
-    String getCurrentPlace();
+    Object getCurrentPlace();
 }

@@ -86,8 +86,8 @@ public class AllAllAll implements Alive {
     }
 
     @Override
-    public String getCurrentPlace() {
-        return "They came to " + currentPlace;
+    public Object getCurrentPlace() {
+        return currentPlace;
     }
 
     @Override
@@ -103,6 +103,10 @@ public class AllAllAll implements Alive {
     @Override
     public String toThink(Think aThink) {
         return "They all thought '" + aThink.getContent() + "' with feeling " + aThink.getFeeling();
+    }
+
+    public String disband(){
+        return "The crowd dispersed";
     }
 
     //переопределяем hashcode, toString, hashcode
