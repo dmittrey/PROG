@@ -18,7 +18,7 @@ import innerInterface.Phrase;
 import innerInterface.Think;
 
 public interface Alive {
-    void goTo(String aPlace);
+    void goTo(Object aPlace);
 
     String toSay(Phrase aPhrase);
 

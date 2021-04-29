@@ -6,6 +6,10 @@ import innerInterface.Think;
 import java.util.Objects;
 
 /**
+ * Класс персоны
+ *
+ *
+ *
  * Реализованы поля:
  * name --- имя
  * genus --- род
@@ -32,7 +36,7 @@ import java.util.Objects;
 
 public abstract class Person implements Alive {
 
-    private String currentPlace = "";
+    private Object currentPlace = "";
     //абстрактный класс
     private String name;
 
@@ -104,12 +108,16 @@ public abstract class Person implements Alive {
     }
 
     public void setEyesTarget(String aTarget) {
+
+// тут надо продумать момент, скорее всего пропишу просто исключение или првоерку на пустое значение
+        System.out.println("Меняем направление взгляда у " + this.name);
+        if (aTarget.equals(""))
         eyes.changeTarget(aTarget);
     }
 
 
     @Override
-    public void goTo(String aPlace) {
+    public void goTo(Object aPlace) {
         currentPlace = aPlace;
     }
 

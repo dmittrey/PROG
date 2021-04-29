@@ -1,6 +1,9 @@
 package aliveInterface;
 
 /**
+ * Класс толпы
+ *
+ *
  * Реализуются поля:
  * <p>
  * currentPlace --- Текущая локация
@@ -21,6 +24,9 @@ package aliveInterface;
  * public String toThink(Think aThink) --- Выводит мысль и опасения
  * <p>
  * Также реализуется статический вложенный класс Eeyore и метод wigTail с локальным классом tail
+ * <p>
+ * можно попробовать наложить на все методы этого класса ошибку которуб тригерит поле толпаВместе,
+ * и проверяя эту хуету мы будем блочить все поля
  */
 
 
@@ -31,13 +37,15 @@ import java.util.Objects;
 
 public class AllAllAll implements Alive {
 
-    private String currentPlace;
+    private Object currentPlace;
     private String shapeStatus;
 
 
-    public AllAllAll(String aCurrentPlace, boolean aGoodByeStatus) {
-        currentPlace = aCurrentPlace;
+    public AllAllAll(int crowdAmount) {
+        if (crowdAmount <= 1) throw new RuntimeException();//определить свое исключение и создать конструктор
+        currentPlace = "Somewhere in the city";
         shapeStatus = "column";
+
     }
 
     public static class Eeyore extends Person {
@@ -83,7 +91,7 @@ public class AllAllAll implements Alive {
     }
 
     @Override
-    public void goTo(String aPlace) {
+    public void goTo(Object aPlace) {
         currentPlace = aPlace;
     }
 

@@ -6,6 +6,8 @@ import java.util.Objects;
 
 /**
  * Реализуем класс для фраз которые произносят
+ *
+ *
  * Имплементируем интерфейс Inner
  * <p>
  * Реализованы поля:
@@ -51,8 +53,8 @@ public class Phrase implements Inner {
 
         Phrase other = (Phrase) otherObject;
 
-        return other.text == text
-                && other.intonation == intonation;
+        return (other.text == text)
+                && (other.intonation == intonation);
     }
 
     @Override
