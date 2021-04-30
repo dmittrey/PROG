@@ -1,5 +1,6 @@
 package aliveInterface;
 
+import Exceptions.NotAliveException;
 import innerInterface.Phrase;
 import innerInterface.Think;
 
@@ -99,66 +100,81 @@ public abstract class Person implements Alive {
     }
 
     public Object getEyesTarget() {
+        if (!aliveStatus) throw new NotAliveException();
         return eyes.getTarget();
     }
 
     public String getName() {
+        if (!aliveStatus) throw new NotAliveException();
         return name;
     }
 
     public void setEyesTarget(Object aTarget) {
+        if (!aliveStatus) throw new NotAliveException();
         eyes.changeTarget(aTarget);
     }
 
 
     @Override
     public void goTo(Object aPlace) {
+        if (!aliveStatus) throw new NotAliveException();
         currentPlace = aPlace;
     }
 
     @Override
     public Object getCurrentPlace() {
+        if (!aliveStatus) throw new NotAliveException();
         return name + " near " + currentPlace + " right now";
     }
 
     @Override
     public String getThinkFeeling(){
+        if (!aliveStatus) throw new NotAliveException();
         return think.getFeeling();
     }
 
     @Override
     public String getThinkContent(){
+        if (!aliveStatus) throw new NotAliveException();
         return think.getContent();
     }
 
     @Override
     public void setPhraseFeeling(String aContent){
+        if (!aliveStatus) throw new NotAliveException();
         phrase.setFeeling(aContent);
     }
 
     @Override
     public String getPhraseContent(){
+        if (!aliveStatus) throw new NotAliveException();
         return phrase.getContent();
     }
 
     @Override
     public String getPhraseFeeling(){
+        if (!aliveStatus) throw new NotAliveException();
         return phrase.getFeeling();
     }
-
 
     public boolean isExist(){
         return aliveStatus;
     }
 
+    public void murder(){
+        aliveStatus = false;
+    }
+
     @Override
     public void toSay(Phrase aPhrase) {
+        if (!aliveStatus) throw new NotAliveException();
         phrase.setContent(aPhrase.getContent());
         phrase.setFeeling(aPhrase.getFeeling());
     }
 
     @Override
     public void toThink(Think aThink) {
+        if (!aliveStatus) throw new NotAliveException();
         think.setContent(aThink.getContent());
         think.setFeeling(aThink.getFeeling());
     }

@@ -30,6 +30,7 @@ package aliveInterface;
  */
 
 
+import Exceptions.NotPositiveAmountException;
 import innerInterface.Phrase;
 import innerInterface.Think;
 
@@ -45,8 +46,8 @@ public class AllAllAll implements Alive {
     private boolean existStatus;
 
 
-    public AllAllAll(int crowdAmount, String aName) {
-        if (crowdAmount <= 1) throw new RuntimeException();//определить свое исключение и создать конструктор
+    public AllAllAll(int crowdAmount, String aName) throws NotPositiveAmountException {
+        if (crowdAmount <= 1) throw new NotPositiveAmountException("Enter the correct number of people in the crowd");
         currentPlace = "at the city";
         shapeStatus = "column";
         name = aName;

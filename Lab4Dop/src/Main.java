@@ -1,3 +1,4 @@
+import Exceptions.NotPositiveAmountException;
 import aliveInterface.AllAllAll;
 import aliveInterface.ChristopherRobin;
 import aliveInterface.Person;
@@ -6,7 +7,7 @@ import innerInterface.Think;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NotPositiveAmountException {
 
         AllAllAll crowd = new AllAllAll(5, "All-All-All"); //Инициализируем переменную толпы
 
@@ -119,3 +120,7 @@ public class Main {
         }
     }
 }
+
+//Осталось переопределить методы по нормальному для всех классов
+
+//Почистить код от неиспользуемых вещей
