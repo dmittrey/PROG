@@ -1,7 +1,5 @@
 package innerInterface;
 
-import aliveInterface.ChristopherRobin;
-
 import java.util.Objects;
 
 /**

@@ -39,15 +39,16 @@ public class AllAllAll implements Alive {
 
     private Object currentPlace;
     private String shapeStatus;
-    private Think think;
-    private Phrase phrase;
+    private Think think = new Think("", "");
+    private Phrase phrase = new Phrase("", "");
+    private String name;
 
 
-    public AllAllAll(int crowdAmount) {
+    public AllAllAll(int crowdAmount, String aName) {
         if (crowdAmount <= 1) throw new RuntimeException();//определить свое исключение и создать конструктор
         currentPlace = "Somewhere in the city";
         shapeStatus = "column";
-
+        name = aName;
     }
 
     public static class Eeyore extends Person {
@@ -77,6 +78,10 @@ public class AllAllAll implements Alive {
 
             return tail.wigTail();
         }
+    }
+
+    public String getName(){
+        return name;
     }
 
     //надо как-то норм оформить вывод структуры толпы

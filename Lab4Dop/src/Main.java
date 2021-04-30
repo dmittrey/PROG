@@ -8,7 +8,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        AllAllAll crowd = new AllAllAll(5 ); //Инициализируем переменную толпы
+        AllAllAll crowd = new AllAllAll(5, "All-All-All"); //Инициализируем переменную толпы
 
         ChristopherRobin christopherRobin = new ChristopherRobin("Christopher Robin");
         //Инициализировали Кристофера
@@ -16,7 +16,10 @@ public class Main {
         Place christopherRobinHome = new Place(christopherRobin, "House");
         //Инициализируем дом Кристофера
 
+        System.out.println(crowd.getName() + " now " + crowd.getCurrentPlace());
+
         crowd.goTo(christopherRobinHome);
+        System.out.println(crowd.getName() + " now " + crowd.getCurrentPlace().toString());
 
         if (crowd.getCurrentPlace().equals(christopherRobinHome)) crowd.toThink(new Think("We came to say goodbye", "They really, really didn't want to think about it" ));
 

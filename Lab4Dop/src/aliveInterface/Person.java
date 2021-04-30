@@ -44,9 +44,9 @@ public abstract class Person implements Alive {
 
     private Eyes eyes;
 
-    private Think think;
+    private Think think = new Think("", "");
 
-    private Phrase phrase;
+    private Phrase phrase = new Phrase("","");
 
     private boolean aliveStatus;
 

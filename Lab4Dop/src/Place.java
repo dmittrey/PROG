@@ -28,4 +28,9 @@ public class Place {
     public String getType() {
         return type;
     }
+
+    @Override
+    public String toString(){
+        return type + " belonging to a " + owner;
+    }
 }
