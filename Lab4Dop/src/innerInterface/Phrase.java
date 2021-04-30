@@ -1,26 +1,6 @@
 package innerInterface;
 
-import aliveInterface.AllAllAll;
-
 import java.util.Objects;
-
-/**
- * Реализуем класс для фраз которые произносят
- *
- *
- * Имплементируем интерфейс Inner
- * <p>
- * Реализованы поля:
- * <p>
- * text --- Содержимое
- * intonation --- Эмоциональный окрас
- * <p>
- * Реализованы методы:
- * <p>
- * String getContent() --- Вывести содержимое фразы
- * <p>
- * String getFeeling() --- Вывести эмоциональный окрас фразы
- */
 
 public class Phrase implements Inner {
     private String text;

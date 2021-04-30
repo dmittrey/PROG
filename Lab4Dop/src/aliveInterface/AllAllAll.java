@@ -1,39 +1,8 @@
 package aliveInterface;
 
-/**
- * Класс толпы
- *
- *
- * Реализуются поля:
- * <p>
- * currentPlace --- Текущая локация
- * shapeStatus --- Структура толпы
- * <p>
- * Реализуются методы:
- * <p>
- * public String getShapeStatus() --- Выводит структуру толпы
- * <p>
- * public void setShapeStatus(String aShapeStatus) --- Меняет структуру толпы
- * <p>
- * public String getCurrentPlace() --- Выводит локацию толпы
- * <p>
- * public void goTo(String aPlace) --- Меняет локацию толпы
- * <p>
- * public String toSay(Phrase aPhrase) --- Выводит фразу и чувства
- * <p>
- * public String toThink(Think aThink) --- Выводит мысль и опасения
- * <p>
- * Также реализуется статический вложенный класс Eeyore и метод wigTail с локальным классом tail
- * <p>
- * можно попробовать наложить на все методы этого класса ошибку которуб тригерит поле толпаВместе,
- * и проверяя эту хуету мы будем блочить все поля
- */
-
-
 import Exceptions.NotPositiveAmountException;
 import innerInterface.Phrase;
 import innerInterface.Think;
-
 import java.util.Objects;
 
 public class AllAllAll implements Alive {
@@ -42,7 +11,7 @@ public class AllAllAll implements Alive {
     private String shapeStatus;
     private Think think = new Think("", "");
     private Phrase phrase = new Phrase("", "");
-    private String name;
+    private final String name;
     private boolean existStatus;
 
 
@@ -104,7 +73,6 @@ public class AllAllAll implements Alive {
         @Override
         public int hashCode() {
             return super.hashCode();
-            //внимание
         }
     }
 
@@ -118,6 +86,10 @@ public class AllAllAll implements Alive {
 
     public void setShapeStatus(String aShapeStatus) {
         shapeStatus = aShapeStatus;
+    }
+
+    public void disband(){
+        existStatus = false;
     }
 
     @Override
@@ -140,10 +112,6 @@ public class AllAllAll implements Alive {
     public void toThink(Think aThink) {
         think.setContent(aThink.getContent());
         think.setFeeling(aThink.getFeeling());
-    }
-
-    public void disband(){
-        existStatus = false;
     }
 
     @Override

@@ -3,45 +3,15 @@ package aliveInterface;
 import Exceptions.NotAliveException;
 import innerInterface.Phrase;
 import innerInterface.Think;
-
 import java.util.Objects;
-
-/**
- * Класс персоны
- *
- *
- *
- * Реализованы поля:
- * name --- имя
- * genus --- род
- * eyes.color --- цвет глаз
- * eyes.target --- куда направлены глаза
- * <p>
- * Реализованы методы:
- * String getEyesTarget() --- Вывести куда челик смотрит
- * <p>
- * EyeColor getEyesColor() --- Вывести цвет глаз челика
- * <p>
- * String getName() --- Вывести имя челика
- * <p>
- * String getGenus() --- Вывести род челика
- * <p>
- * void setEyesTarget(String aTarget) --- Перевести взгляд челика
- * <p>
- * Реализован нестатический вложенный класс Eyes который использует enum EyeColor
- * <p>
- * <p>
- * <p>
- * Осталось переопределить equals, toString, hashCode и реализовать обработку исключений
- */
 
 public abstract class Person implements Alive {
 
     private Object currentPlace = "";
     //абстрактный класс
-    private String name;
+    private final String name;
 
-    private String genus;
+    private final String genus;
 
     private Eyes eyes;
 
@@ -51,24 +21,6 @@ public abstract class Person implements Alive {
 
     private boolean aliveStatus;
 
-    public Person(String aName, String aGenus, EyeColor aColor, String aTarget) {
-        name = aName;
-        genus = aGenus;
-        eyes = new Eyes(aColor, aTarget);
-    }
-
-    public Person(String aName, String aGenus, String aTarget) {
-        name = aName;
-        genus = aGenus;
-        eyes = new Eyes(EyeColor.brown, aTarget);
-    }
-
-    public Person(String aName, String aGenus, EyeColor aColor) {
-        name = aName;
-        genus = aGenus;
-        eyes = new Eyes(aColor, "");
-    }
-
     public Person(String aName, String aGenus) {
         aliveStatus = true;
         name = aName;
@@ -77,7 +29,7 @@ public abstract class Person implements Alive {
     }
 
     private class Eyes {
-        private EyeColor color;
+        private final EyeColor color;
 
         private Object target;
 
@@ -159,10 +111,6 @@ public abstract class Person implements Alive {
 
     public boolean isExist(){
         return aliveStatus;
-    }
-
-    public void murder(){
-        aliveStatus = false;
     }
 
     @Override

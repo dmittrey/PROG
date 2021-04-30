@@ -1,15 +1,6 @@
-import aliveInterface.AllAllAll;
 import aliveInterface.Person;
 
 import java.util.Objects;
-
-/**
- *
- * Класс строений
- *
- * Создан для дома Кристофера Робина
- *
- */
 
 public class Place {
     private Person owner;

@@ -2,22 +2,6 @@ package innerInterface;
 
 import java.util.Objects;
 
-/**
- * Реализуем класс для мыслей о которых думают
- * Имплементируем интерфейс Inner
- * <p>
- * Реализованы поля:
- * <p>
- * idea --- Содержимое
- * opinion --- Мнение
- * <p>
- * Реализованы методы:
- * <p>
- * String getContent() --- Вывести содержимое мысли
- * <p>
- * String getFeeling() --- Вывести переживания от неё
- */
-
 public class Think implements Inner {
     private String idea;
     private String opinion;

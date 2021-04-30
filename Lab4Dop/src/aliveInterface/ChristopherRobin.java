@@ -11,7 +11,6 @@ public class ChristopherRobin extends Person {
         readStatus = true;
     }
 
-
     public void stopReading() {
         readStatus = false;
     }
@@ -44,5 +43,4 @@ public class ChristopherRobin extends Person {
     public int hashCode() {
         return super.hashCode() + Objects.hash(readStatus);
     }
-
 }

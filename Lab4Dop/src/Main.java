@@ -9,13 +9,11 @@ public class Main {
 
     public static void main(String[] args) throws NotPositiveAmountException {
 
-        AllAllAll crowd = new AllAllAll(5, "All-All-All"); //Инициализируем переменную толпы
+        AllAllAll crowd = new AllAllAll(5, "All-All-All");
 
         ChristopherRobin christopherRobin = new ChristopherRobin("Christopher Robin");
-        //Инициализировали Кристофера
 
         Place christopherRobinHome = new Place(christopherRobin, "House");
-        //Инициализируем дом Кристофера
 
         System.out.println(crowd.getName() + " now " + crowd.getCurrentPlace());
 
@@ -120,7 +118,3 @@ public class Main {
         }
     }
 }
-
-//Осталось переопределить методы по нормальному для всех классов
-
-//Почистить код от неиспользуемых вещей
