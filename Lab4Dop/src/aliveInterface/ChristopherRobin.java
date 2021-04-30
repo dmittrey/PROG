@@ -37,9 +37,7 @@ public class ChristopherRobin extends Person {
 
     @Override
     public String toString() {
-        return super.toString()
-                + "readStatus=" + readStatus
-                + "]";
+        return super.toString();
     }
 
     @Override

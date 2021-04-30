@@ -31,6 +31,6 @@ public class Place {
 
     @Override
     public String toString(){
-        return type + " belonging to a " + owner;
+        return "at " + type + " belonging to a " + owner;
     }
 }

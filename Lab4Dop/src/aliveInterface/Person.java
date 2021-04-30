@@ -141,6 +141,11 @@ public abstract class Person implements Alive {
         return phrase.getContent();
     }
 
+    @Override
+    public String getPhraseFeeling(){
+        return phrase.getFeeling();
+    }
+
 
     public boolean isExist(){
         return aliveStatus;
@@ -178,12 +183,7 @@ public abstract class Person implements Alive {
 
     @Override
     public String toString() {
-        return getClass().getName()
-                + "[currentPlace=" + currentPlace
-                + "name=" + name
-                + "genus=" + genus
-                + "eyes=" + eyes
-                + "]";
+        return name + " from " + genus;
     }
 
     @Override

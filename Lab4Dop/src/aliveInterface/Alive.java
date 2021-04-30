@@ -34,5 +34,7 @@ public interface Alive {
 
     String getPhraseContent();
 
+    String getPhraseFeeling();
+
 
 }

@@ -42,13 +42,15 @@ public class AllAllAll implements Alive {
     private Think think = new Think("", "");
     private Phrase phrase = new Phrase("", "");
     private String name;
+    private boolean existStatus;
 
 
     public AllAllAll(int crowdAmount, String aName) {
         if (crowdAmount <= 1) throw new RuntimeException();//определить свое исключение и создать конструктор
-        currentPlace = "Somewhere in the city";
+        currentPlace = "at the city";
         shapeStatus = "column";
         name = aName;
+        existStatus = true;
     }
 
     public static class Eeyore extends Person {
@@ -115,8 +117,8 @@ public class AllAllAll implements Alive {
         think.setFeeling(aThink.getFeeling());
     }
 
-    public String disband(){
-        return "The crowd dispersed";
+    public void disband(){
+        existStatus = false;
     }
 
     @Override
@@ -137,6 +139,11 @@ public class AllAllAll implements Alive {
     @Override
     public String getPhraseContent(){
         return phrase.getContent();
+    }
+
+    @Override
+    public String getPhraseFeeling() {
+        return phrase.getFeeling();
     }
 
     //переопределяем hashcode, toString, hashcode
