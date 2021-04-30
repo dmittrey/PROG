@@ -81,13 +81,37 @@ public class AllAllAll implements Alive {
 
             return tail.wigTail();
         }
+
+        @Override
+        public boolean equals(Object otherObject) {
+
+            if (this == otherObject) return true;
+
+            if (otherObject == null) return false;
+
+            if (getClass() != otherObject.getClass()) return false;
+
+            Eeyore other = (Eeyore) otherObject;
+
+            return super.equals(other);
+        }
+
+        @Override
+        public String toString() {
+            return this.getName();
+        }
+
+        @Override
+        public int hashCode() {
+            return super.hashCode();
+            //внимание
+        }
     }
 
     public String getName(){
         return name;
     }
 
-    //надо как-то норм оформить вывод структуры толпы
     public String getShapeStatus() {
         return shapeStatus;
     }
@@ -147,34 +171,33 @@ public class AllAllAll implements Alive {
         return phrase.getFeeling();
     }
 
-    //переопределяем hashcode, toString, hashcode
-
     @Override
     public boolean equals(Object otherObject) {
+
         if (this == otherObject) return true;
 
         if (otherObject == null) return false;
 
         if (getClass() != otherObject.getClass()) return false;
 
-        if (!(otherObject instanceof AllAllAll)) return false;
-
         AllAllAll other = (AllAllAll) otherObject;
 
-        return currentPlace.equals(other.currentPlace) &&
-                shapeStatus.equals(other.shapeStatus);
+        if ((!existStatus) || (!other.existStatus)) return false;
+
+        return currentPlace.equals(other.currentPlace)
+                && shapeStatus.equals(other.shapeStatus)
+                && think.equals(other.think)
+                && phrase.equals(other.phrase)
+                && name.equals(other.name);
     }
 
     @Override
     public String toString() {
-        return getClass().getName()
-                + "[currentPlace=" + currentPlace
-                + "shapeStatus=" + shapeStatus
-                + "]";
+        return this.getName();
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(currentPlace, shapeStatus);
+        return Objects.hash(currentPlace, shapeStatus, think, phrase, name);
     }
 }

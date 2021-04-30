@@ -181,29 +181,32 @@ public abstract class Person implements Alive {
 
     @Override
     public boolean equals(Object otherObject) {
+
         if (this == otherObject) return true;
 
         if (otherObject == null) return false;
-
-        if (getClass() != otherObject.getClass()) return false;
 
         if (!(otherObject instanceof Person)) return false;
 
         Person other = (Person) otherObject;
 
-        return other.currentPlace.equals(currentPlace)
-                && other.name.equals(name)
-                && other.genus.equals(genus)
-                && other.eyes.equals(eyes);
+        if ((!aliveStatus) || (!other.aliveStatus)) return false;
+
+        return currentPlace.equals(other.currentPlace)
+                && name.equals(other.name)
+                && genus.equals(other.genus)
+                && eyes.equals(other.eyes)
+                && think.equals(other.think)
+                && phrase.equals(other.phrase);
     }
 
     @Override
     public String toString() {
-        return name + " from " + genus;
+        return this.getName();
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(currentPlace, name, genus, eyes);
+        return Objects.hash(currentPlace, name, genus, eyes, think, phrase);
     }
 }

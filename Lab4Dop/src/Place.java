@@ -1,4 +1,7 @@
+import aliveInterface.AllAllAll;
 import aliveInterface.Person;
+
+import java.util.Objects;
 
 /**
  *
@@ -30,7 +33,27 @@ public class Place {
     }
 
     @Override
+    public boolean equals(Object otherObject) {
+
+        if (this == otherObject) return true;
+
+        if (otherObject == null) return false;
+
+        if (getClass() != otherObject.getClass()) return false;
+
+        Place other = (Place) otherObject;
+
+        return owner.equals(other.owner)
+                && type.equals(other.type);
+    }
+
+    @Override
     public String toString(){
         return "at " + type + " belonging to a " + owner;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(owner, type);
     }
 }

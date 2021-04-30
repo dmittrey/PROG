@@ -47,29 +47,25 @@ public class Think implements Inner {
         idea = aContent;
     }
 
-
     @Override
     public boolean equals(Object otherObject) {
+
         if (this == otherObject) return true;
 
         if (otherObject == null) return false;
 
         if (getClass() != otherObject.getClass()) return false;
 
-        if (!(otherObject instanceof Think)) return false;
-
         Think other = (Think) otherObject;
 
-        return other.idea == idea
-                && other.opinion == opinion;
+        return idea.equals(other.idea)
+                && opinion.equals(other.opinion);
     }
 
     @Override
     public String toString() {
-        return getClass().getName()
-                + "[idea=" + idea
-                + "opinion=" + opinion
-                + "]";
+        return idea + " with feeling that "
+                + opinion;
     }
 
     @Override

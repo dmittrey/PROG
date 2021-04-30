@@ -1,5 +1,7 @@
 package innerInterface;
 
+import aliveInterface.AllAllAll;
+
 import java.util.Objects;
 
 /**
@@ -51,26 +53,23 @@ public class Phrase implements Inner {
 
     @Override
     public boolean equals(Object otherObject) {
+
         if (this == otherObject) return true;
 
         if (otherObject == null) return false;
 
         if (getClass() != otherObject.getClass()) return false;
 
-        if (!(otherObject instanceof Phrase)) return false;
-
         Phrase other = (Phrase) otherObject;
 
-        return (other.text == text)
-                && (other.intonation == intonation);
+        return text.equals(other.text)
+                && intonation.equals(other.intonation);
     }
 
     @Override
     public String toString() {
-        return getClass().getName()
-                + "[text=" + text
-                + "intonation=" + intonation
-                + "]";
+        return text + " with feeling that "
+                + intonation;
     }
 
     @Override

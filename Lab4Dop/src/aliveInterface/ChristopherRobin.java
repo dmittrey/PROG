@@ -22,22 +22,22 @@ public class ChristopherRobin extends Person {
 
     @Override
     public boolean equals(Object otherObject) {
+
         if (this == otherObject) return true;
 
         if (otherObject == null) return false;
 
         if (getClass() != otherObject.getClass()) return false;
 
-        if (!(otherObject instanceof ChristopherRobin)) return false;
-
         ChristopherRobin other = (ChristopherRobin) otherObject;
 
-        return other.readStatus == readStatus;
+        return readStatus == other.readStatus
+                && super.equals(other);
     }
 
     @Override
     public String toString() {
-        return super.toString();
+        return getName();
     }
 
     @Override
