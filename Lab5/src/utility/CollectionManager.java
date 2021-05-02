@@ -1,6 +1,6 @@
 package utility;
 
-import java.io.Console;
+import utility.Console;
 import java.time.ZonedDateTime;
 import java.util.HashSet;
 
