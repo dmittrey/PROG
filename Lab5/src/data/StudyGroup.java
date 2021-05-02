@@ -2,7 +2,7 @@ package data;
 
 import java.util.Date;
 
-public class StudyGroup implements Comparable<StudyGroup>{
+public class StudyGroup implements Comparable<StudyGroup> {
     private Integer id; //Поле не может быть null, Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
     private String name; //Поле не может быть null, Строка не может быть пустой
     private Coordinates coordinates; //Поле не может быть null
@@ -13,7 +13,7 @@ public class StudyGroup implements Comparable<StudyGroup>{
     private Semester semesterEnum; //Поле не может быть null
     private Person groupAdmin; //Поле не может быть null
 
-    public StudyGroup(Integer aId, String aName, Coordinates aCoordinates, Date aCreationDate, Integer aStudentsCount, Double aAverageMark, FormOfEducation aFormOfEducation, Semester aSemesterEnum, Person aGroupAdmin){
+    public StudyGroup(Integer aId, String aName, Coordinates aCoordinates, Date aCreationDate, Integer aStudentsCount, Double aAverageMark, FormOfEducation aFormOfEducation, Semester aSemesterEnum, Person aGroupAdmin) {
         id = aId;//
         name = aName;//
         coordinates = aCoordinates;//
@@ -61,8 +61,9 @@ public class StudyGroup implements Comparable<StudyGroup>{
         return groupAdmin;
     }
 
-    //Тут надо описать метод getValue, но надо понять по каким критериям сравнивать
-
+    public Double getValue() {
+        return averageMark;
+    }
 
     @Override
     public int compareTo(StudyGroup aStudyGroup) {
@@ -76,7 +77,7 @@ public class StudyGroup implements Comparable<StudyGroup>{
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return "Study Group №" + id
                 + "(added " + creationDate + ")"
                 + "Name: " + name
