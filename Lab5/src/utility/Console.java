@@ -1,43 +1,53 @@
 package utility;
 
-
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 /**
- *
- * Отвечает за то, чтобывыводить объекты в консоль и считывать их, проверяяих на нулевое значение
+ * Класс отвечает за вывод информации в консоль
+ * и ввод информации из потока который лежит в scanner
  */
+
 public class Console {
+
+    // объявляем переменную scanner, которая будет отвечать за поток вывода
     private final Scanner scanner;
 
+    /**
+     * @param aScanner - поток ввода который указывается в явном параметре конструктора
+     */
     public Console(Scanner aScanner){
         scanner = aScanner;
     }
 
     /**
-     * Prints toOut.toString() + \n to Console
-     * @param toOut - Object ot print
+     * @param aString - строку которую необходимо вывести в консоль
      */
-
-    public static void println(Object toObj){
-        System.out.println(toObj);
+    public void println(String aString){
+        System.out.println(aString);
     }
 
-    public String readln() {
-        String line;
+    /**
+     * Метод предназначен для построчного ввода из потока ввода который указан
+     * в переменной scanner
+     *
+     * @return - строку или null
+     *
+     * Проверяет считывающиеся строки на наличие символов и длину:
+     * Если длина будет равна нулю или не будет символов,
+     * то выведет null, иначе выведет искомую строку
+     */
+    public String read(){
+        String string = null;
 
         try {
-            scanner.nextLine();
-        } catch (NoSuchElementException e) {
+            string = scanner.nextLine();
+        } catch (NoSuchElementException exception) {
+            //корректный выход тк мы выходим когда кончились строки ввода
             System.exit(0);
-            line = null;
         }
 
-        if (line.length() == 0){
-            line = null;
-        }
-
-        return line;
+        if (string.length() == 0) return null;
+        else return string;
     }
 }
