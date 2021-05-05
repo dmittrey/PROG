@@ -38,10 +38,10 @@ public class CommandReader {
     public CommandReader(Console aConsole, Invoker aInvoker) {
         console = aConsole;
         invoker = aInvoker;
-        commandName = Pattern.compile("^\\w+\\s");
+        commandName = Pattern.compile("^\\w+\\s+");
         // Заматчим с строкой
         // Обрежем заматченную строку
-        argName = Pattern.compile("^\\s*(\\w+)");
+        argName = Pattern.compile("^\\w+");
         // Заматчим с оставшейся строкой
     }
 
@@ -64,44 +64,37 @@ public class CommandReader {
 
     public void enable(){
 
-        String nextLine;
+        String nextLine = console.readln() + " ";
         String command;
         String arg;
 
-        while (!console.readln().equals("exit")) {
+        while (!nextLine.equals("exit ")) {
 
-            String text = console.readln();
+            nextLine = console.readln() + " ";
 
-            Matcher matcher = commandName.matcher(text);
+            Matcher matcher = commandName.matcher(nextLine);
 
             if (matcher.find()) {
+                command = matcher.group();
+                console.print(nextLine);
+                console.print(command);
+
                 /**
-                 * Надо понять как реагировать на то, если команда введена неверно или в ней присутствует ненужное
+                 * продумать как вводить аргументы пока не закончаться в строке
                  *
-                 *
-                 * общими словами нужно провести нормальную валидацию и понять как реагировать на
-                 * ненужный результат
-                 *
-                 * Про валидацию:
-                 * По сути ничего в документации не сказано, просто нужно ввести команду строкой,
-                 * иначе выкинуть сообщение что клиент мудак и опять инициализировать ввод
-                 *
-                 *      Как это проверить?
-                 *
-                 *      Скорее всего просто искать регулярками чтобы строка состояла из символов,
-                 *      а потом содержала пробел.
-                 *
-                 *
-                 *  оно где-то находит мэтч и не выводит сообщение об ошибке есои символ хуевый в конце или в начале
-                 *  скорее всего регулярки подпилить
+                 * продумать как взять в строку нли аргументы и убрать команду
                  */
 
+                nextLine = nextLine.substring(matcher.end(), (nextLine.length() - matcher.end() + 1));
+                console.print(nextLine);
 
-
-
-
-                console.print(text.substring(matcher.start(),(matcher.end()-matcher.start())));
-
+                if (nextLine.length() != 0) {
+                    matcher = argName.matcher(nextLine);
+                    arg = matcher.group();
+                    console.print(matcher);
+                } else {
+                    console.print("Ввели команду без аргумента");
+                }
             } else {
                 console.print("Команда введена некорректно, попробуйте ввести еще раз или введите exit для выхода");
             }
