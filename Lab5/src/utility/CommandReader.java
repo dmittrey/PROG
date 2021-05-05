@@ -1,75 +1,112 @@
 package utility;
 
-import javax.xml.ws.spi.Invoker;
-import java.util.NoSuchElementException;
-import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- *
- * Класс нужен для чтения команд из консоли и предоставлять формулировки команд с аргументами в invoker
+ * Класс нужен для того, чтобы считать строку из консоли и распарсить строку так, чтобы передать
+ * готовую строку и аргументы в Invoker
+ * (Напишу этот класс и надо прочитать хорстмана про обобщенное программирование + логика утверждений)
  */
-
 public class CommandReader {
-    private final Scanner scanner;
+
+    private final Console console;
     private final Invoker invoker;
-    private final Pattern commandNamePattern;
-    private final Pattern argPattern;
+    private Pattern commandName;
+    private Pattern argName;
 
     /**
-     * @param scanner - is used to read commands from console
-     * @param invoker - invoker which wil execute received commands
+     * Конструктор предназначен для того, чтобы дать читателю команд поток ввода и инвокер,
+     * куда перенаправляются команды из потока ввода.
+     * @param aConsole - поток ввода
+     *                 (тут очень щепетильный момент, можно либо делегировать считывание строк до конца CommandReader
+     *                 либо считывать их по одной в main и передавать в CommandReader
+     *
+     *                 Скорее всего второй вариант выигрышнее потому, что при парсинге файла в FileManager мы будем
+     *                 передавать уже готовые строки и получается просто два раза одно и то же пишем
+     *
+     *                 Скорее всего лучше сделать парсинг в Main и FileManager, а в CommandReader просто оставить
+     *                 регулярки для перенаправления команд в Invoker)
+     *
+     *                 (Ещё один щепетильный момент, следует ли указать console или достаточно указать scanner?
+     *
+     *                 Скорее всего укажу консоль, тк при вводе некорректных команд буду туда посылать сообщения с ошибкой
+     *                 а иначе буду считывать оттуда команды и не надо будет по новой проверять на наличие строки)
+     *
+     * @param aInvoker - Класс, который служит для указания исполняемой команды и ведёт статистику исполняемых команд
      */
-
-    public CommandReader(Scanner aScanner, Invoker aInvoker){
-        scanner = aScanner;
+    public CommandReader(Console aConsole, Invoker aInvoker) {
+        console = aConsole;
         invoker = aInvoker;
-        commandNamePattern = Pattern.compile("^\\w+");
-        argPattern = Pattern.compile("\\b(.*\\s*)*");
-
-        /**
-         * Тут используются регулярки(Надо посмотреть что за класс Pattern и что за статический метод compile)
-         * Также надо посмотреть регулярки в java
-         */
+        commandName = Pattern.compile("^\\w+\\s");
+        // Заматчим с строкой
+        // Обрежем заматченную строку
+        argName = Pattern.compile("^\\s*(\\w+)");
+        // Заматчим с оставшейся строкой
     }
 
     /**
-     * Начинаем читать команды Loop'ом
-     * Loop читает команды и вызывает инвокер для того чтобы выполнить их
-     * Loop завершается если на вход подаётся пустая строка или мы вызвали команду exit()
+     * Команда для включения CommandReader
+     *
+     * Будем считывать loop'ом просто до того как строки закончаться, а потом по сути вернется код окончания программы
+     *
+     * В методе осущетсвляется считывание строки из консоли (априори мы считаем её ненулевой)
+     * остается распарсить просто в формат (имя команды, аргументы)
+     *
+     * Стоит почитать про обобщенное программирование(Там где String ...)
+     *
+     * !!
+     * !!
+     * !! пробую считывать на пофиг и потом просто выходить с кодом ноль из прогм!!
+     * !!
+     * !!
      */
 
-    public void activeMode() {
-        String line;
+    public void enable(){
+
+        String nextLine;
         String command;
         String arg;
-        do {
 
-            try {
-                line = scanner.nextLine();
-            } catch (NoSuchElementException exception) {
-                break;
-            }
+        while (!console.readln().equals("exit")) {
 
-            Matcher matcher = commandNamePattern.matcher(line);
+            String text = console.readln();
+
+            Matcher matcher = commandName.matcher(text);
 
             if (matcher.find()) {
-                command =matcher.group();
-            } else {
-                System.out.println("Input is not a command");
-                continue;
-            }
+                /**
+                 * Надо понять как реагировать на то, если команда введена неверно или в ней присутствует ненужное
+                 *
+                 *
+                 * общими словами нужно провести нормальную валидацию и понять как реагировать на
+                 * ненужный результат
+                 *
+                 * Про валидацию:
+                 * По сути ничего в документации не сказано, просто нужно ввести команду строкой,
+                 * иначе выкинуть сообщение что клиент мудак и опять инициализировать ввод
+                 *
+                 *      Как это проверить?
+                 *
+                 *      Скорее всего просто искать регулярками чтобы строка состояла из символов,
+                 *      а потом содержала пробел.
+                 *
+                 *
+                 *  оно где-то находит мэтч и не выводит сообщение об ошибке есои символ хуевый в конце или в начале
+                 *  скорее всего регулярки подпилить
+                 */
 
-            line = line.substring(command.length());
-            matcher = argPattern.matcher(line);
 
-            if (matcher.find()) {
-                arg = matcher.group();
+
+
+
+                console.print(text.substring(matcher.start(),(matcher.end()-matcher.start())));
+
             } else {
-                arg = "";
+                console.print("Команда введена некорректно, попробуйте ввести еще раз или введите exit для выхода");
             }
-            invoker.execute(command, arg);
-        } while (!invoker.isStopRequesting() && scanner.hasNext());
+        }
+
+
     }
 }

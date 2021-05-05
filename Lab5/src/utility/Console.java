@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 /**
  *
- * Отвечает за то, чтобывыводить объекты в консоль и считывать их, проверяяих на нулевое значение
+ * Отвечает за то, чтобы выводить объекты в консоль и считывать их, проверяяих на нулевое значение
  */
 public class Console {
     private final Scanner scanner;
@@ -20,7 +20,7 @@ public class Console {
      * @param toOut - Object ot print
      */
 
-    public static void println(Object toObj){
+    public static void print(Object toObj){
         System.out.println(toObj);
     }
 
@@ -28,7 +28,7 @@ public class Console {
         String line;
 
         try {
-            scanner.nextLine();
+            line = scanner.nextLine();
         } catch (NoSuchElementException e) {
             System.exit(0);
             line = null;
