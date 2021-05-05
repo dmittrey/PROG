@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a1461d5a-1468-409c-901e-7897f657ae79" name="Default Changelist" comment="Переезд в общагу" />
+    <list default="true" id="a1461d5a-1468-409c-901e-7897f657ae79" name="Default Changelist" comment="Перенёс идейные файлы">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -83,7 +85,7 @@
     <property name="ASKED_MARK_IGNORED_FILES_AS_EXCLUDED" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Lab4Dop" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
@@ -125,7 +127,7 @@
       <updated>1619913725516</updated>
       <workItem from="1619913726767" duration="17000" />
       <workItem from="1619914888397" duration="19108000" />
-      <workItem from="1620140496916" duration="17598000" />
+      <workItem from="1620140496916" duration="17931000" />
     </task>
     <task id="LOCAL-00001" summary="Описали класс, объекты которого будут лежать в коллекции">
       <created>1619919496190</created>
@@ -204,7 +206,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620175508382</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Перенёс идейные файлы">
+      <created>1620176317359</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1620176317359</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -233,6 +242,7 @@
     <MESSAGE value="Написал Console(фикс 37 строка)" />
     <MESSAGE value="Переезд в коворкинг" />
     <MESSAGE value="Переезд в общагу" />
-    <option name="LAST_COMMIT_MESSAGE" value="Переезд в общагу" />
+    <MESSAGE value="Перенёс идейные файлы" />
+    <option name="LAST_COMMIT_MESSAGE" value="Перенёс идейные файлы" />
   </component>
 </project>

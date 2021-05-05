@@ -4,9 +4,9 @@ public interface Inner {
 
     String getContent();
 
-    String getFeeling();
+    Object getInner();
 
-    void setFeeling(String aFeeling);
+    void setInner(Object aFeeling);
 
     void setContent(String aContent);
 }

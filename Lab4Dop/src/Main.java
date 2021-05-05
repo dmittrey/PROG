@@ -2,6 +2,8 @@ import Exceptions.NotPositiveAmountException;
 import aliveInterface.AllAllAll;
 import aliveInterface.ChristopherRobin;
 import aliveInterface.Person;
+import innerInterface.IntonationStatus;
+import innerInterface.OpinionStatus;
 import innerInterface.Phrase;
 import innerInterface.Think;
 
@@ -21,34 +23,33 @@ public class Main {
         System.out.println(crowd.getName() + " now " + crowd.getCurrentPlace().toString());
 
         if (crowd.getCurrentPlace().equals(christopherRobinHome)) crowd.toThink(new Think(
-                "We came to say goodbye", "They really, really didn't want to think about it" ));
-        System.out.println(crowd.getName() + " are thinking '" + crowd.getThinkContent() + "' with feeling that "
-                + crowd.getThinkFeeling());
+                "We came to say goodbye", OpinionStatus.Sad));
+        System.out.println(crowd.getName() + " are thinking!! '" + crowd.getThinkContent() + "' !!with feeling that "
+                + crowd.getThinkFeeling().toString());
 
 
-        crowd.toSay(new Phrase("Hello", "They were calm"));
+        crowd.toSay(new Phrase("Hello", IntonationStatus.calm));
         System.out.println(crowd.getName() + " said '" + crowd.getPhraseContent() + "' with feeling that "
-                + crowd.getPhraseFeeling());
+                + crowd.getPhraseFeeling().toString());
 
 
-        if (crowd.getThinkContent().equals("We came to say goodbye")) crowd.setPhraseFeeling(
-                "somehow sad and uneasy");
-        System.out.println("Now " + crowd.getName() + " are feeling " + crowd.getPhraseFeeling());
+        if (crowd.getThinkContent().equals("We came to say goodbye")) crowd.setPhraseFeeling(IntonationStatus.sad);
+        System.out.println("Now " + crowd.getName() + " are feeling " + crowd.getPhraseFeeling().toString());
 
 
-        if (crowd.getPhraseFeeling().equals("somehow sad and uneasy")){
+        if (crowd.getPhraseFeeling().equals(IntonationStatus.sad)){
 
             crowd.setShapeStatus("Heap");
             System.out.println("Now " + crowd.getName() + " is " + crowd.getShapeStatus());
 
             crowd.toThink(new Think(
-                    "We have to push each other", "They were waiting for someone else to speak"));
+                    "We have to push each other", OpinionStatus.Boring));
             System.out.println(crowd.getName() + " are thinking '" + crowd.getThinkContent() + "' with feeling that "
-                    + crowd.getThinkFeeling());
+                    + crowd.getThinkFeeling().toString());
 
-            crowd.toSay(new Phrase("Come on, you", "They wanted to displace a weak person"));
+            crowd.toSay(new Phrase("Come on, you", IntonationStatus.panic));
             System.out.println(crowd.getName() + " said '" + crowd.getPhraseContent() + "' with feeling that "
-                    + crowd.getPhraseFeeling());
+                    + crowd.getPhraseFeeling().toString());
 
             AllAllAll.Eeyore Ia = new AllAllAll.Eeyore("Eeyore");
             System.out.println(Ia.getName() + " is now exist");
@@ -60,19 +61,18 @@ public class Main {
                 crowd.goTo(iaBack);
                 System.out.println("Now " + crowd.getName() + " at " + crowd.getCurrentPlace());
 
-                Ia.toThink(new Think("I need to wag my tail", "It will motivate him"));
+                Ia.toThink(new Think("I need to wag my tail", OpinionStatus.Motivation));
                 System.out.println(Ia.getName() + " is thinking '" + Ia.getThinkContent() + "' with feeling that "
-                        + Ia.getThinkFeeling());
+                        + Ia.getThinkFeeling().toString());
             }
 
             if (Ia.getThinkContent().equals("I need to wag my tail")){
                 Ia.wagTail("Clockwise");
                 System.out.println(Ia.getName() + "'s tail is wagging");
 
-                Ia.toSay(new Phrase("Goodbye " + christopherRobin.getName(),
-                    "He was sorry"));
+                Ia.toSay(new Phrase("Goodbye " + christopherRobin.getName(), IntonationStatus.sorry));
                 System.out.println(Ia.getName() + " said '" + Ia.getPhraseContent() + "' with feeling that "
-                        + Ia.getPhraseFeeling());
+                        + Ia.getPhraseFeeling().toString());
             }
 
             if (Ia.getPhraseContent().equals("Goodbye " + christopherRobin.getName())) {
@@ -89,10 +89,9 @@ public class Main {
 
         if (!christopherRobin.isReading()){
 
-            christopherRobin.toThink(new Think("He wants to thank",
-                "He liked that no one interrupted him"));
+            christopherRobin.toThink(new Think("He wants to thank", OpinionStatus.Funny));
             System.out.println(christopherRobin.getName() + " are thinking '" + christopherRobin.getThinkContent() + "' with feeling that "
-                    + christopherRobin.getThinkFeeling());
+                    + christopherRobin.getThinkFeeling().toString());
 
             christopherRobin.setEyesTarget("In front of him");
             System.out.println(christopherRobin.getName() + "target his eyes to " + christopherRobin.getEyesTarget());
@@ -112,9 +111,9 @@ public class Main {
             Place roadPart = new Place(null, "most of way");
 
             if (roadPart.getType().equals("most of way")) christopherRobin.toSay(
-                    new Phrase(":", "calm"));
+                    new Phrase(":", IntonationStatus.calm));
             System.out.println(christopherRobin.getName() + " said '" + christopherRobin.getPhraseContent() + "' with feeling that "
-                    + christopherRobin.getPhraseFeeling());
+                    + christopherRobin.getPhraseFeeling().toString());
         }
     }
 }

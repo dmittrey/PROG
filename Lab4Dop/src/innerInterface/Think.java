@@ -4,9 +4,9 @@ import java.util.Objects;
 
 public class Think implements Inner {
     private String idea;
-    private String opinion;
+    private OpinionStatus opinion;
 
-    public Think(String aIdea, String aOpinion) {
+    public Think(String aIdea, OpinionStatus aOpinion) {
         idea = aIdea;
         opinion = aOpinion;
     }
@@ -17,13 +17,13 @@ public class Think implements Inner {
     }
 
     @Override
-    public String getFeeling() {
+    public OpinionStatus getInner() {
         return opinion;
     }
 
     @Override
-    public void setFeeling(String aFeeling) {
-        opinion = aFeeling;
+    public void setInner(Object aFeeling) {
+        opinion = (OpinionStatus) aFeeling;
     }
 
     @Override
@@ -48,8 +48,7 @@ public class Think implements Inner {
 
     @Override
     public String toString() {
-        return idea + " with feeling that "
-                + opinion;
+        return opinion + idea;
     }
 
     @Override

@@ -1,16 +1,18 @@
 package aliveInterface;
 
 import Exceptions.NotPositiveAmountException;
+import innerInterface.IntonationStatus;
+import innerInterface.OpinionStatus;
 import innerInterface.Phrase;
 import innerInterface.Think;
 import java.util.Objects;
 
-public class AllAllAll implements Alive {
+public class AllAllAll implements Movable, Phrasable, Thinkable {
 
     private Object currentPlace;
     private String shapeStatus;
-    private Think think = new Think("", "");
-    private Phrase phrase = new Phrase("", "");
+    private Think think = new Think("", null);
+    private Phrase phrase = new Phrase("", null);
     private final String name;
     private boolean existStatus;
 
@@ -105,18 +107,18 @@ public class AllAllAll implements Alive {
     @Override
     public void toSay(Phrase aPhrase) {
         phrase.setContent(aPhrase.getContent());
-        phrase.setFeeling(aPhrase.getFeeling());
+        phrase.setInner(aPhrase.getInner());
     }
 
     @Override
     public void toThink(Think aThink) {
         think.setContent(aThink.getContent());
-        think.setFeeling(aThink.getFeeling());
+        think.setInner(aThink.getInner());
     }
 
     @Override
-    public String getThinkFeeling(){
-        return think.getFeeling();
+    public OpinionStatus getThinkFeeling(){
+        return think.getInner();
     }
 
     @Override
@@ -125,8 +127,8 @@ public class AllAllAll implements Alive {
     }
 
     @Override
-    public void setPhraseFeeling(String aFeeling) {
-        phrase.setFeeling(aFeeling);
+    public void setPhraseFeeling(IntonationStatus aFeeling) {
+        phrase.setInner(aFeeling);
     }
 
     @Override
@@ -135,8 +137,8 @@ public class AllAllAll implements Alive {
     }
 
     @Override
-    public String getPhraseFeeling() {
-        return phrase.getFeeling();
+    public IntonationStatus getPhraseFeeling() {
+        return phrase.getInner();
     }
 
     @Override

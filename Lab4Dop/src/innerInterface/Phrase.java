@@ -4,9 +4,9 @@ import java.util.Objects;
 
 public class Phrase implements Inner {
     private String text;
-    private String intonation;
+    private IntonationStatus intonation;
 
-    public Phrase(String aText, String aIntonation) {
+    public Phrase(String aText, IntonationStatus aIntonation) {
         text = aText;
         intonation = aIntonation;
     }
@@ -17,13 +17,13 @@ public class Phrase implements Inner {
     }
 
     @Override
-    public String getFeeling() {
+    public IntonationStatus getInner() {
         return intonation;
     }
 
     @Override
-    public void setFeeling(String aFeeling) {
-        intonation = aFeeling;
+    public void setInner(Object aFeeling) {
+        intonation = (IntonationStatus) aFeeling;
     }
 
     @Override

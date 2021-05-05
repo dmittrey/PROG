@@ -1,11 +1,13 @@
 package aliveInterface;
 
 import Exceptions.NotAliveException;
+import innerInterface.IntonationStatus;
+import innerInterface.OpinionStatus;
 import innerInterface.Phrase;
 import innerInterface.Think;
 import java.util.Objects;
 
-public abstract class Person implements Alive {
+public abstract class Person implements Movable, Phrasable, Thinkable{
 
     private Object currentPlace = "";
     //абстрактный класс
@@ -15,9 +17,17 @@ public abstract class Person implements Alive {
 
     private Eyes eyes;
 
-    private Think think = new Think("", "");
+    private class innerExpression{
+        private String expression;
 
-    private Phrase phrase = new Phrase("","");
+        public innerExpression(String aInnerExpression){
+            expression = aInnerExpression;
+        }
+    }
+
+    private Think think = new Think("", null);
+
+    private Phrase phrase = new Phrase("", null);
 
     private boolean aliveStatus;
 
@@ -80,9 +90,9 @@ public abstract class Person implements Alive {
     }
 
     @Override
-    public String getThinkFeeling(){
+    public OpinionStatus getThinkFeeling(){
         if (!aliveStatus) throw new NotAliveException();
-        return think.getFeeling();
+        return think.getInner();
     }
 
     @Override
@@ -92,9 +102,9 @@ public abstract class Person implements Alive {
     }
 
     @Override
-    public void setPhraseFeeling(String aContent){
+    public void setPhraseFeeling(IntonationStatus aFeeling){
         if (!aliveStatus) throw new NotAliveException();
-        phrase.setFeeling(aContent);
+        phrase.setInner(aFeeling);
     }
 
     @Override
@@ -104,9 +114,9 @@ public abstract class Person implements Alive {
     }
 
     @Override
-    public String getPhraseFeeling(){
+    public IntonationStatus getPhraseFeeling(){
         if (!aliveStatus) throw new NotAliveException();
-        return phrase.getFeeling();
+        return phrase.getInner();
     }
 
     public boolean isExist(){
@@ -117,14 +127,14 @@ public abstract class Person implements Alive {
     public void toSay(Phrase aPhrase) {
         if (!aliveStatus) throw new NotAliveException();
         phrase.setContent(aPhrase.getContent());
-        phrase.setFeeling(aPhrase.getFeeling());
+        phrase.setInner(aPhrase.getInner());
     }
 
     @Override
     public void toThink(Think aThink) {
         if (!aliveStatus) throw new NotAliveException();
         think.setContent(aThink.getContent());
-        think.setFeeling(aThink.getFeeling());
+        think.setInner(aThink.getInner());
     }
 
     @Override
