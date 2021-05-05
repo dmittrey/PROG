@@ -20,7 +20,7 @@ public class Console {
      * @param toOut - Object ot print
      */
 
-    public static void print(Object toObj){
+    public void print(Object toObj){
         System.out.println(toObj);
     }
 
