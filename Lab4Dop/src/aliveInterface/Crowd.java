@@ -16,13 +16,15 @@ public class Crowd implements Movable, Phrasable, Thinkable{
     private Phrase phrase = new Phrase("", null);
     private boolean existStatus;
     private String name = "crowd";
+    private Person[] crowdMembers;
 
 
-    public Crowd(int crowdAmount, Person[] crowdMembers) throws NotPositiveAmountException {
+    public Crowd(int crowdAmount, Person[] aCrowdMembers) throws NotPositiveAmountException {
         if (crowdAmount <= 1) throw new NotPositiveAmountException("Enter the correct number of people in the crowd");
         currentPlace = "at the city";
         shapeStatus = "column";
         existStatus = true;
+        crowdMembers = aCrowdMembers;
     }
 
     public static class Eeyore extends Person {
@@ -79,7 +81,12 @@ public class Crowd implements Movable, Phrasable, Thinkable{
     }
 
     public String getName(){
-        return name;
+        String names = "";
+        for (Person i:
+             crowdMembers) {
+            names += i.getName() + "\n";
+        };
+        return names;
     }
 
     public String getShapeStatus() {
@@ -101,7 +108,10 @@ public class Crowd implements Movable, Phrasable, Thinkable{
 
     @Override
     public void goTo(Object aPlace) {
-        currentPlace = aPlace;
+        for (Person i:
+             crowdMembers) {
+            i.goTo(aPlace);
+        }
     }
 
     @Override
