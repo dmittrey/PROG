@@ -5,23 +5,23 @@ import innerInterface.IntonationStatus;
 import innerInterface.OpinionStatus;
 import innerInterface.Phrase;
 import innerInterface.Think;
+
 import java.util.Objects;
 
-public class AllAllAll implements Movable, Phrasable, Thinkable {
+public class Crowd implements Movable, Phrasable, Thinkable{
 
     private Object currentPlace;
     private String shapeStatus;
     private Think think = new Think("", null);
     private Phrase phrase = new Phrase("", null);
-    private final String name;
     private boolean existStatus;
+    private String name = "crowd";
 
 
-    public AllAllAll(int crowdAmount, String aName) throws NotPositiveAmountException {
+    public Crowd(int crowdAmount, Person[] crowdMembers) throws NotPositiveAmountException {
         if (crowdAmount <= 1) throw new NotPositiveAmountException("Enter the correct number of people in the crowd");
         currentPlace = "at the city";
         shapeStatus = "column";
-        name = aName;
         existStatus = true;
     }
 
@@ -150,7 +150,7 @@ public class AllAllAll implements Movable, Phrasable, Thinkable {
 
         if (getClass() != otherObject.getClass()) return false;
 
-        AllAllAll other = (AllAllAll) otherObject;
+        Crowd other = (Crowd) otherObject;
 
         if ((!existStatus) || (!other.existStatus)) return false;
 

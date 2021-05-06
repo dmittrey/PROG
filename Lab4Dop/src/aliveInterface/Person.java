@@ -13,7 +13,7 @@ public abstract class Person implements Movable, Phrasable, Thinkable{
     //абстрактный класс
     private final String name;
 
-    private final String genus;
+    private final Object genus;
 
     private Eyes eyes;
 
@@ -31,7 +31,7 @@ public abstract class Person implements Movable, Phrasable, Thinkable{
 
     private boolean aliveStatus;
 
-    public Person(String aName, String aGenus) {
+    public Person(String aName, Object aGenus) {
         aliveStatus = true;
         name = aName;
         genus = aGenus;

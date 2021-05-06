@@ -1,17 +1,25 @@
 import Exceptions.NotPositiveAmountException;
-import aliveInterface.AllAllAll;
-import aliveInterface.ChristopherRobin;
-import aliveInterface.Person;
+import aliveInterface.*;
 import innerInterface.IntonationStatus;
 import innerInterface.OpinionStatus;
 import innerInterface.Phrase;
 import innerInterface.Think;
 
+import java.util.Random;
+
 public class Main {
 
     public static void main(String[] args) throws NotPositiveAmountException {
 
-        AllAllAll crowd = new AllAllAll(5, "All-All-All");
+        Person[] crowdMember = new Person[5];
+
+        crowdMember[0] = new CrowdMember("Fedor", TypeOfAnimal.donkey);
+        crowdMember[1] = new CrowdMember("Oleg", TypeOfAnimal.hare);
+        crowdMember[2] = new CrowdMember("Alisa", TypeOfAnimal.fox);
+        crowdMember[3] = new CrowdMember("Gena", TypeOfAnimal.bear);
+        crowdMember[4] = new Crowd.Eeyore("Eeyore");
+
+        Crowd crowd = new Crowd(5, crowdMember);
 
         ChristopherRobin christopherRobin = new ChristopherRobin("Christopher Robin");
 
@@ -51,12 +59,11 @@ public class Main {
             System.out.println(crowd.getName() + " said '" + crowd.getPhraseContent() + "' with feeling that "
                     + crowd.getPhraseFeeling().toString());
 
-            AllAllAll.Eeyore Ia = new AllAllAll.Eeyore("Eeyore");
-            System.out.println(Ia.getName() + " is now exist");
 
+            Crowd.Eeyore Ia = (Crowd.Eeyore) crowdMember[4];
 
-            if (Ia.isExist()) {
-                Place iaBack = new Place(Ia, "Near back");
+            if (crowdMember[4].isExist()) {
+                Place iaBack = new Place(crowdMember[4], "Near back");
 
                 crowd.goTo(iaBack);
                 System.out.println("Now " + crowd.getName() + " at " + crowd.getCurrentPlace());
