@@ -13,13 +13,13 @@ public class Main {
 
         Person[] crowdMember = new Person[5];
 
-        crowdMember[0] = new CrowdMember("Fedor", TypeOfAnimal.donkey);
-        crowdMember[1] = new CrowdMember("Oleg", TypeOfAnimal.hare);
-        crowdMember[2] = new CrowdMember("Alisa", TypeOfAnimal.fox);
-        crowdMember[3] = new CrowdMember("Gena", TypeOfAnimal.bear);
+        crowdMember[0] = new Person("Fedor", TypeOfAnimal.Donkey){};
+        crowdMember[1] = new Person("Oleg", TypeOfAnimal.Hare){};
+        crowdMember[2] = new Person("Alisa", TypeOfAnimal.Fox){};
+        crowdMember[3] = new Person("Gena", TypeOfAnimal.Bear){};
         crowdMember[4] = new Crowd.Eeyore("Eeyore");
 
-        Crowd crowd = new Crowd(5, crowdMember);
+        Crowd crowd = new Crowd(crowdMember);
 
         ChristopherRobin christopherRobin = new ChristopherRobin("Christopher Robin");
 
@@ -89,7 +89,7 @@ public class Main {
 
         }
 
-        Person vinnie = new Person("Vinnie the Pooh", "bear"){};
+        Person vinnie = new Person("Vinnie the Pooh", TypeOfAnimal.Bear){};
 
         christopherRobin.stopReading();
         System.out.println("Now " + christopherRobin.getName() + "is not reading");

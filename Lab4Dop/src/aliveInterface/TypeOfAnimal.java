@@ -1,9 +1,10 @@
 package aliveInterface;
 
 public enum TypeOfAnimal {
-    donkey,
-    hare,
-    fox,
-    bear,
-    Eeyore;
+    Donkey,
+    Hare,
+    Fox,
+    Bear,
+    Eeyore,
+    Human
 }

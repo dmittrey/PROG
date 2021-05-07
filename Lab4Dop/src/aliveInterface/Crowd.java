@@ -6,22 +6,22 @@ import innerInterface.OpinionStatus;
 import innerInterface.Phrase;
 import innerInterface.Think;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.Objects;
 
-public class Crowd implements Movable, Phrasable, Thinkable{
+public class Crowd implements Movable, Phrasable, Thinkable {
 
-    private Object currentPlace;
     private String shapeStatus;
-    private Think think = new Think("", null);
-    private Phrase phrase = new Phrase("", null);
+    private Object currentPlace;
     private boolean existStatus;
-    private String name = "crowd";
-    private Person[] crowdMembers;
+    private final Person[] crowdMembers;
 
 
-    public Crowd(int crowdAmount, Person[] aCrowdMembers) throws NotPositiveAmountException {
-        if (crowdAmount <= 1) throw new NotPositiveAmountException("Enter the correct number of people in the crowd");
-        currentPlace = "at the city";
+    public Crowd(Person[] aCrowdMembers) throws NotPositiveAmountException {
+        if (Array.getLength(aCrowdMembers) <= 1)
+            throw new NotPositiveAmountException("Enter the correct number of people in the crowd");
+        currentPlace = "At the city";
         shapeStatus = "column";
         existStatus = true;
         crowdMembers = aCrowdMembers;
@@ -30,18 +30,17 @@ public class Crowd implements Movable, Phrasable, Thinkable{
     public static class Eeyore extends Person {
 
         public Eeyore(String name) {
-            super(name, "Donkey");
+            super(name, TypeOfAnimal.Donkey);
         }
 
-        public String wagTail(String direction) {
+        public void wagTail(String direction) {
 
             class Tail {
-                private String rotateDirection;
-                private boolean rotateStatus;
+                private final String rotateDirection;
 
                 public Tail(String aRotateDirection) {
                     rotateDirection = aRotateDirection;
-                    rotateStatus = true;
+                    boolean rotateStatus = true;
                 }
 
                 public String wigTail() {
@@ -52,7 +51,7 @@ public class Crowd implements Movable, Phrasable, Thinkable{
 
             Tail tail = new Tail(direction);
 
-            return tail.wigTail();
+            tail.wigTail();
         }
 
         @Override
@@ -80,13 +79,13 @@ public class Crowd implements Movable, Phrasable, Thinkable{
         }
     }
 
-    public String getName(){
-        String names = "";
-        for (Person i:
-             crowdMembers) {
-            names += i.getName() + "\n";
-        };
-        return names;
+    public String getName() {
+        StringBuilder names = new StringBuilder();
+        for(int i=0; i<crowdMembers.length;i++){
+            if (i!=crowdMembers.length-1) names.append(crowdMembers[i].getName()).append(", ");
+            else names.append(crowdMembers[i].getName());
+        }
+        return names.toString();
     }
 
     public String getShapeStatus() {
@@ -97,7 +96,7 @@ public class Crowd implements Movable, Phrasable, Thinkable{
         shapeStatus = aShapeStatus;
     }
 
-    public void disband(){
+    public void disband() {
         existStatus = false;
     }
 
@@ -108,47 +107,51 @@ public class Crowd implements Movable, Phrasable, Thinkable{
 
     @Override
     public void goTo(Object aPlace) {
-        for (Person i:
-             crowdMembers) {
+        currentPlace = aPlace;
+        for (Person i : crowdMembers) {
             i.goTo(aPlace);
         }
     }
 
     @Override
     public void toSay(Phrase aPhrase) {
-        phrase.setContent(aPhrase.getContent());
-        phrase.setInner(aPhrase.getInner());
+        for (Person i : crowdMembers) {
+            i.toSay(aPhrase);
+        }
     }
 
     @Override
     public void toThink(Think aThink) {
-        think.setContent(aThink.getContent());
-        think.setInner(aThink.getInner());
+        for (Person i : crowdMembers) {
+            i.toThink(aThink);
+        }
     }
 
     @Override
-    public OpinionStatus getThinkFeeling(){
-        return think.getInner();
+    public OpinionStatus getThinkFeeling() {
+        return crowdMembers[0].getThinkFeeling();
     }
 
     @Override
-    public String getThinkContent(){
-        return think.getContent();
+    public String getThinkContent() {
+        return crowdMembers[0].getThinkContent();
     }
 
     @Override
     public void setPhraseFeeling(IntonationStatus aFeeling) {
-        phrase.setInner(aFeeling);
+        for (Person i: crowdMembers) {
+            i.setPhraseFeeling(aFeeling);
+        }
     }
 
     @Override
-    public String getPhraseContent(){
-        return phrase.getContent();
+    public String getPhraseContent() {
+        return crowdMembers[0].getPhraseContent();
     }
 
     @Override
     public IntonationStatus getPhraseFeeling() {
-        return phrase.getInner();
+        return crowdMembers[0].getPhraseFeeling();
     }
 
     @Override
@@ -166,9 +169,7 @@ public class Crowd implements Movable, Phrasable, Thinkable{
 
         return currentPlace.equals(other.currentPlace)
                 && shapeStatus.equals(other.shapeStatus)
-                && think.equals(other.think)
-                && phrase.equals(other.phrase)
-                && name.equals(other.name);
+                && Arrays.equals(crowdMembers, other.crowdMembers);
     }
 
     @Override
@@ -178,6 +179,6 @@ public class Crowd implements Movable, Phrasable, Thinkable{
 
     @Override
     public int hashCode() {
-        return Objects.hash(currentPlace, shapeStatus, think, phrase, name);
+        return Objects.hash(currentPlace, shapeStatus, crowdMembers);
     }
 }

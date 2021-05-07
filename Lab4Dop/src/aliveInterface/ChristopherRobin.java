@@ -7,7 +7,7 @@ public class ChristopherRobin extends Person {
     private boolean readStatus;
 
     public ChristopherRobin(String name) {
-        super(name, "human");
+        super(name, TypeOfAnimal.Human);
         readStatus = true;
     }
 

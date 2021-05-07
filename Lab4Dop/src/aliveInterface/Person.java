@@ -7,23 +7,12 @@ import innerInterface.Phrase;
 import innerInterface.Think;
 import java.util.Objects;
 
-public abstract class Person implements Movable, Phrasable, Thinkable{
+public abstract class  Person implements Movable, Phrasable, Thinkable{
 
     private Object currentPlace = "";
-    //абстрактный класс
     private final String name;
-
-    private final Object genus;
-
-    private Eyes eyes;
-
-    private class innerExpression{
-        private String expression;
-
-        public innerExpression(String aInnerExpression){
-            expression = aInnerExpression;
-        }
-    }
+    private final TypeOfAnimal genus;
+    private final Eyes eyes;
 
     private Think think = new Think("", null);
 
@@ -31,10 +20,10 @@ public abstract class Person implements Movable, Phrasable, Thinkable{
 
     private boolean aliveStatus;
 
-    public Person(String aName, Object aGenus) {
+    public Person(String aName, TypeOfAnimal aTypeOfAnimal) {
         aliveStatus = true;
         name = aName;
-        genus = aGenus;
+        genus = aTypeOfAnimal;
         eyes = new Eyes(EyeColor.brown, "");
     }
 
