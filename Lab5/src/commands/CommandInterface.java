@@ -9,7 +9,7 @@ public interface CommandInterface {
 
     String getDescription();
 
-    void execute(String arg);
+    String execute();
 }
 
 /**

@@ -5,11 +5,13 @@ package commands;
  * Абстрактный класс команды который хранит описание и имя команды
  */
 
-public class CommandAbstract implements CommandInterface{
+public abstract class CommandAbstract implements CommandInterface{
 
+    private final String name;
     private final String description;
 
-    public CommandAbstract(String name, String aDescription){
+    public CommandAbstract(String aName, String aDescription){
+        name = aName;
         description = aDescription;
     }
 
@@ -18,20 +20,32 @@ public class CommandAbstract implements CommandInterface{
      */
     @Override
     public String getDescription() {
-        return description;
+
+        switch (name) {
+            case "help":
+            case "info":
+            case "show":
+            case "clear":
+            case "save":
+            case "exit":
+            case "history":
+            case "min_by_students_count":
+                return name + " : " + description;
+            case "add":
+            case "update id":
+            case "add_if_max":
+            case "add_if_min":
+                return name + " {element} : " + description;
+            case "remove_by_id":
+                return name + " id : " + description;
+            case "execute_script":
+                return " file_name : " + description;
+            case "count_less_than_students_count":
+                return name + " studentsCount : " + description;
+            default:
+                return name + " name : " + description;
+        }
     }
-
-
-    /**
-     *
-     * Вот этот момент я скорее всего уберу потому что смысл переопределять метод,
-     * который ничего не делает на данном этапе
-     *
-     * Скорее всего в Invoker экстендится этот класс и поэтому просит переопределить
-     * @param arg
-     */
     @Override
-    public void execute(String arg) {
-
-    }
+    public abstract String execute();
 }

@@ -7,9 +7,6 @@ import utility.CollectionManager;
  * Читаем объект из консоли и вставляем в коллекцию
  */
 
-public class Add extends CommandAbstract{
+public class Add {
 
-    public Add(String name, String aDescription) {
-        super(name, aDescription);
-    }
 }
