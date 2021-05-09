@@ -11,16 +11,12 @@ import java.util.HashMap;
  */
 
 public class Help extends CommandAbstract {
+
     /**
      * Map of all commands
      */
     private final HashMap<String, CommandAbstract> commandsInfo;
 
-    /**
-     * Constructor
-     *
-     * @param aCommands - Map with all commands
-     */
     public Help(HashMap<String, CommandAbstract> aCommands) {
         super("help", "display help for available commands");
         commandsInfo = aCommands;
