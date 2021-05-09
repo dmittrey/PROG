@@ -32,9 +32,9 @@ public class CommandReader {
         argName = Pattern.compile("^\\w+");
     }
 
-    public void enable(){
+    public void enable() {
 
-        String nextLine = console.readln() + " ";
+        String nextLine;
         String exitSave = "";
         String command;
         String arg;
@@ -46,24 +46,23 @@ public class CommandReader {
 
             Matcher matcher = commandName.matcher(nextLine);
 
-            if (matcher.find() && !exitSave.equals("exit ")) {
+            if (matcher.find()) {
                 command = matcher.group();
-            }
-            else {
-                System.out.println("Введите команду");
+            } else {
+                System.out.println("Command is incorrect. Please, try again.");
                 continue;
             }
 
             nextLine = nextLine.substring(command.length());
             matcher = argName.matcher(nextLine);
 
-            if (matcher.find()){
+            if (matcher.find()) {
                 arg = matcher.group();
             } else {
                 arg = "";
             }
 
-            invoker.execute(command, arg);
+            if (!command.equals("exit ")) invoker.execute(command.trim(), arg);
         }
     }
 }

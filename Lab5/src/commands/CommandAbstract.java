@@ -1,16 +1,15 @@
 package commands;
 
 /**
- *
  * Абстрактный класс команды который хранит описание и имя команды
  */
 
-public abstract class CommandAbstract implements CommandInterface{
+public abstract class CommandAbstract implements CommandInterface {
 
     private final String name;
     private final String description;
 
-    public CommandAbstract(String aName, String aDescription){
+    public CommandAbstract(String aName, String aDescription) {
         name = aName;
         description = aDescription;
     }
@@ -46,6 +45,7 @@ public abstract class CommandAbstract implements CommandInterface{
                 return name + " name : " + description;
         }
     }
+
     @Override
-    public abstract String execute();
+    public abstract String execute(String aArg);
 }

@@ -4,6 +4,7 @@ package utility;
 import commands.*;
 
 import java.util.HashMap;
+import java.util.Set;
 
 /**
  * В инвокере должны лежать команды, чтобы я мог их вызвать и по сути еще ссылки на сторонние классы
@@ -12,16 +13,22 @@ import java.util.HashMap;
 
 public class Invoker {
 
+    private final Console console;
+    private final CollectionManager collectionManager;
     private HashMap<String, CommandAbstract> commands;
 
-    public Invoker(){
+    public Invoker(Console aConsole, CollectionManager aCollectionManager){
 
+        console = aConsole;
+        collectionManager = aCollectionManager;
+        commands = new HashMap<>();
+        initMap();
     }
 
-    public void initCommands(){
-        commands.put("help", new Help(commands)); //" - display help for available commands");
-        //commands.put("info", new Info()); //" - print information about the collection (type, initialization date, " + "number of elements, etc.) to standard output");
-        //commands.put("show", new Show()); //" - print all elements in string representation to standard output");
+    private void initMap(){
+        commands.put("help", new Help(commands));
+        commands.put("info", new Info(collectionManager));
+//        commands.put("show", new Show()); //" - print all elements in string representation to standard output");
 //        commands.put("add", new Add()); //" - add new element to the collection");
 //        commands.put("update id", new UpdateId()); // " - update the element`s value, whose ID is equal to the given"+ " You should to enter ID after entering a command");
 //        commands.put("remove_by_id id", new RemoveById()); //" - remove an element from the collection by ID" + " You should to enter ID after entering a command");
@@ -38,8 +45,14 @@ public class Invoker {
     }
 
 
-    public void execute(String command, String arg){
-        initCommands();
-        commands.get("help").execute("");
+    public void execute(String aCommand, String aArg){
+
+        if (commands.containsKey(aCommand)){
+            console.print(commands.get(aCommand).execute(aArg));
+        } else {
+            console.print("Command is incorrect. Please, try again.");
+        }
     }
+
+
 }
