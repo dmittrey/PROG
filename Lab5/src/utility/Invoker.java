@@ -28,8 +28,8 @@ public class Invoker {
     private void initMap(){
         commands.put("help", new Help(commands));
         commands.put("info", new Info(collectionManager));
-//        commands.put("show", new Show()); //" - print all elements in string representation to standard output");
-//        commands.put("add", new Add()); //" - add new element to the collection");
+        commands.put("show", new Show(collectionManager));
+        commands.put("add", new Add(collectionManager, console));
 //        commands.put("update id", new UpdateId()); // " - update the element`s value, whose ID is equal to the given"+ " You should to enter ID after entering a command");
 //        commands.put("remove_by_id id", new RemoveById()); //" - remove an element from the collection by ID" + " You should to enter ID after entering a command");
 //        commands.put("clear", new Clear()); //" - clear the collection");

@@ -41,7 +41,7 @@ public class CommandReader {
 
         while (!exitSave.equals("exit ")) {
 
-            nextLine = console.readln() + " ";
+            nextLine = console.read() + " ";
             exitSave = nextLine;
 
             Matcher matcher = commandName.matcher(nextLine);

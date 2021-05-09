@@ -3,11 +3,7 @@ package utility;
 import data.StudyGroup;
 
 import java.time.LocalDate;
-import java.time.LocalTime;
-import java.time.ZonedDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.HashSet;
-import java.util.Iterator;
 
 public class CollectionManager implements CollectionManagerInterface {
 
@@ -33,20 +29,33 @@ public class CollectionManager implements CollectionManagerInterface {
         return sb.toString();
     }
 
+    /**
+     * Возвращает кол-во элементов в коллекции
+     *
+     * @see CollectionManager#getInfo()
+     */
     private int getCount() {
-        /**
-         * Прочитать про итератор по нормальному
-         */
 
-        Iterator<StudyGroup> iterator = studyGroups.iterator();
+        /** Прочитать про итератор по нормальному */
         int i = 0;
-        while (iterator.hasNext()) {
-            System.out.println();
+        for (StudyGroup studyGroup : studyGroups) {
             i++;
         }
         return i;
     }
 
+    /**
+     * Возвращает коллекцию
+     *
+     * @see commands.Show
+     */
+    public HashSet<StudyGroup> getCollection() {
 
+        return studyGroups;
+    }
+
+    public void add() {
+
+    }
 
 }
