@@ -23,7 +23,7 @@ public class Console {
         System.out.println(anObj);
     }
 
-    public String readArgStr() {
+    public String read() {
         String line;
 
         try {
@@ -36,30 +36,15 @@ public class Console {
         if (line.length() == 0) {
             line = null;
         }
-        return line;
-        //Нужно осуществить нормальную валидацию потому что есть риск что я ничего не введу или введу несколько аргументов
-    }
-
-    public String readArgInt() {
-        String line = readArgStr() + "";
-        intName = Pattern.compile("")
-        if дш
-    }
-
-    public String read() {
-        String line;
-
-        try {
-            line = scanner.next();
-        } catch (NoSuchElementException e) {
-            System.exit(0);
-            line = null;
-        }
-
-        if (line.length() == 0) {
-            line = null;
-        }
 
         return line;
+    }
+
+    public boolean hasNextInt(){
+        return scanner.hasNextInt();
+    }
+
+    public boolean hasNextDouble(){
+        return scanner.hasNextDouble();
     }
 }

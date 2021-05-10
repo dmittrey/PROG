@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a1461d5a-1468-409c-901e-7897f657ae79" name="Default Changelist" comment="Info and CollectionManagerInterface(for D from SOLID)">
+    <list default="true" id="a1461d5a-1468-409c-901e-7897f657ae79" name="Default Changelist" comment="Add and Console refactoring">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/commands/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/Add.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/Show.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/Show.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utility/CollectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/CollectionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utility/CollectionManagerInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/CollectionManagerInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utility/CommandReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/CommandReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utility/Console.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Console.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utility/Invoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Invoker.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +14,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -153,7 +148,7 @@
       <workItem from="1620297055080" duration="1737000" />
       <workItem from="1620427460502" duration="8749000" />
       <workItem from="1620479510540" duration="686000" />
-      <workItem from="1620549119935" duration="27652000" />
+      <workItem from="1620549119935" duration="37583000" />
     </task>
     <task id="LOCAL-00001" summary="Описали класс, объекты которого будут лежать в коллекции">
       <created>1619919496190</created>
@@ -260,7 +255,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620585370797</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Add and Console refactoring">
+      <created>1620601395099</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1620601395100</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -292,7 +294,8 @@
     <MESSAGE value="Help and Invoker" />
     <MESSAGE value="Help and Info" />
     <MESSAGE value="Info and CollectionManagerInterface(for D from SOLID)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Info and CollectionManagerInterface(for D from SOLID)" />
+    <MESSAGE value="Add and Console refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add and Console refactoring" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
