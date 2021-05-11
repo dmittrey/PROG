@@ -7,6 +7,8 @@ import data.Semester;
 import utility.CollectionManager;
 import utility.Console;
 
+import java.io.IOException;
+import java.util.Date;
 import java.util.Scanner;
 
 public class Add extends CommandAbstract {
@@ -23,8 +25,8 @@ public class Add extends CommandAbstract {
     @Override
     public String execute(String aArg) {
         String name = getName();
-        Coordinates coordinates; //Поле не может быть null
-        java.util.Date creationDate; //Поле не может быть null, Значение этого поля должно генерироваться автоматически
+        Coordinates coordinates;
+        java.util.Date creationDate = getCreationDate();
         Integer studentsCount;
         Double averageMark; //Значение поля должно быть больше 0, Поле может быть null
         FormOfEducation formOfEducation; //Поле может быть null
@@ -58,8 +60,7 @@ public class Add extends CommandAbstract {
         console.print("Enter study group's name: ");
         String line = console.read();
         while (line == null || line.trim().equals("")) {
-            console.println("The string cannot be empty or null\n");
-            console.print("Enter study group's name: ");
+            console.println("The string cannot be empty or null\nEnter study group's name: ");
             line = console.read();
         }
         return line;
@@ -67,7 +68,7 @@ public class Add extends CommandAbstract {
 
     /**
      * Метод для вычисления координат объекта
-     *
+     * <p>
      * В процессе вычисления происходит валидация числе на принадлежность к типу и корректность значения
      *
      * @return Объект типа Coordinates с зашитыми координатами
@@ -76,45 +77,82 @@ public class Add extends CommandAbstract {
     public Coordinates getCoordinates() {
 
         int x;
-        double y = 5.0;
+        double y;
 
-        //Неведомая хуйня с переводом каретки, просто перестают выводиться строки(даже хз в чем дело)
-
+        // надо потом будет оптимизировать так, чтобы код не повторялся два раза для разных осей
         console.print("Enter x coordinate: ");
-
-        boolean nextIntStatus = console.hasNextInt();
         String line = console.read();
 
-        System.out.println(line);//!
-        System.out.println(nextIntStatus+"111");//!
-
-        while (!nextIntStatus) {
-            console.println("Coordinate x must be integer number\n");
-
-            console.print("Enter x coordinate: ");
-            nextIntStatus = console.hasNextInt();
+        while (line == null || line.trim().equals("") || !isInt(line)){
+            console.print("\n\t\tCoordinate x must be integer number.\n\n Enter x coordinate again: ");
             line = console.read();
-            System.out.println(line);//!
-            System.out.println(nextIntStatus+"111");//!
-
         }
+
         x = Integer.parseInt(line);
-        System.out.println(x);
 
+        console.print("Enter y coordinate:");
+        line = console.read();
 
+        while (line == null || line.trim().equals("") || !isDouble(line)){
+            console.print("\n\t\tCoordinate y must be integer number.\n\n Enter x coordinate again: ");
+            line = console.read();
+        }
 
+        y = Double.parseDouble(line);
 
+        // Продумать момент где должна распологаться валидация(ProtectField)
 
+        //Сделать класс фабрику для таких групп
 
+        // Продумать как не повторять код(приватный метод в ProtectField)
+        return new Coordinates(x, y);
+    }
 
+    private boolean isInt(String aStr) {
+        try {
+            Integer.parseInt(aStr);
+        } catch (NumberFormatException e) {
+            return false;
+        }
+        return true;
+    }
 
-
-        return new Coordinates(x,y);
+    private boolean isDouble(String aStr){
+        try {
+            Double.parseDouble(aStr);
+        } catch (NumberFormatException e) {
+            return false;
+        }
+        return true;
     }
 
 
+    /**
+     * Метод для вычисления даты создания объекта коллекции
+     *
+     * @return Дата создания объекта
+     * @see Add#execute(String)
+     */
+    private java.util.Date getCreationDate() {
+        Date creationDate = new Date();
+        creationDate.getTime();
+        return creationDate;
+    }
 
-    public static void main(String[] args) {
+    /**
+     * Метод для вычисления кол-ва человек в группе
+     *
+     * @return Кол-во человек в группе
+     * @see Add#execute(String)
+     */
+    private Integer getStudentsCount() {
+
+
+        return 55;
+    }
+
+
+    public static void main(String[] args) throws IOException {
         CollectionManager kek = new CollectionManager();
         Scanner input = new Scanner(System.in);
         Console cons = new Console(input);

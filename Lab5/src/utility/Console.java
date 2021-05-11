@@ -1,9 +1,9 @@
 package utility;
 
 
+import java.io.IOException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
-import java.util.regex.Pattern;
 
 /**
  * Отвечает за то, чтобы выводить объекты в консоль и считывать их, проверяяих на нулевое значение
@@ -46,5 +46,15 @@ public class Console {
 
     public boolean hasNextDouble(){
         return scanner.hasNextDouble();
+    }
+
+    public String next(){
+        return scanner.next();
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Console pekus = new Console(sc);
+        System.out.println(pekus.read());
     }
 }
