@@ -2,10 +2,6 @@ package utility;
 
 import data.*;
 
-
-//надо потом будет потыкать валидацию еще раз и еще нужно нормально пояснять какая ошибка во вводе, просто if else
-// в блоке while
-
 /**
  * потыкать валидацию каждого паблик и сравнить с областью определения
  * сделать норм оформление и перейти к команде add(там 5 строчек максимум поменять)
@@ -19,48 +15,57 @@ import data.*;
 
 public class ProtectFields {
 
-    private Console console;
+    private final Console console;
 
     public ProtectFields(Console aConsole) {
         console = aConsole;
     }
 
-    /**
-     * Метод вычисляет имя группы
-     */
+    /** Method get name field */
     public String getName() {
         String line;
+
+        console.print("-------------------" +
+                      "GROUP'S NAME" +
+                      "-------------------");
         console.print("Enter group name: ");
         line = console.read();
         while (line == null) {
-            console.print("\t\tGroup name should be not null string!\n\nEnter group name again: ");
+            console.print(TextFormatting.getRedText("\tGroup name should be not null and not empty string!"));
+            console.print("\nEnter group name again: ");
             line = console.read();
         }
         return line;
     }
 
-    /**
-     * Метод вычисляет координаты объекта
-     */
+    /** Method get coordinates */
     public Coordinates getCoordinates() {
 
         String line;
-        Integer x;
-        Double y;
+        int x;
+        double y;
+
+        console.print("-------------------" +
+                "GROUP'S COORDINATES" +
+                "-------------------");
 
         console.print("Enter x coordinate: ");
         line = console.read();
+
         while (line == null || !isInt(line)) {
-            console.print("\t\tCoordinate x should be not null integer number!\n\nEnter x coordinate again: ");
-            //надо уточнить момент, может ли быть null
+            console.print(TextFormatting.getRedText("\tCoordinate x should be not null integer number!"));
+            console.print("\nEnter x coordinate again: ");
             line = console.read();
         }
+
         x = Integer.parseInt(line);
 
         console.print("Enter y coordinate: ");
         line = console.read();
+
         while (line == null || !isDouble(line)) {
-            console.print("\t\tCoordinate x should be not null integer number!\n\nEnter y coordinate again: ");
+            console.print(TextFormatting.getRedText("\tCoordinate x should be not null double number!"));
+            console.print("\nEnter y coordinate again: ");
             line = console.read();
         }
         y = Double.parseDouble(line);
@@ -69,6 +74,7 @@ public class ProtectFields {
     }
 
     private boolean isInt(String aStr) {
+
         try {
             Integer.parseInt(aStr);
         } catch (NumberFormatException e) {
@@ -86,17 +92,20 @@ public class ProtectFields {
         return true;
     }
 
-    /**
-     * Метод вычисляет кол-во человек в группе
-     */
+    /** Method get students count */
     public Integer getStudentsCount() {
         String line;
+
+        console.print("-------------------" +
+                "GROUP'S STUDENTS COUNT" +
+                "-------------------");
 
         console.print("Enter group's count: ");
         line = console.read();
 
         while (line == null || !isPositiveInt(line)) {
-            console.print("\t\tGroup count should be positive not null integer!\n\nEnter group count again: ");
+            console.print(TextFormatting.getRedText("\tGroup count should be positive not null integer!"));
+            console.print("\nEnter group count again: ");
             line = console.read();
         }
         return Integer.parseInt(line);
@@ -112,11 +121,13 @@ public class ProtectFields {
         return Integer.parseInt(aStr) > 0;
     }
 
-    /**
-     * Метод вычисляет значение среднего балла в группе
-     */
+    /** Method get average mark in group */
     public Double getAverageMark() {
         String line;
+
+        console.print("-------------------" +
+                "GROUP'S AVERAGE MARK" +
+                "-------------------");
 
         console.print("Enter group's average mark: ");
         line = console.read();
@@ -124,8 +135,12 @@ public class ProtectFields {
         if (line == null) return null;
 
         while (!isPositiveDouble(line)) {
-            console.print("\t\tGroup count should be positive not null double!\n\nEnter group's average mark again: ");
+            console.print(TextFormatting.getRedText("\tGroup count should be positive double or you can skip" +
+                    " this field!"));
+            console.print("\nEnter group's average mark again: ");
             line = console.read();
+
+            if (line == null) return null;
         }
         return Double.parseDouble(line);
     }
@@ -139,24 +154,28 @@ public class ProtectFields {
         return Double.parseDouble(aStr) > 0;
     }
 
-    /**
-     * Метод вычисляет форму обучения
-     */
     public FormOfEducation getFormOfEducation() {
         String line;
 
+        console.print("-------------------" +
+                "GROUP'S FORM OF EDUCATION" +
+                "-------------------");
+
         console.print("Available forms of education:\n" +
-                "\tDISTANCE_EDUCATION,\n" +
+                TextFormatting.getGreenText("\tDISTANCE_EDUCATION,\n" +
                 "\tFULL_TIME_EDUCATION,\n" +
-                "\tEVENING_CLASSES\n");
-        console.print("Enter form of education: ");
+                "\tEVENING_CLASSES\n"));
+        console.print("\nEnter form of education: ");
         line = console.read();
 
         if (line == null) return null;
 
         while (!isEducationForm(line)){
-            console.print("\t\tIt's incorrect form of education\n\nEnter form of education again: ");
+            console.print(TextFormatting.getRedText("\tIt's incorrect form of education!"));
+            console.print("\nEnter form of education again: ");
             line = console.read();
+
+            if (line == null) return null;
         }
         return FormOfEducation.valueOf(line);
     }
@@ -173,19 +192,22 @@ public class ProtectFields {
     public Semester getSemester(){
         String line;
 
+        console.print("-------------------" +
+                "GROUP'S SEMESTER" +
+                "-------------------");
+
         console.print("Available forms of education:\n" +
-                "\tSECOND,\n" +
+                TextFormatting.getGreenText("\tSECOND,\n" +
                 "\tTHIRD,\n" +
                 "\tFOURTH,\n" +
                 "\tFIFTH,\n" +
-                "\tSIXTH\n");
-        console.print("Enter semester: ");
+                "\tSIXTH\n"));
+        console.print("\nEnter semester: ");
         line = console.read();
 
-        if (line == null) return null;
-
-        while (!isSemester(line)){
-            console.print("\t\tIt's incorrect semester\n\nEnter semester again: ");
+        while (line == null || !isSemester(line)){
+            console.print(TextFormatting.getRedText("\tIt's incorrect semester!"));
+            console.print("\nEnter semester again: ");
             line = console.read();
         }
         return Semester.valueOf(line);
@@ -210,16 +232,17 @@ public class ProtectFields {
                 "GROUP'S ADMIN\n" +
                 "-------------------\n\n");
 
-        console.print("\tEnter admin name: ");
+        console.print("Enter admin name: ");
         line = console.read();
 
         while (line == null) {
-            console.print("Admin name should be not null string.\n\nEnter admin name: ");
+            console.print(TextFormatting.getRedText("\tAdmin name should be not null string!"));
+            console.print("\nEnter admin name: ");
             line = console.read();
         }
         name = line;
 
-        console.print("\tEnter admin weight: ");
+        console.print("\nEnter admin weight: ");
         line = console.read();
 
         while (line == null || !isPositiveLong(line)){
@@ -228,17 +251,18 @@ public class ProtectFields {
         }
         weight = Long.parseLong(line);
 
-        console.print("Available hair color:"+
-                "\tBLACK,\n" +
+        console.print("\nAvailable hair color:\n"+
+                TextFormatting.getGreenText("\tBLACK,\n" +
                 "\tBLUE,\n" +
                 "\tYELLOW,\n" +
                 "\tWHITE,\n" +
-                "\tBROWN\n");
-        console.print("\tEnter hair color: ");
+                "\tBROWN\n"));
+        console.print("\nEnter hair color: ");
         line = console.read();
 
         while (line == null || !isHairColor(line)){
-            console.print("\tEnter correct hair color: ");
+            console.print(TextFormatting.getRedText("\tHair color is incorrect: \n"));
+            console.print("Enter correct hair color: ");
             line = console.read();
         }
         hairColor = Color.valueOf(line);
