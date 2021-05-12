@@ -33,23 +33,11 @@ public class Console {
             line = null;
         }
 
-        if (line.length() == 0) {
+        if (line.trim().length() == 0) {
             line = null;
         }
 
         return line;
-    }
-
-    public boolean hasNextInt(){
-        return scanner.hasNextInt();
-    }
-
-    public boolean hasNextDouble(){
-        return scanner.hasNextDouble();
-    }
-
-    public String next(){
-        return scanner.next();
     }
 
     public static void main(String[] args) {

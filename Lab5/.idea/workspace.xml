@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a1461d5a-1468-409c-901e-7897f657ae79" name="Default Changelist" comment="Add and Console refactoring">
-      <change afterPath="$PROJECT_DIR$/src/utility/StudyGroupFactory.java" afterDir="false" />
+    <list default="true" id="a1461d5a-1468-409c-901e-7897f657ae79" name="Default Changelist" comment="refactor Add command">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/Add.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utility/CommandReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/CommandReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/StudyGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/StudyGroup.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utility/Console.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Console.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utility/ProtectFields.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/ProtectFields.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utility/StudyGroupFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/StudyGroupFactory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,17 +130,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Add" />
@@ -166,7 +155,8 @@
       <workItem from="1620479510540" duration="686000" />
       <workItem from="1620549119935" duration="37583000" />
       <workItem from="1620642765285" duration="1075000" />
-      <workItem from="1620679302879" duration="13192000" />
+      <workItem from="1620679302879" duration="16882000" />
+      <workItem from="1620797072802" duration="7100000" />
     </task>
     <task id="LOCAL-00001" summary="Описали класс, объекты которого будут лежать в коллекции">
       <created>1619919496190</created>
@@ -280,7 +270,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620601395100</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="refactor Add command">
+      <created>1620695524996</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1620695524996</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -313,7 +310,8 @@
     <MESSAGE value="Help and Info" />
     <MESSAGE value="Info and CollectionManagerInterface(for D from SOLID)" />
     <MESSAGE value="Add and Console refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add and Console refactoring" />
+    <MESSAGE value="refactor Add command" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor Add command" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
