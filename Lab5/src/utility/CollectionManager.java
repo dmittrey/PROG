@@ -36,12 +36,7 @@ public class CollectionManager implements CollectionManagerInterface {
      */
     private int getCount() {
 
-        /** Прочитать про итератор по нормальному */
-        int i = 0;
-        for (StudyGroup studyGroup : studyGroups) {
-            i++;
-        }
-        return i;
+        return studyGroups.size();
     }
 
     /**

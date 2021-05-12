@@ -2,6 +2,7 @@ package utility;
 
 
 import commands.*;
+import data.StudyGroup;
 
 import java.util.HashMap;
 import java.util.Set;
@@ -16,12 +17,14 @@ public class Invoker {
     private final Console console;
     private final CollectionManager collectionManager;
     private HashMap<String, CommandAbstract> commands;
+    private final StudyGroupFactory studyGroupFactory;
 
-    public Invoker(Console aConsole, CollectionManager aCollectionManager){
+    public Invoker(Console aConsole, CollectionManager aCollectionManager, StudyGroupFactory aStudyGroupFactory){
 
         console = aConsole;
         collectionManager = aCollectionManager;
         commands = new HashMap<>();
+        studyGroupFactory = aStudyGroupFactory;
         initMap();
     }
 
@@ -29,7 +32,7 @@ public class Invoker {
         commands.put("help", new Help(commands));
         commands.put("info", new Info(collectionManager));
         commands.put("show", new Show(collectionManager));
-        commands.put("add", new Add(collectionManager, console));
+        commands.put("add", new Add(collectionManager, console, studyGroupFactory));
 //        commands.put("update id", new UpdateId()); // " - update the element`s value, whose ID is equal to the given"+ " You should to enter ID after entering a command");
 //        commands.put("remove_by_id id", new RemoveById()); //" - remove an element from the collection by ID" + " You should to enter ID after entering a command");
 //        commands.put("clear", new Clear()); //" - clear the collection");
@@ -50,7 +53,7 @@ public class Invoker {
         if (commands.containsKey(aCommand)){
             console.print(commands.get(aCommand).execute(aArg));
         } else {
-            console.print("Command is incorrect. Please, try again.");
+            console.print(TextFormatting.getRedText("Command is incorrect. Please, try again!\n"));
         }
     }
 

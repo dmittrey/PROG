@@ -1,6 +1,7 @@
 package utility;
 
 
+import java.io.EOFException;
 import java.io.IOException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
@@ -29,15 +30,16 @@ public class Console {
         try {
             line = scanner.nextLine();
         } catch (NoSuchElementException e) {
-            System.exit(0);
-            line = null;
+//            System.exit(0);
+            // fixme Throw normal exception
+            throw new RuntimeException("Unexpected EOF");
         }
 
-        if (line.trim().length() == 0) {
-            line = null;
+        if (line.trim().isEmpty()) {
+            return null;
         }
 
-        return line;
+        return line.trim();
     }
 
     public static void main(String[] args) {

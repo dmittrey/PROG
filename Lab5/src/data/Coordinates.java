@@ -2,9 +2,9 @@ package data;
 
 public class Coordinates {
     private int x;
-    private Double y; //Поле не может быть null
+    private double y;
 
-    public Coordinates(int aX, Double aY) {
+    public Coordinates(int aX, double aY) {
         x = aX;
         y = aY;
     }
@@ -13,7 +13,7 @@ public class Coordinates {
         return x;
     }
 
-    public Double getY() {
+    public double getY() {
         return y;
     }
 

@@ -41,7 +41,7 @@ public class CommandReader {
 
         while (!exitSave.equals("exit ")) {
 
-            nextLine = console.read();
+            nextLine = console.read()+" ";
             exitSave = nextLine;
 
             Matcher matcher = commandName.matcher(nextLine);
@@ -49,18 +49,14 @@ public class CommandReader {
             if (matcher.find()) {
                 command = matcher.group();
             } else {
-                System.out.println("Command is incorrect. Please, try again.");
+                System.out.println("Command is incorrect. Please, try again!");
                 continue;
             }
 
             nextLine = nextLine.substring(command.length());
             matcher = argName.matcher(nextLine);
 
-            if (matcher.find()) {
-                arg = matcher.group();
-            } else {
-                arg = "";
-            }
+            arg = matcher.find() ? matcher.group() : "";
 
             if (!command.equals("exit ")) invoker.execute(command.trim(), arg);
         }

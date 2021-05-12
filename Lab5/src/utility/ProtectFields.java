@@ -2,6 +2,8 @@ package utility;
 
 import data.*;
 
+import java.util.Arrays;
+
 /**
  * потыкать валидацию каждого паблик и сравнить с областью определения
  * сделать норм оформление и перейти к команде add(там 5 строчек максимум поменять)
@@ -21,13 +23,13 @@ public class ProtectFields {
         console = aConsole;
     }
 
-    /** Method get name field */
+    /** Method get group's name */
     public String getName() {
         String line;
 
-        console.print("-------------------" +
-                      "GROUP'S NAME" +
-                      "-------------------");
+        console.print("\n-------------------\n" +
+                      "GROUP'S NAME\n" +
+                      "-------------------\n\n");
         console.print("Enter group name: ");
         line = console.read();
         while (line == null) {
@@ -38,16 +40,16 @@ public class ProtectFields {
         return line;
     }
 
-    /** Method get coordinates */
+    /** Method get group coordinates */
     public Coordinates getCoordinates() {
 
         String line;
         int x;
         double y;
 
-        console.print("-------------------" +
-                "GROUP'S COORDINATES" +
-                "-------------------");
+        console.print("\n-------------------\n" +
+                "GROUP'S COORDINATES\n" +
+                "-------------------\n\n");
 
         console.print("Enter x coordinate: ");
         line = console.read();
@@ -92,13 +94,13 @@ public class ProtectFields {
         return true;
     }
 
-    /** Method get students count */
+    /** Method get students count in group */
     public Integer getStudentsCount() {
         String line;
 
-        console.print("-------------------" +
-                "GROUP'S STUDENTS COUNT" +
-                "-------------------");
+        console.print("\n-------------------\n" +
+                "GROUP'S STUDENTS COUNT\n" +
+                "-------------------\n\n");
 
         console.print("Enter group's count: ");
         line = console.read();
@@ -112,22 +114,17 @@ public class ProtectFields {
     }
 
     private boolean isPositiveInt(String aStr) {
-        try {
-            Integer.parseInt(aStr);
-        } catch (NumberFormatException e) {
-            return false;
-        }
 
-        return Integer.parseInt(aStr) > 0;
+        return isInt(aStr) && Integer.parseInt(aStr) > 0;
     }
 
     /** Method get average mark in group */
     public Double getAverageMark() {
         String line;
 
-        console.print("-------------------" +
-                "GROUP'S AVERAGE MARK" +
-                "-------------------");
+        console.print("\n-------------------\n" +
+                "GROUP'S AVERAGE MARK\n" +
+                "-------------------\n\n");
 
         console.print("Enter group's average mark: ");
         line = console.read();
@@ -146,20 +143,17 @@ public class ProtectFields {
     }
 
     private boolean isPositiveDouble(String aStr) {
-        try {
-            Double.parseDouble(aStr);
-        } catch (NumberFormatException e) {
-            return false;
-        }
-        return Double.parseDouble(aStr) > 0;
+
+        return isDouble(aStr) && Double.parseDouble(aStr) > 0;
     }
 
+    /** Method get form of group's education */
     public FormOfEducation getFormOfEducation() {
         String line;
 
-        console.print("-------------------" +
-                "GROUP'S FORM OF EDUCATION" +
-                "-------------------");
+        console.print("\n-------------------\n" +
+                "GROUP'S FORM OF EDUCATION\n" +
+                "-------------------\n\n");
 
         console.print("Available forms of education:\n" +
                 TextFormatting.getGreenText("\tDISTANCE_EDUCATION,\n" +
@@ -189,12 +183,13 @@ public class ProtectFields {
         return true;
     }
 
+    /** Method get group's semester */
     public Semester getSemester(){
         String line;
 
-        console.print("-------------------" +
-                "GROUP'S SEMESTER" +
-                "-------------------");
+        console.print("\n-------------------\n" +
+                "GROUP'S SEMESTER\n" +
+                "-------------------\n\n");
 
         console.print("Available forms of education:\n" +
                 TextFormatting.getGreenText("\tSECOND,\n" +
@@ -222,13 +217,14 @@ public class ProtectFields {
         return true;
     }
 
+    /** Method get group's admin */
     public Person getGroupAdmin(){
         String line;
         String name; //Поле не может быть null, Строка не может быть пустой
-        Long weight; //Поле не может быть null, Значение поля должно быть больше 0
+        long weight; //Поле не может быть null, Значение поля должно быть больше 0
         Color hairColor; //Поле не может быть null
 
-        console.print("-------------------\n" +
+        console.print("\n-------------------\n" +
                 "GROUP'S ADMIN\n" +
                 "-------------------\n\n");
 
@@ -246,11 +242,14 @@ public class ProtectFields {
         line = console.read();
 
         while (line == null || !isPositiveLong(line)){
-            console.print("Admin weight should be not null long number.\n\nEnter admin weight: ");
+            console.print(TextFormatting.getRedText("\tAdmin weight should be not null positive long number!"));
+            console.print("\nEnter admin weight: ");
             line = console.read();
         }
         weight = Long.parseLong(line);
 
+        Color c = Color.BLACK;
+        // fixme Color.values().toString()
         console.print("\nAvailable hair color:\n"+
                 TextFormatting.getGreenText("\tBLACK,\n" +
                 "\tBLUE,\n" +
@@ -261,7 +260,7 @@ public class ProtectFields {
         line = console.read();
 
         while (line == null || !isHairColor(line)){
-            console.print(TextFormatting.getRedText("\tHair color is incorrect: \n"));
+            console.print(TextFormatting.getRedText("\tHair color is incorrect!\n"));
             console.print("Enter correct hair color: ");
             line = console.read();
         }

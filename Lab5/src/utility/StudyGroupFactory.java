@@ -3,20 +3,25 @@ package utility;
 import data.*;
 
 import java.util.Date;
+import java.util.Scanner;
 
 public class StudyGroupFactory {
 
-    private Integer id = 1;
-    private ProtectFields protectFields;
+    private int id = 1;//Продумать конфликт id объектов из скрипта и объектов из консоли
+    private final ProtectFields protectFields;
     private String creationDate;
 
     public StudyGroupFactory(ProtectFields aProtectFields){
         protectFields = aProtectFields;
     }
 
+    /**
+     * Method creates new StudyGroup object
+     * @see ProtectFields
+     */
     public StudyGroup createStudyGroup() {
 
-        Integer id = getId();
+        int id = getId();
         String name = protectFields.getName();
         Coordinates coordinates = protectFields.getCoordinates();
         String creationDate = new Date().toString();
@@ -33,5 +38,14 @@ public class StudyGroupFactory {
 
     private int getId(){
         return id++;
+    }
+
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Console console = new Console(scanner);
+        ProtectFields protectFields = new ProtectFields(console);
+        StudyGroupFactory studyGroupFactory = new StudyGroupFactory(protectFields);
+        console.print(studyGroupFactory.createStudyGroup());
     }
 }
