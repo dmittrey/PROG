@@ -1,27 +1,25 @@
 package commands;
 
 import utility.CollectionManager;
-import utility.Console;
 import utility.StudyGroupFactory;
 import utility.TextFormatting;
 
 public class Add extends CommandAbstract {
 
-    private final Console console;
-    private final CollectionManager collectionManager;
     private final StudyGroupFactory studyGroupFactory;
+    private final CollectionManager collectionManager;
 
-    public Add(CollectionManager aCollectionManager, Console aConsole, StudyGroupFactory aStudyGroupFactory) {
+    public Add(StudyGroupFactory aStudyGroupFactory, CollectionManager aCollectionManager) {
         super("add", "add new element to the collection");
-        collectionManager = aCollectionManager;
-        console = aConsole;
         studyGroupFactory = aStudyGroupFactory;
+        collectionManager = aCollectionManager;
     }
 
     @Override
     public String execute(String aArg) {
         if (aArg.equals("")) {
-            studyGroupFactory.createStudyGroup();
+            collectionManager.add(studyGroupFactory.createStudyGroup());
+
             return TextFormatting.getGreenText("\tSuccessful\n\n");
         } else {
             return TextFormatting.getRedText("Command arguments entered incorrectly!\n");

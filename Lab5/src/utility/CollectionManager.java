@@ -35,7 +35,6 @@ public class CollectionManager implements CollectionManagerInterface {
      * @see CollectionManager#getInfo()
      */
     private int getCount() {
-
         return studyGroups.size();
     }
 
@@ -45,12 +44,40 @@ public class CollectionManager implements CollectionManagerInterface {
      * @see commands.Show
      */
     public HashSet<StudyGroup> getCollection() {
-
         return studyGroups;
     }
 
-    public void add() {
-
+    public void add(StudyGroup studyGroup) {
+        studyGroups.add(studyGroup);
     }
 
+    public StudyGroup getMin() {
+
+        StudyGroup minGroup = null;
+
+        for (StudyGroup studyGroup : getCollection()) {
+            if (minGroup == null) {
+                minGroup = studyGroup;
+            } else {
+                if (minGroup.compareTo(studyGroup) < 0) minGroup = studyGroup;
+            }
+        }
+
+        return minGroup;
+    }
+
+    public StudyGroup getMax() {
+
+        StudyGroup maxGroup = null;
+
+        for (StudyGroup studyGroup : getCollection()) {
+            if (maxGroup == null) {
+                maxGroup = studyGroup;
+            } else {
+                if (maxGroup.compareTo(studyGroup) > 0) maxGroup = studyGroup;
+            }
+        }
+
+        return  maxGroup;
+    }
 }

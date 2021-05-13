@@ -2,6 +2,7 @@ package commands;
 
 import data.StudyGroup;
 import utility.CollectionManager;
+import utility.TextFormatting;
 
 import java.util.HashSet;
 
@@ -31,15 +32,15 @@ public class Show extends CommandAbstract {
 
     private StringBuilder getObjectInfo(StudyGroup aStudyGroup) {
         StringBuilder sb = new StringBuilder();
-        sb.append(aStudyGroup.getName()).append(":").append("\n");
-        sb.append("Id").append("\t\t:\t\t").append(aStudyGroup.getId()).append("\n");
-        sb.append("Coordinates").append("\t\t:\t\t").append(aStudyGroup.getCoordinates()).append("\n");
-        sb.append("Creation date").append("\t\t:\t\t").append(aStudyGroup.getCreationDate());
-        sb.append("Students count").append("\t\t:\t\t").append(aStudyGroup.getStudentsCount());
-        sb.append("Average mark").append("\t\t:\t\t").append(aStudyGroup.getAverageMark());
-        sb.append("Form of education").append("\t\t:\t\t").append(aStudyGroup.getFormOfEducation());
-        sb.append("Semester enum").append("\t\t:\t\t").append(aStudyGroup.getSemesterEnum());
-        sb.append("Group admin").append("\t\t:\t\t").append(aStudyGroup.getGroupAdmin());
+        sb.append("\n").append(TextFormatting.getBlueText(aStudyGroup.getName())).append(":").append("\n");
+        sb.append("Id").append("\t\t\t\t\t:\t").append(aStudyGroup.getId()).append("\n");
+        sb.append("Coordinates").append("\t\t\t:\t").append(aStudyGroup.getCoordinates()).append("\n");
+        sb.append("Creation date").append("\t\t:\t").append(aStudyGroup.getCreationDate()).append("\n");
+        sb.append("Students count").append("\t\t:\t").append(aStudyGroup.getStudentsCount()).append("\n");
+        sb.append("Average mark").append("\t\t:\t").append(aStudyGroup.getAverageMark()).append("\n");
+        sb.append("Form of education").append("\t:\t").append(aStudyGroup.getFormOfEducation()).append("\n");
+        sb.append("Semester enum").append("\t\t:\t").append(aStudyGroup.getSemesterEnum()).append("\n");
+        sb.append("Group admin").append("\t\t\t:\t").append(aStudyGroup.getGroupAdmin()).append("\n");
         return sb;
     }
 }

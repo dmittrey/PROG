@@ -32,15 +32,15 @@ public class Invoker {
         commands.put("help", new Help(commands));
         commands.put("info", new Info(collectionManager));
         commands.put("show", new Show(collectionManager));
-        commands.put("add", new Add(collectionManager, console, studyGroupFactory));
+        commands.put("add", new Add(studyGroupFactory, collectionManager));
 //        commands.put("update id", new UpdateId()); // " - update the element`s value, whose ID is equal to the given"+ " You should to enter ID after entering a command");
 //        commands.put("remove_by_id id", new RemoveById()); //" - remove an element from the collection by ID" + " You should to enter ID after entering a command");
 //        commands.put("clear", new Clear()); //" - clear the collection");
 //        commands.put("save", new Save()); //" - save the collection to file");
 //        commands.put("execute_script", new ExecuteScript()); //" - read and execute a script from specified file" + " You should to enter path to file after entering a command");
 //        commands.put("exit", new Exit()); //" - end the program (without saving to file)");
-//        commands.put("add_if_max", new AddIfMax()); //" - add new element to the collection, if it`s value greater, "+ "than biggest element of this collection. You should to enter characteristics of"+ " comparing element after entering a command.");
-//        commands.put("add_if_min", new AddIfMin()); //" - add new element to the collection, if it`s value less, "+ "than smallest element of this collection. You should to enter characteristics of" + " comparing element after entering a command.");
+        commands.put("add_if_max", new AddIfMax(studyGroupFactory, collectionManager));
+        commands.put("add_if_min", new AddIfMin(studyGroupFactory, collectionManager));
 //        commands.put("history", new History()); //" - print the last 14 commands (without their arguments)");
 //        commands.put("min_by_students_count", new MinByStudentsCount()); //" - print any object from the collection whose "+ "studentsCount field value is minimal");
 //        commands.put("count_less_than_students_count", new CountLessThanStudentsCount()); //"print the number of elements whose "+ "studentsCount field value is less than the specified one");
@@ -53,7 +53,7 @@ public class Invoker {
         if (commands.containsKey(aCommand)){
             console.print(commands.get(aCommand).execute(aArg));
         } else {
-            console.print(TextFormatting.getRedText("Command is incorrect. Please, try again!\n"));
+            console.print(TextFormatting.getRedText("Command not found. Please, try again!\n"));
         }
     }
 

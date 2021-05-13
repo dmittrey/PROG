@@ -13,5 +13,5 @@ public interface CollectionManagerInterface {
     HashSet<StudyGroup> getCollection();
 
     /** Add element to te collection */
-    void add();
+    void add(StudyGroup studyGroup);
 }

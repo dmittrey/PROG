@@ -41,6 +41,7 @@ public class CommandReader {
 
         while (!exitSave.equals("exit ")) {
 
+            console.print("Enter the command: ");
             nextLine = console.read()+" ";
             exitSave = nextLine;
 
@@ -49,7 +50,7 @@ public class CommandReader {
             if (matcher.find()) {
                 command = matcher.group();
             } else {
-                System.out.println("Command is incorrect. Please, try again!");
+                System.out.println(TextFormatting.getRedText("Command is incorrect. Please, try again!"));
                 continue;
             }
 

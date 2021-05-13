@@ -62,17 +62,14 @@ public class StudyGroup implements Comparable<StudyGroup> {
         return groupAdmin;
     }
 
-    public double getValue() {
-        return averageMark;
-    }
-
     @Override
     public int compareTo(StudyGroup aStudyGroup) {
-        if (this.getValue() > aStudyGroup.getValue()) {
-            return -1;
-        }
-        if (this.getValue() < aStudyGroup.getValue()) {
+
+        if (this.getStudentsCount() < aStudyGroup.getStudentsCount()) {
             return 1;
+        }
+        else if (this.getStudentsCount() > aStudyGroup.getStudentsCount()) {
+            return -1;
         }
         return 0;
     }
