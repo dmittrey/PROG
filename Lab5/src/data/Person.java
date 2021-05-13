@@ -22,4 +22,11 @@ public class Person {
     public Color getHairColor() {
         return hairColor;
     }
+
+    @Override
+    public String toString(){
+        return "name = " + name + ", " +
+                "weight = " + weight + ", " +
+                "hair color = " + hairColor;
+    }
 }

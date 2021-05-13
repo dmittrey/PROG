@@ -77,7 +77,11 @@ public class CollectionManager implements CollectionManagerInterface {
                 if (maxGroup.compareTo(studyGroup) > 0) maxGroup = studyGroup;
             }
         }
-
         return  maxGroup;
     }
+
+    public void clear(){
+        getCollection().clear();
+    }
+
 }

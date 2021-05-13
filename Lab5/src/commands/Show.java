@@ -25,7 +25,7 @@ public class Show extends CommandAbstract {
             }
             return sb.toString();
         } else {
-            return "Arguments entered incorrectly";
+            return TextFormatting.getRedText("Arguments entered incorrectly\n");
         }
     }
 

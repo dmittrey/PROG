@@ -35,7 +35,7 @@ public class Invoker {
         commands.put("add", new Add(studyGroupFactory, collectionManager));
 //        commands.put("update id", new UpdateId()); // " - update the element`s value, whose ID is equal to the given"+ " You should to enter ID after entering a command");
 //        commands.put("remove_by_id id", new RemoveById()); //" - remove an element from the collection by ID" + " You should to enter ID after entering a command");
-//        commands.put("clear", new Clear()); //" - clear the collection");
+        commands.put("clear", new Clear(collectionManager)); //" - clear the collection");
 //        commands.put("save", new Save()); //" - save the collection to file");
 //        commands.put("execute_script", new ExecuteScript()); //" - read and execute a script from specified file" + " You should to enter path to file after entering a command");
 //        commands.put("exit", new Exit()); //" - end the program (without saving to file)");
