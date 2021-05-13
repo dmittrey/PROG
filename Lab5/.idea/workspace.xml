@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a1461d5a-1468-409c-901e-7897f657ae79" name="Default Changelist" comment="refactor Add command">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/Add.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/AddIfMax.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/AddIfMax.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/AddIfMin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/AddIfMin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/Show.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/Show.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/StudyGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/StudyGroup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utility/CollectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/CollectionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utility/CollectionManagerInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/CollectionManagerInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utility/CommandReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/CommandReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utility/Invoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Invoker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utility/TextFormatting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/TextFormatting.java" afterDir="false" />
-    </list>
+    <list default="true" id="a1461d5a-1468-409c-901e-7897f657ae79" name="Default Changelist" comment="SHOW and ADD commands" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -168,6 +155,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
@@ -203,7 +201,7 @@
       <workItem from="1620860870355" duration="2015000" />
       <workItem from="1620906129497" duration="376000" />
       <workItem from="1620909689261" duration="2251000" />
-      <workItem from="1620920199921" duration="3793000" />
+      <workItem from="1620920199921" duration="3956000" />
     </task>
     <task id="LOCAL-00001" summary="Описали класс, объекты которого будут лежать в коллекции">
       <created>1619919496190</created>
@@ -324,7 +322,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620695524996</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="SHOW and ADD commands">
+      <created>1620924875570</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1620924875570</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -358,7 +363,8 @@
     <MESSAGE value="Info and CollectionManagerInterface(for D from SOLID)" />
     <MESSAGE value="Add and Console refactoring" />
     <MESSAGE value="refactor Add command" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor Add command" />
+    <MESSAGE value="SHOW and ADD commands" />
+    <option name="LAST_COMMIT_MESSAGE" value="SHOW and ADD commands" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
