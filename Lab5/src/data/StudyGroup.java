@@ -8,12 +8,13 @@ public class StudyGroup implements Comparable<StudyGroup> {
     private Coordinates coordinates; //Поле не может быть null
     private String creationDate; //Поле не может быть null, Значение этого поля должно генерироваться автоматически
     private int studentsCount; //Значение поля должно быть больше 0, Поле не может быть null
-    private double averageMark; //Значение поля должно быть больше 0, Поле может быть null
+    private Double averageMark; //Значение поля должно быть больше 0, Поле может быть null
     private FormOfEducation formOfEducation; //Поле может быть null
     private Semester semesterEnum; //Поле не может быть null
     private Person groupAdmin; //Поле не может быть null
 
-    public StudyGroup(int aId, String aName, Coordinates aCoordinates, String aCreationDate, int aStudentsCount, double aAverageMark, FormOfEducation aFormOfEducation, Semester aSemesterEnum, Person aGroupAdmin) {
+    public StudyGroup(int aId, String aName, Coordinates aCoordinates, String aCreationDate, int aStudentsCount,
+                      Double aAverageMark, FormOfEducation aFormOfEducation, Semester aSemesterEnum, Person aGroupAdmin) {
         id = aId;//
         name = aName;//
         coordinates = aCoordinates;//
@@ -45,7 +46,7 @@ public class StudyGroup implements Comparable<StudyGroup> {
         return studentsCount;
     }
 
-    public double getAverageMark() {
+    public Double getAverageMark() {
         return averageMark;
     }
 

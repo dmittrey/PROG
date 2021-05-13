@@ -3,17 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="a1461d5a-1468-409c-901e-7897f657ae79" name="Default Changelist" comment="refactor Add command">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/commands/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/Add.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/Coordinates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Coordinates.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/CommandInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/CommandInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/StudyGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/StudyGroup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utility/CollectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/CollectionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utility/CommandReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/CommandReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utility/Console.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Console.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utility/Invoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Invoker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utility/ProtectFields.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/ProtectFields.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utility/StudyGroupFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/StudyGroupFactory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,15 +161,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -211,7 +202,9 @@
       <workItem from="1620679302879" duration="16882000" />
       <workItem from="1620797072802" duration="7100000" />
       <workItem from="1620816291839" duration="9865000" />
-      <workItem from="1620841173162" duration="6653000" />
+      <workItem from="1620841173162" duration="7028000" />
+      <workItem from="1620848611763" duration="1000" />
+      <workItem from="1620860870355" duration="2015000" />
     </task>
     <task id="LOCAL-00001" summary="Описали класс, объекты которого будут лежать в коллекции">
       <created>1619919496190</created>

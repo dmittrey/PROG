@@ -1,16 +1,9 @@
 package commands;
 
-import data.Coordinates;
-import data.FormOfEducation;
-import data.Person;
-import data.Semester;
 import utility.CollectionManager;
 import utility.Console;
 import utility.StudyGroupFactory;
-
-import java.io.IOException;
-import java.util.Date;
-import java.util.Scanner;
+import utility.TextFormatting;
 
 public class Add extends CommandAbstract {
 
@@ -29,9 +22,19 @@ public class Add extends CommandAbstract {
     public String execute(String aArg) {
         if (aArg.equals("")) {
             studyGroupFactory.createStudyGroup();
-            return "Successful";
+            return TextFormatting.getGreenText("\tSuccessful\n\n");
         } else {
-            return "Arguments entered incorrectly";
+            return TextFormatting.getRedText("Command arguments entered incorrectly!\n");
         }
     }
 }
+
+/**
+ * Yаписать документацию к команде, поработать с другими кмандами(кроме скрипта), там будет связка
+ *
+ * CollectionManager + команда
+ *
+ * Затем перейти к работе со скриптом и закончить переменной окружения(мб закончу к утру, надо понять, имеет ли
+ * смысл не спать и идти или нужно постараться чтобы он дал код ревью и я могу бы сдать выполнение(чтобы он потыкал
+ * прогу лишний раз))
+ */
