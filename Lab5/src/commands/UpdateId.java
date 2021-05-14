@@ -13,7 +13,6 @@ public class UpdateId extends CommandAbstract{
     private final StudyGroupFactory studyGroupFactory;
     private final ProtectFields protectFields;
     private final CollectionManager collectionManager;
-    private HashSet<StudyGroup> collection;
 
     public UpdateId(StudyGroupFactory aStudyGroupFactory, CollectionManager aCollectionManager,
                     ProtectFields aProtectFields) {
@@ -27,17 +26,15 @@ public class UpdateId extends CommandAbstract{
     @Override
     public String execute(String aArg){
         try {
-            if (protectFields.isPositiveInt(aArg)){
-                collection = collectionManager.getCollection();
-                for (StudyGroup studyGroup: collection) {
-                    if (studyGroup.getId() == Integer.parseInt(aArg)) {
-                        // fixme страшный момент с ссылкой на объекты(если там лежит Integer, то нам пиздец)
-                        collection.remove(studyGroup);
-                        collection.add(studyGroupFactory.createStudyGroupWithId(Integer.parseInt(aArg)));
-                        return TextFormatting.getGreenText("\n\tSuccessful\n");
-                    }
-                }
-                return TextFormatting.getRedText("\tAn object with this id does not exist!\n");
+            if (protectFields.isPositiveInt(aArg)) {
+                StudyGroup studyGroup = collectionManager.getId(Integer.parseInt(aArg));
+
+                if (studyGroup != null) collectionManager.remove(studyGroup);
+                else return TextFormatting.getRedText("\tAn object with this id does not exist!\n");
+
+                collectionManager.add(studyGroupFactory.createStudyGroupWithId(Integer.parseInt(aArg)));
+
+                return TextFormatting.getGreenText("\n\tSuccessful\n");
             }
         } catch (NullPointerException ignored) { }
         return TextFormatting.getRedText("\tId should be not null positive integer!\n");

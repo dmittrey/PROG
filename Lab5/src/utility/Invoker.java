@@ -37,20 +37,15 @@ public class Invoker {
         commands.put("show", new Show(collectionManager));
         commands.put("add", new Add(studyGroupFactory, collectionManager));
         commands.put("update", new UpdateId(studyGroupFactory, collectionManager, protectFields));
-//         вот тут можно просто пройтись по всем объектам коллекции и найти тот у которого id совпадет, а потом просто наебнуть
-        // пройтись по коллекции до конца попутно удаляя старый файл с id, ищя файл со старым id и ожидая конца коллекции
-
-//        commands.put("remove_by_id id", new RemoveById()); //" - remove an element from the collection by ID" + " You should to enter ID after entering a command");
-
-        //это тоже самое что выше
-        commands.put("clear", new Clear(collectionManager)); //" - clear the collection");
+        commands.put("remove_by_id id", new RemoveById(collectionManager, protectFields));
+        commands.put("clear", new Clear(collectionManager));
 //        commands.put("save", new Save()); //" - save the collection to file");
 //        commands.put("execute_script", new ExecuteScript()); //" - read and execute a script from specified file" + " You should to enter path to file after entering a command");
         commands.put("add_if_max", new AddIfMax(studyGroupFactory, collectionManager));
         commands.put("add_if_min", new AddIfMin(studyGroupFactory, collectionManager));
-        commands.put("history", new History(previousCommands, console)); //" - print the last 14 commands (without their arguments)");
-        commands.put("min_by_students_count", new MinByStudentsCount(collectionManager)); //" - print any object from the collection whose "+ "studentsCount field value is minimal");
-//        commands.put("count_less_than_students_count", new CountLessThanStudentsCount()); //"print the number of elements whose "+ "studentsCount field value is less than the specified one");
+        commands.put("history", new History(previousCommands, console));
+        commands.put("min_by_students_count", new MinByStudentsCount(collectionManager));
+        commands.put("count_less_than_students_count", new CountLessThanStudentsCount(collectionManager, protectFields));
 //        commands.put("filter_starts_with_name", new FilterStartsWithName()); //" - output elements whose name field value starts with"+ " the specified substring");
     }
 

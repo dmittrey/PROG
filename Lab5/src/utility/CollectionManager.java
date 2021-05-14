@@ -51,6 +51,10 @@ public class CollectionManager implements CollectionManagerInterface {
         studyGroups.add(studyGroup);
     }
 
+    public void remove(StudyGroup studyGroup) {
+        studyGroups.remove(studyGroup);
+    }
+
     public StudyGroup getMin() {
 
         StudyGroup minGroup = null;
@@ -70,7 +74,7 @@ public class CollectionManager implements CollectionManagerInterface {
 
         StudyGroup maxGroup = null;
 
-        for (StudyGroup studyGroup : getCollection()) {
+        for (StudyGroup studyGroup : studyGroups) {
             if (maxGroup == null) {
                 maxGroup = studyGroup;
             } else {
@@ -80,8 +84,17 @@ public class CollectionManager implements CollectionManagerInterface {
         return  maxGroup;
     }
 
+    public StudyGroup getId(int key) {
+        for (StudyGroup studyGroup: studyGroups) {
+            if (studyGroup.getId() == key) return studyGroup;
+        }
+        return null;
+    }
+
     public void clear(){
         getCollection().clear();
     }
+
+
 
 }
