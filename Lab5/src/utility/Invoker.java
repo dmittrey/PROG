@@ -14,12 +14,15 @@ public class Invoker {
 
     private final Console console;
     private final CollectionManager collectionManager;
-    private HashMap<String, CommandAbstract> commands;
+    private final HashMap<String, CommandAbstract> commands;
+    private final ProtectFields protectFields;
     private final StudyGroupFactory studyGroupFactory;
     private final Queue previousCommands;
 
-    public Invoker(Console aConsole, CollectionManager aCollectionManager, StudyGroupFactory aStudyGroupFactory){
+    public Invoker(Console aConsole, CollectionManager aCollectionManager, ProtectFields aProtectFields,
+                   StudyGroupFactory aStudyGroupFactory) {
 
+        protectFields = aProtectFields;
         console = aConsole;
         collectionManager = aCollectionManager;
         commands = new HashMap<>();
@@ -33,8 +36,13 @@ public class Invoker {
         commands.put("info", new Info(collectionManager));
         commands.put("show", new Show(collectionManager));
         commands.put("add", new Add(studyGroupFactory, collectionManager));
-//        commands.put("update id", new UpdateId()); // " - update the element`s value, whose ID is equal to the given"+ " You should to enter ID after entering a command");
+        commands.put("update", new UpdateId(studyGroupFactory, collectionManager, protectFields));
+//         вот тут можно просто пройтись по всем объектам коллекции и найти тот у которого id совпадет, а потом просто наебнуть
+        // пройтись по коллекции до конца попутно удаляя старый файл с id, ищя файл со старым id и ожидая конца коллекции
+
 //        commands.put("remove_by_id id", new RemoveById()); //" - remove an element from the collection by ID" + " You should to enter ID after entering a command");
+
+        //это тоже самое что выше
         commands.put("clear", new Clear(collectionManager)); //" - clear the collection");
 //        commands.put("save", new Save()); //" - save the collection to file");
 //        commands.put("execute_script", new ExecuteScript()); //" - read and execute a script from specified file" + " You should to enter path to file after entering a command");

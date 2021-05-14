@@ -28,6 +28,10 @@ public class StudyGroup implements Comparable<StudyGroup> {
         groupAdmin = aGroupAdmin;
     }
 
+    public void setId(int anId){
+        id = anId;
+    }
+
     public int getId() {
         return id;
     }

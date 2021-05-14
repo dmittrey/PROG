@@ -30,8 +30,9 @@ public abstract class CommandAbstract implements CommandInterface {
             case "history":
             case "min_by_students_count":
                 return name + " : " + description;
-            case "add":
-            case "update id":
+            case "update":
+                return name + " id {element} : " + description;
+            case "add" :
             case "add_if_max":
             case "add_if_min":
                 return name + " {element} : " + description;

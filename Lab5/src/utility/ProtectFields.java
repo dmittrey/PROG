@@ -113,7 +113,7 @@ public class ProtectFields {
         return Integer.parseInt(line);
     }
 
-    private boolean isPositiveInt(String aStr) {
+    public boolean isPositiveInt(String aStr) {
 
         return isInt(aStr) && Integer.parseInt(aStr) > 0;
     }

@@ -11,7 +11,7 @@ public class Main {
         ProtectFields protectFields = new ProtectFields(console);
         StudyGroupFactory studyGroupFactory = new StudyGroupFactory(protectFields);
         CollectionManager collectionManager = new CollectionManager();
-        Invoker invoker = new Invoker(console, collectionManager, studyGroupFactory); // Прокси класс
+        Invoker invoker = new Invoker(console, collectionManager, protectFields, studyGroupFactory); // Прокси класс
         CommandReader commandReader = new CommandReader(console, invoker); // Делаем класс который передаёт в инвокер
         // вводимые в консоли команды
         String creationDate = "13.05.21";

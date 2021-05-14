@@ -35,7 +35,7 @@ public class Help extends CommandAbstract {
             StringBuilder sb = new StringBuilder();
             sb.append("List of commands:\n\n");
             for (String i : commandsInfo.keySet()) {
-                sb.append("\t").append(commandsInfo.get(i).getDescription()).append("\n");
+                sb.append("\t").append(commandsInfo.get(i).getDescription()).append("\n\n");
             }
             return sb.toString();
         } else {

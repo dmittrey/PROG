@@ -36,6 +36,13 @@ public class StudyGroupFactory {
 
     }
 
+    public StudyGroup createStudyGroupWithId(int anId) {
+        StudyGroup newStudyGroup = createStudyGroup();
+        newStudyGroup.setId(anId);
+        id = anId;
+        return newStudyGroup;
+    }
+
     private int getId(){
         return id++;
     }
