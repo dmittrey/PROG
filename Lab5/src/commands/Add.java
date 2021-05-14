@@ -20,9 +20,9 @@ public class Add extends CommandAbstract {
         if (aArg.equals("")) {
             collectionManager.add(studyGroupFactory.createStudyGroup());
 
-            return TextFormatting.getGreenText("\tSuccessful\n\n");
+            return TextFormatting.getGreenText("\n\tSuccessful\n\n");
         } else {
-            return TextFormatting.getRedText("Command arguments entered incorrectly!\n");
+            return TextFormatting.getRedText("\tCommand arguments entered incorrectly!\n");
         }
     }
 }
@@ -35,4 +35,6 @@ public class Add extends CommandAbstract {
  * Затем перейти к работе со скриптом и закончить переменной окружения(мб закончу к утру, надо понять, имеет ли
  * смысл не спать и идти или нужно постараться чтобы он дал код ревью и я могу бы сдать выполнение(чтобы он потыкал
  * прогу лишний раз))
+ *
+ * убрать обновление id
  */

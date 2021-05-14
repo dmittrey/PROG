@@ -27,7 +27,7 @@ public class RemoveById extends CommandAbstract{
                 if (studyGroup != null) collectionManager.remove(studyGroup);
                 else return TextFormatting.getRedText("\tAn object with this id does not exist!\n");
 
-                return TextFormatting.getGreenText("\n\tSuccessful\n");
+                return TextFormatting.getGreenText("\n\tSuccessful\n\n");
             }
         } catch (NullPointerException ignored) { }
         return TextFormatting.getRedText("\tId should be not null positive integer!\n");

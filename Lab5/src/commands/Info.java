@@ -1,6 +1,7 @@
 package commands;
 
 import utility.CollectionManager;
+import utility.TextFormatting;
 
 /**
  * @author dmittrey
@@ -30,9 +31,9 @@ public class Info extends CommandAbstract{
     public String execute(String aArg) {
         if (aArg.equals("")) {
 
-            return "Information about collection:\n\n" + collectionManager.getInfo();
+            return TextFormatting.getBlueText("\nInformation about collection:\n\n") + collectionManager.getInfo();
         } else {
-            return "Arguments entered incorrectly";
+            return TextFormatting.getRedText("\tArguments entered incorrectly\n");
         }
     }
 }

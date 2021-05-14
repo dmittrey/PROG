@@ -34,7 +34,7 @@ public class UpdateId extends CommandAbstract{
 
                 collectionManager.add(studyGroupFactory.createStudyGroupWithId(Integer.parseInt(aArg)));
 
-                return TextFormatting.getGreenText("\n\tSuccessful\n");
+                return TextFormatting.getGreenText("\n\tSuccessful\n\n");
             }
         } catch (NullPointerException ignored) { }
         return TextFormatting.getRedText("\tId should be not null positive integer!\n");

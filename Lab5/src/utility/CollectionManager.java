@@ -2,7 +2,7 @@ package utility;
 
 import data.StudyGroup;
 
-import java.time.LocalDate;
+import java.util.Date;
 import java.util.HashSet;
 
 public class CollectionManager implements CollectionManagerInterface {
@@ -11,21 +11,21 @@ public class CollectionManager implements CollectionManagerInterface {
 
     private boolean exeDone;
 
-    private final LocalDate initTime;
+    private final String initTime;
 
     public CollectionManager() {
         studyGroups = new HashSet<>();
-        initTime = LocalDate.now();
+        initTime = new Date().toString();
     }
 
     public String getInfo() {
 
         StringBuilder sb = new StringBuilder();
-        sb.append("\t").append("Type of collection:").append("\t\t\t\t\t").append("HashSet").append("\n");
-        sb.append("\t").append("Type of collection items:").append("\t\t\t").append("Study groups").append("\n");
-        sb.append("\t").append("Priority:").append("\t\t\t\t\t\t\t").append("Average mark").append("\n");
-        sb.append("\t").append("Initialization date:").append("\t\t\t\t").append(initTime).append("\n");
-        sb.append("\t").append("Number of items in te collection:").append("\t").append(this.getCount()).append("\n");
+        sb.append("\t").append("Type of collection").append("\t\t\t\t\t:\t").append("HashSet").append("\n");
+        sb.append("\t").append("Type of collection items").append("\t\t\t:\t").append("Study groups").append("\n");
+        sb.append("\t").append("Priority").append("\t\t\t\t\t\t\t:\t").append("Student's count").append("\n");
+        sb.append("\t").append("Initialization date").append("\t\t\t\t\t:\t").append(initTime).append("\n");
+        sb.append("\t").append("Number of items in te collection").append("\t:\t").append(this.getCount()).append("\n\n");
         return sb.toString();
     }
 

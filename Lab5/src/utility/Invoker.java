@@ -37,7 +37,7 @@ public class Invoker {
         commands.put("show", new Show(collectionManager));
         commands.put("add", new Add(studyGroupFactory, collectionManager));
         commands.put("update", new UpdateId(studyGroupFactory, collectionManager, protectFields));
-        commands.put("remove_by_id id", new RemoveById(collectionManager, protectFields));
+        commands.put("remove_by_id", new RemoveById(collectionManager, protectFields));
         commands.put("clear", new Clear(collectionManager));
 //        commands.put("save", new Save()); //" - save the collection to file");
 //        commands.put("execute_script", new ExecuteScript()); //" - read and execute a script from specified file" + " You should to enter path to file after entering a command");

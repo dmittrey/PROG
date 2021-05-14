@@ -26,9 +26,10 @@ public class FilterStartsWithName extends CommandAbstract{
             } else {
                 StringBuilder sb = new StringBuilder();
                 for (StudyGroup studyGroup: collection) {
-                    if (studyGroup.getName().contains(aArg)) sb.append(studyGroup).append("\n\t------\n");
+                    if (studyGroup.getName().contains(aArg)) sb.append(studyGroup).append("------\n");
                 }
-                return sb.toString();
+                if (sb.toString().equals("")) return TextFormatting.getRedText("\tNo objects found!\n");
+                else return sb.toString();
             }
         } else {
             return TextFormatting.getRedText("\tSubstring should be not empty!\n");

@@ -18,6 +18,7 @@ public class Show extends CommandAbstract {
     @Override
     public String execute(String aArg) {
         if (aArg.equals("")) {
+            if (studyGroups.size() == 0) return TextFormatting.getRedText("\tCollection is empty!\n");
             StringBuilder sb = new StringBuilder();
             for (StudyGroup studyGroup: studyGroups) {
                 sb.append(studyGroup);
@@ -25,7 +26,7 @@ public class Show extends CommandAbstract {
             }
             return sb.toString();
         } else {
-            return TextFormatting.getRedText("Arguments entered incorrectly\n");
+            return TextFormatting.getRedText("\tArguments entered incorrectly\n");
         }
     }
 }

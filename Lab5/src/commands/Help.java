@@ -1,6 +1,7 @@
 package commands;
 
 import utility.Invoker;
+import utility.TextFormatting;
 
 import java.util.HashMap;
 
@@ -33,13 +34,14 @@ public class Help extends CommandAbstract {
 
         if (aArg.equals("")) {
             StringBuilder sb = new StringBuilder();
-            sb.append("List of commands:\n\n");
+            sb.append(TextFormatting.getBlueText("\nList of commands:\n\n"));
             for (String i : commandsInfo.keySet()) {
                 sb.append("\t").append(commandsInfo.get(i).getDescription()).append("\n\n");
             }
+            sb.append("\t").append("exit : end the program (without saving it to a file)").append("\n\n");
             return sb.toString();
         } else {
-            return "Arguments entered incorrectly";
+            return TextFormatting.getRedText("\tArguments entered incorrectly\n");
         }
     }
 }

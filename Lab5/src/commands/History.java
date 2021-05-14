@@ -18,15 +18,14 @@ public class History extends CommandAbstract {
     @Override
     public String execute(String aArg) {
         if (aArg.equals("")) {
+            int i = 0;
             StringBuilder sb = new StringBuilder();
             for (String command : previousCommands) {
-                sb.append(command).append("\n");
-                //продумать момент как ограничить кол-во листа до 14
-                //и рефакторинг подхода к приёму аргументов а то заебало этот случай обрабатывать
+                sb.append(++i).append(") ").append(command).append("\n");
             }
         return sb.toString();
         } else {
-            return TextFormatting.getRedText("Arguments entered incorrectly\n");
+            return TextFormatting.getRedText("\tArguments entered incorrectly\n");
         }
     }
 }

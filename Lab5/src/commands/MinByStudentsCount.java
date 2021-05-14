@@ -18,10 +18,10 @@ public class MinByStudentsCount extends CommandAbstract {
             try {
                 return collectionManager.getMin().toString();
             } catch (NullPointerException e) {
-                return TextFormatting.getRedText("There are no study groups in the collection yet");
+                return TextFormatting.getRedText("\tThere are no study groups in the collection yet!\n");
             }
         } else {
-            return TextFormatting.getRedText("Arguments entered incorrectly\n");
+            return TextFormatting.getRedText("\tArguments entered incorrectly!\n");
         }
     }
 
