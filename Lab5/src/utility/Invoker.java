@@ -2,10 +2,8 @@ package utility;
 
 
 import commands.*;
-import data.StudyGroup;
 
-import java.util.HashMap;
-import java.util.Set;
+import java.util.*;
 
 /**
  * В инвокере должны лежать команды, чтобы я мог их вызвать и по сути еще ссылки на сторонние классы
@@ -18,6 +16,7 @@ public class Invoker {
     private final CollectionManager collectionManager;
     private HashMap<String, CommandAbstract> commands;
     private final StudyGroupFactory studyGroupFactory;
+    private final Queue previousCommands;
 
     public Invoker(Console aConsole, CollectionManager aCollectionManager, StudyGroupFactory aStudyGroupFactory){
 
@@ -25,6 +24,7 @@ public class Invoker {
         collectionManager = aCollectionManager;
         commands = new HashMap<>();
         studyGroupFactory = aStudyGroupFactory;
+        previousCommands = new LinkedList<String>();
         initMap();
     }
 
@@ -38,11 +38,10 @@ public class Invoker {
         commands.put("clear", new Clear(collectionManager)); //" - clear the collection");
 //        commands.put("save", new Save()); //" - save the collection to file");
 //        commands.put("execute_script", new ExecuteScript()); //" - read and execute a script from specified file" + " You should to enter path to file after entering a command");
-//        commands.put("exit", new Exit()); //" - end the program (without saving to file)");
         commands.put("add_if_max", new AddIfMax(studyGroupFactory, collectionManager));
         commands.put("add_if_min", new AddIfMin(studyGroupFactory, collectionManager));
-//        commands.put("history", new History()); //" - print the last 14 commands (without their arguments)");
-//        commands.put("min_by_students_count", new MinByStudentsCount()); //" - print any object from the collection whose "+ "studentsCount field value is minimal");
+        commands.put("history", new History(previousCommands, console)); //" - print the last 14 commands (without their arguments)");
+        commands.put("min_by_students_count", new MinByStudentsCount(collectionManager)); //" - print any object from the collection whose "+ "studentsCount field value is minimal");
 //        commands.put("count_less_than_students_count", new CountLessThanStudentsCount()); //"print the number of elements whose "+ "studentsCount field value is less than the specified one");
 //        commands.put("filter_starts_with_name", new FilterStartsWithName()); //" - output elements whose name field value starts with"+ " the specified substring");
     }
@@ -51,6 +50,9 @@ public class Invoker {
     public void execute(String aCommand, String aArg){
 
         if (commands.containsKey(aCommand)){
+            if (previousCommands.size() > 13) previousCommands.remove();
+            previousCommands.add(aCommand);
+
             console.print(commands.get(aCommand).execute(aArg));
         } else {
             console.print(TextFormatting.getRedText("Command not found. Please, try again!\n"));

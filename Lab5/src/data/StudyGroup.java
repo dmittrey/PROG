@@ -1,5 +1,7 @@
 package data;
 
+import utility.TextFormatting;
+
 import java.util.Date;
 
 public class StudyGroup implements Comparable<StudyGroup> {
@@ -74,17 +76,21 @@ public class StudyGroup implements Comparable<StudyGroup> {
         return 0;
     }
 
+
     @Override
     public String toString() {
-        return "Study Group №" + id
-                + "(added " + creationDate + ")"
-                + "Name: " + name
-                + "Location: " + coordinates
-                + "Group size: " + studentsCount
-                + "Average mark: " + averageMark
-                + "formOfEducation" + formOfEducation
-                + "semesterEnum" + semesterEnum
-                + "groupAdmin" + groupAdmin;
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("\n").append(TextFormatting.getBlueText(name)).append(":").append("\n");
+        sb.append("Id").append("\t\t\t\t\t:\t").append(id).append("\n");
+        sb.append("Coordinates").append("\t\t\t:\t").append(coordinates).append("\n");
+        sb.append("Creation date").append("\t\t:\t").append(creationDate).append("\n");
+        sb.append("Students count").append("\t\t:\t").append(studentsCount).append("\n");
+        sb.append("Average mark").append("\t\t:\t").append(averageMark).append("\n");
+        sb.append("Form of education").append("\t:\t").append(formOfEducation).append("\n");
+        sb.append("Semester enum").append("\t\t:\t").append(semesterEnum).append("\n");
+        sb.append("Group admin").append("\t\t\t:\t").append(groupAdmin).append("\n");
+        return sb.toString();
     }
 
 
