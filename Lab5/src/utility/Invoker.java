@@ -5,11 +5,6 @@ import commands.*;
 
 import java.util.*;
 
-/**
- * В инвокере должны лежать команды, чтобы я мог их вызвать и по сути еще ссылки на сторонние классы
- * чтобы можно было через обратный вызов обращаться из команд к этим классам
- */
-
 public class Invoker {
 
     private final Console console;
@@ -18,6 +13,7 @@ public class Invoker {
     private final ProtectFields protectFields;
     private final StudyGroupFactory studyGroupFactory;
     private final Queue previousCommands;
+    private final HashSet<String> executedScripts;
 
     public Invoker(Console aConsole, CollectionManager aCollectionManager, ProtectFields aProtectFields,
                    StudyGroupFactory aStudyGroupFactory) {
@@ -28,6 +24,7 @@ public class Invoker {
         commands = new HashMap<>();
         studyGroupFactory = aStudyGroupFactory;
         previousCommands = new LinkedList<String>();
+        executedScripts = new HashSet<>();
         initMap();
     }
 
@@ -40,7 +37,7 @@ public class Invoker {
         commands.put("remove_by_id", new RemoveById(collectionManager, protectFields));
         commands.put("clear", new Clear(collectionManager));
 //        commands.put("save", new Save()); //" - save the collection to file");
-//        commands.put("execute_script", new ExecuteScript()); //" - read and execute a script from specified file" + " You should to enter path to file after entering a command");
+        commands.put("execute_script", new ExecuteScript(this));
         commands.put("add_if_max", new AddIfMax(studyGroupFactory, collectionManager));
         commands.put("add_if_min", new AddIfMin(studyGroupFactory, collectionManager));
         commands.put("history", new History(previousCommands, console));
@@ -60,6 +57,14 @@ public class Invoker {
         } else {
             console.print(TextFormatting.getRedText("Command not found. Please, try again!\n"));
         }
+    }
+
+    public boolean addScriptPath(String aPath){
+        return executedScripts.add(aPath);
+    }
+
+    public void removeScriptPath(String aPath){
+        executedScripts.remove(aPath);
     }
 
 

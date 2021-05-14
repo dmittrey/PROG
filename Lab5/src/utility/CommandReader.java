@@ -29,10 +29,10 @@ public class CommandReader {
 
         commandName = Pattern.compile("^\\w+\\s+");
 
-        argName = Pattern.compile("^\\w+");
+        argName = Pattern.compile("^.+");
     }
 
-    public void enable() {
+    public void enable(boolean printPermission) {
 
         String nextLine;
         String exitSave = "";
@@ -42,7 +42,7 @@ public class CommandReader {
         while (!exitSave.equals("exit ")) {
 
             console.print("Enter the command: ");
-            nextLine = console.read()+" ";
+            nextLine = console.read() + " ";
             exitSave = nextLine;
 
             Matcher matcher = commandName.matcher(nextLine);
@@ -59,7 +59,10 @@ public class CommandReader {
 
             arg = matcher.find() ? matcher.group() : "";
 
+            if (printPermission) console.print(command+"!");
+
             if (!command.equals("exit ")) invoker.execute(command.trim(), arg);
+            else break;
         }
     }
 }

@@ -31,6 +31,6 @@ public class CountLessThanStudentsCount extends CommandAbstract{
             return TextFormatting.getGreenText("\tAmount of elements: " + i + "\n");
         }
 
-        return TextFormatting.getRedText("Student's count should be not null positive integer number\n");
+        return TextFormatting.getRedText("\tStudent's count should be not null positive integer number\n");
     }
 }

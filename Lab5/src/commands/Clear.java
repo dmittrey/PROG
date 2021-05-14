@@ -15,7 +15,7 @@ public class Clear extends CommandAbstract{
     public String execute(String aArg){
         if (aArg.equals("")) {
         collectionManager.clear();
-        return TextFormatting.getGreenText("\n\tSuccessful!\n\n");
+        return TextFormatting.getGreenText("\n\n\tSuccessful!\n\n");
         } else {
             return TextFormatting.getRedText("Command arguments entered incorrectly!\n");
         }

@@ -30,7 +30,7 @@ public class AddIfMin extends CommandAbstract {
             } catch (NullPointerException e) { }
 
             collectionManager.add(inputStudyGroup);
-            return TextFormatting.getGreenText("\tSuccessful!\n\n");
+            return TextFormatting.getGreenText("\n\n\tSuccessful!\n\n");
 
         } else {
 

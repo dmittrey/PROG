@@ -27,7 +27,6 @@ public class Console {
         try {
             line = scanner.nextLine();
         } catch (NoSuchElementException e) {
-//            System.exit(0);
             // fixme Throw normal exception
             throw new RuntimeException("Unexpected EOF");
         }

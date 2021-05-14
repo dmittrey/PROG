@@ -39,7 +39,7 @@ public abstract class CommandAbstract implements CommandInterface {
             case "remove_by_id":
                 return name + " id : " + description;
             case "execute_script":
-                return " file_name : " + description;
+                return name + " file_name : " + description;
             case "count_less_than_students_count":
                 return name + " studentsCount : " + description;
             default:
