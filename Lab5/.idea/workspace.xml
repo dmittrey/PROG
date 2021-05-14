@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a1461d5a-1468-409c-901e-7897f657ae79" name="Default Changelist" comment="Update id">
+    <list default="true" id="a1461d5a-1468-409c-901e-7897f657ae79" name="Default Changelist" comment="Last 3 commands">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/CountLessThanStudentsCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/CountLessThanStudentsCount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/RemoveById.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/RemoveById.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/UpdateId.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/UpdateId.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utility/CollectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/CollectionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/FilterStartsWithName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/FilterStartsWithName.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utility/Invoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Invoker.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,6 +21,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1rxNLFePh8wJVbS90T1x2p5vrAA" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -211,7 +216,7 @@
       <workItem from="1620906129497" duration="376000" />
       <workItem from="1620909689261" duration="2251000" />
       <workItem from="1620920199921" duration="5323000" />
-      <workItem from="1620930338288" duration="13682000" />
+      <workItem from="1620930338288" duration="15831000" />
     </task>
     <task id="LOCAL-00001" summary="Описали класс, объекты которого будут лежать в коллекции">
       <created>1619919496190</created>
@@ -367,7 +372,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620983671247</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Last 3 commands">
+      <created>1620987313971</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1620987313971</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -405,7 +417,8 @@
     <MESSAGE value="Show and Clear" />
     <MESSAGE value="History and MinByStudentsCount" />
     <MESSAGE value="Update id" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update id" />
+    <MESSAGE value="Last 3 commands" />
+    <option name="LAST_COMMIT_MESSAGE" value="Last 3 commands" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

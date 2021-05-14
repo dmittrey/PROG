@@ -46,7 +46,7 @@ public class Invoker {
         commands.put("history", new History(previousCommands, console));
         commands.put("min_by_students_count", new MinByStudentsCount(collectionManager));
         commands.put("count_less_than_students_count", new CountLessThanStudentsCount(collectionManager, protectFields));
-//        commands.put("filter_starts_with_name", new FilterStartsWithName()); //" - output elements whose name field value starts with"+ " the specified substring");
+        commands.put("filter_starts_with_name", new FilterStartsWithName(collectionManager));
     }
 
 
