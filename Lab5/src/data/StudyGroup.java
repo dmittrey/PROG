@@ -2,8 +2,6 @@ package data;
 
 import utility.TextFormatting;
 
-import java.util.Date;
-
 public class StudyGroup implements Comparable<StudyGroup> {
     private int id; //Поле не может быть null, Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
     private String name; //Поле не может быть null, Строка не может быть пустой
@@ -14,6 +12,7 @@ public class StudyGroup implements Comparable<StudyGroup> {
     private FormOfEducation formOfEducation; //Поле может быть null
     private Semester semesterEnum; //Поле не может быть null
     private Person groupAdmin; //Поле не может быть null
+    private static final String XML = "<StudyGroup>...</StudGroup>";
 
     public StudyGroup(int aId, String aName, Coordinates aCoordinates, String aCreationDate, int aStudentsCount,
                       Double aAverageMark, FormOfEducation aFormOfEducation, Semester aSemesterEnum, Person aGroupAdmin) {
@@ -96,6 +95,4 @@ public class StudyGroup implements Comparable<StudyGroup> {
         sb.append("Group admin").append("\t\t\t:\t").append(groupAdmin).append("\n");
         return sb.toString();
     }
-
-
 }

@@ -3,6 +3,7 @@ package utility;
 
 import commands.*;
 
+import java.io.IOException;
 import java.util.*;
 
 public class Invoker {
@@ -14,6 +15,7 @@ public class Invoker {
     private final StudyGroupFactory studyGroupFactory;
     private final Queue<String> previousCommands;
     private final Set<String> executedScripts;
+    private final FileWorker fileWorker;
 
     public Invoker(Console aConsole, CollectionManager aCollectionManager, ProtectFields aProtectFields,
                    StudyGroupFactory aStudyGroupFactory) {
@@ -25,6 +27,7 @@ public class Invoker {
         studyGroupFactory = aStudyGroupFactory;
         previousCommands = new LinkedList<>();
         executedScripts = new HashSet<>();
+        fileWorker = new FileWorker(collectionManager, console);
         initMap();
     }
 
@@ -36,7 +39,7 @@ public class Invoker {
         commands.put("update", new UpdateId(studyGroupFactory, collectionManager, protectFields));
         commands.put("remove_by_id", new RemoveById(collectionManager, protectFields));
         commands.put("clear", new Clear(collectionManager));
-//        commands.put("save", new Save()); //" - save the collection to file");
+        commands.put("save", new Save(fileWorker));
         commands.put("execute_script", new ExecuteScript(this));
         commands.put("add_if_max", new AddIfMax(studyGroupFactory, collectionManager));
         commands.put("add_if_min", new AddIfMin(studyGroupFactory, collectionManager));
@@ -47,7 +50,7 @@ public class Invoker {
     }
 
 
-    public void execute(String aCommand, String aArg){
+    public void execute(String aCommand, String aArg) throws IOException {
 
         if (commands.containsKey(aCommand)){
             if (previousCommands.size() > 13) previousCommands.remove();

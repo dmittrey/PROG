@@ -1,10 +1,14 @@
 import data.*;
+import org.xml.sax.SAXException;
 import utility.*;
 
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.IOException;
+import java.util.HashSet;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, ParserConfigurationException, SAXException {
         Scanner scanner = new Scanner(System.in); //Указываем стандартный поток ввода
         Console console = new Console(scanner); // Инициализируем объект для общения с пользователем
         ProtectFields protectFields = new ProtectFields(console);
@@ -12,6 +16,8 @@ public class Main {
         CollectionManager collectionManager = new CollectionManager();
         Invoker invoker = new Invoker(console, collectionManager, protectFields, studyGroupFactory); // Прокси класс
         CommandReader commandReader = new CommandReader(console, invoker); // Делаем класс который передаёт в инвокер
+        FileWorker fileWorker = new FileWorker(collectionManager, console);
+        collectionManager.setCollection(fileWorker.parse());
         // вводимые в консоли команды
         String creationDate = "13.05.21";
         collectionManager.add(new StudyGroup(2323,"dfddwadf", new Coordinates(34,34), creationDate, 23,

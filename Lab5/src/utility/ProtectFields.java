@@ -114,8 +114,7 @@ public class ProtectFields {
     }
 
     public boolean isPositiveInt(String aStr) {
-
-        return isInt(aStr) && Integer.parseInt(aStr) > 0;
+        return isInt(aStr.trim()) && Integer.parseInt(aStr.trim()) > 0;
     }
 
     /** Method get average mark in group */

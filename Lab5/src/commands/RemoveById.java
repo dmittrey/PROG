@@ -21,8 +21,8 @@ public class RemoveById extends CommandAbstract{
     @Override
     public String execute(String aArg){
         try {
-            if (protectFields.isPositiveInt(aArg)) {
-                StudyGroup studyGroup = collectionManager.getId(Integer.parseInt(aArg));
+            if (protectFields.isPositiveInt(aArg.trim())) {
+                StudyGroup studyGroup = collectionManager.getId(Integer.parseInt(aArg.trim()));
 
                 if (studyGroup != null) collectionManager.remove(studyGroup);
                 else return TextFormatting.getRedText("\tAn object with this id does not exist!\n");

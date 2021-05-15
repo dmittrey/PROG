@@ -1,5 +1,6 @@
 package utility;
 
+import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -32,7 +33,7 @@ public class CommandReader {
         argName = Pattern.compile("^.+");
     }
 
-    public void enable(boolean printPermission) {
+    public void enable(boolean printPermission) throws IOException {
 
         String nextLine;
         String exitSave = "";

@@ -1,5 +1,7 @@
 package commands;
 
+import java.io.IOException;
+
 /**
  * Абстрактный класс команды который хранит описание и имя команды
  */
@@ -48,5 +50,5 @@ public abstract class CommandAbstract implements CommandInterface {
     }
 
     @Override
-    public abstract String execute(String aArg);
+    public abstract String execute(String aArg) throws IOException;
 }

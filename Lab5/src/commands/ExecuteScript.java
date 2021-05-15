@@ -4,6 +4,7 @@ import utility.*;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class ExecuteScript extends CommandAbstract{
@@ -27,9 +28,10 @@ public class ExecuteScript extends CommandAbstract{
                 Console console = new Console(scriptScanner);
                 CommandReader commandReader = new CommandReader(console, invoker);
                 commandReader.enable(true);
-
             } catch (FileNotFoundException exception) {
                 return TextFormatting.getRedText("\tFile not found!\n");
+            } catch (IOException e) {
+                e.printStackTrace();
             }
             invoker.removeScriptPath(aArg);
             return TextFormatting.getGreenText("\n\n\tSuccessful!\n\n");

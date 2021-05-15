@@ -7,7 +7,7 @@ import java.util.HashSet;
 
 public class CollectionManager implements CollectionManagerInterface {
 
-    private final HashSet<data.StudyGroup> studyGroups;
+    private HashSet<data.StudyGroup> studyGroups;
 
     private boolean exeDone;
 
@@ -45,6 +45,10 @@ public class CollectionManager implements CollectionManagerInterface {
      */
     public HashSet<StudyGroup> getCollection() {
         return studyGroups;
+    }
+
+    public void setCollection(HashSet<StudyGroup> newCollection) {
+        studyGroups = newCollection;
     }
 
     public void add(StudyGroup studyGroup) {
@@ -93,6 +97,10 @@ public class CollectionManager implements CollectionManagerInterface {
 
     public void clear(){
         getCollection().clear();
+    }
+
+    public String getPath(){
+        return System.getenv("FILE_PATH");
     }
 
 
