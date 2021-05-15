@@ -1,9 +1,6 @@
 package commands;
 
-import utility.CommandReader;
-import utility.Console;
-import utility.Invoker;
-import utility.TextFormatting;
+import utility.*;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -20,7 +17,6 @@ public class ExecuteScript extends CommandAbstract{
 
     @Override
     public String execute(String aArg){
-        System.out.println(aArg);
         if (aArg.equals("")) return TextFormatting.getRedText("\tYou should write script path!\n");
         else if (!(invoker.addScriptPath(aArg))) return TextFormatting.getRedText("\tRecursion has been found. " +
                 "Please correct your script!\n");
@@ -30,9 +26,8 @@ public class ExecuteScript extends CommandAbstract{
                 Scanner scriptScanner = new Scanner(new File(aArg));
                 Console console = new Console(scriptScanner);
                 CommandReader commandReader = new CommandReader(console, invoker);
-                while (scriptScanner.hasNextLine()) {
-                    commandReader.enable(true);
-                }
+                commandReader.enable(true);
+
             } catch (FileNotFoundException exception) {
                 return TextFormatting.getRedText("\tFile not found!\n");
             }

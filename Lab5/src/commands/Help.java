@@ -3,7 +3,7 @@ package commands;
 import utility.Invoker;
 import utility.TextFormatting;
 
-import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author dmittrey
@@ -16,9 +16,9 @@ public class Help extends CommandAbstract {
     /**
      * Map of all commands
      */
-    private final HashMap<String, CommandAbstract> commandsInfo;
+    private final Map<String, CommandAbstract> commandsInfo;
 
-    public Help(HashMap<String, CommandAbstract> aCommands) {
+    public Help(Map<String, CommandAbstract> aCommands) {
         super("help", "display help for available commands");
         commandsInfo = aCommands;
     }

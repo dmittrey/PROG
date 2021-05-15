@@ -1,7 +1,6 @@
 import data.*;
 import utility.*;
 
-import java.sql.Date;
 import java.util.Scanner;
 
 public class Main {
@@ -19,7 +18,7 @@ public class Main {
                 null, null, Semester.SECOND, new Person("awdawd", 344, Color.BLACK)));
         collectionManager.add(new StudyGroup(2324,"dfdf", new Coordinates(34,34), creationDate, 23,
                 null, null, Semester.SECOND, new Person("awdawd", 344, Color.BLACK)));
-        commandReader.enable(false); // Включаем ввод команд и передачу их на исполнение
+        commandReader.enable(false); // Включаемввод команд и передачу их на исполнение
     }
 }
 /**

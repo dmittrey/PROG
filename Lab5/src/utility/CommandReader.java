@@ -59,10 +59,10 @@ public class CommandReader {
 
             arg = matcher.find() ? matcher.group() : "";
 
-            if (printPermission) console.print(command+"!");
+            if (printPermission) console.print(TextFormatting.getGreenText(command));
 
             if (!command.equals("exit ")) invoker.execute(command.trim(), arg);
-            else break;
+            else System.exit(0);
         }
     }
 }

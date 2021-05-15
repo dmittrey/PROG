@@ -9,11 +9,11 @@ public class Invoker {
 
     private final Console console;
     private final CollectionManager collectionManager;
-    private final HashMap<String, CommandAbstract> commands;
+    private final Map<String, CommandAbstract> commands;
     private final ProtectFields protectFields;
     private final StudyGroupFactory studyGroupFactory;
-    private final Queue previousCommands;
-    private final HashSet<String> executedScripts;
+    private final Queue<String> previousCommands;
+    private final Set<String> executedScripts;
 
     public Invoker(Console aConsole, CollectionManager aCollectionManager, ProtectFields aProtectFields,
                    StudyGroupFactory aStudyGroupFactory) {
@@ -23,7 +23,7 @@ public class Invoker {
         collectionManager = aCollectionManager;
         commands = new HashMap<>();
         studyGroupFactory = aStudyGroupFactory;
-        previousCommands = new LinkedList<String>();
+        previousCommands = new LinkedList<>();
         executedScripts = new HashSet<>();
         initMap();
     }
