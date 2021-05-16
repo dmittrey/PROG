@@ -4,7 +4,7 @@ import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 /**
- * Отвечает за то, чтобы выводить объекты в консоль и считывать их, проверяяих на нулевое значение
+ * <code>Console</code> helps us to read and print information
  */
 public class Console {
     private final Scanner scanner;
@@ -13,22 +13,26 @@ public class Console {
         scanner = aScanner;
     }
 
+    /**
+     * Method print information in stdout
+     * @param anObj - information
+     */
     public void print(Object anObj) {
         System.out.print(anObj);
     }
 
-    public void println(Object anObj) {
-        System.out.println(anObj);
-    }
-
+    /**
+     * Method read information from stdin
+     * @return null or not empty string
+     */
     public String read() {
         String line;
 
         try {
             line = scanner.nextLine();
         } catch (NoSuchElementException e) {
-            // fixme Throw normal exception
-            throw new RuntimeException("Unexpected EOF");
+            print(TextFormatting.getRedText("\tUnexpected EOF!\n"));
+            return null;
         }
 
         if (line.trim().isEmpty()) {
@@ -36,11 +40,5 @@ public class Console {
         }
 
         return line.trim();
-    }
-
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        Console pekus = new Console(sc);
-        System.out.println(pekus.read());
     }
 }

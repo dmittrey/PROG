@@ -6,8 +6,6 @@ import utility.ProtectFields;
 import utility.StudyGroupFactory;
 import utility.TextFormatting;
 
-import java.util.HashSet;
-
 public class UpdateId extends CommandAbstract{
 
     private final StudyGroupFactory studyGroupFactory;

@@ -1,27 +1,18 @@
 package utility;
 
-import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * <code>commandReader</code> read and parse strings from input to commands and arguments
+ */
 public class CommandReader {
 
     private final Console console;
     private final Invoker invoker;
-    private Pattern commandName;
-    private Pattern argName;
+    private final Pattern commandName;
+    private final Pattern argName;
 
-    /**
-     * Конструктор предназначен для того, чтобы дать читателю команд поток ввода и инвокер,
-     * куда перенаправляются команды из потока ввода.
-     * @param aConsole - поток ввода
-     *
-     * @param aInvoker - Класс, который служит для указания исполняемой команды и ведёт статистику исполняемых команд
-     */
-
-    /**
-     * Продумать момент как через инвокер отключить CommandReader
-     */
 
     public CommandReader(Console aConsole, Invoker aInvoker) {
         console = aConsole;
@@ -33,7 +24,13 @@ public class CommandReader {
         argName = Pattern.compile("^.+");
     }
 
-    public void enable(boolean printPermission) throws IOException {
+    /**
+     * <code>enable</code> - method to enable line entry
+     * @param printPermission - variable to access print commands after enjoy line.
+     *
+     * if command includes letter only we explain invoker and give him command and argument
+     */
+    public void enable(boolean printPermission) {
 
         String nextLine;
         String exitSave = "";
@@ -51,7 +48,7 @@ public class CommandReader {
             if (matcher.find()) {
                 command = matcher.group();
             } else {
-                System.out.println(TextFormatting.getRedText("Command is incorrect. Please, try again!"));
+                console.print(TextFormatting.getRedText("\tCommand is incorrect. Please, try again!\n"));
                 continue;
             }
 

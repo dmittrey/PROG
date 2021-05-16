@@ -3,24 +3,23 @@ package data;
 import utility.TextFormatting;
 
 public class StudyGroup implements Comparable<StudyGroup> {
-    private int id; //Поле не может быть null, Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
-    private String name; //Поле не может быть null, Строка не может быть пустой
-    private Coordinates coordinates; //Поле не может быть null
-    private String creationDate; //Поле не может быть null, Значение этого поля должно генерироваться автоматически
-    private int studentsCount; //Значение поля должно быть больше 0, Поле не может быть null
-    private Double averageMark; //Значение поля должно быть больше 0, Поле может быть null
-    private FormOfEducation formOfEducation; //Поле может быть null
-    private Semester semesterEnum; //Поле не может быть null
-    private Person groupAdmin; //Поле не может быть null
-    private static final String XML = "<StudyGroup>...</StudGroup>";
+    private int id;
+    private final String name;
+    private final Coordinates coordinates;
+    private final String creationDate;
+    private final int studentsCount;
+    private final Double averageMark;
+    private final FormOfEducation formOfEducation;
+    private final Semester semesterEnum;
+    private final Person groupAdmin;
 
     public StudyGroup(int aId, String aName, Coordinates aCoordinates, String aCreationDate, int aStudentsCount,
                       Double aAverageMark, FormOfEducation aFormOfEducation, Semester aSemesterEnum, Person aGroupAdmin) {
-        id = aId;//
-        name = aName;//
-        coordinates = aCoordinates;//
-        creationDate = aCreationDate;//
-        studentsCount = aStudentsCount;//
+        id = aId;
+        name = aName;
+        coordinates = aCoordinates;
+        creationDate = aCreationDate;
+        studentsCount = aStudentsCount;
         averageMark = aAverageMark;
         formOfEducation = aFormOfEducation;
         semesterEnum = aSemesterEnum;
@@ -79,20 +78,17 @@ public class StudyGroup implements Comparable<StudyGroup> {
         return 0;
     }
 
-
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
 
-        sb.append("\n").append(TextFormatting.getBlueText(name)).append(":").append("\n");
-        sb.append("Id").append("\t\t\t\t\t:\t").append(id).append("\n");
-        sb.append("Coordinates").append("\t\t\t:\t").append(coordinates).append("\n");
-        sb.append("Creation date").append("\t\t:\t").append(creationDate).append("\n");
-        sb.append("Students count").append("\t\t:\t").append(studentsCount).append("\n");
-        sb.append("Average mark").append("\t\t:\t").append(averageMark).append("\n");
-        sb.append("Form of education").append("\t:\t").append(formOfEducation).append("\n");
-        sb.append("Semester enum").append("\t\t:\t").append(semesterEnum).append("\n");
-        sb.append("Group admin").append("\t\t\t:\t").append(groupAdmin).append("\n");
-        return sb.toString();
+        return "\n" + TextFormatting.getBlueText(name) + ":" + "\n" +
+                "Id" + "\t\t\t\t\t:\t" + id + "\n" +
+                "Coordinates" + "\t\t\t:\t" + coordinates + "\n" +
+                "Creation date" + "\t\t:\t" + creationDate + "\n" +
+                "Students count" + "\t\t:\t" + studentsCount + "\n" +
+                "Average mark" + "\t\t:\t" + averageMark + "\n" +
+                "Form of education" + "\t:\t" + formOfEducation + "\n" +
+                "Semester enum" + "\t\t:\t" + semesterEnum + "\n" +
+                "Group admin" + "\t\t\t:\t" + groupAdmin + "\n";
     }
 }

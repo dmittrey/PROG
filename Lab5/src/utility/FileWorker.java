@@ -1,28 +1,29 @@
 package utility;
 
 import data.*;
-
 import org.w3c.dom.Document;
-import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.FactoryConfigurationError;
-import javax.xml.parsers.ParserConfigurationException;
 
 import java.io.*;
 
-import java.util.Date;
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Scanner;
+
+
+import javax.xml.bind.*;
+import javax.xml.namespace.QName;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.stream.Location;
+import javax.xml.stream.XMLEventReader;
+import javax.xml.stream.XMLInputFactory;
+import javax.xml.stream.XMLStreamException;
+import javax.xml.stream.events.StartElement;
+import javax.xml.stream.events.XMLEvent;
 
 
 /**
- * This class is used to operate with files
+ * <code>FileWorker</code> is used to operate with file
  */
 public class FileWorker {
     private final CollectionManager collectionManager;
@@ -36,211 +37,137 @@ public class FileWorker {
 
     /**
      * Read collection from indicated file
-     *
-     * @return collection from indicated file
-     * @throws IllegalArgumentException     if some methods have incorrect argument
-     * @throws NullPointerException         if some of the fields is null
-     * @throws IOException                  if can't read collection from file
-     * @throws SAXException                 if can't match XML format in file
-     * @throws ParserConfigurationException if document builder can't be created
+     * Поехали писать парсер
      */
-    public HashSet<StudyGroup> parse() throws IllegalArgumentException, NullPointerException, IOException, SAXException, ParserConfigurationException {
-        HashSet<StudyGroup> collectionFromFile = new HashSet<>();
-        Integer id = null;
-        String name = null;
-        int x = 0;
-        Double y = null;
-        String creationDate = null;
-        Integer studentsCount = null;
-        Double averageMark = null;
-        FormOfEducation formOfEducation = null;
-        Semester semesterEnum = null;
-        String adminName = null;
-        Long adminWeight = null;
-        Color adminHairColor = null;
+    public HashSet<StudyGroup> readCollection() {
+
+        String filePath = System.getenv("FILE_PATH");
+
+        if (filePath == null) {
+            console.print(TextFormatting.getRedText("\tProgram can't find xml file!\n"));
+
+}
+
         try {
-            File input = new File("C:\\Users\\zubah\\IdeaProjects\\PROG\\Lab5\\src\\test.xml");
-            Scanner scanner = new Scanner(input);
-            StringBuilder file = new StringBuilder();
-            HashMap<Long, String> incorrectNames = new HashMap<>();
-            long studyGroupsNumberForNames = 1;
-            while (scanner.hasNextLine()) {
-                String line = scanner.nextLine();
-                if (line.contains("<studyGroup>")) {
-                    studyGroupsNumberForNames += 1;
-                }
-                if (line.contains("<name>")) {
-                    String helpLine = line;
-                    helpLine = helpLine.replace("<name>", "").replace("</name>", "");
-                    incorrectNames.put(studyGroupsNumberForNames, helpLine);
-                    helpLine = helpLine.replace("<", "");
-                    file.append("<name>").append(helpLine).append("</name>");
-                } else {
-                    file.append(line);
-                }
-            }
-            scanner.close();
-            incorrectNames.replaceAll((aStudyGroupsNumberForNames, aHelpLine) -> aHelpLine.replace(" ", ""));
-            FileWriter fileWriter = new FileWriter(input);
-            fileWriter.write(file.toString());
-            fileWriter.close();
-            long studyGroupNumber = 1;
-            DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
-            DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
-            Document doc = documentBuilder.parse(input);
-            doc.getDocumentElement().normalize();
-            NodeList nList = doc.getElementsByTagName("studyGroup");
-
-            for (int iter = 0; iter < nList.getLength(); iter++) {
-                Node node = nList.item(iter);
-                if (node.getNodeType() == Node.ELEMENT_NODE) {
-                    Element element = (Element) node;
-
-                    try {
-                        id = Integer.parseInt(element.getElementsByTagName("id").item(0).getTextContent());
-                        if (id <= 0) throw new NumberFormatException();
-                    } catch (NumberFormatException exception) {
-                        console.print(TextFormatting.getRedText("Wrong id in study group " + studyGroupNumber + "!\n"));
-                        id = null;
-                    }
-
-                    name = element.getElementsByTagName("name").item(0).getTextContent();
-                    if (name == null || name.trim().isEmpty() ) {
-                        console.print(TextFormatting.getRedText("Wrong study group name in study group " + studyGroupNumber + "!\n"));
-                        name = null;
-                    }
-
-                    NodeList tempNodeListCoordinates = element.getElementsByTagName("coordinates");
-                    Element elementCoordinates = (Element) tempNodeListCoordinates.item(0);
-
-                    try {
-                        x = Integer.parseInt(elementCoordinates.getElementsByTagName("coordinateX").item(0).getTextContent());
-                    } catch (NumberFormatException exception) {
-                        console.print(TextFormatting.getRedText("Wrong coordinate x in study group " + studyGroupNumber + "!\n"));
-                    }
-
-                    try {
-                        y = Double.parseDouble(elementCoordinates.getElementsByTagName("coordinateY").item(0).getTextContent());
-                    } catch (NumberFormatException exception) {
-                        console.print(TextFormatting.getRedText("Wrong coordinate y in study group " + studyGroupNumber + "!\n"));
-                    }
-
-                    /**
-                     *
-                     */
-
-                    creationDate = element.getElementsByTagName("creationDate").item(0).getTextContent();
-                    //через регулярку проверить
-                    //fixme regex
-
-                    /**
-                     *
-                     */
-
-                    try {
-                        studentsCount = Integer.parseInt(element.getElementsByTagName("studentsCount").item(0).getTextContent());
-                        if (studentsCount <= 0) throw new NumberFormatException();
-
-                    } catch (NumberFormatException exception) {
-                        console.print(TextFormatting.getRedText("Wrong student's count in study group " + studyGroupNumber + "!\n"));
-                    }
-
-                    try {
-                        averageMark = Double.parseDouble(element.getElementsByTagName("averageMark").item(0).getTextContent());
-                        if (averageMark <= 0) throw new NumberFormatException();
-
-                    } catch (NumberFormatException exception) {
-                        console.print(TextFormatting.getRedText("Wrong average mark in study group " + studyGroupNumber + "!\n"));
-                    } catch (NullPointerException ignored) { }
-
-                    try {
-                        formOfEducation = FormOfEducation.valueOf(element.getElementsByTagName("averageMark").item(0).getTextContent());
-
-                    } catch (IllegalArgumentException exception) {
-                        console.print(TextFormatting.getRedText("Wrong form of education in study group " + studyGroupNumber + "!\n"));
-                    } catch (NullPointerException ignored) { }
-
-                    try {
-                        semesterEnum = Semester.valueOf(element.getElementsByTagName("averageMark").item(0).getTextContent());
-
-                    } catch (IllegalArgumentException | NullPointerException exception) {
-                        console.print(TextFormatting.getRedText("Wrong semester in study group " + studyGroupNumber + "!\n"));
-                    }
-
-                    NodeList tempNodeListPerson = element.getElementsByTagName("groupAdmin");
-                    Element elementPerson = (Element) tempNodeListPerson.item(0);
-
-                    try {
-                        adminName = elementPerson.getElementsByTagName("name").item(0).getTextContent();
-                        if (adminName.trim().isEmpty()) throw new IllegalArgumentException();
-                    } catch (IllegalArgumentException exception) {
-                        console.print(TextFormatting.getRedText("Wrong admin name in study group " + studyGroupNumber + "!\n"));
-                    }
-
-                    try {
-                        adminWeight = Long.parseLong(elementPerson.getElementsByTagName("weight").item(0).getTextContent());
-                        if (adminWeight <= 0) {
-                            throw new NumberFormatException();
+            DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+            Document document = builder.parse(new File(filePath));
+            Node root = document.getDocumentElement();
+            NodeList studyGroups = root.getChildNodes();
+            clearFields();
+            for (int i = 0; i < studyGroups.getLength(); i++) {
+                boolean checkFields = true;
+                String FieldName;
+                String FieldValue;
+                String ClassName;
+                if (studyGroups.item(i).getNodeType() != Node.TEXT_NODE && studyGroups.item(i).getChildNodes().getLength() > 1) {
+                    String studyGroupInformation = studyGroups.item(i).getNodeName();
+                    NodeList studyGroup = studyGroups.item(i).getChildNodes();
+                    checkHeadSize = false;
+                    checkEyesNumber = false;
+                    for (int j = 0; j < studyGroup.getLength() && checkFields; j++) {
+                        if (studyGroup.item(j).getNodeType() != Node.TEXT_NODE && studyGroup.item(j).getChildNodes().getLength() == 1) {
+                            FieldName = studyGroup.item(j).getNodeName();
+                            FieldValue = studyGroup.item(j).getChildNodes().item(0).getTextContent().replace("\n", "").trim();
+                            checkFields = checkFields(FieldName, FieldValue, "a");
+                        } else if (dragon.item(j).getNodeType() != Node.TEXT_NODE && dragon.item(j).getChildNodes().getLength() > 1) {
+                            NodeList dragon1 = dragon.item(j).getChildNodes();
+                            ClassName = dragon.item(j).getNodeName();
+                            for (int k = 0; k < dragon1.getLength() && checkFields; k++) {
+                                if (dragon1.item(k).getNodeType() != Node.TEXT_NODE && dragon1.item(k).getChildNodes().getLength() == 1) {
+                                    FieldName = dragon1.item(k).getNodeName();
+                                    FieldValue = dragon1.item(k).getChildNodes().item(0).getTextContent().replace("\n", "").trim();
+                                    checkFields = checkFields(ClassName, FieldName, FieldValue);
+                                }
+                            }
                         }
-                    } catch (NumberFormatException exception) {
-                        System.out.println("Wrong admin weight in study group " + studyGroupNumber + "!\n");
-                        adminWeight = null;
-                    }
-
-                    try {
-                        adminHairColor = Color.valueOf(elementPerson.getElementsByTagName("weight").item(0).getTextContent());
-
-                    } catch (NullPointerException | IllegalArgumentException e) {
-                        System.out.println("Wrong admin hair color in study group " + studyGroupNumber + "!\n");
                     }
                 }
-
-                studyGroupNumber += 1;
-
-                if (id == null || name == null || y == null || creationDate == null || studentsCount == null ||
-                        semesterEnum == null || adminName == null || adminWeight == null || adminHairColor == null) {
-                    console.print(TextFormatting.getRedText("Worker can't be added. Some data is wrong!\n"));
+                if (dragons.item(i).getNodeType() != Node.TEXT_NODE) {
+                    if (checkFields && elementCreation()) {
+                        System.out.println("Элемент номер " + (i / 2 + 1) + " успешно добавлен в коллекцию");
+                    } else {
+                        System.out.println("Элемент номер " + (i / 2 + 1) + " не может быть добавлен в коллекцию");
+                    }
+                    clearFields();
                 }
             }
-            console.print(TextFormatting.getBlueText("Collection was loaded successfully!\n\n"));
-        } catch (FactoryConfigurationError | ParserConfigurationException | IOException | SAXException exception) {
-            System.out.println("Something goes wrong. Please correct file and try again. (" + exception.getMessage() + ")");
-        }
+        } catch (ParserConfigurationException e) {
+            System.out.println("Невозможно считать данные из-за ошибки конфигурации");
+        } catch (IOException ex) {
+            if (!file.exists()) {
+                System.out.println("Файл с таким именем не найден. Создайте файл и запустите программу снова.");
+                System.exit(0);
 
-        return collectionFromFile;
+            } else if (file.exists() && !file.canRead()) {
+                System.out.println("Нет прав для чтения файла. Добавьте необходимые права и запустите программу снова.");
+                System.exit(0);
+            }
+        } catch (SAXException ex) {
+            System.out.println("Невозможно считать данные, так как файл имеет неверную структуру");
+            System.exit(0);
+        }
+        return vector;
     }
 
-    public void getToXmlFormat() throws IOException {
-        File outFile = new File("C:\\Users\\zubah\\IdeaProjects\\PROG\\Lab5\\src\\test.xml");//fixme добавить ссылку на переменную окружения
-        OutputStream outputStream = new FileOutputStream(outFile);
-        OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream);
-        outputStreamWriter.write("<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n");
-        outputStreamWriter.write("<collection>\n");
-        for (StudyGroup studyGroup : collectionManager.getCollection()) {
-            outputStreamWriter.write("<studyGroup>\n");
-            outputStreamWriter.write("<id>" + studyGroup.getId() + "</id>\n");
-            outputStreamWriter.write("<name>" + studyGroup.getName() + "</name>\n");
-            outputStreamWriter.write("<coordinates>\n");
-            outputStreamWriter.write("<coordinateX>" + studyGroup.getCoordinates().getX() + "</coordinateX>\n");
-            outputStreamWriter.write("<coordinateY>" + studyGroup.getCoordinates().getY() + "</coordinateY>\n");
-            outputStreamWriter.write("</coordinates>\n");
-            outputStreamWriter.write("<creationDate>" + studyGroup.getCreationDate() + "</creationDate>\n");
-            outputStreamWriter.write("<studentsCount>" + studyGroup.getStudentsCount() + "</studentsCount>\n");
-            outputStreamWriter.write("<averageMark>" + studyGroup.getAverageMark() + "</averageMark>\n");
-            outputStreamWriter.write("<formOfEducation>" + studyGroup.getFormOfEducation() + "</formOfEducation>\n");
-            outputStreamWriter.write("<semesterEnum>" + studyGroup.getSemesterEnum() + "</semesterEnum>\n");
-            outputStreamWriter.write("<groupAdmin>\n");
-            outputStreamWriter.write("<name>" + studyGroup.getGroupAdmin().getName() + "</name>\n");
-            outputStreamWriter.write("<weight>" + studyGroup.getGroupAdmin().getWeight() + "</weight>\n");
-            outputStreamWriter.write("<hairColor>" + studyGroup.getGroupAdmin().getHairColor() + "</hairColor>\n");
-            outputStreamWriter.write("</groupAdmin>\n");
-            outputStreamWriter.write("</studyGroup>\n");
-        }
-        outputStreamWriter.write("</collection>");
-        outputStreamWriter.close();
+    public void clearFields() {
+        name = null;
+        age = 0;
+        color = null;
+        type = null;
+        character = null;
+        x = null;
+        y = null;
+        call = null;
+        size = null;
+        eyesCount = null;
+        id = null;
+        creationDate = null;
     }
 
-    public static void main(String[] args) {
 
+    /**
+     * Method print collection in xml file
+     * @return status message
+     */
+    public String getToXmlFormat() {
+        String filePath = System.getenv("FILE_PATH");
+
+        if (filePath == null) return TextFormatting.getRedText("\tProgram can't find xml file!\n");
+
+        try {
+            File outFile = new File(filePath);
+            OutputStream outputStream = new FileOutputStream(outFile);
+            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream);
+            outputStreamWriter.write("<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n");
+            outputStreamWriter.write("<collection>\n");
+
+            for (StudyGroup studyGroup : collectionManager.getCollection()) {
+                outputStreamWriter.write("<studyGroup>\n");
+                outputStreamWriter.write("<id>" + studyGroup.getId() + "</id>\n");
+                outputStreamWriter.write("<name>" + studyGroup.getName() + "</name>\n");
+                outputStreamWriter.write("<coordinates>\n");
+                outputStreamWriter.write("<coordinateX>" + studyGroup.getCoordinates().getX() + "</coordinateX>\n");
+                outputStreamWriter.write("<coordinateY>" + studyGroup.getCoordinates().getY() + "</coordinateY>\n");
+                outputStreamWriter.write("</coordinates>\n");
+                outputStreamWriter.write("<creationDate>" + studyGroup.getCreationDate() + "</creationDate>\n");
+                outputStreamWriter.write("<studentsCount>" + studyGroup.getStudentsCount() + "</studentsCount>\n");
+                outputStreamWriter.write("<averageMark>" + studyGroup.getAverageMark() + "</averageMark>\n");
+                outputStreamWriter.write("<formOfEducation>" + studyGroup.getFormOfEducation() + "</formOfEducation>\n");
+                outputStreamWriter.write("<semesterEnum>" + studyGroup.getSemesterEnum() + "</semesterEnum>\n");
+                outputStreamWriter.write("<groupAdmin>\n");
+                outputStreamWriter.write("<name>" + studyGroup.getGroupAdmin().getName() + "</name>\n");
+                outputStreamWriter.write("<weight>" + studyGroup.getGroupAdmin().getWeight() + "</weight>\n");
+                outputStreamWriter.write("<hairColor>" + studyGroup.getGroupAdmin().getHairColor() + "</hairColor>\n");
+                outputStreamWriter.write("</groupAdmin>\n");
+                outputStreamWriter.write("</studyGroup>\n");
+            }
+            outputStreamWriter.write("</collection>");
+            outputStreamWriter.close();
+        } catch (FileNotFoundException e) {
+            return TextFormatting.getRedText("\tChange the file path in the environment variable!\n");
+        } catch (IOException e) {
+            return TextFormatting.getRedText("\tWe have unexpected problems!\n");
+        }
+        return TextFormatting.getGreenText("Collection recorded successfully");
     }
 }
