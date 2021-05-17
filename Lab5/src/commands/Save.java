@@ -21,7 +21,6 @@ public class Save extends CommandAbstract {
 
     @Override
     public String execute(String aArg) {
-        fileWorker.getToXmlFormat();
-        return TextFormatting.getGreenText("\tSuccessful\n");
+        return fileWorker.saveToXml();
     }
 }

@@ -1,12 +1,16 @@
 package data;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+
 /**
  * Class for study group admin
  */
+@XmlType(propOrder = {"name", "weight", "hairColor"})
 public class Person {
-    private final String name;
-    private final long weight;
-    private final Color hairColor;
+    private String name;
+    private long weight;
+    private Color hairColor;
 
     /**
      * Class constructor
@@ -17,6 +21,21 @@ public class Person {
     public Person(String aName, long aWeight, Color aHairColor) {
         name = aName;
         weight = aWeight;
+        hairColor = aHairColor;
+    }
+
+    @XmlElement
+    public void setName(String aName){
+        name = aName;
+    }
+
+    @XmlElement
+    public void setWeight(long aWeight){
+        weight = aWeight;
+    }
+
+    @XmlElement
+    public void setHairColor(Color aHairColor){
         hairColor = aHairColor;
     }
 

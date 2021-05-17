@@ -11,7 +11,7 @@ public interface FileWorkerInterface {
      *
      * @see commands.Save#execute
      */
-    String getToXmlFormat();
+    String saveToXml();
 
     /**
      * Read objects from xml file and add objects to collection(file path should be in environment variable "FILE_PATH")

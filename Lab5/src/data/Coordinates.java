@@ -1,11 +1,13 @@
 package data;
 
+import javax.xml.bind.annotation.XmlElement;
+
 /**
  * Class for study group coordinates
  */
 public class Coordinates {
-    private final int x;
-    private final double y;
+    private int x;
+    private double y;
 
     /**
      * Class constructor
@@ -15,6 +17,16 @@ public class Coordinates {
      */
     public Coordinates(int aX, double aY) {
         x = aX;
+        y = aY;
+    }
+
+    @XmlElement(name = "CoordinateX")
+    public void setX(int aX){
+        x = aX;
+    }
+
+    @XmlElement (name = "CoordinateY")
+    public void setY(double aY) {
         y = aY;
     }
 

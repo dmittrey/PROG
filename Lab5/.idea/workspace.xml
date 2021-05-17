@@ -6,12 +6,18 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1461d5a-1468-409c-901e-7897f657ae79" name="Default Changelist" comment="Refactor">
+    <list default="true" id="a1461d5a-1468-409c-901e-7897f657ae79" name="Default Changelist" comment="XML parser">
       <change afterPath="$PROJECT_DIR$/../.idea/PROG.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Lab4Dop/Lab4Dop.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/Save.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/Save.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/Coordinates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Coordinates.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Person.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/StudyGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/StudyGroup.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utility/FileWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/FileWorker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utility/Interfaces/FileWorkerInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Interfaces/FileWorkerInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utility/StudyGroupFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/StudyGroupFactory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +118,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="Application.StudyGroup">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Clear" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="commands.Clear" />
       <module name="Lab5" />
@@ -175,24 +181,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.StudyGroup" />
         <item itemvalue="Application.JavaWriteXmlJaxbEx" />
-        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Clear" />
         <item itemvalue="Application.CommandReader" />
       </list>
@@ -226,7 +230,8 @@
       <workItem from="1620920199921" duration="5323000" />
       <workItem from="1620930338288" duration="52951000" />
       <workItem from="1621100221028" duration="10030000" />
-      <workItem from="1621168461808" duration="28492000" />
+      <workItem from="1621168461808" duration="28881000" />
+      <workItem from="1621249472298" duration="4551000" />
     </task>
     <task id="LOCAL-00001" summary="Описали класс, объекты которого будут лежать в коллекции">
       <created>1619919496190</created>
@@ -438,7 +443,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621216559502</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="XML parser">
+      <created>1621219831811</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1621219831811</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -457,7 +469,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Добавлены конструктор и геттеры" />
     <MESSAGE value="Добавил метод getValue" />
     <MESSAGE value="Начал прописывать менеджер коллекции" />
     <MESSAGE value="Прописал команды" />
@@ -482,7 +493,8 @@
     <MESSAGE value="file manager" />
     <MESSAGE value="Refactor and add Javadoc" />
     <MESSAGE value="Refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor" />
+    <MESSAGE value="XML parser" />
+    <option name="LAST_COMMIT_MESSAGE" value="XML parser" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

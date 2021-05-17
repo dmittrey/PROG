@@ -32,7 +32,7 @@ public class StudyGroupFactory implements StudyGroupFactoryInterface {
         Semester semester = protectFields.getSemester();
         Person groupAdmin = protectFields.getGroupAdmin();
 
-        return new StudyGroup(id, name, coordinates, creationDate, studentsCount, averageMark, formOfEducation,
+        return new StudyGroup(id, name, coordinates, creationDate.toString(), studentsCount, averageMark, formOfEducation,
                 semester, groupAdmin);
 
     }
