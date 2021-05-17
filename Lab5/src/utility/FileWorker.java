@@ -1,5 +1,6 @@
 package utility;
 
+import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
 import data.*;
 
 import utility.Interfaces.FileWorkerInterface;
@@ -27,12 +28,30 @@ public class FileWorker implements FileWorkerInterface {
      */
     public HashSet<StudyGroup> getFromXmlFormat() {
 
-        String filePath = System.getenv("FILE_PATH");
-
-        if (filePath == null) {
-            console.print(TextFormatting.getRedText("\tProgram can't find xml file!\n"));
-
-        }
+//        String filePath = System.getenv("FILE_PATH");
+//
+//        if (filePath == null) {
+//            console.print(TextFormatting.getRedText("\tProgram can't find xml file!\n"));
+//            return new HashSet<>();
+//        } else {
+//            try {
+//                BufferedReader bufferedReader = new BufferedReader(new FileReader(filePath));
+//
+//                for ( ; ; ) {
+//                    try {
+//                        String newLine = bufferedReader.readLine();
+//                        if
+//                    }
+//                }
+//            } catch (FileNotFoundException exception) {
+//                console.print(TextFormatting.getRedText("\tXml file not found!\n"));
+//                return new HashSet<>();
+//            } catch (IOException exception2) {
+//                console.print(TextFormatting.getRedText("\tWe have unexpected problems!\n"));
+//                return new HashSet<>();
+//            }
+//
+//        }
 
         return new HashSet<>();
     }

@@ -2,21 +2,32 @@ package data;
 
 import utility.TextFormatting;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.Date;
+
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Unmarshaller;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * Class to study group
  */
+@XmlRootElement
 public class StudyGroup implements Comparable<StudyGroup> {
+
     private int id;
-    private final String name;
-    private final Coordinates coordinates;
-    private final Date creationDate;
-    private final int studentsCount;
-    private final Double averageMark;
-    private final FormOfEducation formOfEducation;
-    private final Semester semesterEnum;
-    private final Person groupAdmin;
+    private String name;
+    private Coordinates coordinates;
+    private Date creationDate;
+    private int studentsCount;
+    private Double averageMark;
+    private FormOfEducation formOfEducation;
+    private Semester semesterEnum;
+    private Person groupAdmin;
 
     /**
      * Class construct
@@ -45,9 +56,7 @@ public class StudyGroup implements Comparable<StudyGroup> {
         groupAdmin = aGroupAdmin;
     }
 
-    public void setId(int anId) {
-        id = anId;
-    }
+    public StudyGroup(){ }
 
     public int getId() {
         return id;
@@ -85,6 +94,53 @@ public class StudyGroup implements Comparable<StudyGroup> {
         return groupAdmin;
     }
 
+    @XmlAttribute
+    public void setId(int anId) {
+        id = anId;
+    }
+
+    @XmlElement
+    public void setName(String aName){
+        name = aName;
+    }
+
+    @XmlElement
+    public void setCoordinates(Coordinates aCoordinates){
+        coordinates = aCoordinates;
+    }
+
+    @XmlElement
+    public void setCreationDate(Date aCreationDate) {
+        creationDate = aCreationDate;
+    }
+
+    @XmlElement
+    public void setStudentsCount(int aStudentsCount) {
+        studentsCount = aStudentsCount;
+    }
+
+    @XmlElement
+    public void setAverageMark(Double anAverageMark) {
+        averageMark = anAverageMark;
+    }
+
+    @XmlElement
+    public void setFormOfEducation(FormOfEducation aFormOfEducation) {
+        formOfEducation = aFormOfEducation;
+    }
+
+    @XmlElement
+    public void setSemesterEnum(Semester aSemesterEnum) {
+        semesterEnum = aSemesterEnum;
+    }
+
+    @XmlElement
+    public void setGroupAdmin(Person aGroupAdmin) {
+        groupAdmin = aGroupAdmin;
+    }
+
+
+
     /**
      * Method to compare two study groups by field(student's count)
      *
@@ -115,5 +171,17 @@ public class StudyGroup implements Comparable<StudyGroup> {
                 "Form of education" + "\t:\t" + formOfEducation + "\n" +
                 "Semester enum" + "\t\t:\t" + semesterEnum + "\n" +
                 "Group admin" + "\t\t\t:\t" + groupAdmin + "\n";
+    }
+
+    public static void main(String[] args) {
+        JAXBContext jaxbContext = null;
+        try {
+            String filePath = "C:\\Users\\zubah\\IdeaProjects\\PROG\\Lab5\\src\\test.xml";
+            jaxbContext = JAXBContext.newInstance(StudyGroup.class);
+            Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+            StudyGroup studyGroup = (StudyGroup) jaxbUnmarshaller.unmarshal(new FileReader(filePath));
+        } catch (JAXBException | FileNotFoundException e) {
+            System.out.println(TextFormatting.getRedText("\tWe have some problems!\n"));
+        }
     }
 }
