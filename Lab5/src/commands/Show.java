@@ -13,8 +13,6 @@ public class Show extends CommandAbstract {
 
     private final CollectionManager collectionManager;
 
-    private final HashSet<StudyGroup> studyGroupsCopy;
-
     /**
      * Class constructor
      *
@@ -23,7 +21,6 @@ public class Show extends CommandAbstract {
     public Show(CollectionManager aCollectionManager) {
         super("show", "print all elements in string representation to standard output");
         collectionManager = aCollectionManager;
-        studyGroupsCopy = (HashSet<StudyGroup>) collectionManager.getCollection().clone();
     }
 
     @Override
@@ -32,12 +29,10 @@ public class Show extends CommandAbstract {
             if (collectionManager.getCollection().size() == 0)
                 return TextFormatting.getRedText("\tCollection is empty!\n");
             StringBuilder sb = new StringBuilder();
-            for (int i = 0; i < collectionManager.getCollection().size(); i++) {
-                sb.append(collectionManager.getMax());
-                collectionManager.remove(collectionManager.getMax());
+            for (StudyGroup studyGroup: collectionManager.getCollection()) {
+                sb.append(studyGroup);
                 sb.append("------\n");
             }
-            collectionManager.setCollection(studyGroupsCopy);
             return sb.toString();
         } else {
             return TextFormatting.getRedText("\tArguments entered incorrectly\n");

@@ -19,7 +19,8 @@ public class ExecuteScript extends CommandAbstract {
      * @param aInvoker - Proxy class for call command's classes
      */
     public ExecuteScript(Invoker aInvoker) {
-        super("execute_script", "Read and execute script from entered file");
+        super("execute_script", "Read and execute script from entered file" +
+                TextFormatting.getBlueText("\n\tYou should to enter script name after entering a command"));
         invoker = aInvoker;
     }
 

@@ -24,7 +24,8 @@ public class CountLessThanStudentsCount extends CommandAbstract {
      */
     public CountLessThanStudentsCount(CollectionManager aCollectionManager, ProtectFields aProtectFields) {
         super("count_less_than_students_count", "print the number of elements whose "
-                + "studentsCount field value is less than the specified one.");
+                + "studentsCount field value is less than the specified one" +
+                TextFormatting.getBlueText("\n\tYou should to enter students count after entering a command"));
         collectionManager = aCollectionManager;
         protectFields = aProtectFields;
     }

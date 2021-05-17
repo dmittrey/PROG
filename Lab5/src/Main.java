@@ -19,16 +19,14 @@ public class Main {
         Date creationDate = new Date();
         collectionManager.add(new StudyGroup(2323,"dfddwadf", new Coordinates(34,34), creationDate, 23,
                 null, null, Semester.SECOND, new Person("awdawd", 344, Color.BLACK)));
-        collectionManager.add(new StudyGroup(2324,"dfdf", new Coordinates(34,34), creationDate, 23,
+        collectionManager.add(new StudyGroup(2324,"dfdf", new Coordinates(34,34), creationDate, 236,
                 null, null, Semester.SECOND, new Person("awdawd", 344, Color.BLACK)));
         commandReader.enable(false); // Включаемввод команд и передачу их на исполнение
     }
 }
 
 /**
- * Осталось реализовать парсер файла
- *
- * Подумать над строкой которая должна быть Date!!!
+ * Осталось реализовать парсер файла(ааааааааааааааааааааааааааааааааааааааааааа)
  *
  * потыкать на хелиос
  */

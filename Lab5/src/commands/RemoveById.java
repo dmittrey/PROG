@@ -22,7 +22,7 @@ public class RemoveById extends CommandAbstract {
     public RemoveById(CollectionManager aCollectionManager,
                       ProtectFields aProtectFields) {
         super("remove_by_id", "remove an element from the collection by ID." +
-                TextFormatting.getBlueText("You should to enter ID after entering a command"));
+                TextFormatting.getBlueText("\n\tYou should to enter ID after entering a command"));
         collectionManager = aCollectionManager;
         protectFields = aProtectFields;
     }
