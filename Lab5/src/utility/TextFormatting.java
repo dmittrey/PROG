@@ -15,5 +15,7 @@ public class TextFormatting {
         return ANSI_GREEN + text + ANSI_RESET;
     }
 
-    public static String getBlueText(String text) { return ANSI_BLUE + text + ANSI_RESET; };
+    public static String getBlueText(String text) {
+        return ANSI_BLUE + text + ANSI_RESET;
+    }
 }

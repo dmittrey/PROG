@@ -3,10 +3,19 @@ package commands;
 import utility.CollectionManager;
 import utility.TextFormatting;
 
+/**
+ * Class print object form collection
+ */
 public class MinByStudentsCount extends CommandAbstract {
 
     CollectionManager collectionManager;
-    public MinByStudentsCount(CollectionManager aCollectionManager){
+
+    /**
+     * Class constructor
+     *
+     * @param aCollectionManager - Class to work with collection
+     */
+    public MinByStudentsCount(CollectionManager aCollectionManager) {
         super("min_by_students_count", "print any object from the collection whose " +
                 "studentsCount field value is minimal");
         collectionManager = aCollectionManager;

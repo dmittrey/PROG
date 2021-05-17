@@ -2,18 +2,37 @@ package data;
 
 import utility.TextFormatting;
 
+import java.util.Date;
+
+/**
+ * Class to study group
+ */
 public class StudyGroup implements Comparable<StudyGroup> {
     private int id;
     private final String name;
     private final Coordinates coordinates;
-    private final String creationDate;
+    private final Date creationDate;
     private final int studentsCount;
     private final Double averageMark;
     private final FormOfEducation formOfEducation;
     private final Semester semesterEnum;
     private final Person groupAdmin;
 
-    public StudyGroup(int aId, String aName, Coordinates aCoordinates, String aCreationDate, int aStudentsCount,
+    /**
+     * Class construct
+     *
+     * @param aId              - group id
+     * @param aName            - group name
+     * @param aCoordinates     - group coordinates
+     * @param aCreationDate    - group creation date
+     * @param aStudentsCount   - group student's count
+     * @param aAverageMark     - group average mark
+     * @param aFormOfEducation - group form of education
+     * @param aSemesterEnum    - group semester of education
+     * @param aGroupAdmin      - group admin
+     * @see Person
+     */
+    public StudyGroup(int aId, String aName, Coordinates aCoordinates, Date aCreationDate, int aStudentsCount,
                       Double aAverageMark, FormOfEducation aFormOfEducation, Semester aSemesterEnum, Person aGroupAdmin) {
         id = aId;
         name = aName;
@@ -26,7 +45,7 @@ public class StudyGroup implements Comparable<StudyGroup> {
         groupAdmin = aGroupAdmin;
     }
 
-    public void setId(int anId){
+    public void setId(int anId) {
         id = anId;
     }
 
@@ -42,7 +61,7 @@ public class StudyGroup implements Comparable<StudyGroup> {
         return coordinates;
     }
 
-    public String getCreationDate() {
+    public Date getCreationDate() {
         return creationDate;
     }
 
@@ -66,13 +85,20 @@ public class StudyGroup implements Comparable<StudyGroup> {
         return groupAdmin;
     }
 
+    /**
+     * Method to compare two study groups by field(student's count)
+     *
+     * @param aStudyGroup - study group
+     * @return "-1" - if study group in implicit parameter have more students
+     *          "0" - if study groups have same students
+     *          "1" - if study group in implicit parameter have less students
+     */
     @Override
     public int compareTo(StudyGroup aStudyGroup) {
 
         if (this.getStudentsCount() < aStudyGroup.getStudentsCount()) {
             return 1;
-        }
-        else if (this.getStudentsCount() > aStudyGroup.getStudentsCount()) {
+        } else if (this.getStudentsCount() > aStudyGroup.getStudentsCount()) {
             return -1;
         }
         return 0;
@@ -80,7 +106,6 @@ public class StudyGroup implements Comparable<StudyGroup> {
 
     @Override
     public String toString() {
-
         return "\n" + TextFormatting.getBlueText(name) + ":" + "\n" +
                 "Id" + "\t\t\t\t\t:\t" + id + "\n" +
                 "Coordinates" + "\t\t\t:\t" + coordinates + "\n" +

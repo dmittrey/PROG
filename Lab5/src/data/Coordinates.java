@@ -1,9 +1,18 @@
 package data;
 
+/**
+ * Class for study group coordinates
+ */
 public class Coordinates {
     private final int x;
     private final double y;
 
+    /**
+     * Class constructor
+     *
+     * @param aX - first coordinate
+     * @param aY - second coordinate
+     */
     public Coordinates(int aX, double aY) {
         x = aX;
         y = aY;
@@ -18,7 +27,7 @@ public class Coordinates {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return getX() + ", " + getY();
     }
 }

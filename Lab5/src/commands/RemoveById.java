@@ -5,13 +5,22 @@ import utility.CollectionManager;
 import utility.ProtectFields;
 import utility.TextFormatting;
 
-public class RemoveById extends CommandAbstract{
+/**
+ * Class that remove object with current id from collection
+ */
+public class RemoveById extends CommandAbstract {
 
     private final CollectionManager collectionManager;
     private final ProtectFields protectFields;
 
+    /**
+     * Class constructor
+     *
+     * @param aCollectionManager - Class to work with collection
+     * @param aProtectFields     - Class to read fields and create new study groups
+     */
     public RemoveById(CollectionManager aCollectionManager,
-                      ProtectFields aProtectFields){
+                      ProtectFields aProtectFields) {
         super("remove_by_id", "remove an element from the collection by ID." +
                 TextFormatting.getBlueText("You should to enter ID after entering a command"));
         collectionManager = aCollectionManager;
@@ -19,7 +28,7 @@ public class RemoveById extends CommandAbstract{
     }
 
     @Override
-    public String execute(String aArg){
+    public String execute(String aArg) {
         try {
             if (protectFields.isPositiveInt(aArg.trim())) {
                 StudyGroup studyGroup = collectionManager.getId(Integer.parseInt(aArg.trim()));
@@ -29,7 +38,8 @@ public class RemoveById extends CommandAbstract{
 
                 return TextFormatting.getGreenText("\n\tSuccessful\n\n");
             }
-        } catch (NullPointerException ignored) { }
+        } catch (NullPointerException ignored) {
+        }
         return TextFormatting.getRedText("\tId should be not null positive integer!\n");
     }
 }

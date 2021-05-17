@@ -1,23 +1,28 @@
 package commands;
 
-import java.io.IOException;
-
 /**
- * Абстрактный класс команды который хранит описание и имя команды
+ * Abstract class for commands with main methods
  */
-
 public abstract class CommandAbstract implements CommandInterface {
 
     private final String name;
     private final String description;
 
+    /**
+     * Class constructor
+     *
+     * @param aName        - Command's name
+     * @param aDescription - Command's description
+     */
     public CommandAbstract(String aName, String aDescription) {
         name = aName;
         description = aDescription;
     }
 
     /**
-     * @return Описание программы
+     * Method for print information about command
+     *
+     * @return String with command's name and description
      */
     @Override
     public String getDescription() {
@@ -34,7 +39,7 @@ public abstract class CommandAbstract implements CommandInterface {
                 return name + " : " + description;
             case "update":
                 return name + " id {element} : " + description;
-            case "add" :
+            case "add":
             case "add_if_max":
             case "add_if_min":
                 return name + " {element} : " + description;
@@ -50,5 +55,5 @@ public abstract class CommandAbstract implements CommandInterface {
     }
 
     @Override
-    public abstract String execute(String aArg) throws IOException;
+    public abstract String execute(String aArg);
 }

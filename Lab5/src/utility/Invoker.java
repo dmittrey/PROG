@@ -2,11 +2,11 @@ package utility;
 
 
 import commands.*;
+import utility.Interfaces.InvokerInterface;
 
-import java.io.IOException;
 import java.util.*;
 
-public class Invoker {
+public class Invoker implements InvokerInterface {
 
     private final Console console;
     private final CollectionManager collectionManager;
@@ -31,7 +31,7 @@ public class Invoker {
         initMap();
     }
 
-    private void initMap(){
+    private void initMap() {
         commands.put("help", new Help(commands));
         commands.put("info", new Info(collectionManager));
         commands.put("show", new Show(collectionManager));
@@ -43,32 +43,30 @@ public class Invoker {
         commands.put("execute_script", new ExecuteScript(this));
         commands.put("add_if_max", new AddIfMax(studyGroupFactory, collectionManager));
         commands.put("add_if_min", new AddIfMin(studyGroupFactory, collectionManager));
-        commands.put("history", new History(previousCommands, console));
+        commands.put("history", new History(previousCommands));
         commands.put("min_by_students_count", new MinByStudentsCount(collectionManager));
         commands.put("count_less_than_students_count", new CountLessThanStudentsCount(collectionManager, protectFields));
         commands.put("filter_starts_with_name", new FilterStartsWithName(collectionManager));
     }
 
 
-    public void execute(String aCommand, String aArg) throws IOException {
+    public void execute(String aCommand, String aArg) {
 
-        if (commands.containsKey(aCommand)){
+        if (commands.containsKey(aCommand)) {
             if (previousCommands.size() > 13) previousCommands.remove();
             previousCommands.add(aCommand);
 
             console.print(commands.get(aCommand).execute(aArg));
         } else {
-            console.print(TextFormatting.getRedText("Command not found. Please, try again!\n"));
+            console.print(TextFormatting.getRedText("\tCommand not found. Please, try again!\n"));
         }
     }
 
-    public boolean addScriptPath(String aPath){
-        return executedScripts.add(aPath);
+    public boolean addScriptPath(String anArg) {
+        return executedScripts.add(anArg);
     }
 
-    public void removeScriptPath(String aPath){
-        executedScripts.remove(aPath);
+    public void removeScriptPath(String anArg) {
+        executedScripts.remove(anArg);
     }
-
-
 }

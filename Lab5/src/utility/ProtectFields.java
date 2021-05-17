@@ -1,8 +1,9 @@
 package utility;
 
 import data.*;
+import utility.Interfaces.ProtectFieldsInterface;
 
-public class ProtectFields {
+public class ProtectFields implements ProtectFieldsInterface {
 
     private final Console console;
 
@@ -10,13 +11,15 @@ public class ProtectFields {
         console = aConsole;
     }
 
-    /** Method get group's name */
+    /**
+     * Method get group's name
+     */
     public String getName() {
         String line;
 
         console.print("\n-------------------\n" +
-                      "GROUP'S NAME\n" +
-                      "-------------------\n\n");
+                "GROUP'S NAME\n" +
+                "-------------------\n\n");
         console.print("Enter group name: ");
         line = console.read();
         while (line == null) {
@@ -27,7 +30,9 @@ public class ProtectFields {
         return line;
     }
 
-    /** Method get group coordinates */
+    /**
+     * Method get group coordinates
+     */
     public Coordinates getCoordinates() {
 
         String line;
@@ -81,7 +86,9 @@ public class ProtectFields {
         return true;
     }
 
-    /** Method get students count in group */
+    /**
+     * Method get students count in group
+     */
     public Integer getStudentsCount() {
         String line;
 
@@ -104,7 +111,9 @@ public class ProtectFields {
         return isInt(aStr.trim()) && Integer.parseInt(aStr.trim()) > 0;
     }
 
-    /** Method get average mark in group */
+    /**
+     * Method get average mark in group
+     */
     public Double getAverageMark() {
         String line;
 
@@ -133,7 +142,9 @@ public class ProtectFields {
         return isDouble(aStr) && Double.parseDouble(aStr) > 0;
     }
 
-    /** Method get form of group's education */
+    /**
+     * Method get form of group's education
+     */
     public FormOfEducation getFormOfEducation() {
         String line;
 
@@ -143,14 +154,14 @@ public class ProtectFields {
 
         console.print("Available forms of education:\n" +
                 TextFormatting.getGreenText("\tDISTANCE_EDUCATION,\n" +
-                "\tFULL_TIME_EDUCATION,\n" +
-                "\tEVENING_CLASSES\n"));
+                        "\tFULL_TIME_EDUCATION,\n" +
+                        "\tEVENING_CLASSES\n"));
         console.print("\nEnter form of education: ");
         line = console.read();
 
         if (line == null) return null;
 
-        while (!isEducationForm(line)){
+        while (!isEducationForm(line)) {
             console.print(TextFormatting.getRedText("\tIt's incorrect form of education!"));
             console.print("\nEnter form of education again: ");
             line = console.read();
@@ -169,8 +180,10 @@ public class ProtectFields {
         return true;
     }
 
-    /** Method get group's semester */
-    public Semester getSemester(){
+    /**
+     * Method get group's semester
+     */
+    public Semester getSemester() {
         String line;
 
         console.print("\n-------------------\n" +
@@ -179,14 +192,14 @@ public class ProtectFields {
 
         console.print("Available forms of education:\n" +
                 TextFormatting.getGreenText("\tSECOND,\n" +
-                "\tTHIRD,\n" +
-                "\tFOURTH,\n" +
-                "\tFIFTH,\n" +
-                "\tSIXTH\n"));
+                        "\tTHIRD,\n" +
+                        "\tFOURTH,\n" +
+                        "\tFIFTH,\n" +
+                        "\tSIXTH\n"));
         console.print("\nEnter semester: ");
         line = console.read();
 
-        while (line == null || !isSemester(line)){
+        while (line == null || !isSemester(line)) {
             console.print(TextFormatting.getRedText("\tIt's incorrect semester!"));
             console.print("\nEnter semester again: ");
             line = console.read();
@@ -203,8 +216,10 @@ public class ProtectFields {
         return true;
     }
 
-    /** Method get group's admin */
-    public Person getGroupAdmin(){
+    /**
+     * Method get group's admin
+     */
+    public Person getGroupAdmin() {
         String line;
         String name; //Поле не может быть null, Строка не может быть пустой
         long weight; //Поле не может быть null, Значение поля должно быть больше 0
@@ -227,7 +242,7 @@ public class ProtectFields {
         console.print("\nEnter admin weight: ");
         line = console.read();
 
-        while (line == null || !isPositiveLong(line)){
+        while (line == null || !isPositiveLong(line)) {
             console.print(TextFormatting.getRedText("\tAdmin weight should be not null positive long number!"));
             console.print("\nEnter admin weight: ");
             line = console.read();
@@ -236,16 +251,16 @@ public class ProtectFields {
 
         Color c = Color.BLACK;
         // fixme Color.values().toString()
-        console.print("\nAvailable hair color:\n"+
+        console.print("\nAvailable hair color:\n" +
                 TextFormatting.getGreenText("\tBLACK,\n" +
-                "\tBLUE,\n" +
-                "\tYELLOW,\n" +
-                "\tWHITE,\n" +
-                "\tBROWN\n"));
+                        "\tBLUE,\n" +
+                        "\tYELLOW,\n" +
+                        "\tWHITE,\n" +
+                        "\tBROWN\n"));
         console.print("\nEnter hair color: ");
         line = console.read();
 
-        while (line == null || !isHairColor(line)){
+        while (line == null || !isHairColor(line)) {
             console.print(TextFormatting.getRedText("\tHair color is incorrect!\n"));
             console.print("Enter correct hair color: ");
             line = console.read();
@@ -256,17 +271,17 @@ public class ProtectFields {
 
     }
 
-    private boolean isPositiveLong(String aStr){
+    private boolean isPositiveLong(String aStr) {
         try {
             Long.parseLong(aStr);
-        } catch (NumberFormatException e){
+        } catch (NumberFormatException e) {
             return false;
         }
 
         return Long.parseLong(aStr) > 0;
     }
 
-    private boolean isHairColor(String aStr){
+    private boolean isHairColor(String aStr) {
         try {
             Color.valueOf(aStr);
         } catch (IllegalArgumentException e) {

@@ -1,12 +1,14 @@
 package utility;
 
+import utility.Interfaces.CommandReaderInterface;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * <code>commandReader</code> read and parse strings from input to commands and arguments
+ * CommandReader read and parse strings from input to commands and arguments
  */
-public class CommandReader {
+public class CommandReader implements CommandReaderInterface {
 
     private final Console console;
     private final Invoker invoker;
@@ -24,12 +26,6 @@ public class CommandReader {
         argName = Pattern.compile("^.+");
     }
 
-    /**
-     * <code>enable</code> - method to enable line entry
-     * @param printPermission - variable to access print commands after enjoy line.
-     *
-     * if command includes letter only we explain invoker and give him command and argument
-     */
     public void enable(boolean printPermission) {
 
         String nextLine;
@@ -58,6 +54,7 @@ public class CommandReader {
             arg = matcher.find() ? matcher.group() : "";
 
             if (printPermission) console.print(TextFormatting.getGreenText(command));
+
 
             if (!command.equals("exit ")) invoker.execute(command.trim(), arg);
             else System.exit(0);

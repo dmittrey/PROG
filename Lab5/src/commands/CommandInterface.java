@@ -1,14 +1,17 @@
 package commands;
 
-import java.io.IOException;
-
 /**
  * Interface for commands
  */
-
 public interface CommandInterface {
 
+    /**
+     * Method for print command's description
+     */
     String getDescription();
 
-    String execute(String aArg) throws IOException;// для справочных команд
+    /**
+     * Method for execute command and return execution status
+     */
+    String execute(String aArg);
 }

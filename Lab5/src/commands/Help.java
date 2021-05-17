@@ -6,30 +6,22 @@ import utility.TextFormatting;
 import java.util.Map;
 
 /**
- * @author dmittrey
- * <p>
  * Class for displaying all commands with explanations
  */
-
 public class Help extends CommandAbstract {
 
-    /**
-     * Map of all commands
-     */
     private final Map<String, CommandAbstract> commandsInfo;
 
+    /**
+     * Class constructor
+     *
+     * @param aCommands - Map of command's name and their classes
+     */
     public Help(Map<String, CommandAbstract> aCommands) {
         super("help", "display help for available commands");
         commandsInfo = aCommands;
     }
 
-    /**
-     * Function to print all commands
-     *
-     * @param aArg - command arguments
-     * @return List of commands or error message
-     * @see Invoker#execute(String, String)
-     */
     public String execute(String aArg) {
 
         if (aArg.equals("")) {

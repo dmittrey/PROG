@@ -7,27 +7,38 @@ import utility.TextFormatting;
 
 import java.util.HashSet;
 
-public class CountLessThanStudentsCount extends CommandAbstract{
+/**
+ * Class for count elements whose less than specified variable
+ */
+public class CountLessThanStudentsCount extends CommandAbstract {
 
     private final CollectionManager collectionManager;
     private final ProtectFields protectFields;
     private HashSet<StudyGroup> collection;
 
-    public CountLessThanStudentsCount(CollectionManager aCollectionManager, ProtectFields aProtectFields){
+    /**
+     * Class constructor
+     *
+     * @param aCollectionManager - Class to work with collection
+     * @param aProtectFields     - Class to read fields and check them for correctness
+     */
+    public CountLessThanStudentsCount(CollectionManager aCollectionManager, ProtectFields aProtectFields) {
         super("count_less_than_students_count", "print the number of elements whose "
                 + "studentsCount field value is less than the specified one.");
         collectionManager = aCollectionManager;
         protectFields = aProtectFields;
     }
 
-    public String execute(String aArg){
+    public String execute(String aArg) {
         collection = collectionManager.getCollection();
 
         if (collection.size() == 0) return TextFormatting.getRedText("\tCollection is empty!\n");
 
         if (protectFields.isPositiveInt(aArg)) {
             int i = 0;
-            for (StudyGroup studyGroup: collection) {if (studyGroup.getStudentsCount() < Integer.parseInt(aArg)) i++;}
+            for (StudyGroup studyGroup : collection) {
+                if (studyGroup.getStudentsCount() < Integer.parseInt(aArg)) i++;
+            }
             return TextFormatting.getGreenText("\tAmount of elements: " + i + "\n");
         }
 

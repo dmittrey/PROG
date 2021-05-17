@@ -1,10 +1,19 @@
 package data;
 
+/**
+ * Class for study group admin
+ */
 public class Person {
-    private final String name; //Поле не может быть null, Строка не может быть пустой
-    private final long weight; //Поле не может быть null, Значение поля должно быть больше 0
-    private final Color hairColor; //Поле не может быть null
+    private final String name;
+    private final long weight;
+    private final Color hairColor;
 
+    /**
+     * Class constructor
+     * @param aName - admin name
+     * @param aWeight - admin weight
+     * @param aHairColor - admin color
+     */
     public Person(String aName, long aWeight, Color aHairColor) {
         name = aName;
         weight = aWeight;

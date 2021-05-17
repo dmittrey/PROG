@@ -1,22 +1,23 @@
 package utility;
 
 import data.*;
+import utility.Interfaces.StudyGroupFactoryInterface;
 
 import java.util.Date;
-import java.util.Scanner;
 
-public class StudyGroupFactory {
+public class StudyGroupFactory implements StudyGroupFactoryInterface {
 
-    private int id = 1;//Продумать конфликт id объектов из скрипта и объектов из консоли
+    private int id = 1;
     private final ProtectFields protectFields;
     private String creationDate;
 
-    public StudyGroupFactory(ProtectFields aProtectFields){
+    public StudyGroupFactory(ProtectFields aProtectFields) {
         protectFields = aProtectFields;
     }
 
     /**
      * Method creates new StudyGroup object
+     *
      * @see ProtectFields
      */
     public StudyGroup createStudyGroup() {
@@ -24,7 +25,7 @@ public class StudyGroupFactory {
         int id = getId();
         String name = protectFields.getName();
         Coordinates coordinates = protectFields.getCoordinates();
-        String creationDate = new Date().toString();
+        Date creationDate = new Date();
         Integer studentsCount = protectFields.getStudentsCount();
         Double averageMark = protectFields.getAverageMark();
         FormOfEducation formOfEducation = protectFields.getFormOfEducation();
@@ -43,16 +44,7 @@ public class StudyGroupFactory {
         return newStudyGroup;
     }
 
-    private int getId(){
+    private int getId() {
         return id++;
-    }
-
-
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        Console console = new Console(scanner);
-        ProtectFields protectFields = new ProtectFields(console);
-        StudyGroupFactory studyGroupFactory = new StudyGroupFactory(protectFields);
-        console.print(studyGroupFactory.createStudyGroup());
     }
 }
