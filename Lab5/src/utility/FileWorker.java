@@ -56,7 +56,6 @@ public class FileWorker implements FileWorkerInterface {
      */
     public String saveToXml() {
         String filePath = System.getenv("FILE_PATH");
-        //String filePath = "C:\\Users\\zubah\\IdeaProjects\\PROG\\Lab5\\src\\test.xml";
         HashSet<StudyGroup> studyGroups = collectionManager.getCollection();
 
         if (filePath == null) return TextFormatting.getRedText("\tProgram can't find xml file!\n");
