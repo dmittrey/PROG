@@ -221,9 +221,9 @@ public class ProtectFields implements ProtectFieldsInterface {
      */
     public Person getGroupAdmin() {
         String line;
-        String name; //Поле не может быть null, Строка не может быть пустой
-        long weight; //Поле не может быть null, Значение поля должно быть больше 0
-        Color hairColor; //Поле не может быть null
+        String name;
+        long weight;
+        Color hairColor;
 
         console.print("\n-------------------\n" +
                 "GROUP'S ADMIN\n" +

@@ -4,8 +4,6 @@ import data.StudyGroup;
 import utility.CollectionManager;
 import utility.TextFormatting;
 
-import java.util.HashSet;
-
 /**
  * Class to print all elements from collection in stdout
  */
@@ -29,7 +27,7 @@ public class Show extends CommandAbstract {
             if (collectionManager.getCollection().size() == 0)
                 return TextFormatting.getRedText("\tCollection is empty!\n");
             StringBuilder sb = new StringBuilder();
-            for (StudyGroup studyGroup: collectionManager.getCollection()) {
+            for (StudyGroup studyGroup : collectionManager.getCollection()) {
                 sb.append(studyGroup);
                 sb.append("------\n");
             }

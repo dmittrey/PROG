@@ -1,9 +1,5 @@
 package utility.Interfaces;
 
-import data.StudyGroup;
-
-import java.util.HashSet;
-
 public interface FileWorkerInterface {
 
     /**
@@ -16,5 +12,5 @@ public interface FileWorkerInterface {
     /**
      * Read objects from xml file and add objects to collection(file path should be in environment variable "FILE_PATH")
      */
-    HashSet<StudyGroup> getFromXmlFormat();
+    String getFromXmlFormat();
 }

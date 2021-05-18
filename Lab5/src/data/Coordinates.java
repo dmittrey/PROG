@@ -20,6 +20,14 @@ public class Coordinates {
         y = aY;
     }
 
+    /**
+     * Class constructor for Xml parser
+     */
+    public Coordinates(){
+        x = 0;
+        y = 0;
+    }
+
     @XmlElement(name = "CoordinateX")
     public void setX(int aX){
         x = aX;

@@ -6,18 +6,20 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1461d5a-1468-409c-901e-7897f657ae79" name="Default Changelist" comment="XML parser">
-      <change afterPath="$PROJECT_DIR$/../.idea/PROG.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lab4Dop/Lab4Dop.iml" afterDir="false" />
+    <list default="true" id="a1461d5a-1468-409c-901e-7897f657ae79" name="Default Changelist" comment="Work with XML file">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/commands/Save.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/Save.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/Show.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/Show.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/CollectionToPrint.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/Coordinates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Coordinates.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Person.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/StudyGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/StudyGroup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utility/CollectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/CollectionManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utility/FileWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/FileWorker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utility/Interfaces/FileWorkerInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Interfaces/FileWorkerInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utility/StudyGroupFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/StudyGroupFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utility/Invoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Invoker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utility/ProtectFields.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/ProtectFields.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,7 +233,7 @@
       <workItem from="1620930338288" duration="52951000" />
       <workItem from="1621100221028" duration="10030000" />
       <workItem from="1621168461808" duration="28881000" />
-      <workItem from="1621249472298" duration="4551000" />
+      <workItem from="1621249472298" duration="7893000" />
     </task>
     <task id="LOCAL-00001" summary="Описали класс, объекты которого будут лежать в коллекции">
       <created>1619919496190</created>
@@ -450,7 +452,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621219831811</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Work with XML file">
+      <created>1621270479547</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1621270479547</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -469,7 +478,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Добавил метод getValue" />
     <MESSAGE value="Начал прописывать менеджер коллекции" />
     <MESSAGE value="Прописал команды" />
     <MESSAGE value="Прописал начало CollectionManager" />
@@ -494,7 +502,8 @@
     <MESSAGE value="Refactor and add Javadoc" />
     <MESSAGE value="Refactor" />
     <MESSAGE value="XML parser" />
-    <option name="LAST_COMMIT_MESSAGE" value="XML parser" />
+    <MESSAGE value="Work with XML file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Work with XML file" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

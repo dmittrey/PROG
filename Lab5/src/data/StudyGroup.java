@@ -2,6 +2,7 @@ package data;
 
 import utility.TextFormatting;
 
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
@@ -50,9 +51,12 @@ public class StudyGroup implements Comparable<StudyGroup> {
         groupAdmin = aGroupAdmin;
     }
 
+    /**
+     * Class constructor for Xml parser
+     */
     public StudyGroup(){ }
 
-    @XmlElement
+    @XmlAttribute
     public void setId(int anId) {
         id = anId;
     }

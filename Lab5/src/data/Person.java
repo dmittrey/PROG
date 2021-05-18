@@ -24,6 +24,15 @@ public class Person {
         hairColor = aHairColor;
     }
 
+    /**
+     * Class constructor for Xml parser
+     */
+    public Person(){
+        name = null;
+        weight = 0;
+        hairColor = null;
+    }
+
     @XmlElement
     public void setName(String aName){
         name = aName;

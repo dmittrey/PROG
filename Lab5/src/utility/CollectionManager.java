@@ -3,11 +3,14 @@ package utility;
 import data.StudyGroup;
 import utility.Interfaces.CollectionManagerInterface;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.util.*;
 
 /**
  * Class to work with collection
  */
+@XmlRootElement(name = "studyGroups")
 public class CollectionManager implements CollectionManagerInterface {
 
     private HashSet<data.StudyGroup> studyGroups;
@@ -32,6 +35,7 @@ public class CollectionManager implements CollectionManagerInterface {
         return studyGroups;
     }
 
+    @XmlElement(name = "studyGroup")
     public void setCollection(HashSet<StudyGroup> aStudyGroups) {
         studyGroups = aStudyGroups;
     }
@@ -59,7 +63,6 @@ public class CollectionManager implements CollectionManagerInterface {
         return minGroup;
     }
 
-    //тут надо подумать какие выкинет эксепшены
     public StudyGroup getMax() {
 
         StudyGroup maxGroup = null;

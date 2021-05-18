@@ -27,7 +27,7 @@ public class Invoker implements InvokerInterface {
         studyGroupFactory = aStudyGroupFactory;
         previousCommands = new LinkedList<>();
         executedScripts = new HashSet<>();
-        fileWorker = new FileWorker(collectionManager, console);
+        fileWorker = new FileWorker(collectionManager);
         initMap();
     }
 

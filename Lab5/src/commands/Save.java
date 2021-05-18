@@ -1,7 +1,6 @@
 package commands;
 
 import utility.FileWorker;
-import utility.TextFormatting;
 
 /**
  * Class to save collection in xml file
