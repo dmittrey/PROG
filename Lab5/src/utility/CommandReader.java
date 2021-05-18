@@ -56,7 +56,7 @@ public class CommandReader implements CommandReaderInterface {
             if (printPermission) console.print(TextFormatting.getGreenText(command));
 
 
-            if (!command.equals("exit ")) invoker.execute(command.trim(), arg);
+            if (!command.equals("exit ")) invoker.execute(command.trim(), arg.trim());
             else {
                 console.print(TextFormatting.getGreenText("\tThank you for working in this program!\n"));
                 System.exit(0);

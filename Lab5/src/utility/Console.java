@@ -26,6 +26,7 @@ public class Console implements ConsoleInterface {
             line = scanner.nextLine();
         } catch (NoSuchElementException e) {
             print(TextFormatting.getRedText("\tUnexpected EOF!\n"));
+            System.exit(0);
             return null;
         }
 

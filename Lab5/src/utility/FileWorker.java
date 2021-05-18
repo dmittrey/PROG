@@ -26,7 +26,8 @@ public class FileWorker implements FileWorkerInterface {
      * Read collection from indicated file
      */
     public String getFromXmlFormat() {
-        String filePath = System.getenv("FILE_PATH");
+        String filePath = "C:\\Users\\zubah\\IdeaProjects\\PROG\\Lab5\\src\\test.xml";
+        //String filePath = System.getenv("FILE_PATH");
 
         if (filePath == null) return TextFormatting.getRedText("\tProgram can't find xml file!\n");
 
@@ -39,7 +40,8 @@ public class FileWorker implements FileWorkerInterface {
             Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
 
             /* unmarshalling java objects from xml */
-            CollectionManager collectionManager = (CollectionManager) jaxbUnmarshaller.unmarshal(inputFile);
+            CollectionManager defaultCollectionManager = (CollectionManager) jaxbUnmarshaller.unmarshal(inputFile);
+            collectionManager.setCollection(defaultCollectionManager.getCollection());
 
         } catch (FileNotFoundException e) {
             return TextFormatting.getRedText("\tChange the file path in the environment variable!\n");
@@ -55,7 +57,8 @@ public class FileWorker implements FileWorkerInterface {
      * @return status message
      */
     public String saveToXml() {
-        String filePath = System.getenv("FILE_PATH");
+        String filePath = "C:\\Users\\zubah\\IdeaProjects\\PROG\\Lab5\\src\\test.xml";
+        //String filePath = System.getenv("FILE_PATH");
         HashSet<StudyGroup> studyGroups = collectionManager.getCollection();
 
         if (filePath == null) return TextFormatting.getRedText("\tProgram can't find xml file!\n");
@@ -85,4 +88,11 @@ public class FileWorker implements FileWorkerInterface {
         }
         return TextFormatting.getGreenText("\tCollection recorded successfully!\n");
     }
+/**
+ * Сделать парсинг с кири
+ *
+ * сделать protectfields
+ *
+ * сделать метод
+ */
 }

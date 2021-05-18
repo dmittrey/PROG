@@ -14,7 +14,8 @@ public class Main {
         Invoker invoker = new Invoker(console, collectionManager, protectFields, studyGroupFactory);
         CommandReader commandReader = new CommandReader(console, invoker);
         FileWorker fileWorker = new FileWorker(collectionManager);
-        System.out.print(fileWorker.getFromXmlFormat());
+        console.print(fileWorker.getFromXmlFormat());
+
 
 //        Date creationDate = new Date();
 //        collectionManager.add(new StudyGroup(2323,"dfddwadf", new Coordinates(34,34), creationDate.toString(), 23,
@@ -29,4 +30,10 @@ public class Main {
  * Осталось доебашить пару команд просто на парсер и скомпилить на хелиос
  *
  * потыкать на хелиос
+ *
+ * пофиксить табулацию
+ *
+ * указать где можно null
+ *
+ * Добавить на хелиос xml
  */
