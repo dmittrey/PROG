@@ -1,13 +1,18 @@
 package utility;
 
 import data.*;
-import utility.Interfaces.ProtectFieldsInterface;
+import utility.Interfaces.FieldsProtectorInterface;
+import utility.Interfaces.FieldsReceiverInterface;
 
-public class ProtectFields implements ProtectFieldsInterface {
+import java.util.Date;
+
+import java.util.Scanner;
+
+public class FieldsReceiver implements FieldsReceiverInterface, FieldsProtectorInterface {
 
     private final Console console;
 
-    public ProtectFields(Console aConsole) {
+    public FieldsReceiver(Console aConsole) {
         console = aConsole;
     }
 
@@ -15,17 +20,9 @@ public class ProtectFields implements ProtectFieldsInterface {
      * Method get group's name
      */
     public String getName() {
-        String line;
-
-        console.print("\n-------------------\n" +
-                "GROUP'S NAME\n" +
-                "-------------------\n\n");
-        console.print("Enter group name: ");
-        line = console.read();
-        while (line == null) {
-            console.print(TextFormatting.getRedText("\tGroup name should be not null and not empty string!"));
-            console.print("\nEnter group name again: ");
-            line = console.read();
+        String line = getFirstRequest("group name");
+        while (!getNameCorrectStatus(line)) {
+            line = getUniversalRequest("Group name", "not null and not empty string");
         }
         return line;
     }
@@ -46,44 +43,20 @@ public class ProtectFields implements ProtectFieldsInterface {
         console.print("Enter x coordinate: ");
         line = console.read();
 
-        while (line == null || !isInt(line)) {
-            console.print(TextFormatting.getRedText("\tCoordinate x should be not null integer number!"));
-            console.print("\nEnter x coordinate again: ");
-            line = console.read();
+        while (!getCoordinateXCorrectStatus(line)) {
+            line = getUniversalRequest("x coordinate", "not null int number");
         }
-
         x = Integer.parseInt(line);
 
         console.print("Enter y coordinate: ");
         line = console.read();
 
-        while (line == null || !isDouble(line)) {
-            console.print(TextFormatting.getRedText("\tCoordinate x should be not null double number!"));
-            console.print("\nEnter y coordinate again: ");
-            line = console.read();
+        while (!getCoordinateYCorrectStatus(line)) {
+            line = getUniversalRequest("y coordinate", "not null Double number");
         }
         y = Double.parseDouble(line);
 
         return new Coordinates(x, y);
-    }
-
-    private boolean isInt(String aStr) {
-
-        try {
-            Integer.parseInt(aStr);
-        } catch (NumberFormatException e) {
-            return false;
-        }
-        return true;
-    }
-
-    private boolean isDouble(String aStr) {
-        try {
-            Double.parseDouble(aStr);
-        } catch (NumberFormatException e) {
-            return false;
-        }
-        return true;
     }
 
     /**
@@ -92,23 +65,12 @@ public class ProtectFields implements ProtectFieldsInterface {
     public Integer getStudentsCount() {
         String line;
 
-        console.print("\n-------------------\n" +
-                "GROUP'S STUDENTS COUNT\n" +
-                "-------------------\n\n");
+        line = getFirstRequest("group students count");
 
-        console.print("Enter group's count: ");
-        line = console.read();
-
-        while (line == null || !isPositiveInt(line)) {
-            console.print(TextFormatting.getRedText("\tGroup count should be positive not null integer!"));
-            console.print("\nEnter group count again: ");
-            line = console.read();
+        while (!getStudentsCountCorrectStatus(line)) {
+            line = getUniversalRequest("group student count", "not null positive Integer number");
         }
         return Integer.parseInt(line);
-    }
-
-    public boolean isPositiveInt(String aStr) {
-        return isInt(aStr.trim()) && Integer.parseInt(aStr.trim()) > 0;
     }
 
     /**
@@ -117,29 +79,13 @@ public class ProtectFields implements ProtectFieldsInterface {
     public Double getAverageMark() {
         String line;
 
-        console.print("\n-------------------\n" +
-                "GROUP'S AVERAGE MARK\n" +
-                "-------------------\n\n");
+        line = getFirstRequest("group average mark");
 
-        console.print("Enter group's average mark: ");
-        line = console.read();
-
-        if (line == null) return null;
-
-        while (!isPositiveDouble(line)) {
-            console.print(TextFormatting.getRedText("\tGroup count should be positive double or you can skip" +
-                    " this field!"));
-            console.print("\nEnter group's average mark again: ");
-            line = console.read();
-
-            if (line == null) return null;
+        while (!getAverageMarkCorrectStatus()) {
+            line = getUniversalRequest("group average mark",
+                    "positive double or you can skip this field!");
         }
         return Double.parseDouble(line);
-    }
-
-    private boolean isPositiveDouble(String aStr) {
-
-        return isDouble(aStr) && Double.parseDouble(aStr) > 0;
     }
 
     /**
@@ -288,5 +234,14 @@ public class ProtectFields implements ProtectFieldsInterface {
             return false;
         }
         return true;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Console console = new Console(scanner);
+        FieldsReceiver fieldsReceiver = new FieldsReceiver(console);
+        //System.out.print(fieldsReceiver.getCoordinates());
+        Date date = new Date();
+        System.out.print(date.toString());
     }
 }
