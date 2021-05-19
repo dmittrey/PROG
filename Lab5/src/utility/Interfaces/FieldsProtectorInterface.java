@@ -26,7 +26,7 @@ public interface FieldsProtectorInterface{
         try {
             Double.parseDouble(line);
             return true;
-        } catch (NumberFormatException exception) {
+        } catch (NullPointerException | NumberFormatException exception) {
             return false;
         }
     }
@@ -50,10 +50,16 @@ public interface FieldsProtectorInterface{
         }
     }
 
+    default boolean isPositiveInt(String line){
+        return getStudentsCountCorrectStatus(line);
+    }
+
     default boolean getAverageMarkCorrectStatus(String line) {
         try {
             return Double.parseDouble(line) > 0;
         } catch (NumberFormatException exception) {
+            return false;
+        } catch (NullPointerException exception) {
             return true;
         }
     }
@@ -95,3 +101,9 @@ public interface FieldsProtectorInterface{
         }
     }
 }
+
+/**
+ * Доделать валидацию даты через парсер с sO и потом сделать нормальный парс данных, получаемых с XML
+ *
+ * и продумать механизм с удалением id
+ */

@@ -20,32 +20,38 @@ public interface FieldsReceiverInterface {
         sb.append(requestField.toUpperCase()).append("\n");
         sb.append("-------------------\n\n");
         sb.append("Enter ").append(requestField).append(": ");
-        console.print(sb.toString());
+        console.print(sb);
         return console.read();
     }
 
     default String getUniversalRequest(String requestField, String options) {
         StringBuilder sb = new StringBuilder();
-        sb.append("\t").append(TextFormatting.getRedText(requestField)).
+        sb.append("\t").append(TextFormatting.getRedText(TextFormatting.capitalize(requestField))).
                 append(TextFormatting.getRedText(" should be ")).append(TextFormatting.getRedText(options)).
                 append(TextFormatting.getRedText("!\n"));
         sb.append("Enter ").append(requestField).append(" again: ");
-        console.print(sb.toString());
+        console.print(sb);
         return console.read();
     }
 
-    default String getFirstEnumRequest(String requestField, Enum enumerate) {
+    default String getFirstEnumRequest(String requestField, String enumerateList) {
         StringBuilder sb = new StringBuilder();
         sb.append("\n-------------------\n");
         sb.append(requestField.toUpperCase()).append("\n");
         sb.append("-------------------\n\n");
+        sb.append("Available ").append(requestField).append(":\n");
+        sb.append("\t").append(TextFormatting.getGreenText(enumerateList));
+        sb.append("\n\nEnter ").append(requestField).append(": ");
+        console.print(sb);
+        return console.read();
+    }
 
-        sb.append("Available forms of education:\n");
-        sb.append(TextFormatting.getGreenText(enumerate.toString());
-
-
-        sb.append("Enter ").append(requestField).append(": ");
-        console.print(sb.toString());
+    default String getUniversalEnumRequest(String requestField) {
+        StringBuilder sb = new StringBuilder();
+        sb.append(TextFormatting.getRedText("\tIt's incorrect ")).
+                append(TextFormatting.getRedText(requestField)).append(TextFormatting.getRedText("!"));
+        sb.append("\nEnter ").append(requestField).append(" again: ");
+        console.print(sb);
         return console.read();
     }
 

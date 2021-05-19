@@ -6,22 +6,15 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1461d5a-1468-409c-901e-7897f657ae79" name="Default Changelist" comment="change FileWorker">
-      <change afterPath="$PROJECT_DIR$/src/utility/Interfaces/FieldsProtectorInterface.java" afterDir="false" />
+    <list default="true" id="a1461d5a-1468-409c-901e-7897f657ae79" name="Default Changelist" comment="Add classes to Protect fields in xml and request them">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/CountLessThanStudentsCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/CountLessThanStudentsCount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/Help.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/Help.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/RemoveById.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/RemoveById.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/UpdateId.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/UpdateId.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Color.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/FormOfEducation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/FormOfEducation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/Semester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Semester.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utility/FileWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/FileWorker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utility/Interfaces/ProtectFieldsInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Interfaces/FieldsReceiverInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utility/Invoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Invoker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utility/ProtectFields.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/FieldsReceiver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utility/StudyGroupFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/StudyGroupFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utility/FieldsReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/FieldsReceiver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utility/Interfaces/FieldsProtectorInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Interfaces/FieldsProtectorInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utility/Interfaces/FieldsReceiverInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Interfaces/FieldsReceiverInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utility/TextFormatting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/TextFormatting.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -238,7 +231,7 @@
       <workItem from="1621100221028" duration="10030000" />
       <workItem from="1621168461808" duration="28881000" />
       <workItem from="1621249472298" duration="8810000" />
-      <workItem from="1621365137169" duration="13614000" />
+      <workItem from="1621365137169" duration="18751000" />
     </task>
     <task id="LOCAL-00001" summary="Описали класс, объекты которого будут лежать в коллекции">
       <created>1619919496190</created>
@@ -492,7 +485,28 @@
       <option name="project" value="LOCAL" />
       <updated>1621369682479</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="toString method added">
+      <created>1621431359193</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1621431359193</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Refactor">
+      <created>1621431406882</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1621431406882</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Add classes to Protect fields in xml and request them">
+      <created>1621431515151</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1621431515151</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -511,8 +525,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Написал CommandReader" />
-    <MESSAGE value="Написал Console(фикс 37 строка)" />
     <MESSAGE value="Переезд в коворкинг" />
     <MESSAGE value="Переезд в общагу" />
     <MESSAGE value="Help and Invoker" />
@@ -530,13 +542,15 @@
     <MESSAGE value="Trouble with exit from script" />
     <MESSAGE value="file manager" />
     <MESSAGE value="Refactor and add Javadoc" />
-    <MESSAGE value="Refactor" />
     <MESSAGE value="XML parser" />
     <MESSAGE value="Work with XML file" />
     <MESSAGE value="Javadoc" />
     <MESSAGE value="Иван Владимирович, здравствуйте." />
     <MESSAGE value="change FileWorker" />
-    <option name="LAST_COMMIT_MESSAGE" value="change FileWorker" />
+    <MESSAGE value="toString method added" />
+    <MESSAGE value="Refactor" />
+    <MESSAGE value="Add classes to Protect fields in xml and request them" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add classes to Protect fields in xml and request them" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

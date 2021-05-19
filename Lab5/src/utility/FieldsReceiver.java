@@ -4,6 +4,7 @@ import data.*;
 import utility.Interfaces.FieldsProtectorInterface;
 import utility.Interfaces.FieldsReceiverInterface;
 
+import java.util.Arrays;
 import java.util.Date;
 
 import java.util.Scanner;
@@ -22,7 +23,7 @@ public class FieldsReceiver implements FieldsReceiverInterface, FieldsProtectorI
     public String getName() {
         String line = getFirstRequest("group name");
         while (!getNameCorrectStatus(line)) {
-            line = getUniversalRequest("Group name", "not null and not empty string");
+            line = getUniversalRequest("group name", "not null and not empty string");
         }
         return line;
     }
@@ -81,11 +82,12 @@ public class FieldsReceiver implements FieldsReceiverInterface, FieldsProtectorI
 
         line = getFirstRequest("group average mark");
 
-        while (!getAverageMarkCorrectStatus()) {
+        while (!getAverageMarkCorrectStatus(line)) {
             line = getUniversalRequest("group average mark",
-                    "positive double or you can skip this field!");
+                    "positive double or you can skip this field");
         }
-        return Double.parseDouble(line);
+        if (line == null) return null;
+        else return Double.parseDouble(line);
     }
 
     /**
@@ -94,36 +96,15 @@ public class FieldsReceiver implements FieldsReceiverInterface, FieldsProtectorI
     public FormOfEducation getFormOfEducation() {
         String line;
 
-        console.print("\n-------------------\n" +
-                "GROUP'S FORM OF EDUCATION\n" +
-                "-------------------\n\n");
+        line = getFirstEnumRequest("form of education", Arrays.toString(FormOfEducation.values())
+                + TextFormatting.getRedText("\n\t(You can skip this field)"));
 
-        console.print("Available forms of education:\n" +
-                TextFormatting.getGreenText("\tDISTANCE_EDUCATION,\n" +
-                        "\tFULL_TIME_EDUCATION,\n" +
-                        "\tEVENING_CLASSES\n"));
-        console.print("\nEnter form of education: ");
-        line = console.read();
+        while (!getFormOfEducationCorrectStatus(line)) {
+            line = getUniversalEnumRequest("form of education");
+        }
 
         if (line == null) return null;
-
-        while (!isEducationForm(line)) {
-            console.print(TextFormatting.getRedText("\tIt's incorrect form of education!"));
-            console.print("\nEnter form of education again: ");
-            line = console.read();
-
-            if (line == null) return null;
-        }
-        return FormOfEducation.valueOf(line);
-    }
-
-    private boolean isEducationForm(String aStr) {
-        try {
-            FormOfEducation.valueOf(aStr);
-        } catch (IllegalArgumentException e) {
-            return false;
-        }
-        return true;
+        else return FormOfEducation.valueOf(line);
     }
 
     /**
@@ -132,34 +113,12 @@ public class FieldsReceiver implements FieldsReceiverInterface, FieldsProtectorI
     public Semester getSemester() {
         String line;
 
-        console.print("\n-------------------\n" +
-                "GROUP'S SEMESTER\n" +
-                "-------------------\n\n");
+        line = getFirstEnumRequest("group semester", Arrays.toString(Semester.values()));
 
-        console.print("Available forms of education:\n" +
-                TextFormatting.getGreenText("\tSECOND,\n" +
-                        "\tTHIRD,\n" +
-                        "\tFOURTH,\n" +
-                        "\tFIFTH,\n" +
-                        "\tSIXTH\n"));
-        console.print("\nEnter semester: ");
-        line = console.read();
-
-        while (line == null || !isSemester(line)) {
-            console.print(TextFormatting.getRedText("\tIt's incorrect semester!"));
-            console.print("\nEnter semester again: ");
-            line = console.read();
+        while (!getSemesterEnumCorrectStatus(line)) {
+            line = getUniversalEnumRequest("semester");
         }
         return Semester.valueOf(line);
-    }
-
-    private boolean isSemester(String aStr) {
-        try {
-            Semester.valueOf(aStr);
-        } catch (IllegalArgumentException e) {
-            return false;
-        }
-        return true;
     }
 
     /**
@@ -172,76 +131,31 @@ public class FieldsReceiver implements FieldsReceiverInterface, FieldsProtectorI
         Color hairColor;
 
         console.print("\n-------------------\n" +
-                "GROUP'S ADMIN\n" +
-                "-------------------\n\n");
+        TextFormatting.getBlueText("\tGROUP ADMIN\n") +
+        "-------------------\n\n");
 
-        console.print("Enter admin name: ");
-        line = console.read();
+        line = getFirstRequest("group admin name");
 
-        while (line == null) {
-            console.print(TextFormatting.getRedText("\tAdmin name should be not null string!"));
-            console.print("\nEnter admin name: ");
-            line = console.read();
+        while (!getNameCorrectStatus(line)) {
+            line = getUniversalRequest("group admin name", "not null and empty String");
         }
         name = line;
 
-        console.print("\nEnter admin weight: ");
-        line = console.read();
+        line = getFirstRequest("group admin weight");
 
-        while (line == null || !isPositiveLong(line)) {
-            console.print(TextFormatting.getRedText("\tAdmin weight should be not null positive long number!"));
-            console.print("\nEnter admin weight: ");
-            line = console.read();
+        while (!getGroupAdminWeightCorrectStatus(line)) {
+            line = getUniversalRequest("group admin weight", "not null positive long number");
         }
         weight = Long.parseLong(line);
 
-        Color c = Color.BLACK;
-        // fixme Color.values().toString()
-        console.print("\nAvailable hair color:\n" +
-                TextFormatting.getGreenText("\tBLACK,\n" +
-                        "\tBLUE,\n" +
-                        "\tYELLOW,\n" +
-                        "\tWHITE,\n" +
-                        "\tBROWN\n"));
-        console.print("\nEnter hair color: ");
-        line = console.read();
+        line = getFirstEnumRequest("group admin hair color", Arrays.toString(Color.values()));
 
-        while (line == null || !isHairColor(line)) {
-            console.print(TextFormatting.getRedText("\tHair color is incorrect!\n"));
-            console.print("Enter correct hair color: ");
-            line = console.read();
+        while (!getGroupAdminHairColorCorrectStatus(line)) {
+            line = getUniversalEnumRequest("group admin hair color");
         }
         hairColor = Color.valueOf(line);
 
         return new Person(name, weight, hairColor);
 
-    }
-
-    private boolean isPositiveLong(String aStr) {
-        try {
-            Long.parseLong(aStr);
-        } catch (NumberFormatException e) {
-            return false;
-        }
-
-        return Long.parseLong(aStr) > 0;
-    }
-
-    private boolean isHairColor(String aStr) {
-        try {
-            Color.valueOf(aStr);
-        } catch (IllegalArgumentException e) {
-            return false;
-        }
-        return true;
-    }
-
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        Console console = new Console(scanner);
-        FieldsReceiver fieldsReceiver = new FieldsReceiver(console);
-        //System.out.print(fieldsReceiver.getCoordinates());
-        Date date = new Date();
-        System.out.print(date.toString());
     }
 }

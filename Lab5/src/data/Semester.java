@@ -9,13 +9,4 @@ public enum Semester {
     FOURTH,
     FIFTH,
     SIXTH;
-
-    @Override
-    public String toString(){
-        StringBuilder stringBuilder = new StringBuilder();
-        for (Semester semester: Semester.values()) {
-            stringBuilder.append(semester).append("\n");
-        }
-        return stringBuilder.toString();
-    }
 }
