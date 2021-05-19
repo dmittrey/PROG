@@ -20,6 +20,7 @@ public class Clear extends CommandAbstract {
         collectionManager = aCollectionManager;
     }
 
+    @Override
     public String execute(String aArg) {
         if (aArg.equals("")) {
             collectionManager.clear();

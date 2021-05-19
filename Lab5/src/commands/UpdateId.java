@@ -20,7 +20,7 @@ public class UpdateId extends CommandAbstract {
      *
      * @param aStudyGroupFactory - Class to create new study group
      * @param aCollectionManager - Class to work with collection
-     * @param aFieldsReceiver     - Class to read fields and create new study groups
+     * @param aFieldsReceiver    - Class to read fields and create new study groups
      */
     public UpdateId(StudyGroupFactory aStudyGroupFactory, CollectionManager aCollectionManager,
                     FieldsReceiver aFieldsReceiver) {

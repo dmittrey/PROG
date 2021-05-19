@@ -3,19 +3,18 @@ package utility;
 import data.*;
 import utility.Interfaces.StudyGroupFactoryInterface;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class StudyGroupFactory implements StudyGroupFactoryInterface {
 
     private int id = 1;
     private final FieldsReceiver fieldsReceiver;
-    private final Console console;
     private String creationDate;
 
-    public StudyGroupFactory(FieldsReceiver aFieldsReceiver, Console aConsole) {
+    public StudyGroupFactory(FieldsReceiver aFieldsReceiver) {
 
         fieldsReceiver = aFieldsReceiver;
-        console = aConsole;
     }
 
     /**
@@ -27,14 +26,17 @@ public class StudyGroupFactory implements StudyGroupFactoryInterface {
         int id = getId();
         String name = fieldsReceiver.getName();
         Coordinates coordinates = fieldsReceiver.getCoordinates();
-        Date creationDate = new Date();
+
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String creationDate = formatter.format(new Date());
+
         Integer studentsCount = fieldsReceiver.getStudentsCount();
         Double averageMark = fieldsReceiver.getAverageMark();
         FormOfEducation formOfEducation = fieldsReceiver.getFormOfEducation();
         Semester semester = fieldsReceiver.getSemester();
         Person groupAdmin = fieldsReceiver.getGroupAdmin();
 
-        return new StudyGroup(id, name, coordinates, creationDate.toString(), studentsCount, averageMark, formOfEducation,
+        return new StudyGroup(id, name, coordinates, creationDate, studentsCount, averageMark, formOfEducation,
                 semester, groupAdmin);
 
     }

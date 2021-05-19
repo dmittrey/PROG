@@ -20,7 +20,7 @@ public class CountLessThanStudentsCount extends CommandAbstract {
      * Class constructor
      *
      * @param aCollectionManager - Class to work with collection
-     * @param aFieldsReceiver     - Class to read fields and check them for correctness
+     * @param aFieldsReceiver    - Class to read fields and check them for correctness
      */
     public CountLessThanStudentsCount(CollectionManager aCollectionManager, FieldsReceiver aFieldsReceiver) {
         super("count_less_than_students_count", "print the number of elements whose "
@@ -30,6 +30,7 @@ public class CountLessThanStudentsCount extends CommandAbstract {
         fieldsReceiver = aFieldsReceiver;
     }
 
+    @Override
     public String execute(String aArg) {
         collection = collectionManager.getCollection();
 

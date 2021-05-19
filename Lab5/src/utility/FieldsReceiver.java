@@ -4,12 +4,7 @@ import data.*;
 import utility.Interfaces.FieldsProtectorInterface;
 import utility.Interfaces.FieldsReceiverInterface;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Arrays;
-import java.util.Date;
-
-import java.util.Scanner;
 
 public class FieldsReceiver implements FieldsReceiverInterface, FieldsProtectorInterface {
 
@@ -133,8 +128,8 @@ public class FieldsReceiver implements FieldsReceiverInterface, FieldsProtectorI
         Color hairColor;
 
         console.print("\n-------------------\n" +
-        TextFormatting.getBlueText("\tGROUP ADMIN\n") +
-        "-------------------\n\n");
+                TextFormatting.getBlueText("\tGROUP ADMIN\n") +
+                "-------------------\n\n");
 
         line = getFirstRequest("group admin name");
 
@@ -158,20 +153,5 @@ public class FieldsReceiver implements FieldsReceiverInterface, FieldsProtectorI
         hairColor = Color.valueOf(line);
 
         return new Person(name, weight, hairColor);
-
-    }
-
-    public static void main(String[] args) {
-        String input = "Thu Jun 18 20:56:02 EDT 2009";
-        SimpleDateFormat parser = new SimpleDateFormat("EEE MMM d HH:mm:ss zzz yyyy");//вводим паттерн
-                                                                                             //для парсера
-        Date date = null;
-        try {
-            date = parser.parse(input);//распаршенная дата
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");//форма для перераспределения даты
-        String formattedDate = formatter.format(date);//форматирование распаршенной даты
     }
 }

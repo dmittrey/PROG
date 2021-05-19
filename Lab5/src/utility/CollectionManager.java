@@ -41,6 +41,10 @@ public class CollectionManager implements CollectionManagerInterface {
     }
 
     public void add(StudyGroup studyGroup) {
+
+        for (StudyGroup currentStudyGroup : studyGroups) {
+            if (currentStudyGroup.getId() == studyGroup.getId()) remove(currentStudyGroup);
+        }
         studyGroups.add(studyGroup);
     }
 

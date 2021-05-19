@@ -7,13 +7,25 @@ import data.Semester;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
-public interface FieldsProtectorInterface{
+public interface FieldsProtectorInterface {
+
+    default boolean getIdCorrectStatus(String line) {
+
+        try {
+            isPositiveInt(line);
+            return true;
+        } catch (NullPointerException exception) {
+            return false;
+        }
+    }
 
     default boolean getNameCorrectStatus(String line) {
+
         return line != null;
     }
 
     default boolean getCoordinateXCorrectStatus(String line) {
+
         try {
             Integer.parseInt(line);
             return true;
@@ -23,6 +35,7 @@ public interface FieldsProtectorInterface{
     }
 
     default boolean getCoordinateYCorrectStatus(String line) {
+
         try {
             Double.parseDouble(line);
             return true;
@@ -33,9 +46,9 @@ public interface FieldsProtectorInterface{
 
     default boolean getDateCorrectStatus(String line) {
 
-        SimpleDateFormat parser = new SimpleDateFormat("EEE MMM d HH:mm:ss zzz yyyy");
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         try {
-            parser.parse(line);
+            formatter.parse(line);
             return true;
         } catch (ParseException e) {
             return false;
@@ -43,6 +56,7 @@ public interface FieldsProtectorInterface{
     }
 
     default boolean getStudentsCountCorrectStatus(String line) {
+
         try {
             return Integer.parseInt(line) > 0;
         } catch (NumberFormatException exception) {
@@ -50,11 +64,14 @@ public interface FieldsProtectorInterface{
         }
     }
 
-    default boolean isPositiveInt(String line){
+    default boolean isPositiveInt(String line) {
         return getStudentsCountCorrectStatus(line);
     }
 
     default boolean getAverageMarkCorrectStatus(String line) {
+
+        if (line.equals("null")) return true;
+
         try {
             return Double.parseDouble(line) > 0;
         } catch (NumberFormatException exception) {
@@ -65,6 +82,9 @@ public interface FieldsProtectorInterface{
     }
 
     default boolean getFormOfEducationCorrectStatus(String line) {
+
+        if (line.equals("null")) return true;
+
         try {
             FormOfEducation.valueOf(line);
             return true;
@@ -75,8 +95,9 @@ public interface FieldsProtectorInterface{
         }
     }
 
-    default boolean getSemesterEnumCorrectStatus(String line){
-        try{
+    default boolean getSemesterEnumCorrectStatus(String line) {
+
+        try {
             Semester.valueOf(line);
             return true;
         } catch (IllegalArgumentException | NullPointerException exception) {
@@ -85,6 +106,7 @@ public interface FieldsProtectorInterface{
     }
 
     default boolean getGroupAdminWeightCorrectStatus(String line) {
+
         try {
             return Long.parseLong(line) > 0;
         } catch (NumberFormatException exception) {
@@ -93,7 +115,8 @@ public interface FieldsProtectorInterface{
     }
 
     default boolean getGroupAdminHairColorCorrectStatus(String line) {
-        try{
+
+        try {
             Color.valueOf(line);
             return true;
         } catch (IllegalArgumentException | NullPointerException exception) {
@@ -101,9 +124,3 @@ public interface FieldsProtectorInterface{
         }
     }
 }
-
-/**
- * Доделать валидацию даты через парсер с sO и потом сделать нормальный парс данных, получаемых с XML
- *
- * и продумать механизм с удалением id
- */

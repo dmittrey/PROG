@@ -17,17 +17,19 @@ import java.util.HashSet;
  */
 public class FileWorker implements FileWorkerInterface {
     private final CollectionManager collectionManager;
+    private final CollectionValidator collectionValidator;
 
     public FileWorker(CollectionManager aCollectionManager) {
         collectionManager = aCollectionManager;
+        collectionValidator = new CollectionValidator(collectionManager);
     }
 
     /**
      * Read collection from indicated file
      */
     public String getFromXmlFormat() {
-        String filePath = "C:\\Users\\zubah\\IdeaProjects\\PROG\\Lab5\\src\\test.xml";
-        //String filePath = System.getenv("FILE_PATH");
+
+        String filePath = System.getenv("FILE_PATH");
 
         try {
             File inputFile = new File(filePath);
@@ -39,14 +41,15 @@ public class FileWorker implements FileWorkerInterface {
 
             /* unmarshalling java objects from xml */
             CollectionManager defaultCollectionManager = (CollectionManager) jaxbUnmarshaller.unmarshal(bufferedReader);
-            collectionManager.setCollection(defaultCollectionManager.getCollection());
+
+            return collectionValidator.validateCollection(defaultCollectionManager.getCollection());
 
         } catch (FileNotFoundException e) {
             return TextFormatting.getRedText("\tChange the file path in the environment variable!\n");
         } catch (JAXBException e) {
             TextFormatting.getRedText("\tFile has been broken!\n");
         }
-        return TextFormatting.getGreenText("\n\tCollection was loaded!\n\n");
+        return null;
     }
 
     /**
@@ -55,8 +58,8 @@ public class FileWorker implements FileWorkerInterface {
      * @return status message
      */
     public String saveToXml() {
-        String filePath = "C:\\Users\\zubah\\IdeaProjects\\PROG\\Lab5\\src\\test.xml";
-        //String filePath = System.getenv("FILE_PATH");
+
+        String filePath = System.getenv("FILE_PATH");
         HashSet<StudyGroup> studyGroups = collectionManager.getCollection();
 
         try {
@@ -84,11 +87,4 @@ public class FileWorker implements FileWorkerInterface {
         }
         return TextFormatting.getGreenText("\tCollection recorded successfully!\n");
     }
-/**
- * Сделать парсинг с кири
- *
- * сделать protectfields
- *
- * сделать метод
- */
 }

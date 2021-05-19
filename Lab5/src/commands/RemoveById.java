@@ -17,7 +17,7 @@ public class RemoveById extends CommandAbstract {
      * Class constructor
      *
      * @param aCollectionManager - Class to work with collection
-     * @param aFieldsReceiver     - Class to read fields and create new study groups
+     * @param aFieldsReceiver    - Class to read fields and create new study groups
      */
     public RemoveById(CollectionManager aCollectionManager,
                       FieldsReceiver aFieldsReceiver) {

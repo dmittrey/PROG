@@ -6,9 +6,56 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1461d5a-1468-409c-901e-7897f657ae79" name="Default Changelist" comment="Validation data from xml file">
+    <list default="true" id="a1461d5a-1468-409c-901e-7897f657ae79" name="Default Changelist" comment="Validation Date">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Lab5_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/Lab5_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/project-template.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/project-template.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab5.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Lab5.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/Add.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/AddIfMax.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/AddIfMax.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/AddIfMin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/AddIfMin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/Clear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/Clear.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/CommandAbstract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/CommandAbstract.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/CommandInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/CommandInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/CountLessThanStudentsCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/CountLessThanStudentsCount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/ExecuteScript.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/ExecuteScript.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/FilterStartsWithName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/FilterStartsWithName.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/Help.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/Help.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/History.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/History.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/Info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/Info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/MinByStudentsCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/MinByStudentsCount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/RemoveById.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/RemoveById.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/Save.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/Save.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/Show.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/Show.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/UpdateId.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/UpdateId.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Color.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/Coordinates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Coordinates.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/FormOfEducation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/FormOfEducation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/Semester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Semester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/StudyGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/StudyGroup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utility/CollectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/CollectionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utility/CommandReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/CommandReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utility/Console.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Console.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utility/FieldsReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/FieldsReceiver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utility/FileWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/FileWorker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utility/Interfaces/CollectionManagerInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Interfaces/CollectionManagerInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utility/Interfaces/CommandReaderInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Interfaces/CommandReaderInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utility/Interfaces/ConsoleInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Interfaces/ConsoleInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utility/Interfaces/FieldsProtectorInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Interfaces/FieldsProtectorInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utility/Interfaces/FieldsReceiverInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Interfaces/FieldsReceiverInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utility/Interfaces/FileWorkerInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Interfaces/FileWorkerInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utility/Interfaces/InvokerInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Interfaces/InvokerInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utility/Interfaces/StudyGroupFactoryInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Interfaces/StudyGroupFactoryInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utility/Invoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Invoker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utility/StudyGroupFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/StudyGroupFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utility/TextFormatting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/TextFormatting.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +65,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -34,63 +81,11 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="KotlinMultiplatform">
+    <allAvailableExecutables />
+  </component>
   <component name="ProjectId" id="1rxNLFePh8wJVbS90T1x2p5vrAA" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
-      <flattenPackages />
-      <showMembers />
-      <showModules />
-      <showLibraryContents />
-      <hideEmptyPackages />
-      <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
-      <sortByType />
-    </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="untitled104" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="untitled104" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="untitled104" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="untitled104" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="untitled104" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="company" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-    </panes>
-  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -104,12 +99,18 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="Application.FieldsReceiver">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Clear" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="commands.Clear" />
       <module name="Lab5" />
@@ -172,23 +173,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.FieldsReceiver" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.FieldsReceiver" />
         <item itemvalue="Application.StudyGroup" />
         <item itemvalue="Application.JavaWriteXmlJaxbEx" />
         <item itemvalue="Application.Clear" />
@@ -226,6 +225,8 @@
       <workItem from="1621168461808" duration="28881000" />
       <workItem from="1621249472298" duration="8810000" />
       <workItem from="1621365137169" duration="21101000" />
+      <workItem from="1621449916330" duration="5214000" />
+      <workItem from="1621460094729" duration="1966000" />
     </task>
     <task id="LOCAL-00001" summary="Описали класс, объекты которого будут лежать в коллекции">
       <created>1619919496190</created>
