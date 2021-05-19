@@ -1,17 +1,15 @@
-import data.*;
 import utility.*;
 
-import java.util.Date;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Console console = new Console(scanner);
-        ProtectFields protectFields = new ProtectFields(console);
-        StudyGroupFactory studyGroupFactory = new StudyGroupFactory(protectFields);
+        FieldsReceiver fieldsReceiver = new FieldsReceiver(console);
+        StudyGroupFactory studyGroupFactory = new StudyGroupFactory(fieldsReceiver, console);
         CollectionManager collectionManager = new CollectionManager();
-        Invoker invoker = new Invoker(console, collectionManager, protectFields, studyGroupFactory);
+        Invoker invoker = new Invoker(console, collectionManager, fieldsReceiver, studyGroupFactory);
         CommandReader commandReader = new CommandReader(console, invoker);
         FileWorker fileWorker = new FileWorker(collectionManager);
         console.print(fileWorker.getFromXmlFormat());

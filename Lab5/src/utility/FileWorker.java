@@ -29,8 +29,6 @@ public class FileWorker implements FileWorkerInterface {
         String filePath = "C:\\Users\\zubah\\IdeaProjects\\PROG\\Lab5\\src\\test.xml";
         //String filePath = System.getenv("FILE_PATH");
 
-        if (filePath == null) return TextFormatting.getRedText("\tProgram can't find xml file!\n");
-
         try {
             File inputFile = new File(filePath);
             BufferedReader bufferedReader = new BufferedReader(new FileReader(filePath));
@@ -40,7 +38,7 @@ public class FileWorker implements FileWorkerInterface {
             Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
 
             /* unmarshalling java objects from xml */
-            CollectionManager defaultCollectionManager = (CollectionManager) jaxbUnmarshaller.unmarshal(inputFile);
+            CollectionManager defaultCollectionManager = (CollectionManager) jaxbUnmarshaller.unmarshal(bufferedReader);
             collectionManager.setCollection(defaultCollectionManager.getCollection());
 
         } catch (FileNotFoundException e) {
@@ -60,8 +58,6 @@ public class FileWorker implements FileWorkerInterface {
         String filePath = "C:\\Users\\zubah\\IdeaProjects\\PROG\\Lab5\\src\\test.xml";
         //String filePath = System.getenv("FILE_PATH");
         HashSet<StudyGroup> studyGroups = collectionManager.getCollection();
-
-        if (filePath == null) return TextFormatting.getRedText("\tProgram can't find xml file!\n");
 
         try {
             File outFile = new File(filePath);
