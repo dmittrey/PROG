@@ -6,15 +6,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1461d5a-1468-409c-901e-7897f657ae79" name="Default Changelist" comment="Add classes to Protect fields in xml and request them">
+    <list default="true" id="a1461d5a-1468-409c-901e-7897f657ae79" name="Default Changelist" comment="Validation data from xml file">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Color.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/FormOfEducation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/FormOfEducation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/Semester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Semester.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utility/FieldsReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/FieldsReceiver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utility/Interfaces/FieldsProtectorInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Interfaces/FieldsProtectorInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utility/Interfaces/FieldsReceiverInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Interfaces/FieldsReceiverInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utility/TextFormatting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/TextFormatting.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,7 +225,7 @@
       <workItem from="1621100221028" duration="10030000" />
       <workItem from="1621168461808" duration="28881000" />
       <workItem from="1621249472298" duration="8810000" />
-      <workItem from="1621365137169" duration="18751000" />
+      <workItem from="1621365137169" duration="21101000" />
     </task>
     <task id="LOCAL-00001" summary="Описали класс, объекты которого будут лежать в коллекции">
       <created>1619919496190</created>
@@ -506,7 +500,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621431515151</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Validation data from xml file">
+      <created>1621436679408</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1621436679408</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -525,7 +526,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Переезд в коворкинг" />
     <MESSAGE value="Переезд в общагу" />
     <MESSAGE value="Help and Invoker" />
     <MESSAGE value="Help and Info" />
@@ -550,7 +550,8 @@
     <MESSAGE value="toString method added" />
     <MESSAGE value="Refactor" />
     <MESSAGE value="Add classes to Protect fields in xml and request them" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add classes to Protect fields in xml and request them" />
+    <MESSAGE value="Validation data from xml file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Validation data from xml file" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -4,6 +4,8 @@ import data.*;
 import utility.Interfaces.FieldsProtectorInterface;
 import utility.Interfaces.FieldsReceiverInterface;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
 
@@ -157,5 +159,19 @@ public class FieldsReceiver implements FieldsReceiverInterface, FieldsProtectorI
 
         return new Person(name, weight, hairColor);
 
+    }
+
+    public static void main(String[] args) {
+        String input = "Thu Jun 18 20:56:02 EDT 2009";
+        SimpleDateFormat parser = new SimpleDateFormat("EEE MMM d HH:mm:ss zzz yyyy");//вводим паттерн
+                                                                                             //для парсера
+        Date date = null;
+        try {
+            date = parser.parse(input);//распаршенная дата
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");//форма для перераспределения даты
+        String formattedDate = formatter.format(date);//форматирование распаршенной даты
     }
 }
