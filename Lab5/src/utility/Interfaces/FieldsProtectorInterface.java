@@ -17,7 +17,7 @@ public interface FieldsProtectorInterface {
 
     default boolean getNameCorrectStatus(String line) {
 
-        return line != null & !line.equals("null");
+        if (line != null && !line.equals("null")) return true;
     }
 
     default boolean getCoordinateXCorrectStatus(String line) {
