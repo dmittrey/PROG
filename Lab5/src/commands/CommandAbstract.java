@@ -54,6 +54,9 @@ public abstract class CommandAbstract implements CommandInterface {
         }
     }
 
+    /**
+     * Universal method to executing commands
+     */
     @Override
-    public abstract String execute(String aArg);
+    public abstract Object execute(String aArg);
 }

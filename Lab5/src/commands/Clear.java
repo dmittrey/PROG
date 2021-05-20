@@ -20,8 +20,13 @@ public class Clear extends CommandAbstract {
         collectionManager = aCollectionManager;
     }
 
+    /**
+     * We return status of execute
+     *
+     * (in future we can return empty collection)
+     */
     @Override
-    public String execute(String aArg) {
+    public Object execute(String aArg) {
         if (aArg.equals("")) {
             collectionManager.clear();
             return TextFormatting.getGreenText("\n\tSuccessful!\n\n");

@@ -31,8 +31,13 @@ public class UpdateId extends CommandAbstract {
         fieldsReceiver = aFieldsReceiver;
     }
 
+    /**
+     * We return execute status
+     *
+     * (In future we can return updated collection)
+     */
     @Override
-    public String execute(String aArg) {
+    public Object execute(String aArg) {
         if (fieldsReceiver.isPositiveInt(aArg)) {
             StudyGroup studyGroup = collectionManager.getId(Integer.parseInt(aArg));
 

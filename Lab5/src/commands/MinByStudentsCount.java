@@ -1,5 +1,6 @@
 package commands;
 
+import data.StudyGroup;
 import utility.CollectionManager;
 import utility.TextFormatting;
 
@@ -21,8 +22,13 @@ public class MinByStudentsCount extends CommandAbstract {
         collectionManager = aCollectionManager;
     }
 
+    /**
+     * We return execute status
+     *
+     * (In future we can return min object from collection and print on client)
+     */
     @Override
-    public String execute(String aArg) {
+    public Object execute(String aArg) {
         if (aArg.equals("")) {
             try {
                 return collectionManager.getMin().toString();
@@ -33,5 +39,4 @@ public class MinByStudentsCount extends CommandAbstract {
             return TextFormatting.getRedText("\tArguments entered incorrectly!\n");
         }
     }
-
 }

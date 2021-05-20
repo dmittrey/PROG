@@ -6,21 +6,25 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1461d5a-1468-409c-901e-7897f657ae79" name="Default Changelist" comment="fixing">
+    <list default="true" id="a1461d5a-1468-409c-901e-7897f657ae79" name="Default Changelist" comment="Fixing and Javadoc">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/Add.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/AddIfMax.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/AddIfMax.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/AddIfMin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/AddIfMin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/Clear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/Clear.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/CommandAbstract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/CommandAbstract.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/CommandInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/CommandInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/CountLessThanStudentsCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/CountLessThanStudentsCount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/ExecuteScript.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/ExecuteScript.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/FilterStartsWithName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/FilterStartsWithName.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/Help.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/Help.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/commands/History.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/History.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/Info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/Info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/MinByStudentsCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/MinByStudentsCount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/RemoveById.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/RemoveById.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/Save.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/Save.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/Show.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/Show.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/commands/UpdateId.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/UpdateId.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utility/CollectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/CollectionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utility/CollectionValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/CollectionValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utility/CommandReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/CommandReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utility/Console.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Console.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utility/FieldsReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/FieldsReceiver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utility/FileWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/FileWorker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utility/Interfaces/StudyGroupFactoryInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Interfaces/StudyGroupFactoryInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utility/Invoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Invoker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utility/StudyGroupFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/StudyGroupFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utility/TextFormatting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/TextFormatting.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,17 +142,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
@@ -191,7 +184,9 @@
       <workItem from="1621249472298" duration="8810000" />
       <workItem from="1621365137169" duration="21101000" />
       <workItem from="1621449916330" duration="5214000" />
-      <workItem from="1621460094729" duration="10206000" />
+      <workItem from="1621460094729" duration="10518000" />
+      <workItem from="1621473650765" duration="68000" />
+      <workItem from="1621517484516" duration="3025000" />
     </task>
     <task id="LOCAL-00001" summary="Описали класс, объекты которого будут лежать в коллекции">
       <created>1619919496190</created>
@@ -494,7 +489,21 @@
       <option name="project" value="LOCAL" />
       <updated>1621470107785</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Fixing and Javadoc">
+      <created>1621473189242</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1621473189242</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Fixing and Javadoc">
+      <created>1621473447726</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1621473447726</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -513,7 +522,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Help and Info" />
     <MESSAGE value="Info and CollectionManagerInterface(for D from SOLID)" />
     <MESSAGE value="Add and Console refactoring" />
     <MESSAGE value="refactor Add command" />
@@ -538,7 +546,8 @@
     <MESSAGE value="Validation data from xml file" />
     <MESSAGE value=";)" />
     <MESSAGE value="fixing" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixing" />
+    <MESSAGE value="Fixing and Javadoc" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixing and Javadoc" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

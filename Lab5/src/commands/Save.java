@@ -18,8 +18,13 @@ public class Save extends CommandAbstract {
         fileWorker = aFileWorker;
     }
 
+    /**
+     * We return execute status
+     *
+     * (In future also)
+     */
     @Override
-    public String execute(String aArg) {
+    public Object execute(String aArg) {
         return fileWorker.saveToXml();
     }
 }

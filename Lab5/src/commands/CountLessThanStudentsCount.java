@@ -29,8 +29,13 @@ public class CountLessThanStudentsCount extends CommandAbstract {
         fieldsReceiver = aFieldsReceiver;
     }
 
+    /**
+     * We return status of execute
+     *
+     * (In future we can return Integer number or error message)
+     */
     @Override
-    public String execute(String aArg) {
+    public Object execute(String aArg) {
         HashSet<StudyGroup> collection = collectionManager.getCollection();
 
         if (collection.size() == 0) return TextFormatting.getRedText("\tCollection is empty!\n");

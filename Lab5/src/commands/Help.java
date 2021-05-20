@@ -21,7 +21,13 @@ public class Help extends CommandAbstract {
         commandsInfo = aCommands;
     }
 
-    public String execute(String aArg) {
+    /**
+     * We return list of commands
+     *
+     * (In future we can return map of commands and their descriptions)
+     */
+    @Override
+    public Object execute(String aArg) {
 
         if (aArg.equals("")) {
             StringBuilder sb = new StringBuilder();

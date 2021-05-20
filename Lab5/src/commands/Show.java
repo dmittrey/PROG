@@ -21,8 +21,13 @@ public class Show extends CommandAbstract {
         collectionManager = aCollectionManager;
     }
 
+    /**
+     * We return execute status
+     *
+     * (In future we can return collection and print on client)
+     */
     @Override
-    public String execute(String aArg) {
+    public Object execute(String aArg) {
         if (aArg.equals("")) {
             if (collectionManager.getCollection().size() == 0)
                 return TextFormatting.getRedText("\tCollection is empty!\n");

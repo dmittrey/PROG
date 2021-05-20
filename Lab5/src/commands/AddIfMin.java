@@ -27,8 +27,13 @@ public class AddIfMin extends CommandAbstract {
         collectionManager = aCollectionManager;
     }
 
+    /**
+     * We return status of execute
+     *
+     * (In future we can return collection with added object or error message)
+     */
     @Override
-    public String execute(String aArg) {
+    public Object execute(String aArg) {
         if (aArg.equals("")) {
             StudyGroup inputStudyGroup = studyGroupFactory.createStudyGroup();
             try {

@@ -27,8 +27,13 @@ public class RemoveById extends CommandAbstract {
         fieldsReceiver = aFieldsReceiver;
     }
 
+    /**
+     * We return execute status
+     *
+     * (In future we can return collection without removed object)
+     */
     @Override
-    public String execute(String aArg) {
+    public Object execute(String aArg) {
         try {
             if (fieldsReceiver.isPositiveInt(aArg.trim())) {
                 StudyGroup studyGroup = collectionManager.getId(Integer.parseInt(aArg.trim()));

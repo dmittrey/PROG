@@ -24,9 +24,13 @@ public class Add extends CommandAbstract {
         collectionManager = aCollectionManager;
     }
 
-
+    /**
+     * We returning status of execute
+     *
+     * (In future we can return collection with added object)
+     */
     @Override
-    public String execute(String aArg) {
+    public Object execute(String aArg) {
         if (aArg.equals("")) {
             collectionManager.add(studyGroupFactory.createStudyGroup());
 

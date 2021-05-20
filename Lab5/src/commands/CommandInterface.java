@@ -13,5 +13,5 @@ public interface CommandInterface {
     /**
      * Method for execute command and return execution status
      */
-    String execute(String aArg);
+    Object execute(String aArg);
 }

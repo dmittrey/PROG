@@ -24,8 +24,13 @@ public class ExecuteScript extends CommandAbstract {
         invoker = aInvoker;
     }
 
+    /**
+     * We return status of execute
+     *
+     * (In future we can return list of commands from script)
+     */
     @Override
-    public String execute(String aArg) {
+    public Object execute(String aArg) {
         if (aArg.equals("")) return TextFormatting.getRedText("\tYou should write script path!\n");
         else if (!(invoker.addScriptPath(aArg))) return TextFormatting.getRedText("\tRecursion has been found. " +
                 "Please correct your script!\n");

@@ -24,7 +24,12 @@ public class FilterStartsWithName extends CommandAbstract {
         collection = aCollectionManager.getCollection();
     }
 
-    public String execute(String aArg) {
+    /**
+     * We return execute status
+     *
+     * (In future we can return ArrayList of names or error message)
+     */
+    public Object execute(String aArg) {
         if (!aArg.equals("")) {
             if (collection.size() == 0) {
                 return TextFormatting.getRedText("\tCollection is empty!\n");

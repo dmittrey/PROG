@@ -21,8 +21,13 @@ public class Info extends CommandAbstract {
         collectionManager = aCollectionManager;
     }
 
+    /**
+     * We return execute status
+     *
+     * (In future we can return map of properties and their values)
+     */
     @Override
-    public String execute(String aArg) {
+    public Object execute(String aArg) {
         if (aArg.equals("")) {
             return TextFormatting.getBlueText("\nInformation about collection:\n\n") + collectionManager.getInfo();
         } else {

@@ -21,8 +21,13 @@ public class History extends CommandAbstract {
         previousCommands = aPreviousCommands;
     }
 
+    /**
+     * We return execute status
+     *
+     * (in future we can return queue of last 14 commands and print on client)
+     */
     @Override
-    public String execute(String aArg) {
+    public Object execute(String aArg) {
         if (aArg.equals("")) {
             int i = 0;
             StringBuilder sb = new StringBuilder();
