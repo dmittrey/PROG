@@ -15,10 +15,12 @@ public class Console implements ConsoleInterface {
         scanner = aScanner;
     }
 
+    @Override
     public void print(Object anObj) {
         System.out.print(anObj);
     }
 
+    @Override
     public String read() {
         String line;
 

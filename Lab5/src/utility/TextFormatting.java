@@ -1,5 +1,8 @@
 package utility;
 
+/**
+ * Class for format text for highlight errors and informational messages
+ */
 public class TextFormatting {
 
     private static final String ANSI_RESET = "\u001B[0m";

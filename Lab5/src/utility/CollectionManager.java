@@ -22,6 +22,7 @@ public class CollectionManager implements CollectionManagerInterface {
         initTime = new Date().toString();
     }
 
+    @Override
     public String getInfo() {
 
         return "Type of collection" + "  \t\t\t:\t" + "HashSet" + "\n" +
@@ -31,15 +32,18 @@ public class CollectionManager implements CollectionManagerInterface {
                 "Number of items in te collection" + "\t:\t" + studyGroups.size() + "\n\n";
     }
 
+    @Override
     public HashSet<StudyGroup> getCollection() {
         return studyGroups;
     }
 
+    @Override
     @XmlElement(name = "studyGroup")
     public void setCollection(HashSet<StudyGroup> aStudyGroups) {
         studyGroups = aStudyGroups;
     }
 
+    @Override
     public void add(StudyGroup studyGroup) {
 
         for (StudyGroup currentStudyGroup : studyGroups) {
@@ -48,10 +52,12 @@ public class CollectionManager implements CollectionManagerInterface {
         studyGroups.add(studyGroup);
     }
 
+    @Override
     public void remove(StudyGroup studyGroup) {
         studyGroups.remove(studyGroup);
     }
 
+    @Override
     public StudyGroup getMin() {
 
         StudyGroup minGroup = null;
@@ -67,6 +73,7 @@ public class CollectionManager implements CollectionManagerInterface {
         return minGroup;
     }
 
+    @Override
     public StudyGroup getMax() {
 
         StudyGroup maxGroup = null;
@@ -81,6 +88,7 @@ public class CollectionManager implements CollectionManagerInterface {
         return maxGroup;
     }
 
+    @Override
     public StudyGroup getId(int key) {
         for (StudyGroup studyGroup : studyGroups) {
             if (studyGroup.getId() == key) return studyGroup;
@@ -88,6 +96,7 @@ public class CollectionManager implements CollectionManagerInterface {
         return null;
     }
 
+    @Override
     public void clear() {
         studyGroups.clear();
     }

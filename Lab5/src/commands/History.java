@@ -4,10 +4,18 @@ import utility.TextFormatting;
 
 import java.util.Queue;
 
+/**
+ * Class for displaying last 14 commands
+ */
 public class History extends CommandAbstract {
 
     Queue<String> previousCommands;
 
+    /**
+     * Class constructor
+     *
+     * @param aPreviousCommands - Queue of last 14 commands
+     */
     public History(Queue<String> aPreviousCommands) {
         super("history", "print the last 14 commands (without their arguments)");
         previousCommands = aPreviousCommands;

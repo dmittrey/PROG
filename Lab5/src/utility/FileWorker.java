@@ -13,7 +13,7 @@ import java.io.*;
 import java.util.HashSet;
 
 /**
- * <code>FileWorker</code> is used to operate with file
+ * FileWorker is used to operate with file
  */
 public class FileWorker implements FileWorkerInterface {
     private final CollectionManager collectionManager;
@@ -27,6 +27,7 @@ public class FileWorker implements FileWorkerInterface {
     /**
      * Read collection from indicated file
      */
+    @Override
     public String getFromXmlFormat() {
 
         String filePath = System.getenv("FILE_PATH");
@@ -60,6 +61,7 @@ public class FileWorker implements FileWorkerInterface {
      *
      * @return status message
      */
+    @Override
     public String saveToXml() {
 
         String filePath = System.getenv("FILE_PATH");
@@ -95,6 +97,3 @@ public class FileWorker implements FileWorkerInterface {
         return TextFormatting.getGreenText("\tCollection recorded successfully!\n");
     }
 }
-/**
- * стек ошибок null average mark
- */

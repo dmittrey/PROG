@@ -5,10 +5,18 @@ import utility.Interfaces.FieldsProtectorInterface;
 
 import java.util.HashSet;
 
+/**
+ * Class to validate objects from xml file and add correct study groups in collection
+ */
 public class CollectionValidator implements FieldsProtectorInterface {
 
     CollectionManager collectionManager;
 
+    /**
+     * Class constructor
+     *
+     * @param aCollectionManager - Class for add new element into collection
+     */
     public CollectionValidator(CollectionManager aCollectionManager) {
         collectionManager = aCollectionManager;
     }

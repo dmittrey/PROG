@@ -6,14 +6,21 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1461d5a-1468-409c-901e-7897f657ae79" name="Default Changelist" comment=";)">
+    <list default="true" id="a1461d5a-1468-409c-901e-7897f657ae79" name="Default Changelist" comment="fixing">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/AddIfMax.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/AddIfMax.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/StudyGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/StudyGroup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/History.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/History.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/UpdateId.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/UpdateId.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Person.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utility/CollectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/CollectionManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utility/CollectionValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/CollectionValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utility/CommandReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/CommandReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utility/Console.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Console.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utility/FieldsReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/FieldsReceiver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utility/FileWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/FileWorker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utility/Interfaces/FieldsProtectorInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Interfaces/FieldsProtectorInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utility/Interfaces/StudyGroupFactoryInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Interfaces/StudyGroupFactoryInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utility/Invoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Invoker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utility/StudyGroupFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/StudyGroupFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utility/TextFormatting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/TextFormatting.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,7 +191,7 @@
       <workItem from="1621249472298" duration="8810000" />
       <workItem from="1621365137169" duration="21101000" />
       <workItem from="1621449916330" duration="5214000" />
-      <workItem from="1621460094729" duration="7061000" />
+      <workItem from="1621460094729" duration="10206000" />
     </task>
     <task id="LOCAL-00001" summary="Описали класс, объекты которого будут лежать в коллекции">
       <created>1619919496190</created>
@@ -480,7 +487,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621462462209</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="fixing">
+      <created>1621470107785</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1621470107785</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -499,7 +513,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Help and Invoker" />
     <MESSAGE value="Help and Info" />
     <MESSAGE value="Info and CollectionManagerInterface(for D from SOLID)" />
     <MESSAGE value="Add and Console refactoring" />
@@ -524,7 +537,8 @@
     <MESSAGE value="Add classes to Protect fields in xml and request them" />
     <MESSAGE value="Validation data from xml file" />
     <MESSAGE value=";)" />
-    <option name="LAST_COMMIT_MESSAGE" value=";)" />
+    <MESSAGE value="fixing" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixing" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

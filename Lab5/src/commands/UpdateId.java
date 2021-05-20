@@ -39,7 +39,9 @@ public class UpdateId extends CommandAbstract {
             if (studyGroup != null) collectionManager.remove(studyGroup);
             else return TextFormatting.getRedText("\tAn object with this id does not exist!\n");
 
-            collectionManager.add(studyGroupFactory.createStudyGroupWithId(Integer.parseInt(aArg)));
+            StudyGroup upgradingGroup = studyGroupFactory.createStudyGroup();
+            upgradingGroup.setId(Integer.parseInt(aArg));
+            collectionManager.add(upgradingGroup);
 
             return TextFormatting.getGreenText("\n\tSuccessful\n\n");
         }

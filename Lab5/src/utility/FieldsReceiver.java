@@ -6,6 +6,9 @@ import utility.Interfaces.FieldsReceiverInterface;
 
 import java.util.Arrays;
 
+/**
+ * Class is used to receive fields
+ */
 public class FieldsReceiver implements FieldsReceiverInterface, FieldsProtectorInterface {
 
     private final Console console;
@@ -17,6 +20,7 @@ public class FieldsReceiver implements FieldsReceiverInterface, FieldsProtectorI
     /**
      * Method get group's name
      */
+    @Override
     public String getName() {
         String line = getFirstRequest("group name");
         while (!getNameCorrectStatus(line)) {
@@ -28,6 +32,7 @@ public class FieldsReceiver implements FieldsReceiverInterface, FieldsProtectorI
     /**
      * Method get group coordinates
      */
+    @Override
     public Coordinates getCoordinates() {
 
         String line;
@@ -60,6 +65,7 @@ public class FieldsReceiver implements FieldsReceiverInterface, FieldsProtectorI
     /**
      * Method get students count in group
      */
+    @Override
     public Integer getStudentsCount() {
         String line;
 
@@ -74,6 +80,7 @@ public class FieldsReceiver implements FieldsReceiverInterface, FieldsProtectorI
     /**
      * Method get average mark in group
      */
+    @Override
     public Double getAverageMark() {
         String line;
 
@@ -90,6 +97,7 @@ public class FieldsReceiver implements FieldsReceiverInterface, FieldsProtectorI
     /**
      * Method get form of group's education
      */
+    @Override
     public FormOfEducation getFormOfEducation() {
         String line;
 
@@ -107,6 +115,7 @@ public class FieldsReceiver implements FieldsReceiverInterface, FieldsProtectorI
     /**
      * Method get group's semester
      */
+    @Override
     public Semester getSemester() {
         String line;
 
@@ -121,6 +130,7 @@ public class FieldsReceiver implements FieldsReceiverInterface, FieldsProtectorI
     /**
      * Method get group's admin
      */
+    @Override
     public Person getGroupAdmin() {
         String line;
         String name;

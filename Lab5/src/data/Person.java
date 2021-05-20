@@ -14,6 +14,7 @@ public class Person {
 
     /**
      * Class constructor
+     *
      * @param aName - admin name
      * @param aWeight - admin weight
      * @param aHairColor - admin color

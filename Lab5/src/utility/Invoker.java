@@ -6,6 +6,9 @@ import utility.Interfaces.InvokerInterface;
 
 import java.util.*;
 
+/**
+ * Proxy class to redirect commands and write the executed commands to the queue
+ */
 public class Invoker implements InvokerInterface {
 
     private final Console console;
@@ -17,6 +20,14 @@ public class Invoker implements InvokerInterface {
     private final Set<String> executedScripts;
     private final FileWorker fileWorker;
 
+    /**
+     * Class construct
+     *
+     * @param aConsole - Class to print and read information
+     * @param aCollectionManager - Class for add new element into collection
+     * @param aFieldsReceiver - Class to receive information to create study groups
+     * @param aStudyGroupFactory - Class to create study groups
+     */
     public Invoker(Console aConsole, CollectionManager aCollectionManager, FieldsReceiver aFieldsReceiver,
                    StudyGroupFactory aStudyGroupFactory) {
 
@@ -49,7 +60,7 @@ public class Invoker implements InvokerInterface {
         commands.put("filter_starts_with_name", new FilterStartsWithName(collectionManager));
     }
 
-
+    @Override
     public void execute(String aCommand, String aArg) {
 
         if (commands.containsKey(aCommand)) {
@@ -62,10 +73,18 @@ public class Invoker implements InvokerInterface {
         }
     }
 
+    /**
+     * Method to add executing script in collection to detect recursion
+     */
+    @Override
     public boolean addScriptPath(String anArg) {
         return executedScripts.add(anArg);
     }
 
+    /**
+     * Method to remove executed scripts from collection when they finished
+     */
+    @Override
     public void removeScriptPath(String anArg) {
         executedScripts.remove(anArg);
     }

@@ -26,6 +26,7 @@ public class CommandReader implements CommandReaderInterface {
         argName = Pattern.compile("^.+");
     }
 
+    @Override
     public void enable(boolean printPermission) {
 
         String nextLine;
