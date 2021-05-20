@@ -5,6 +5,9 @@ import utility.TextFormatting;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * Class to study group
@@ -156,6 +159,8 @@ public class StudyGroup implements Comparable<StudyGroup> {
     public int compareTo(StudyGroup aStudyGroup) {
         Double aStudyGroupAverageMark, thisAverageMark;
 
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
         if (aStudyGroup.getAverageMark() == null) aStudyGroupAverageMark = (double) 0;
         else aStudyGroupAverageMark = aStudyGroup.getAverageMark();
 
@@ -166,7 +171,13 @@ public class StudyGroup implements Comparable<StudyGroup> {
                 (aStudyGroup.getStudentsCount() * 100 + aStudyGroupAverageMark * 50)) return 1;
         else if ((getStudentsCount() * 100 + thisAverageMark * 50) <
                 (aStudyGroup.getStudentsCount() * 100 + aStudyGroupAverageMark * 50)) return -1;
-        else return getCreationDate().compareTo(aStudyGroup.getCreationDate());
+        else {
+            try {
+                return formatter.parse(getCreationDate()).compareTo(formatter.parse(aStudyGroup.getCreationDate()));
+            } catch (ParseException e) {
+                return 0;
+            }
+        }
     }
 
     @Override

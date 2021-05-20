@@ -3,6 +3,7 @@ package utility;
 import data.*;
 import utility.Interfaces.StudyGroupFactoryInterface;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -40,7 +41,7 @@ public class StudyGroupFactory implements StudyGroupFactoryInterface {
         Person groupAdmin = fieldsReceiver.getGroupAdmin();
 
         return new StudyGroup(id, name, coordinates, creationDate, studentsCount, averageMark, formOfEducation,
-                semester, groupAdmin);
+                    semester, groupAdmin);
     }
 
     /**
