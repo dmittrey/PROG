@@ -50,6 +50,8 @@ public class CollectionManager implements CollectionManagerInterface {
             if (currentStudyGroup.getId() == studyGroup.getId()) remove(currentStudyGroup);
         }
         studyGroups.add(studyGroup);
+        //тут надо добавить на проверку исключительности id и если такой элемент уже есть то старый элемент удалять
+        //но тут такой момент что не надо трогать id которые добавлены из xml файла(привязать к генерации значит)
     }
 
     @Override
