@@ -14,7 +14,6 @@ public class CountLessThanStudentsCount extends CommandAbstract {
 
     private final CollectionManager collectionManager;
     private final FieldsReceiver fieldsReceiver;
-    private HashSet<StudyGroup> collection;
 
     /**
      * Class constructor
@@ -32,7 +31,7 @@ public class CountLessThanStudentsCount extends CommandAbstract {
 
     @Override
     public String execute(String aArg) {
-        collection = collectionManager.getCollection();
+        HashSet<StudyGroup> collection = collectionManager.getCollection();
 
         if (collection.size() == 0) return TextFormatting.getRedText("\tCollection is empty!\n");
 

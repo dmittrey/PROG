@@ -1,7 +1,5 @@
 package utility;
 
-import data.*;
-
 import utility.Interfaces.FileWorkerInterface;
 
 import javax.xml.bind.JAXBContext;
@@ -9,8 +7,6 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import java.io.*;
-
-import java.util.HashSet;
 
 /**
  * FileWorker is used to operate with file
@@ -36,7 +32,6 @@ public class FileWorker implements FileWorkerInterface {
                 "Change environmental variable!\n\n");
 
         try {
-            File inputFile = new File(filePath);
             BufferedReader bufferedReader = new BufferedReader(new FileReader(filePath));
 
             /* init jaxb marshaller */
@@ -68,8 +63,6 @@ public class FileWorker implements FileWorkerInterface {
 
         if (filePath == null) return TextFormatting.getRedText("\tProgram can't find xml file. " +
                 "Change environmental variable!\n\n");
-
-        HashSet<StudyGroup> studyGroups = collectionManager.getCollection();
 
         try {
             File outFile = new File(filePath);
