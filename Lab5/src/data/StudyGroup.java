@@ -145,17 +145,25 @@ public class StudyGroup implements Comparable<StudyGroup> {
      * @return "-1" - if study group in implicit parameter have more students
      * "0" - if study groups have same students
      * "1" - if study group in implicit parameter have less students
+     *
+     * Fields priority:
+     * StudentsCount - 100x
+     * AverageMark - 50x
+     * FormOfEducation - FULL_TIME_EDUCATION > DISTANCE_EDUCATION > EVENING_CLASSES
+     *
+     * If the rest of the fields match we will compare them by the creation date
      */
     @Override
     public int compareTo(StudyGroup aStudyGroup) {
 
-        if (this.getStudentsCount() < aStudyGroup.getStudentsCount()) {
-            return 1;
-        } else if (this.getStudentsCount() > aStudyGroup.getStudentsCount()) {
-            return -1;
+        if ((getStudentsCount() * 100 + getAverageMark() * 50) >
+        (aStudyGroup.getStudentsCount() * 100 + aStudyGroup.getAverageMark() * 50)) return 1;
+        else if ((getStudentsCount() * 100 + getAverageMark() * 50) <
+                (aStudyGroup.getStudentsCount() * 100 + aStudyGroup.getAverageMark() * 50)) return -1;
+        else if (getFormOfEducation().CompareTo(aStudyGroup.getFormOfEducation()) != 0)
+            return getFormOfEducation().CompareTo(aStudyGroup.getFormOfEducation());
+        else return getCreationDate().compareTo(aStudyGroup.getCreationDate());
         }
-        return 0;
-    }
 
     @Override
     public String toString() {
