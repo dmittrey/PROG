@@ -11,17 +11,13 @@ public interface FieldsProtectorInterface {
 
     default boolean getIdCorrectStatus(String line) {
 
-        try {
-            isPositiveInt(line);
-            return true;
-        } catch (NullPointerException exception) {
-            return false;
-        }
+        if (line == null || !line.equals("null")) return false;
+        return isPositiveInt(line);
     }
 
     default boolean getNameCorrectStatus(String line) {
 
-        return line != null;
+        return line != null & !line.equals("null");
     }
 
     default boolean getCoordinateXCorrectStatus(String line) {
@@ -36,10 +32,12 @@ public interface FieldsProtectorInterface {
 
     default boolean getCoordinateYCorrectStatus(String line) {
 
+        if (line == null || !line.equals("null")) return false;
+
         try {
             Double.parseDouble(line);
             return true;
-        } catch (NullPointerException | NumberFormatException exception) {
+        } catch (NumberFormatException exception) {
             return false;
         }
     }
@@ -71,36 +69,22 @@ public interface FieldsProtectorInterface {
     default boolean getAverageMarkCorrectStatus(String line) {
 
         try {
-            if (line.equals("null")) return true;
+            if (line == null || line.equals("null")) return true;
             return Double.parseDouble(line) > 0;
         } catch (NumberFormatException exception) {
             return false;
-        } catch (NullPointerException exception) {
-            return true;
         }
     }
 
     default boolean getFormOfEducationCorrectStatus(String line) {
 
-        try {
-            if (line.equals("null")) return true;
-            FormOfEducation.valueOf(line);
-            return true;
-        } catch (IllegalArgumentException exception) {
-            return false;
-        } catch (NullPointerException exception) {
-            return true;
-        }
+        if (line == null || line.equals("null")) return true;
+        else return FormOfEducation.isIncludeElement(line);
     }
 
     default boolean getSemesterEnumCorrectStatus(String line) {
 
-        try {
-            Semester.valueOf(line);
-            return true;
-        } catch (IllegalArgumentException | NullPointerException exception) {
-            return false;
-        }
+        return line != null && !line.equals("null") && Semester.isIncludeElement(line);
     }
 
     default boolean getGroupAdminWeightCorrectStatus(String line) {
@@ -114,11 +98,6 @@ public interface FieldsProtectorInterface {
 
     default boolean getGroupAdminHairColorCorrectStatus(String line) {
 
-        try {
-            Color.valueOf(line);
-            return true;
-        } catch (IllegalArgumentException | NullPointerException exception) {
-            return false;
-        }
+        return line != null && !line.equals("null") && Color.isIncludeElement(line);
     }
 }

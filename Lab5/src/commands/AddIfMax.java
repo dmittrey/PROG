@@ -35,10 +35,11 @@ public class AddIfMax extends CommandAbstract {
     public Object execute(String aArg) {
         if (aArg.equals("")) {
             StudyGroup inputStudyGroup = studyGroupFactory.createStudyGroup();
-            try {
-                if (inputStudyGroup.compareTo(collectionManager.getMax()) <= 0) return TextFormatting.getRedText(
-                        "\tStudy group isn't best!\n\n");
-            } catch (NullPointerException ignored) { }
+
+            if (collectionManager.getMax() != null) {
+                if (inputStudyGroup.compareTo(collectionManager.getMax()) <= 0)
+                    return TextFormatting.getRedText("\tStudy group isn't best!\n\n");
+            }
 
             collectionManager.add(inputStudyGroup);
             return TextFormatting.getGreenText("\n\n\tSuccessful!\n\n");

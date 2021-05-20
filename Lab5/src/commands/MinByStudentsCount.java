@@ -30,11 +30,8 @@ public class MinByStudentsCount extends CommandAbstract {
     @Override
     public Object execute(String aArg) {
         if (aArg.equals("")) {
-            try {
-                return collectionManager.getMin().toString();
-            } catch (NullPointerException e) {
-                return TextFormatting.getRedText("\tThere are no study groups in the collection yet!\n");
-            }
+            if (collectionManager.getMin() == null) return collectionManager.getMin().toString();
+            else return TextFormatting.getRedText("\tThere are no study groups in the collection yet!\n");
         } else {
             return TextFormatting.getRedText("\tArguments entered incorrectly!\n");
         }

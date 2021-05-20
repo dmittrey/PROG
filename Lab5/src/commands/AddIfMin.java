@@ -36,10 +36,10 @@ public class AddIfMin extends CommandAbstract {
     public Object execute(String aArg) {
         if (aArg.equals("")) {
             StudyGroup inputStudyGroup = studyGroupFactory.createStudyGroup();
-            try {
-                if (inputStudyGroup.compareTo(collectionManager.getMin()) >= 0) return TextFormatting.getRedText(
-                        "\tStudy group isn't worst!\n\n");
-            } catch (NullPointerException ignored) {
+
+            if (collectionManager.getMin() != null) {
+                if (inputStudyGroup.compareTo(collectionManager.getMin()) >= 0)
+                    return TextFormatting.getRedText("\tStudy group isn't worst!\n\n");
             }
 
             collectionManager.add(inputStudyGroup);
