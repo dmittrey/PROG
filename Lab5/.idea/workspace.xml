@@ -6,9 +6,10 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1461d5a-1468-409c-901e-7897f657ae79" name="Default Changelist" comment="Exceptions issue">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utility/Interfaces/FieldsProtectorInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Interfaces/FieldsProtectorInterface.java" afterDir="false" />
+    <list default="true" id="a1461d5a-1468-409c-901e-7897f657ae79" name="Default Changelist" comment="fixing">
+      <change beforePath="$PROJECT_DIR$/src/commands/MinByStudentsCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/MinByStudentsCount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/RemoveById.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/RemoveById.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/StudyGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/StudyGroup.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,35 +171,7 @@
       <workItem from="1621449916330" duration="5214000" />
       <workItem from="1621460094729" duration="10518000" />
       <workItem from="1621473650765" duration="68000" />
-      <workItem from="1621517484516" duration="10743000" />
-    </task>
-    <task id="LOCAL-00002" summary="Добавлены конструктор и геттеры">
-      <created>1619921440667</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1619921440667</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Добавил метод getValue">
-      <created>1619921859392</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1619921859392</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Начал прописывать менеджер коллекции">
-      <created>1619922717406</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1619922717406</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Прописал команды">
-      <created>1619966505763</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1619966505764</updated>
+      <workItem from="1621517484516" duration="11315000" />
     </task>
     <task id="LOCAL-00006" summary="Прописал начало CollectionManager">
       <created>1619968602140</created>
@@ -515,7 +488,35 @@
       <option name="project" value="LOCAL" />
       <updated>1621527691904</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Exceptions issue">
+      <created>1621528347084</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1621528347084</updated>
+    </task>
+    <task id="LOCAL-00052" summary="Exceptions issue">
+      <created>1621528400287</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1621528400287</updated>
+    </task>
+    <task id="LOCAL-00053" summary="fixing">
+      <created>1621528572772</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1621528572772</updated>
+    </task>
+    <task id="LOCAL-00054" summary="fixing">
+      <created>1621528616015</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1621528616015</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -554,12 +555,12 @@
     <MESSAGE value="Add classes to Protect fields in xml and request them" />
     <MESSAGE value="Validation data from xml file" />
     <MESSAGE value=";)" />
-    <MESSAGE value="fixing" />
     <MESSAGE value="Fixing and Javadoc" />
     <MESSAGE value="String issue" />
     <MESSAGE value="Compare issue" />
     <MESSAGE value="Exceptions issue" />
-    <option name="LAST_COMMIT_MESSAGE" value="Exceptions issue" />
+    <MESSAGE value="fixing" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixing" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -1,6 +1,5 @@
 package commands;
 
-import data.StudyGroup;
 import utility.CollectionManager;
 import utility.TextFormatting;
 

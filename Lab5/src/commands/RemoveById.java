@@ -34,15 +34,14 @@ public class RemoveById extends CommandAbstract {
      */
     @Override
     public Object execute(String aArg) {
-        if (fieldsReceiver.isPositiveInt(aArg.trim())) {
+        if (aArg!= null && fieldsReceiver.isPositiveInt(aArg.trim())) {
+
             StudyGroup studyGroup = collectionManager.getId(Integer.parseInt(aArg.trim()));
 
             if (studyGroup != null) collectionManager.remove(studyGroup);
             else return TextFormatting.getRedText("\tAn object with this id does not exist!\n");
 
             return TextFormatting.getGreenText("\n\tSuccessful\n\n");
-
-            //разобраться где тут работает null pointer exception
             }
 
         return TextFormatting.getRedText("\tId should be not null positive integer!\n");
