@@ -6,9 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1461d5a-1468-409c-901e-7897f657ae79" name="Default Changelist" comment="String issue">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/FormOfEducation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/FormOfEducation.java" afterDir="false" />
+    <list default="true" id="a1461d5a-1468-409c-901e-7897f657ae79" name="Default Changelist" comment="Compare issue">
       <change beforePath="$PROJECT_DIR$/src/data/StudyGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/StudyGroup.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -171,7 +169,7 @@
       <workItem from="1621449916330" duration="5214000" />
       <workItem from="1621460094729" duration="10518000" />
       <workItem from="1621473650765" duration="68000" />
-      <workItem from="1621517484516" duration="4666000" />
+      <workItem from="1621517484516" duration="5132000" />
     </task>
     <task id="LOCAL-00001" summary="Описали класс, объекты которого будут лежать в коллекции">
       <created>1619919496190</created>
@@ -495,7 +493,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621520588435</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Compare issue">
+      <created>1621522221381</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1621522221381</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -514,7 +519,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add and Console refactoring" />
     <MESSAGE value="refactor Add command" />
     <MESSAGE value="SHOW and ADD commands" />
     <MESSAGE value="Show and Clear" />
@@ -539,7 +543,8 @@
     <MESSAGE value="fixing" />
     <MESSAGE value="Fixing and Javadoc" />
     <MESSAGE value="String issue" />
-    <option name="LAST_COMMIT_MESSAGE" value="String issue" />
+    <MESSAGE value="Compare issue" />
+    <option name="LAST_COMMIT_MESSAGE" value="Compare issue" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
