@@ -11,13 +11,13 @@ public interface FieldsProtectorInterface {
 
     default boolean getIdCorrectStatus(String line) {
 
-        if (line == null || !line.equals("null")) return false;
+        if (line == null || line.equals("null")) return false;
         return isPositiveInt(line);
     }
 
     default boolean getNameCorrectStatus(String line) {
 
-        return line != null & !line.equals("null");
+        return line != null & line.equals("null");
     }
 
     default boolean getCoordinateXCorrectStatus(String line) {
@@ -32,7 +32,7 @@ public interface FieldsProtectorInterface {
 
     default boolean getCoordinateYCorrectStatus(String line) {
 
-        if (line == null || !line.equals("null")) return false;
+        if (line == null || line.equals("null")) return false;
 
         try {
             Double.parseDouble(line);
