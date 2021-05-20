@@ -54,7 +54,8 @@ public class StudyGroup implements Comparable<StudyGroup> {
     /**
      * Class constructor for Xml parser
      */
-    public StudyGroup(){ }
+    public StudyGroup() {
+    }
 
     @XmlAttribute
     public void setId(int anId) {
@@ -142,8 +143,8 @@ public class StudyGroup implements Comparable<StudyGroup> {
      *
      * @param aStudyGroup - study group
      * @return "-1" - if study group in implicit parameter have more students
-     *          "0" - if study groups have same students
-     *          "1" - if study group in implicit parameter have less students
+     * "0" - if study groups have same students
+     * "1" - if study group in implicit parameter have less students
      */
     @Override
     public int compareTo(StudyGroup aStudyGroup) {
@@ -159,13 +160,13 @@ public class StudyGroup implements Comparable<StudyGroup> {
     @Override
     public String toString() {
         return "\n" + TextFormatting.getBlueText(name) + ":" + "\n" +
-                "Id" + "\t\t\t\t\t:\t" + id + "\n" +
-                "Coordinates" + "\t\t\t:\t" + coordinates + "\n" +
+                "Id" + "\t\t\t:\t" + id + "\n" +
+                "Coordinates" + "\t\t:\t" + coordinates + "\n" +
                 "Creation date" + "\t\t:\t" + creationDate + "\n" +
                 "Students count" + "\t\t:\t" + studentsCount + "\n" +
                 "Average mark" + "\t\t:\t" + averageMark + "\n" +
                 "Form of education" + "\t:\t" + formOfEducation + "\n" +
                 "Semester enum" + "\t\t:\t" + semesterEnum + "\n" +
-                "Group admin" + "\t\t\t:\t" + groupAdmin + "\n";
+                "Group admin" + "\t\t:\t" + groupAdmin + "\n";
     }
 }

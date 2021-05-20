@@ -70,9 +70,8 @@ public interface FieldsProtectorInterface {
 
     default boolean getAverageMarkCorrectStatus(String line) {
 
-        if (line.equals("null")) return true;
-
         try {
+            if (line.equals("null")) return true;
             return Double.parseDouble(line) > 0;
         } catch (NumberFormatException exception) {
             return false;
@@ -83,9 +82,8 @@ public interface FieldsProtectorInterface {
 
     default boolean getFormOfEducationCorrectStatus(String line) {
 
-        if (line.equals("null")) return true;
-
         try {
+            if (line.equals("null")) return true;
             FormOfEducation.valueOf(line);
             return true;
         } catch (IllegalArgumentException exception) {

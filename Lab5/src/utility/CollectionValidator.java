@@ -30,7 +30,7 @@ public class CollectionValidator implements FieldsProtectorInterface {
                     getGroupAdminWeightCorrectStatus(String.valueOf(studyGroup.getGroupAdmin().getWeight())) &&
                     getGroupAdminHairColorCorrectStatus(String.valueOf(studyGroup.getGroupAdmin().getHairColor()))) {
                 collectionManager.add(studyGroup);
-            } else return TextFormatting.getGreenText("\n\tXml file has been broken!\n\n");
+            } else return TextFormatting.getGreenText("\n\tXml file has been broken!(not all objects was loaded)\n\n");
         }
         return TextFormatting.getGreenText("\n\tCollection was loaded!\n\n");
     }

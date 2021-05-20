@@ -24,11 +24,11 @@ public class CollectionManager implements CollectionManagerInterface {
 
     public String getInfo() {
 
-        return "\t" + "Type of collection" + "\t\t\t\t\t:\t" + "HashSet" + "\n" +
-                "\t" + "Type of collection items" + "\t\t\t:\t" + "Study groups" + "\n" +
-                "\t" + "Priority" + "\t\t\t\t\t\t\t:\t" + "Student's count" + "\n" +
-                "\t" + "Initialization date" + "\t\t\t\t\t:\t" + initTime + "\n" +
-                "\t" + "Number of items in te collection" + "\t:\t" + studyGroups.size() + "\n\n";
+        return "Type of collection" + "  \t\t\t:\t" + "HashSet" + "\n" +
+                "Type of collection items" + "\t\t:\t" + "Study groups" + "\n" +
+                "Priority" + "\t\t\t\t:\t" + "Student's count" + "\n" +
+                "Initialization date" + "\t\t\t:\t" + initTime + "\n" +
+                "Number of items in te collection" + "\t:\t" + studyGroups.size() + "\n\n";
     }
 
     public HashSet<StudyGroup> getCollection() {

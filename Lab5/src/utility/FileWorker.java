@@ -31,6 +31,9 @@ public class FileWorker implements FileWorkerInterface {
 
         String filePath = System.getenv("FILE_PATH");
 
+        if (filePath == null) return TextFormatting.getRedText("\n\tProgram can't find xml file. " +
+                "Change environmental variable!\n\n");
+
         try {
             File inputFile = new File(filePath);
             BufferedReader bufferedReader = new BufferedReader(new FileReader(filePath));
@@ -49,7 +52,7 @@ public class FileWorker implements FileWorkerInterface {
         } catch (JAXBException e) {
             TextFormatting.getRedText("\tFile has been broken!\n");
         }
-        return null;
+        return TextFormatting.getRedText("\n\tXml file is empty or has been broken!\n\n");
     }
 
     /**
@@ -60,6 +63,10 @@ public class FileWorker implements FileWorkerInterface {
     public String saveToXml() {
 
         String filePath = System.getenv("FILE_PATH");
+
+        if (filePath == null) return TextFormatting.getRedText("\tProgram can't find xml file. " +
+                "Change environmental variable!\n\n");
+
         HashSet<StudyGroup> studyGroups = collectionManager.getCollection();
 
         try {
@@ -88,3 +95,6 @@ public class FileWorker implements FileWorkerInterface {
         return TextFormatting.getGreenText("\tCollection recorded successfully!\n");
     }
 }
+/**
+ * стек ошибок null average mark
+ */

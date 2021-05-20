@@ -33,8 +33,7 @@ public class AddIfMax extends CommandAbstract {
             try {
                 if (inputStudyGroup.compareTo(collectionManager.getMax()) <= 0) return TextFormatting.getRedText(
                         "\tStudy group isn't best!\n\n");
-            } catch (NullPointerException ignored) {
-            }
+            } catch (NullPointerException ignored) { }
 
             collectionManager.add(inputStudyGroup);
             return TextFormatting.getGreenText("\n\n\tSuccessful!\n\n");
