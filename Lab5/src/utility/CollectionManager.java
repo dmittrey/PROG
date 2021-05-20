@@ -14,12 +14,14 @@ import java.util.*;
 public class CollectionManager implements CollectionManagerInterface {
 
     private HashSet<data.StudyGroup> studyGroups;
+    private HashSet<Integer> usedId;
 
     private final String initTime;
 
     public CollectionManager() {
         studyGroups = new HashSet<>();
         initTime = new Date().toString();
+        usedId = new HashSet<>();
     }
 
     @Override
@@ -38,6 +40,9 @@ public class CollectionManager implements CollectionManagerInterface {
     }
 
     @Override
+    public HashSet<Integer> getUsedId(){return usedId;}
+
+    @Override
     @XmlElement(name = "studyGroup")
     public void setCollection(HashSet<StudyGroup> aStudyGroups) {
         studyGroups = aStudyGroups;
@@ -49,9 +54,8 @@ public class CollectionManager implements CollectionManagerInterface {
         for (StudyGroup currentStudyGroup : studyGroups) {
             if (currentStudyGroup.getId() == studyGroup.getId()) remove(currentStudyGroup);
         }
+        usedId.add(studyGroup.getId());
         studyGroups.add(studyGroup);
-        //тут надо добавить на проверку исключительности id и если такой элемент уже есть то старый элемент удалять
-        //но тут такой момент что не надо трогать id которые добавлены из xml файла(привязать к генерации значит)
     }
 
     @Override

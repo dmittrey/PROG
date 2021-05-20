@@ -14,6 +14,11 @@ public interface CollectionManagerInterface {
     String getInfo();
 
     /**
+     * Give collection of used id
+     */
+    HashSet<Integer> getUsedId();
+
+    /**
      * Give collection
      *
      * @see commands.CountLessThanStudentsCount#execute

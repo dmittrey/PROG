@@ -14,10 +14,12 @@ public class StudyGroupFactory implements StudyGroupFactoryInterface {
 
     private int id = 1;
     private final FieldsReceiver fieldsReceiver;
+    private final CollectionManager collectionManager;
 
-    public StudyGroupFactory(FieldsReceiver aFieldsReceiver) {
+    public StudyGroupFactory(FieldsReceiver aFieldsReceiver, CollectionManager aCollectionManager) {
 
         fieldsReceiver = aFieldsReceiver;
+        collectionManager = aCollectionManager;
     }
 
     /**
@@ -28,6 +30,9 @@ public class StudyGroupFactory implements StudyGroupFactoryInterface {
     @Override
     public StudyGroup createStudyGroup() {
         int id = getId();
+        while (!collectionManager.getUsedId().add(id)) {
+            id = getId();
+        }
         String name = fieldsReceiver.getName();
         Coordinates coordinates = fieldsReceiver.getCoordinates();
 
