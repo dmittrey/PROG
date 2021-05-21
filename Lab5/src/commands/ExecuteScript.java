@@ -33,7 +33,8 @@ public class ExecuteScript extends CommandAbstract {
     public Object execute(String aArg) {
         if (aArg.equals("")) return TextFormatting.getRedText("\tYou should write script path!\n");
         else if (!(invoker.addScriptPath(aArg))) return TextFormatting.getRedText("\n\tRecursion has been found in " +
-                aArg + "! Please correct your script!\n");
+                "command: execute_script " + aArg + "!\n" +
+                "\tPlease correct your script!\n");
         else {
             invoker.addScriptPath(aArg);
             try {
