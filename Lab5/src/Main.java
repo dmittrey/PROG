@@ -13,6 +13,6 @@ public class Main {
         CommandReader commandReader = new CommandReader(console, invoker);
         FileWorker fileWorker = new FileWorker(collectionManager);
         console.print(fileWorker.getFromXmlFormat());
-        commandReader.enable(false);
+        commandReader.enable(false, false);
     }
 }

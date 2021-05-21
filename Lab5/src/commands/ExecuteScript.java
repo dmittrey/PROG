@@ -32,20 +32,20 @@ public class ExecuteScript extends CommandAbstract {
     @Override
     public Object execute(String aArg) {
         if (aArg.equals("")) return TextFormatting.getRedText("\tYou should write script path!\n");
-        else if (!(invoker.addScriptPath(aArg))) return TextFormatting.getRedText("\tRecursion has been found. " +
-                "Please correct your script!\n");
+        else if (!(invoker.addScriptPath(aArg))) return TextFormatting.getRedText("\n\tRecursion has been found in " +
+                aArg + "! Please correct your script!\n");
         else {
             invoker.addScriptPath(aArg);
             try {
                 Scanner scriptScanner = new Scanner(new File(aArg));
                 Console console = new Console(scriptScanner);
                 CommandReader commandReader = new CommandReader(console, invoker);
-                commandReader.enable(true);
+                commandReader.enable(true, true);
             } catch (FileNotFoundException exception) {
                 return TextFormatting.getRedText("\tFile not found!\n");
             }
             invoker.removeScriptPath(aArg);
-            return TextFormatting.getGreenText("\n\n\tSuccessful!\n\n");
+            return TextFormatting.getGreenText("\n\tThe script " + aArg + " was processed successfully!\n");
         }
     }
 }

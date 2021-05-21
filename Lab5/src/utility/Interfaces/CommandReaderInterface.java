@@ -9,5 +9,5 @@ public interface CommandReaderInterface {
      *                              <p>
      *                              if command includes letter only we explain invoker and give him command and argument
      */
-    void enable(boolean printPermissionStatus);
+    void enable(boolean printPermissionStatus, boolean scriptExecutionStatus);
 }
