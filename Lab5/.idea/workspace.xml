@@ -6,13 +6,8 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1461d5a-1468-409c-901e-7897f657ae79" name="Default Changelist" comment="fix bugs">
+    <list default="true" id="a1461d5a-1468-409c-901e-7897f657ae79" name="Default Changelist" comment="processing recursive scripts">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/ExecuteScript.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/ExecuteScript.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utility/CommandReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/CommandReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utility/Console.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Console.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utility/Interfaces/CommandReaderInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Interfaces/CommandReaderInterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,14 +181,7 @@
       <workItem from="1621460094729" duration="10518000" />
       <workItem from="1621473650765" duration="68000" />
       <workItem from="1621517484516" duration="18341000" />
-      <workItem from="1621627398194" duration="4951000" />
-    </task>
-    <task id="LOCAL-00010" summary="Переезд в коворкинг">
-      <created>1619975451529</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1619975451529</updated>
+      <workItem from="1621627398194" duration="5586000" />
     </task>
     <task id="LOCAL-00011" summary="Переезд в общагу">
       <created>1620175508381</created>
@@ -531,7 +519,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621621231902</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="processing recursive scripts">
+      <created>1621632699411</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1621632699413</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -550,7 +545,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="History and MinByStudentsCount" />
     <MESSAGE value="Update id" />
     <MESSAGE value="Last 3 commands" />
     <MESSAGE value="FilterStartsWithName" />
@@ -575,7 +569,8 @@
     <MESSAGE value="fixing" />
     <MESSAGE value="id controller" />
     <MESSAGE value="fix bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix bugs" />
+    <MESSAGE value="processing recursive scripts" />
+    <option name="LAST_COMMIT_MESSAGE" value="processing recursive scripts" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
