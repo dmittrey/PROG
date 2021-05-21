@@ -102,14 +102,17 @@ public class FieldsReceiver implements FieldsReceiverInterface, FieldsProtectorI
         String line;
 
         line = getFirstEnumRequest("form of education", Arrays.toString(FormOfEducation.values())
-                + TextFormatting.getRedText("\n\t(You can skip this field)"));
+                + TextFormatting.getBlueText("\n-----")
+                + TextFormatting.getBlueText("\n\tYou can write form of education in lower case!")
+                + TextFormatting.getBlueText("\n-----")
+                + TextFormatting.getRedText("\n\n\t(You can skip this field)"));
 
         while (!getFormOfEducationCorrectStatus(line)) {
             line = getUniversalEnumRequest("form of education");
         }
 
         if (line == null) return null;
-        else return FormOfEducation.valueOf(line);
+        else return FormOfEducation.valueOf(line.toUpperCase());
     }
 
     /**
@@ -119,12 +122,15 @@ public class FieldsReceiver implements FieldsReceiverInterface, FieldsProtectorI
     public Semester getSemester() {
         String line;
 
-        line = getFirstEnumRequest("group semester", Arrays.toString(Semester.values()));
+        line = getFirstEnumRequest("group semester", Arrays.toString(Semester.values())
+                + TextFormatting.getBlueText("\n-----")
+                + TextFormatting.getBlueText("\n\tYou can write form of education in lower case!")
+                + TextFormatting.getBlueText("\n-----"));
 
         while (!getSemesterEnumCorrectStatus(line)) {
             line = getUniversalEnumRequest("semester");
         }
-        return Semester.valueOf(line);
+        return Semester.valueOf(line.toUpperCase());
     }
 
     /**
@@ -155,12 +161,15 @@ public class FieldsReceiver implements FieldsReceiverInterface, FieldsProtectorI
         }
         weight = Long.parseLong(line);
 
-        line = getFirstEnumRequest("group admin hair color", Arrays.toString(Color.values()));
+        line = getFirstEnumRequest("group admin hair color", Arrays.toString(Color.values())
+                + TextFormatting.getBlueText("\n-----")
+                + TextFormatting.getBlueText("\n\tYou can write form of education in lower case!")
+                + TextFormatting.getBlueText("\n-----"));
 
         while (!getGroupAdminHairColorCorrectStatus(line)) {
             line = getUniversalEnumRequest("group admin hair color");
         }
-        hairColor = Color.valueOf(line);
+        hairColor = Color.valueOf(line.toUpperCase());
 
         return new Person(name, weight, hairColor);
     }

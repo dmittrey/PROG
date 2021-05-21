@@ -3,25 +3,32 @@ package data;
 /**
  * Enum for study group form of education
  */
-public enum FormOfEducation implements Comparable<FormOfEducation>{
-    DISTANCE_EDUCATION("DISTANCE_EDUCATION"),
-    FULL_TIME_EDUCATION("FULL_TIME_EDUCATION"),
-    EVENING_CLASSES("EVENING_CLASSES");
+public enum FormOfEducation implements Comparable<FormOfEducation> {
+    DISTANCE_EDUCATION("DISTANCE_EDUCATION", "distance_education"),
+    FULL_TIME_EDUCATION("FULL_TIME_EDUCATION", "full_time_education"),
+    EVENING_CLASSES("EVENING_CLASSES", "evening_classes");
 
-    private final String stringRepresentation;
+    private final String stringInUpperCaseRepresentation;
+    private final String stringInLowerCaseRepresentation;
 
-    FormOfEducation(String aStringRepresentation){
-        stringRepresentation = aStringRepresentation;
+    FormOfEducation(String aStringInUpperCaseRepresentation, String aStringInLowerCaseRepresentation) {
+        stringInUpperCaseRepresentation = aStringInUpperCaseRepresentation;
+        stringInLowerCaseRepresentation = aStringInLowerCaseRepresentation;
     }
 
-    private String getStringRepresentation(){
-        return stringRepresentation;
+    private String getStringInLowerCaseRepresentation() {
+        return stringInLowerCaseRepresentation;
     }
 
-    public static boolean isIncludeElement(String aFormOfEducation){
+    private String getStringInUpperCaseRepresentation() {
+        return stringInUpperCaseRepresentation;
+    }
 
-        for (FormOfEducation currentFormOfEducation: FormOfEducation.values()){
-            if (aFormOfEducation.equals(currentFormOfEducation.getStringRepresentation())) return true;
+    public static boolean isIncludeElement(String aFormOfEducation) {
+
+        for (FormOfEducation currentFormOfEducation : FormOfEducation.values()) {
+            if (aFormOfEducation.equals(currentFormOfEducation.getStringInUpperCaseRepresentation())) return true;
+            if (aFormOfEducation.equals(currentFormOfEducation.getStringInLowerCaseRepresentation())) return true;
         }
 
         return false;

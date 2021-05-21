@@ -4,28 +4,34 @@ package data;
  * Enum for study group education semester
  */
 public enum Semester {
-    SECOND("SECOND"),
-    THIRD("THIRD"),
-    FOURTH("FOURTH"),
-    FIFTH("FIFTH"),
-    SIXTH("SIXTH");
+    SECOND("SECOND", "second"),
+    THIRD("THIRD", "third"),
+    FOURTH("FOURTH", "fourth"),
+    FIFTH("FIFTH", "fifth"),
+    SIXTH("SIXTH", "sixth");
 
-    private final String stringRepresentation;
+    private final String stringInUpperCaseRepresentation;
+    private final String stringInLowerCaseRepresentation;
 
-    Semester(String aStringRepresentation){
-        stringRepresentation = aStringRepresentation;
+    Semester(String aStringInUpperCaseRepresentation, String aStringInLowerCaseRepresentation) {
+        stringInUpperCaseRepresentation = aStringInUpperCaseRepresentation;
+        stringInLowerCaseRepresentation = aStringInLowerCaseRepresentation;
     }
 
-    private String getStringRepresentation(){
-        return stringRepresentation;
+    private String getStringInLowerCaseRepresentation() {
+        return stringInLowerCaseRepresentation;
     }
 
-    public static boolean isIncludeElement(String aSemester){
+    private String getStringInUpperCaseRepresentation() {
+        return stringInUpperCaseRepresentation;
+    }
 
-        for (Semester currentSemester: Semester.values()){
-            if (aSemester.equals(currentSemester.getStringRepresentation())) return true;
+    public static boolean isIncludeElement(String aSemester) {
+
+        for (Semester currentSemester : Semester.values()) {
+            if (aSemester.equals(currentSemester.getStringInUpperCaseRepresentation())) return true;
+            if (aSemester.equals(currentSemester.getStringInLowerCaseRepresentation())) return true;
         }
-
         return false;
     }
 }

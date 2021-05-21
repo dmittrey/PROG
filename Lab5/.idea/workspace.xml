@@ -6,12 +6,14 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1461d5a-1468-409c-901e-7897f657ae79" name="Default Changelist" comment="fixing">
+    <list default="true" id="a1461d5a-1468-409c-901e-7897f657ae79" name="Default Changelist" comment="id controller">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utility/CollectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/CollectionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utility/Interfaces/CollectionManagerInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Interfaces/CollectionManagerInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utility/StudyGroupFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/StudyGroupFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/Add.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Color.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/FormOfEducation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/FormOfEducation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/Semester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Semester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utility/FieldsReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/FieldsReceiver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utility/FileWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/FileWorker.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,14 +175,7 @@
       <workItem from="1621449916330" duration="5214000" />
       <workItem from="1621460094729" duration="10518000" />
       <workItem from="1621473650765" duration="68000" />
-      <workItem from="1621517484516" duration="12737000" />
-    </task>
-    <task id="LOCAL-00008" summary="Написал Console(фикс 37 строка)">
-      <created>1619970451452</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1619970451452</updated>
+      <workItem from="1621517484516" duration="18114000" />
     </task>
     <task id="LOCAL-00009" summary="Написал Console(фикс 37 строка)">
       <created>1619970616182</created>
@@ -518,7 +513,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621529129355</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="id controller">
+      <created>1621531575838</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1621531575838</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -537,7 +539,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="SHOW and ADD commands" />
     <MESSAGE value="Show and Clear" />
     <MESSAGE value="History and MinByStudentsCount" />
     <MESSAGE value="Update id" />
@@ -562,7 +563,8 @@
     <MESSAGE value="Compare issue" />
     <MESSAGE value="Exceptions issue" />
     <MESSAGE value="fixing" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixing" />
+    <MESSAGE value="id controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="id controller" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

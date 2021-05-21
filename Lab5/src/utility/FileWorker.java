@@ -44,7 +44,7 @@ public class FileWorker implements FileWorkerInterface {
             return collectionValidator.validateCollection(defaultCollectionManager.getCollection());
 
         } catch (FileNotFoundException e) {
-            return TextFormatting.getRedText("\tChange the file path in the environment variable!\n");
+            return TextFormatting.getRedText("\tChange the file path in the environment variable(FILE_PATH)!\n");
         } catch (JAXBException e) {
             TextFormatting.getRedText("\tFile has been broken!\n");
         }

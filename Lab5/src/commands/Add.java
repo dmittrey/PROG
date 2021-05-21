@@ -34,7 +34,7 @@ public class Add extends CommandAbstract {
         if (aArg.equals("")) {
             collectionManager.add(studyGroupFactory.createStudyGroup());
 
-            return TextFormatting.getGreenText("\n\n\tSuccessful\n\n");
+            return TextFormatting.getGreenText("\n\tSuccessful\n\n");
         } else {
             return TextFormatting.getRedText("\tCommand arguments entered incorrectly!\n");
         }

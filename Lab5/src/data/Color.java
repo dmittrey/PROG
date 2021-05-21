@@ -4,26 +4,33 @@ package data;
  * Enum for study group admin eyes color
  */
 public enum Color {
-    BLACK("BLACK"),
-    BLUE("BLUE"),
-    YELLOW("YELLOW"),
-    WHITE("WHITE"),
-    BROWN("BROWN");
+    BLACK("BLACK", "black"),
+    BLUE("BLUE", "blue"),
+    YELLOW("YELLOW", "yellow"),
+    WHITE("WHITE", "white"),
+    BROWN("BROWN", "brown");
 
-    private final String stringRepresentation;
+    private final String stringInUpperCaseRepresentation;
+    private final String stringInLowerCaseRepresentation;
 
-    Color(String aStringRepresentation){
-        stringRepresentation = aStringRepresentation;
+    Color(String aStringInUpperCaseRepresentation, String aStringInLowerCaseRepresentation) {
+        stringInUpperCaseRepresentation = aStringInUpperCaseRepresentation;
+        stringInLowerCaseRepresentation = aStringInLowerCaseRepresentation;
     }
 
-    private String getStringRepresentation(){
-        return stringRepresentation;
+    private String getStringInLowerCaseRepresentation() {
+        return stringInLowerCaseRepresentation;
     }
 
-    public static boolean isIncludeElement(String aColor){
+    private String getStringInUpperCaseRepresentation() {
+        return stringInUpperCaseRepresentation;
+    }
 
-        for (Color currentColor: Color.values()){
-            if (aColor.equals(currentColor.getStringRepresentation())) return true;
+    public static boolean isIncludeElement(String aColor) {
+
+        for (Color currentColor : Color.values()) {
+            if (aColor.equals(currentColor.getStringInUpperCaseRepresentation())) return true;
+            if (aColor.equals(currentColor.getStringInLowerCaseRepresentation())) return true;
         }
 
         return false;
