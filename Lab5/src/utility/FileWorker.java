@@ -14,10 +14,12 @@ import java.io.*;
 public class FileWorker implements FileWorkerInterface {
     private final CollectionManager collectionManager;
     private final CollectionValidator collectionValidator;
+    private final Console console;
 
-    public FileWorker(CollectionManager aCollectionManager) {
+    public FileWorker(CollectionManager aCollectionManager, Console aConsole) {
         collectionManager = aCollectionManager;
         collectionValidator = new CollectionValidator(collectionManager);
+        console = aConsole;
     }
 
     /**
@@ -28,8 +30,11 @@ public class FileWorker implements FileWorkerInterface {
 
         String filePath = System.getenv("FILE_PATH");
 
-        if (filePath == null) return TextFormatting.getRedText("\n\tProgram can't find xml file. " +
-                "Change environmental variable!\n\n");
+        if (filePath == null) {
+            console.print(TextFormatting.getRedText("\n\tProgram can't find xml file. " +
+                    "\tChange the file path in the environment variable(FILE_PATH)!\n"));
+            System.exit(0);
+        }
 
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader(filePath));
@@ -46,9 +51,8 @@ public class FileWorker implements FileWorkerInterface {
         } catch (FileNotFoundException e) {
             return TextFormatting.getRedText("\tChange the file path in the environment variable(FILE_PATH)!\n");
         } catch (JAXBException e) {
-            TextFormatting.getRedText("\tFile has been broken!\n");
+            return TextFormatting.getRedText("\tFile has been broken!\n");
         }
-        return TextFormatting.getRedText("\n\tXml file is empty or has been broken!\n\n");
     }
 
     /**

@@ -6,8 +6,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1461d5a-1468-409c-901e-7897f657ae79" name="Default Changelist" comment="fix nullPointerException">
-      <change beforePath="$PROJECT_DIR$/src/commands/ExecuteScript.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/ExecuteScript.java" afterDir="false" />
+    <list default="true" id="a1461d5a-1468-409c-901e-7897f657ae79" name="Default Changelist" comment="refactor">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utility/FileWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/FileWorker.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,14 +182,7 @@
       <workItem from="1621460094729" duration="10518000" />
       <workItem from="1621473650765" duration="68000" />
       <workItem from="1621517484516" duration="18341000" />
-      <workItem from="1621627398194" duration="6181000" />
-    </task>
-    <task id="LOCAL-00012" summary="Help and Invoker">
-      <created>1620479565199</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1620479565199</updated>
+      <workItem from="1621627398194" duration="7445000" />
     </task>
     <task id="LOCAL-00013" summary="Help and Info">
       <created>1620562298297</created>
@@ -526,7 +520,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621633409808</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="refactor">
+      <created>1621633916193</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1621633916193</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -545,7 +546,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Last 3 commands" />
     <MESSAGE value="FilterStartsWithName" />
     <MESSAGE value="fix methods" />
     <MESSAGE value="Trouble with exit from script" />
@@ -570,7 +570,8 @@
     <MESSAGE value="fix bugs" />
     <MESSAGE value="processing recursive scripts" />
     <MESSAGE value="fix nullPointerException" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix nullPointerException" />
+    <MESSAGE value="refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

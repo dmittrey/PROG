@@ -11,7 +11,7 @@ public class Main {
         StudyGroupFactory studyGroupFactory = new StudyGroupFactory(fieldsReceiver, collectionManager);
         Invoker invoker = new Invoker(console, collectionManager, fieldsReceiver, studyGroupFactory);
         CommandReader commandReader = new CommandReader(console, invoker);
-        FileWorker fileWorker = new FileWorker(collectionManager);
+        FileWorker fileWorker = new FileWorker(collectionManager, console);
         console.print(fileWorker.getFromXmlFormat());
         commandReader.enable(false, false);
     }
