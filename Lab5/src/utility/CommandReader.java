@@ -36,7 +36,7 @@ public class CommandReader implements CommandReaderInterface {
 
         while (!exitSave.equals("exit ")) {
 
-            if ((scriptExecutionStatus && console.hasNextLine()) || scriptExecutionStatus) {
+            if (!scriptExecutionStatus || console.hasNextLine()) {
                 console.print("Enter the command: ");
             }
             else {

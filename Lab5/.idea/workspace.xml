@@ -6,14 +6,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1461d5a-1468-409c-901e-7897f657ae79" name="Default Changelist" comment="refactor">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/ExecuteScript.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/ExecuteScript.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/FilterStartsWithName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/FilterStartsWithName.java" afterDir="false" />
+    <list default="true" id="a1461d5a-1468-409c-901e-7897f657ae79" name="Default Changelist" comment="refactor scriptReader">
       <change beforePath="$PROJECT_DIR$/src/utility/CommandReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/CommandReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utility/FileWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/FileWorker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utility/Interfaces/CommandReaderInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Interfaces/CommandReaderInterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,14 +182,7 @@
       <workItem from="1621460094729" duration="10518000" />
       <workItem from="1621473650765" duration="68000" />
       <workItem from="1621517484516" duration="18341000" />
-      <workItem from="1621627398194" duration="13455000" />
-    </task>
-    <task id="LOCAL-00014" summary="Info and CollectionManagerInterface(for D from SOLID)">
-      <created>1620585358206</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1620585358206</updated>
+      <workItem from="1621627398194" duration="13770000" />
     </task>
     <task id="LOCAL-00015" summary="Info and CollectionManagerInterface(for D from SOLID)">
       <created>1620585370797</created>
@@ -532,7 +520,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621696990504</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="refactor scriptReader">
+      <created>1621802887301</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1621802887301</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -551,7 +546,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="FilterStartsWithName" />
     <MESSAGE value="fix methods" />
     <MESSAGE value="Trouble with exit from script" />
     <MESSAGE value="file manager" />
@@ -576,7 +570,8 @@
     <MESSAGE value="processing recursive scripts" />
     <MESSAGE value="fix nullPointerException" />
     <MESSAGE value="refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor" />
+    <MESSAGE value="refactor scriptReader" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor scriptReader" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
