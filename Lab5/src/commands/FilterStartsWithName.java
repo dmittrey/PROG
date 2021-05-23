@@ -36,7 +36,7 @@ public class FilterStartsWithName extends CommandAbstract {
             } else {
                 StringBuilder sb = new StringBuilder();
                 for (StudyGroup studyGroup : collection) {
-                    if (studyGroup.getName().contains(aArg)) sb.append(studyGroup).append("------\n");
+                    if (studyGroup.getName().startsWith(aArg)) sb.append(studyGroup).append("------\n");
                 }
                 if (sb.toString().equals("")) return TextFormatting.getRedText("\tNo objects found!\n");
                 else return sb.toString();
@@ -45,7 +45,4 @@ public class FilterStartsWithName extends CommandAbstract {
             return TextFormatting.getRedText("\tSubstring should be not empty!\n");
         }
     }
-    /**
-     * переписать метод чтобы выводило не надстроку а именно с чего начали
-     */
 }

@@ -16,8 +16,4 @@ public class Main {
         console.print(fileWorker.getFromXmlFormat());
         commandReader.enable(false);
     }
-    /**
-     * Команды срабатывают иногда не с первого раза, странная хуйня
-     *
-     */
 }
