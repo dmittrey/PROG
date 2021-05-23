@@ -45,4 +45,7 @@ public class FilterStartsWithName extends CommandAbstract {
             return TextFormatting.getRedText("\tSubstring should be not empty!\n");
         }
     }
+    /**
+     * переписать метод чтобы выводило не надстроку а именно с чего начали
+     */
 }

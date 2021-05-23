@@ -32,7 +32,7 @@ public class FileWorker implements FileWorkerInterface {
 
         if (filePath == null) {
             console.print(TextFormatting.getRedText("\n\tProgram can't find xml file. " +
-                    "\tChange the file path in the environment variable(FILE_PATH)!\n"));
+                    "Change the file path in the environment variable(FILE_PATH)!\n"));
             System.exit(0);
         }
 
@@ -93,4 +93,9 @@ public class FileWorker implements FileWorkerInterface {
         }
         return TextFormatting.getGreenText("\tCollection recorded successfully!\n");
     }
+    /**
+     * Не реализована валидация объектов с одинковым id в xml файле(к примеру добавлять после валидации с коллекцией в связке)
+     *
+     * Неправильная реакция на ошибку(когда файл запривачен+ не выходим почему-то)
+     */
 }

@@ -27,7 +27,7 @@ public class CommandReader implements CommandReaderInterface {
     }
 
     @Override
-    public void enable(boolean printPermission, boolean scriptExecutionStatus) {
+    public void enable(boolean scriptExecutionStatus) {
 
         String nextLine;
         String exitSave = "";
@@ -36,12 +36,12 @@ public class CommandReader implements CommandReaderInterface {
 
         while (!exitSave.equals("exit ")) {
 
-            if (scriptExecutionStatus) {
-                if (console.hasNextLine()) console.print("Enter the command: ");
-                else {
-                    break;
-                }
-            } else console.print("Enter the command: ");
+            if ((scriptExecutionStatus && console.hasNextLine()) || scriptExecutionStatus) {
+                console.print("Enter the command: ");
+            }
+            else {
+                break;
+            }
 
             nextLine = console.read() + " ";
             exitSave = nextLine;
@@ -60,7 +60,7 @@ public class CommandReader implements CommandReaderInterface {
 
             arg = matcher.find() ? matcher.group() : "";
 
-            if (printPermission) console.print(TextFormatting.getGreenText(command) + " " + arg + "\n");
+            if (scriptExecutionStatus) console.print(TextFormatting.getGreenText(command) + " " + arg + "\n");
 
             if (!command.equals("exit ")) invoker.execute(command.trim(), arg.trim());
             else {

@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in);
         Console console = new Console(scanner);
         FieldsReceiver fieldsReceiver = new FieldsReceiver(console);
@@ -13,6 +14,10 @@ public class Main {
         CommandReader commandReader = new CommandReader(console, invoker);
         FileWorker fileWorker = new FileWorker(collectionManager, console);
         console.print(fileWorker.getFromXmlFormat());
-        commandReader.enable(false, false);
+        commandReader.enable(false);
     }
+    /**
+     * Команды срабатывают иногда не с первого раза, странная хуйня
+     *
+     */
 }

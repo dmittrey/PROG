@@ -41,7 +41,7 @@ public class ExecuteScript extends CommandAbstract {
                 Scanner scriptScanner = new Scanner(new File(aArg));
                 Console console = new Console(scriptScanner);
                 CommandReader commandReader = new CommandReader(console, invoker);
-                commandReader.enable(true, true);
+                commandReader.enable(true);
             } catch (FileNotFoundException exception) {
                 return TextFormatting.getRedText("\tFile not found!\n");
             }
