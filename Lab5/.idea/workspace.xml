@@ -6,12 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1461d5a-1468-409c-901e-7897f657ae79" name="Default Changelist" comment="refactor scriptReader">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/FilterStartsWithName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/FilterStartsWithName.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utility/CollectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/CollectionManager.java" afterDir="false" />
-    </list>
+    <list default="true" id="a1461d5a-1468-409c-901e-7897f657ae79" name="Default Changelist" comment="refactor scriptReader" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -184,14 +179,7 @@
       <workItem from="1621460094729" duration="10518000" />
       <workItem from="1621473650765" duration="68000" />
       <workItem from="1621517484516" duration="18341000" />
-      <workItem from="1621627398194" duration="16252000" />
-    </task>
-    <task id="LOCAL-00016" summary="Add and Console refactoring">
-      <created>1620601395099</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1620601395100</updated>
+      <workItem from="1621627398194" duration="16514000" />
     </task>
     <task id="LOCAL-00017" summary="refactor Add command">
       <created>1620695524996</created>
@@ -529,7 +517,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621803228295</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="refactor scriptReader">
+      <created>1621806178031</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1621806178031</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
