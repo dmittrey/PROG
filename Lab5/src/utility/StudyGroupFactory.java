@@ -35,17 +35,13 @@ public class StudyGroupFactory implements StudyGroupFactoryInterface {
         }
         String name = fieldsReceiver.getName();
         Coordinates coordinates = fieldsReceiver.getCoordinates();
-
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        String creationDate = formatter.format(new Date());
-
         Integer studentsCount = fieldsReceiver.getStudentsCount();
         Double averageMark = fieldsReceiver.getAverageMark();
         FormOfEducation formOfEducation = fieldsReceiver.getFormOfEducation();
         Semester semester = fieldsReceiver.getSemester();
         Person groupAdmin = fieldsReceiver.getGroupAdmin();
 
-        return new StudyGroup(id, name, coordinates, creationDate, studentsCount, averageMark, formOfEducation,
+        return new StudyGroup(id, name, coordinates, new Date(), studentsCount, averageMark, formOfEducation,
                     semester, groupAdmin);
     }
 

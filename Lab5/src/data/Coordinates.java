@@ -7,7 +7,7 @@ import javax.xml.bind.annotation.XmlElement;
  */
 public class Coordinates {
     private int x;
-    private double y;
+    private Double y;
 
     /**
      * Class constructor
@@ -25,7 +25,7 @@ public class Coordinates {
      */
     public Coordinates(){
         x = 0;
-        y = 0;
+        y = null;
     }
 
     @XmlElement(name = "CoordinateX")

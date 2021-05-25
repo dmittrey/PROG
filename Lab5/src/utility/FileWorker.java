@@ -28,7 +28,8 @@ public class FileWorker implements FileWorkerInterface {
     @Override
     public String getFromXmlFormat() {
 
-        String filePath = System.getenv("FILE_PATH");
+        //String filePath = System.getenv("FILE_PATH");
+        String filePath = "C:\\Users\\zubah\\IdeaProjects\\PROG\\Lab5\\Test.xml";
 
         if (filePath == null) {
             console.print(TextFormatting.getRedText("\n\tProgram can't find xml file. " +
@@ -63,7 +64,8 @@ public class FileWorker implements FileWorkerInterface {
     @Override
     public String saveToXml() {
 
-        String filePath = System.getenv("FILE_PATH");
+        //String filePath = System.getenv("FILE_PATH");
+        String filePath = "C:\\Users\\zubah\\IdeaProjects\\PROG\\Lab5\\Test.xml";
 
         if (filePath == null) return TextFormatting.getRedText("\tProgram can't find xml file. " +
                 "Change environmental variable!\n\n");

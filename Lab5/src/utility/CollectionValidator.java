@@ -29,7 +29,7 @@ public class CollectionValidator implements FieldsProtectorInterface {
                     getNameCorrectStatus(String.valueOf(studyGroup.getName())) &&
                     getCoordinateXCorrectStatus(String.valueOf(studyGroup.getCoordinates().getX())) &&
                     getCoordinateYCorrectStatus(String.valueOf(studyGroup.getCoordinates().getY())) &&
-                    getDateCorrectStatus(String.valueOf(studyGroup.getCreationDate())) &&
+                    getDateCorrectStatus(studyGroup.getCreationDate()) &&
                     getStudentsCountCorrectStatus(String.valueOf(studyGroup.getStudentsCount())) &&
                     getAverageMarkCorrectStatus(String.valueOf(studyGroup.getAverageMark())) &&
                     getFormOfEducationCorrectStatus(String.valueOf(studyGroup.getFormOfEducation())) &&

@@ -1,12 +1,15 @@
 package data;
 
+import utility.DateAdapter;
 import utility.TextFormatting;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import java.text.ParseException;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.text.SimpleDateFormat;
+
+import java.util.Date;
 
 /**
  * Class to study group
@@ -15,11 +18,11 @@ import java.text.SimpleDateFormat;
         "semesterEnum", "groupAdmin"})
 public class StudyGroup implements Comparable<StudyGroup> {
 
-    private int id;
+    private Integer id;
     private String name;
     private Coordinates coordinates;
-    private String creationDate;
-    private int studentsCount;
+    private Date creationDate;
+    private Integer studentsCount;
     private Double averageMark;
     private FormOfEducation formOfEducation;
     private Semester semesterEnum;
@@ -39,7 +42,7 @@ public class StudyGroup implements Comparable<StudyGroup> {
      * @param aGroupAdmin      - group admin
      * @see Person
      */
-    public StudyGroup(int aId, String aName, Coordinates aCoordinates, String aCreationDate, int aStudentsCount,
+    public StudyGroup(int aId, String aName, Coordinates aCoordinates, Date aCreationDate, int aStudentsCount,
                       Double aAverageMark, FormOfEducation aFormOfEducation, Semester aSemesterEnum,
                       Person aGroupAdmin) {
         id = aId;
@@ -75,7 +78,8 @@ public class StudyGroup implements Comparable<StudyGroup> {
     }
 
     @XmlElement
-    public void setCreationDate(String aCreationDate) {
+    @XmlJavaTypeAdapter(DateAdapter.class)
+    public void setCreationDate(Date aCreationDate) {
         creationDate = aCreationDate;
     }
 
@@ -116,7 +120,7 @@ public class StudyGroup implements Comparable<StudyGroup> {
         return coordinates;
     }
 
-    public String getCreationDate() {
+    public Date getCreationDate() {
         return creationDate;
     }
 
@@ -171,11 +175,7 @@ public class StudyGroup implements Comparable<StudyGroup> {
         else if ((getStudentsCount() * 100 + thisAverageMark * 50) <
                 (aStudyGroup.getStudentsCount() * 100 + aStudyGroupAverageMark * 50)) return -1;
         else {
-            try {
-                return formatter.parse(getCreationDate()).compareTo(formatter.parse(aStudyGroup.getCreationDate()));
-            } catch (ParseException e) {
-                return 0;
-            }
+            return getCreationDate().compareTo(aStudyGroup.getCreationDate());
         }
     }
 

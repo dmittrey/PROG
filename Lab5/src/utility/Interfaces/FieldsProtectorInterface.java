@@ -4,6 +4,7 @@ import data.Color;
 import data.FormOfEducation;
 import data.Semester;
 
+import java.util.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
@@ -42,11 +43,14 @@ public interface FieldsProtectorInterface {
         }
     }
 
-    default boolean getDateCorrectStatus(String line) {
+    default boolean getDateCorrectStatus(Date aDate) {
 
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+        String dateInString = formatter.format(aDate);
+
         try {
-            formatter.parse(line);
+            formatter.parse(dateInString);
             return true;
         } catch (ParseException e) {
             return false;
