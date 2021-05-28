@@ -9,7 +9,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(propOrder = {"name", "weight", "hairColor"})
 public class Person {
     private String name;
-    private long weight;
+    private Long weight;
     private Color hairColor;
 
     /**
@@ -19,7 +19,7 @@ public class Person {
      * @param aWeight - admin weight
      * @param aHairColor - admin color
      */
-    public Person(String aName, long aWeight, Color aHairColor) {
+    public Person(String aName, Long aWeight, Color aHairColor) {
         name = aName;
         weight = aWeight;
         hairColor = aHairColor;
@@ -30,7 +30,7 @@ public class Person {
      */
     public Person(){
         name = null;
-        weight = 0;
+        weight = null;
         hairColor = null;
     }
 
@@ -40,7 +40,7 @@ public class Person {
     }
 
     @XmlElement
-    public void setWeight(long aWeight){
+    public void setWeight(Long aWeight){
         weight = aWeight;
     }
 
@@ -53,7 +53,7 @@ public class Person {
         return name;
     }
 
-    public long getWeight() {
+    public Long getWeight() {
         return weight;
     }
 

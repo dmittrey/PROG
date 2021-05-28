@@ -16,4 +16,5 @@ public class Main {
         console.print(fileWorker.getFromXmlFormat());
         commandReader.enable(false);
     }
+    //потом просто поменять сканнер в command reader вызываемом из execute_script и немножко рефакторинг сделать
 }

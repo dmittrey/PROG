@@ -15,7 +15,7 @@ public class Coordinates {
      * @param aX - first coordinate
      * @param aY - second coordinate
      */
-    public Coordinates(int aX, double aY) {
+    public Coordinates(int aX, Double aY) {
         x = aX;
         y = aY;
     }
@@ -34,7 +34,7 @@ public class Coordinates {
     }
 
     @XmlElement (name = "CoordinateY")
-    public void setY(double aY) {
+    public void setY(Double aY) {
         y = aY;
     }
 
@@ -42,7 +42,7 @@ public class Coordinates {
         return x;
     }
 
-    public double getY() {
+    public Double getY() {
         return y;
     }
 

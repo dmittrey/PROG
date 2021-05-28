@@ -63,7 +63,7 @@ public class StudyGroup implements Comparable<StudyGroup> {
     }
 
     @XmlAttribute
-    public void setId(int anId) {
+    public void setId(Integer anId) {
         id = anId;
     }
 
@@ -84,7 +84,7 @@ public class StudyGroup implements Comparable<StudyGroup> {
     }
 
     @XmlElement
-    public void setStudentsCount(int aStudentsCount) {
+    public void setStudentsCount(Integer aStudentsCount) {
         studentsCount = aStudentsCount;
     }
 
@@ -108,7 +108,7 @@ public class StudyGroup implements Comparable<StudyGroup> {
         groupAdmin = aGroupAdmin;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -124,7 +124,7 @@ public class StudyGroup implements Comparable<StudyGroup> {
         return creationDate;
     }
 
-    public int getStudentsCount() {
+    public Integer getStudentsCount() {
         return studentsCount;
     }
 
@@ -190,5 +190,35 @@ public class StudyGroup implements Comparable<StudyGroup> {
                 "Form of education" + "\t:\t" + formOfEducation + "\n" +
                 "Semester enum" + "\t\t:\t" + semesterEnum + "\n" +
                 "Group admin" + "\t\t:\t" + groupAdmin + "\n";
+    }
+
+    @Override
+    public boolean equals(Object otherObject) {
+        if (this == otherObject) return true;
+
+        if (otherObject == null) return false;
+
+        if (!(otherObject instanceof StudyGroup)) return false;
+
+        StudyGroup other = (StudyGroup) otherObject;
+
+        if (((this.getAverageMark() == null) && (other.getAverageMark() != null))
+                || ((this.getAverageMark() != null) && (other.getAverageMark() == null))) {
+            return false;
+        }
+
+        if (((this.getFormOfEducation() == null) && (other.getFormOfEducation() != null))
+                || ((this.getFormOfEducation() != null) && (other.getFormOfEducation() == null))) {
+            return false;
+        }
+
+        return (this.getName().equals(other.getName())
+                && this.getCoordinates().getX() == other.getCoordinates().getX()
+                && this.getCoordinates().getY().equals(other.getCoordinates().getY())
+                && this.getStudentsCount().equals(other.getStudentsCount())
+                && this.getSemesterEnum().equals(other.getSemesterEnum())
+                && this.getGroupAdmin().getName().equals(other.getGroupAdmin().getName())
+                && this.getGroupAdmin().getWeight().equals(other.getGroupAdmin().getWeight())
+                && this.getGroupAdmin().getHairColor().equals(other.getGroupAdmin().getHairColor()));
     }
 }

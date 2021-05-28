@@ -40,7 +40,9 @@ public class CollectionManager implements CollectionManagerInterface {
     }
 
     @Override
-    public HashSet<Integer> getUsedId(){return usedId;}
+    public HashSet<Integer> getUsedId() {
+        return usedId;
+    }
 
     @Override
     @XmlElement(name = "studyGroup")
@@ -51,11 +53,18 @@ public class CollectionManager implements CollectionManagerInterface {
     @Override
     public void add(StudyGroup studyGroup) {
 
+        boolean existInCollection = false;
+
         for (StudyGroup currentStudyGroup : studyGroups) {
-            if (currentStudyGroup.getId() == studyGroup.getId()) remove(currentStudyGroup);
+
+            if (currentStudyGroup.getId().equals(studyGroup.getId())) remove(currentStudyGroup);
+            else if (currentStudyGroup.equals(studyGroup)) existInCollection = true;
         }
-        usedId.add(studyGroup.getId());
-        studyGroups.add(studyGroup);
+
+        if (!existInCollection) {
+            usedId.add(studyGroup.getId());
+            studyGroups.add(studyGroup);
+        }
     }
 
     @Override
