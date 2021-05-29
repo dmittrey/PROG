@@ -170,13 +170,12 @@ public class StudyGroup implements Comparable<StudyGroup> {
         if (getAverageMark() == null) thisAverageMark = (double) 0;
         else thisAverageMark = getAverageMark();
 
-        if ((getStudentsCount() * 100 + thisAverageMark * 50) >
-                (aStudyGroup.getStudentsCount() * 100 + aStudyGroupAverageMark * 50)) return 1;
-        else if ((getStudentsCount() * 100 + thisAverageMark * 50) <
-                (aStudyGroup.getStudentsCount() * 100 + aStudyGroupAverageMark * 50)) return -1;
-        else {
-            return getCreationDate().compareTo(aStudyGroup.getCreationDate());
-        }
+        double compareStatus = ((getStudentsCount() * 100 + thisAverageMark * 50) -
+                (aStudyGroup.getStudentsCount() * 100 + aStudyGroupAverageMark * 50));
+
+        if (compareStatus > 0) return 1;
+        else if (compareStatus < 0) return -1;
+        else return getCreationDate().compareTo(aStudyGroup.getCreationDate());
     }
 
     @Override

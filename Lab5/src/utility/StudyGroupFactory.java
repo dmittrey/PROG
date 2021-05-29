@@ -3,8 +3,6 @@ package utility;
 import data.*;
 import utility.Interfaces.StudyGroupFactoryInterface;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**

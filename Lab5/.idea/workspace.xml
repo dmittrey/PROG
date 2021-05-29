@@ -9,11 +9,15 @@
     <list default="true" id="a1461d5a-1468-409c-901e-7897f657ae79" name="Default Changelist" comment="refactor scriptReader">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/Coordinates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Coordinates.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/ExecuteScript.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/ExecuteScript.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/StudyGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/StudyGroup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utility/CollectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/CollectionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utility/FileWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/FileWorker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utility/CommandReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/CommandReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utility/Console.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Console.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utility/FieldsReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/FieldsReceiver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utility/Interfaces/CommandReaderInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Interfaces/CommandReaderInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utility/Interfaces/FieldsReceiverInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Interfaces/FieldsReceiverInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utility/Invoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Invoker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utility/StudyGroupFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/StudyGroupFactory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,14 +195,7 @@
       <workItem from="1621940745187" duration="1819000" />
       <workItem from="1622217356434" duration="554000" />
       <workItem from="1622217961463" duration="239000" />
-      <workItem from="1622220562251" duration="1512000" />
-    </task>
-    <task id="LOCAL-00017" summary="refactor Add command">
-      <created>1620695524996</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1620695524996</updated>
+      <workItem from="1622220562251" duration="24811000" />
     </task>
     <task id="LOCAL-00018" summary="SHOW and ADD commands">
       <created>1620924875570</created>
@@ -536,7 +533,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621806178031</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="refactor scriptReader">
+      <created>1622231685977</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1622231685978</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

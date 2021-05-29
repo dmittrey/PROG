@@ -7,14 +7,12 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
         Console console = new Console(scanner);
-        FieldsReceiver fieldsReceiver = new FieldsReceiver(console);
         CollectionManager collectionManager = new CollectionManager();
-        StudyGroupFactory studyGroupFactory = new StudyGroupFactory(fieldsReceiver, collectionManager);
-        Invoker invoker = new Invoker(console, collectionManager, fieldsReceiver, studyGroupFactory);
-        CommandReader commandReader = new CommandReader(console, invoker);
+        Invoker invoker = new Invoker(console, collectionManager);
+        CommandReader commandReader = new CommandReader(invoker, false);
         FileWorker fileWorker = new FileWorker(collectionManager, console);
         console.print(fileWorker.getFromXmlFormat());
-        commandReader.enable(false);
+        commandReader.enable();
+        scanner.close();
     }
-    //потом просто поменять сканнер в command reader вызываемом из execute_script и немножко рефакторинг сделать
 }

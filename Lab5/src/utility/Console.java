@@ -9,15 +9,41 @@ import java.util.Scanner;
  * Console helps us to read and print information
  */
 public class Console implements ConsoleInterface {
-    private final Scanner scanner;
+    private Scanner scanner;
+    private boolean printPermission;
 
     public Console(Scanner aScanner) {
+
         scanner = aScanner;
+        printPermission = true;
+    }
+
+    public void disablePrintPermissionStatus(){
+
+        printPermission = false;
+    }
+
+    public void enablePrintPermission(){
+
+        printPermission = true;
+    }
+
+    public void setScanner(Scanner aScanner){
+        scanner = aScanner;
+    }
+
+    public Scanner getScanner() {
+        return scanner;
+    }
+
+    public void closeScanner(){
+        scanner.close();
     }
 
     @Override
     public void print(Object anObj) {
-        System.out.print(anObj);
+
+        if (printPermission) System.out.print(anObj);
     }
 
     @Override
@@ -27,7 +53,7 @@ public class Console implements ConsoleInterface {
         try {
             line = scanner.nextLine();
         } catch (NoSuchElementException e) {
-            //print(TextFormatting.getRedText("\tUnexpected EOF!\n"));
+            System.out.print("GG");
             System.exit(0);
             return null;
         }

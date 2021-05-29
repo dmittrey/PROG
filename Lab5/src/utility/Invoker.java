@@ -11,11 +11,11 @@ import java.util.*;
  */
 public class Invoker implements InvokerInterface {
 
-    private final Console console;
+    private Console console;
     private final CollectionManager collectionManager;
     private final Map<String, CommandAbstract> commands;
-    private final FieldsReceiver fieldsReceiver;
-    private final StudyGroupFactory studyGroupFactory;
+    private FieldsReceiver fieldsReceiver;
+    private StudyGroupFactory studyGroupFactory;
     private final Queue<String> previousCommands;
     private final Set<String> executedScripts;
     private final FileWorker fileWorker;
@@ -25,21 +25,29 @@ public class Invoker implements InvokerInterface {
      *
      * @param aConsole - Class to print and read information
      * @param aCollectionManager - Class for add new element into collection
-     * @param aFieldsReceiver - Class to receive information to create study groups
-     * @param aStudyGroupFactory - Class to create study groups
      */
-    public Invoker(Console aConsole, CollectionManager aCollectionManager, FieldsReceiver aFieldsReceiver,
-                   StudyGroupFactory aStudyGroupFactory) {
+    public Invoker(Console aConsole, CollectionManager aCollectionManager) {
 
-        fieldsReceiver = aFieldsReceiver;
         console = aConsole;
+        fieldsReceiver = new FieldsReceiver(aConsole);
         collectionManager = aCollectionManager;
+        studyGroupFactory = new StudyGroupFactory(fieldsReceiver, collectionManager);
         commands = new HashMap<>();
-        studyGroupFactory = aStudyGroupFactory;
         previousCommands = new LinkedList<>();
         executedScripts = new HashSet<>();
         fileWorker = new FileWorker(collectionManager, console);
         initMap();
+    }
+
+    public void setNewConsole(Console aConsole){
+        console = aConsole;
+        fieldsReceiver = new FieldsReceiver(console);
+        studyGroupFactory = new StudyGroupFactory(fieldsReceiver, collectionManager);
+        initMap();
+    }
+
+    public Console getConsole(){
+        return console;
     }
 
     private void initMap() {

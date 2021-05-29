@@ -38,10 +38,20 @@ public class ExecuteScript extends CommandAbstract {
         else {
             invoker.addScriptPath(aArg);
             try {
+                Scanner previousScanner = invoker.getConsole().getScanner();
+
                 Scanner scriptScanner = new Scanner(new File(aArg));
-                Console console = new Console(scriptScanner);
-                CommandReader commandReader = new CommandReader(console, invoker);
-                commandReader.enable(true);
+                invoker.getConsole().setScanner(scriptScanner);
+
+                //console.disablePrintPermissionStatus();
+                CommandReader commandReader = new CommandReader(invoker, true);
+                commandReader.enable();
+
+                invoker.getConsole().getScanner().close();
+                invoker.getConsole().setScanner(previousScanner);
+
+                //console.enablePrintPermission();
+                //invoker.setNewConsole(console);
             } catch (FileNotFoundException exception) {
                 return TextFormatting.getRedText("\tFile not found!\n");
             }

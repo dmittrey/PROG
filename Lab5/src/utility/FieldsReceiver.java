@@ -11,7 +11,7 @@ import java.util.Arrays;
  */
 public class FieldsReceiver implements FieldsReceiverInterface, FieldsProtectorInterface {
 
-    private final Console console;
+    private Console console;
 
     public FieldsReceiver(Console aConsole) {
         console = aConsole;
@@ -22,9 +22,9 @@ public class FieldsReceiver implements FieldsReceiverInterface, FieldsProtectorI
      */
     @Override
     public String getName() {
-        String line = getFirstRequest("group name");
+        String line = getFirstRequest("group name", console);
         while (!getNameCorrectStatus(line)) {
-            line = getUniversalRequest("group name", "not null and not empty string");
+            line = getUniversalRequest("group name", "not null and not empty string", console);
         }
         return line;
     }
@@ -47,7 +47,7 @@ public class FieldsReceiver implements FieldsReceiverInterface, FieldsProtectorI
         line = console.read();
 
         while (!getCoordinateXCorrectStatus(line)) {
-            line = getUniversalRequest("x coordinate", "not null int number");
+            line = getUniversalRequest("x coordinate", "not null int number", console);
         }
         x = Integer.parseInt(line);
 
@@ -55,7 +55,7 @@ public class FieldsReceiver implements FieldsReceiverInterface, FieldsProtectorI
         line = console.read();
 
         while (!getCoordinateYCorrectStatus(line)) {
-            line = getUniversalRequest("y coordinate", "not null Double number");
+            line = getUniversalRequest("y coordinate", "not null Double number", console);
         }
         y = Double.parseDouble(line);
 
@@ -69,10 +69,11 @@ public class FieldsReceiver implements FieldsReceiverInterface, FieldsProtectorI
     public Integer getStudentsCount() {
         String line;
 
-        line = getFirstRequest("group students count");
+        line = getFirstRequest("group students count", console);
 
         while (!getStudentsCountCorrectStatus(line)) {
-            line = getUniversalRequest("group student count", "not null positive Integer number");
+            line = getUniversalRequest("group student count", "not null positive Integer number",
+                    console);
         }
         return Integer.parseInt(line);
     }
@@ -84,11 +85,11 @@ public class FieldsReceiver implements FieldsReceiverInterface, FieldsProtectorI
     public Double getAverageMark() {
         String line;
 
-        line = getFirstRequest("group average mark");
+        line = getFirstRequest("group average mark", console);
 
         while (!getAverageMarkCorrectStatus(line)) {
             line = getUniversalRequest("group average mark",
-                    "positive double or you can skip this field");
+                    "positive double or you can skip this field", console);
         }
         if (line == null) return null;
         else return Double.parseDouble(line);
@@ -105,10 +106,10 @@ public class FieldsReceiver implements FieldsReceiverInterface, FieldsProtectorI
                 + TextFormatting.getBlueText("\n-----")
                 + TextFormatting.getBlueText("\n\tYou can write form of education in lower case!")
                 + TextFormatting.getBlueText("\n-----")
-                + TextFormatting.getRedText("\n\n\t(You can skip this field)"));
+                + TextFormatting.getRedText("\n\n\t(You can skip this field)"), console);
 
         while (!getFormOfEducationCorrectStatus(line)) {
-            line = getUniversalEnumRequest("form of education");
+            line = getUniversalEnumRequest("form of education", console);
         }
 
         if (line == null) return null;
@@ -125,10 +126,10 @@ public class FieldsReceiver implements FieldsReceiverInterface, FieldsProtectorI
         line = getFirstEnumRequest("group semester", Arrays.toString(Semester.values())
                 + TextFormatting.getBlueText("\n-----")
                 + TextFormatting.getBlueText("\n\tYou can write form of education in lower case!")
-                + TextFormatting.getBlueText("\n-----"));
+                + TextFormatting.getBlueText("\n-----"), console);
 
         while (!getSemesterEnumCorrectStatus(line)) {
-            line = getUniversalEnumRequest("semester");
+            line = getUniversalEnumRequest("semester", console);
         }
         return Semester.valueOf(line.toUpperCase());
     }
@@ -147,27 +148,27 @@ public class FieldsReceiver implements FieldsReceiverInterface, FieldsProtectorI
                 TextFormatting.getBlueText("\tGROUP ADMIN\n") +
                 "-------------------\n\n");
 
-        line = getFirstRequest("group admin name");
+        line = getFirstRequest("group admin name", console);
 
         while (!getNameCorrectStatus(line)) {
-            line = getUniversalRequest("group admin name", "not null and empty String");
+            line = getUniversalRequest("group admin name", "not null and empty String", console);
         }
         name = line;
 
-        line = getFirstRequest("group admin weight");
+        line = getFirstRequest("group admin weight", console);
 
         while (!getGroupAdminWeightCorrectStatus(line)) {
-            line = getUniversalRequest("group admin weight", "not null positive long number");
+            line = getUniversalRequest("group admin weight", "not null positive long number", console);
         }
         weight = Long.parseLong(line);
 
         line = getFirstEnumRequest("group admin hair color", Arrays.toString(Color.values())
                 + TextFormatting.getBlueText("\n-----")
                 + TextFormatting.getBlueText("\n\tYou can write form of education in lower case!")
-                + TextFormatting.getBlueText("\n-----"));
+                + TextFormatting.getBlueText("\n-----"), console);
 
         while (!getGroupAdminHairColorCorrectStatus(line)) {
-            line = getUniversalEnumRequest("group admin hair color");
+            line = getUniversalEnumRequest("group admin hair color", console);
         }
         hairColor = Color.valueOf(line.toUpperCase());
 

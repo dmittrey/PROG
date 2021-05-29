@@ -7,14 +7,9 @@ import data.Semester;
 import utility.Console;
 import utility.TextFormatting;
 
-import java.util.Scanner;
-
 public interface FieldsReceiverInterface {
 
-    Scanner scanner = new Scanner(System.in);
-    Console console = new Console(scanner);
-
-    default String getFirstRequest(String requestField){
+    default String getFirstRequest(String requestField, Console console){
         StringBuilder sb = new StringBuilder();
         sb.append("\n-------------------\n");
         sb.append(requestField.toUpperCase()).append("\n");
@@ -24,7 +19,7 @@ public interface FieldsReceiverInterface {
         return console.read();
     }
 
-    default String getUniversalRequest(String requestField, String options) {
+    default String getUniversalRequest(String requestField, String options, Console console) {
         StringBuilder sb = new StringBuilder();
         sb.append("\t").append(TextFormatting.getRedText(TextFormatting.capitalize(requestField))).
                 append(TextFormatting.getRedText(" should be ")).append(TextFormatting.getRedText(options)).
@@ -34,7 +29,7 @@ public interface FieldsReceiverInterface {
         return console.read();
     }
 
-    default String getFirstEnumRequest(String requestField, String enumerateList) {
+    default String getFirstEnumRequest(String requestField, String enumerateList, Console console) {
         StringBuilder sb = new StringBuilder();
         sb.append("\n-------------------\n");
         sb.append(requestField.toUpperCase()).append("\n");
@@ -46,7 +41,7 @@ public interface FieldsReceiverInterface {
         return console.read();
     }
 
-    default String getUniversalEnumRequest(String requestField) {
+    default String getUniversalEnumRequest(String requestField, Console console) {
         StringBuilder sb = new StringBuilder();
         sb.append(TextFormatting.getRedText("\tIt's incorrect ")).
                 append(TextFormatting.getRedText(requestField)).append(TextFormatting.getRedText("!"));

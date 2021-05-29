@@ -14,12 +14,15 @@ public class CommandReader implements CommandReaderInterface {
     private final Invoker invoker;
     private final Pattern commandName;
     private final Pattern argName;
+    private final boolean scriptExecutionStatus;
 
 
-    public CommandReader(Console aConsole, Invoker aInvoker) {
-        console = aConsole;
+    public CommandReader(Invoker aInvoker, boolean aScriptExecutionStatus) {
+        console = aInvoker.getConsole();
 
         invoker = aInvoker;
+
+        scriptExecutionStatus = aScriptExecutionStatus;
 
         commandName = Pattern.compile("^\\w+\\s+");
 
@@ -27,7 +30,7 @@ public class CommandReader implements CommandReaderInterface {
     }
 
     @Override
-    public void enable(boolean scriptExecutionStatus) {
+    public void enable() {
 
         String nextLine;
         String exitSave = "";
@@ -36,12 +39,9 @@ public class CommandReader implements CommandReaderInterface {
 
         while (!exitSave.equals("exit ")) {
 
-            if (!scriptExecutionStatus || console.hasNextLine()) {
-                console.print("Enter the command: ");
-            }
-            else {
-                break;
-            }
+            if (scriptExecutionStatus && !console.hasNextLine()) break;
+
+            console.print("Enter the command: \n");
 
             nextLine = console.read() + " ";
             exitSave = nextLine;
@@ -59,8 +59,6 @@ public class CommandReader implements CommandReaderInterface {
             matcher = argName.matcher(nextLine);
 
             arg = matcher.find() ? matcher.group() : "";
-
-            if (scriptExecutionStatus) console.print(TextFormatting.getGreenText(command) + " " + arg + "\n");
 
             if (!command.equals("exit ")) invoker.execute(command.trim(), arg.trim());
             else {
