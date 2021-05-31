@@ -22,9 +22,23 @@ public class FieldsReceiver implements FieldsReceiverInterface, FieldsProtectorI
      */
     @Override
     public String getName() {
-        String line = getFirstRequest("group name", console);
-        while (!getNameCorrectStatus(line)) {
-            line = getUniversalRequest("group name", "not null and not empty string", console);
+        String line;
+        if (console.getExeStatus()) {
+
+            if (!console.hasNextLine()) return null;
+            line = console.read();
+            System.out.println("firstCheckName");
+
+            while (!getNameCorrectStatus(line)) {
+                if (!console.hasNextLine()) return null;
+                line = console.read();
+                System.out.print("checkName");
+            }
+        } else {
+            line = getFirstRequest("group name", console);
+            while (!getNameCorrectStatus(line)) {
+                line = getUniversalRequest("group name", "not null and not empty string", console);
+            }
         }
         return line;
     }
@@ -39,23 +53,46 @@ public class FieldsReceiver implements FieldsReceiverInterface, FieldsProtectorI
         int x;
         double y;
 
-        console.print("\n-------------------\n" +
-                "GROUP'S COORDINATES\n" +
-                "-------------------\n\n");
+        if (console.getExeStatus()) {
+            if (!console.hasNextLine()) return null;
+            line = console.read();
+            System.out.println("firstCheckXCoordinate");
 
-        console.print("Enter x coordinate: ");
-        line = console.read();
+            while (!getCoordinateXCorrectStatus(line)) {
+                if (!console.hasNextLine()) return null;
+                line = console.read();
+                System.out.println("checkXCoordinate");
+            }
+            x = Integer.parseInt(line);
 
-        while (!getCoordinateXCorrectStatus(line)) {
-            line = getUniversalRequest("x coordinate", "not null int number", console);
-        }
-        x = Integer.parseInt(line);
+            if (!console.hasNextLine()) return null;
+            line = console.read();
+            System.out.println("firstCheckYCoordinate");
 
-        console.print("Enter y coordinate: ");
-        line = console.read();
+            while (!getCoordinateYCorrectStatus(line)) {
+                if (!console.hasNextLine()) return null;
+                line = console.read();
+                System.out.println("checkYCoordinate");
+            }
+        } else {
+            console.print("\n-------------------\n" +
+                    "GROUP'S COORDINATES\n" +
+                    "-------------------\n\n");
 
-        while (!getCoordinateYCorrectStatus(line)) {
-            line = getUniversalRequest("y coordinate", "not null Double number", console);
+            console.print("Enter x coordinate: ");
+            line = console.read();
+
+            while (!getCoordinateXCorrectStatus(line)) {
+                line = getUniversalRequest("x coordinate", "not null int number", console);
+            }
+            x = Integer.parseInt(line);
+
+            console.print("Enter y coordinate: ");
+            line = console.read();
+
+            while (!getCoordinateYCorrectStatus(line)) {
+                line = getUniversalRequest("y coordinate", "not null Double number", console);
+            }
         }
         y = Double.parseDouble(line);
 
@@ -69,11 +106,23 @@ public class FieldsReceiver implements FieldsReceiverInterface, FieldsProtectorI
     public Integer getStudentsCount() {
         String line;
 
-        line = getFirstRequest("group students count", console);
+        if (console.getExeStatus()) {
+            if (!console.hasNextLine()) return null;
+            line = console.read();
+            System.out.print("firstCheckStudentsCount");
 
-        while (!getStudentsCountCorrectStatus(line)) {
-            line = getUniversalRequest("group student count", "not null positive Integer number",
-                    console);
+            while (!getStudentsCountCorrectStatus(line)) {
+                if (!console.hasNextLine()) return null;
+                line = console.read();
+                System.out.print("checkStudentsCount");
+            }
+        } else {
+            line = getFirstRequest("group students count", console);
+
+            while (!getStudentsCountCorrectStatus(line)) {
+                line = getUniversalRequest("group student count", "not null positive Integer number",
+                        console);
+            }
         }
         return Integer.parseInt(line);
     }
@@ -85,11 +134,23 @@ public class FieldsReceiver implements FieldsReceiverInterface, FieldsProtectorI
     public Double getAverageMark() {
         String line;
 
-        line = getFirstRequest("group average mark", console);
+        if (console.getExeStatus()) {
+            if (!console.hasNextLine()) return null;
+            line = console.read();
+            System.out.print("firstCheckAverageMark");
 
-        while (!getAverageMarkCorrectStatus(line)) {
-            line = getUniversalRequest("group average mark",
-                    "positive double or you can skip this field", console);
+            while (!getAverageMarkCorrectStatus(line)) {
+                if (!console.hasNextLine()) return null;
+                line = console.read();
+                System.out.print("checkAverageMark");
+            }
+        } else {
+            line = getFirstRequest("group average mark", console);
+
+            while (!getAverageMarkCorrectStatus(line)) {
+                line = getUniversalRequest("group average mark",
+                        "positive double or you can skip this field", console);
+            }
         }
         if (line == null) return null;
         else return Double.parseDouble(line);
@@ -102,14 +163,26 @@ public class FieldsReceiver implements FieldsReceiverInterface, FieldsProtectorI
     public FormOfEducation getFormOfEducation() {
         String line;
 
-        line = getFirstEnumRequest("form of education", Arrays.toString(FormOfEducation.values())
-                + TextFormatting.getBlueText("\n-----")
-                + TextFormatting.getBlueText("\n\tYou can write form of education in lower case!")
-                + TextFormatting.getBlueText("\n-----")
-                + TextFormatting.getRedText("\n\n\t(You can skip this field)"), console);
+        if (console.getExeStatus()) {
+            if (!console.hasNextLine()) return null;
+            line = console.read();
+            System.out.print("firstCheckFormOfEducation");
 
-        while (!getFormOfEducationCorrectStatus(line)) {
-            line = getUniversalEnumRequest("form of education", console);
+            while (!getFormOfEducationCorrectStatus(line)) {
+                if (!console.hasNextLine()) return null;
+                line = console.read();
+                System.out.print("checkFormOfEducation");
+            }
+        } else {
+            line = getFirstEnumRequest("form of education", Arrays.toString(FormOfEducation.values())
+                    + TextFormatting.getBlueText("\n-----")
+                    + TextFormatting.getBlueText("\n\tYou can write form of education in lower case!")
+                    + TextFormatting.getBlueText("\n-----")
+                    + TextFormatting.getRedText("\n\n\t(You can skip this field)"), console);
+
+            while (!getFormOfEducationCorrectStatus(line)) {
+                line = getUniversalEnumRequest("form of education", console);
+            }
         }
 
         if (line == null) return null;
@@ -123,13 +196,25 @@ public class FieldsReceiver implements FieldsReceiverInterface, FieldsProtectorI
     public Semester getSemester() {
         String line;
 
-        line = getFirstEnumRequest("group semester", Arrays.toString(Semester.values())
-                + TextFormatting.getBlueText("\n-----")
-                + TextFormatting.getBlueText("\n\tYou can write form of education in lower case!")
-                + TextFormatting.getBlueText("\n-----"), console);
+        if (console.getExeStatus()) {
+            if (!console.hasNextLine()) return null;
+            line = console.read();
+            System.out.print("firstCheckSemester");
 
-        while (!getSemesterEnumCorrectStatus(line)) {
-            line = getUniversalEnumRequest("semester", console);
+            while (!getSemesterEnumCorrectStatus(line)) {
+                if (!console.hasNextLine()) return null;
+                line = console.read();
+                System.out.print("checkSemester");
+            }
+        } else {
+            line = getFirstEnumRequest("group semester", Arrays.toString(Semester.values())
+                    + TextFormatting.getBlueText("\n-----")
+                    + TextFormatting.getBlueText("\n\tYou can write form of education in lower case!")
+                    + TextFormatting.getBlueText("\n-----"), console);
+
+            while (!getSemesterEnumCorrectStatus(line)) {
+                line = getUniversalEnumRequest("semester", console);
+            }
         }
         return Semester.valueOf(line.toUpperCase());
     }
@@ -144,31 +229,68 @@ public class FieldsReceiver implements FieldsReceiverInterface, FieldsProtectorI
         long weight;
         Color hairColor;
 
-        console.print("\n-------------------\n" +
-                TextFormatting.getBlueText("\tGROUP ADMIN\n") +
-                "-------------------\n\n");
+        if (console.getExeStatus()) {
+            if (!console.hasNextLine()) return null;
+            line = console.read();
+            System.out.print("firstCheckNameGroupAdmin");
 
-        line = getFirstRequest("group admin name", console);
+            while (!getNameCorrectStatus(line)) {
+                if (!console.hasNextLine()) return null;
+                line = console.read();
+                System.out.print("checkNameGroupAdmin");
+            }
+        } else {
+            console.print("\n-------------------\n" +
+                    TextFormatting.getBlueText("\tGROUP ADMIN\n") +
+                    "-------------------\n\n");
+            line = getFirstRequest("group admin name", console);
 
-        while (!getNameCorrectStatus(line)) {
-            line = getUniversalRequest("group admin name", "not null and empty String", console);
+            while (!getNameCorrectStatus(line)) {
+                line = getUniversalRequest("group admin name", "not null and empty String", console);
+            }
         }
         name = line;
 
-        line = getFirstRequest("group admin weight", console);
+        //
+        if (console.getExeStatus()) {
+            if (!console.hasNextLine()) return null;
+            line = console.read();
+            System.out.print("firstCheckWeightGroupAdmin");
 
-        while (!getGroupAdminWeightCorrectStatus(line)) {
-            line = getUniversalRequest("group admin weight", "not null positive long number", console);
+            while (!getGroupAdminWeightCorrectStatus(line)) {
+                if (!console.hasNextLine()) return null;
+                line = console.read();
+                System.out.print("checkWeightGroupAdmin");
+            }
+        } else {
+            line = getFirstRequest("group admin weight", console);
+
+            while (!getGroupAdminWeightCorrectStatus(line)) {
+                line = getUniversalRequest("group admin weight", "not null positive long number", console);
+            }
         }
         weight = Long.parseLong(line);
 
-        line = getFirstEnumRequest("group admin hair color", Arrays.toString(Color.values())
-                + TextFormatting.getBlueText("\n-----")
-                + TextFormatting.getBlueText("\n\tYou can write form of education in lower case!")
-                + TextFormatting.getBlueText("\n-----"), console);
+        //
+        if (console.getExeStatus()) {
+            if (!console.hasNextLine()) return null;
+            line = console.read();
+            System.out.print("firstCheckHairColorGroupAdmin");
 
-        while (!getGroupAdminHairColorCorrectStatus(line)) {
-            line = getUniversalEnumRequest("group admin hair color", console);
+            while (!getGroupAdminHairColorCorrectStatus(line)) {
+                if (!console.hasNextLine()) return null;
+                line = console.read();
+                System.out.print("checkHairColorGroupAdmin");
+            }
+        } else {
+            line = getFirstEnumRequest("group admin hair color", Arrays.toString(Color.values())
+                    + TextFormatting.getBlueText("\n-----")
+                    + TextFormatting.getBlueText("\n\tYou can write form of education in lower case!")
+                    + TextFormatting.getBlueText("\n-----"), console);
+
+            while (!getGroupAdminHairColorCorrectStatus(line)) {
+                line = getUniversalEnumRequest("group admin hair color", console);
+            }
         }
         hairColor = Color.valueOf(line.toUpperCase());
 

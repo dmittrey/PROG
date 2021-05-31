@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        Console console = new Console(scanner);
+        Console console = new Console(scanner, false);
         CollectionManager collectionManager = new CollectionManager();
         Invoker invoker = new Invoker(console, collectionManager);
         CommandReader commandReader = new CommandReader(invoker, false);

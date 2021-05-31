@@ -10,22 +10,12 @@ import java.util.Scanner;
  */
 public class Console implements ConsoleInterface {
     private Scanner scanner;
-    private boolean printPermission;
+    private boolean exeStatus;
 
-    public Console(Scanner aScanner) {
+    public Console(Scanner aScanner, boolean anExeStatus) {
 
         scanner = aScanner;
-        printPermission = true;
-    }
-
-    public void disablePrintPermissionStatus(){
-
-        printPermission = false;
-    }
-
-    public void enablePrintPermission(){
-
-        printPermission = true;
+        exeStatus = anExeStatus;
     }
 
     public void setScanner(Scanner aScanner){
@@ -36,14 +26,22 @@ public class Console implements ConsoleInterface {
         return scanner;
     }
 
-    public void closeScanner(){
-        scanner.close();
+    public void enableExeStatus(){
+        exeStatus = true;
+    }
+
+    public void disableExeStatus(){
+        exeStatus = false;
+    }
+
+    public boolean getExeStatus(){
+        return exeStatus;
     }
 
     @Override
     public void print(Object anObj) {
 
-        if (printPermission) System.out.print(anObj);
+        System.out.print(anObj);
     }
 
     @Override
@@ -53,8 +51,7 @@ public class Console implements ConsoleInterface {
         try {
             line = scanner.nextLine();
         } catch (NoSuchElementException e) {
-            System.out.print("GG");
-            System.exit(0);
+            if (!exeStatus) System.exit(0);
             return null;
         }
 

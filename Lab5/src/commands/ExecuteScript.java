@@ -42,6 +42,7 @@ public class ExecuteScript extends CommandAbstract {
 
                 Scanner scriptScanner = new Scanner(new File(aArg));
                 invoker.getConsole().setScanner(scriptScanner);
+                invoker.getConsole().enableExeStatus();
 
                 //console.disablePrintPermissionStatus();
                 CommandReader commandReader = new CommandReader(invoker, true);
