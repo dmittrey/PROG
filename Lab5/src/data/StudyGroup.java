@@ -1,6 +1,7 @@
 package data;
 
 import utility.DateAdapter;
+import utility.Interfaces.FieldsProtectorInterface;
 import utility.TextFormatting;
 
 import javax.xml.bind.annotation.XmlAttribute;
@@ -16,7 +17,7 @@ import java.util.Date;
  */
 @XmlType(propOrder = {"id", "name", "coordinates", "creationDate", "studentsCount", "averageMark", "formOfEducation",
         "semesterEnum", "groupAdmin"})
-public class StudyGroup implements Comparable<StudyGroup> {
+public class StudyGroup implements Comparable<StudyGroup>, FieldsProtectorInterface {
 
     private Integer id;
     private String name;
@@ -45,6 +46,8 @@ public class StudyGroup implements Comparable<StudyGroup> {
     public StudyGroup(int aId, String aName, Coordinates aCoordinates, Date aCreationDate, int aStudentsCount,
                       Double aAverageMark, FormOfEducation aFormOfEducation, Semester aSemesterEnum,
                       Person aGroupAdmin) {
+
+
         id = aId;
         name = aName;
         coordinates = aCoordinates;

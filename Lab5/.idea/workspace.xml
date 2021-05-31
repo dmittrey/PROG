@@ -7,12 +7,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1461d5a-1468-409c-901e-7897f657ae79" name="Default Changelist" comment="refactor">
+      <change afterPath="$PROJECT_DIR$/src/utility/Interfaces/ObjectValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/ExecuteScript.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/ExecuteScript.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/Add.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/StudyGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/StudyGroup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utility/CollectionValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/CollectionValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utility/CommandReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/CommandReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utility/Console.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Console.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utility/FieldsReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/FieldsReceiver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utility/FileWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/FileWorker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utility/StudyGroupFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/StudyGroupFactory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +24,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -126,6 +128,17 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>

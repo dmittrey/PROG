@@ -41,7 +41,7 @@ public class CommandReader implements CommandReaderInterface {
 
             if (scriptExecutionStatus && !console.hasNextLine()) break;
 
-            console.print("Enter the command: ");
+            if (!scriptExecutionStatus) console.print("Enter the command: ");
 
             nextLine = console.read() + " ";
             exitSave = nextLine;

@@ -1,6 +1,7 @@
 package utility;
 
 import data.*;
+import utility.Interfaces.ObjectValidator;
 import utility.Interfaces.StudyGroupFactoryInterface;
 
 import java.util.Date;
@@ -8,7 +9,7 @@ import java.util.Date;
 /**
  * Class for creating Study groups with autogenerate id and Date
  */
-public class StudyGroupFactory implements StudyGroupFactoryInterface {
+public class StudyGroupFactory implements StudyGroupFactoryInterface, ObjectValidator {
 
     private int id = 1;
     private final FieldsReceiver fieldsReceiver;
@@ -39,8 +40,15 @@ public class StudyGroupFactory implements StudyGroupFactoryInterface {
         Semester semester = fieldsReceiver.getSemester();
         Person groupAdmin = fieldsReceiver.getGroupAdmin();
 
-        return new StudyGroup(id, name, coordinates, new Date(), studentsCount, averageMark, formOfEducation,
-                    semester, groupAdmin);
+        if ((name != null) &&
+                (coordinates != null) &&
+                (studentsCount != null) &&
+                (semester != null) &&
+                (groupAdmin != null)) {
+            return new StudyGroup(id, name, coordinates, new Date(), studentsCount,
+                    averageMark, formOfEducation, semester, groupAdmin);
+        }
+        return null;
     }
 
     /**

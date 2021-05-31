@@ -1,5 +1,6 @@
 package commands;
 
+import data.StudyGroup;
 import utility.CollectionManager;
 import utility.StudyGroupFactory;
 import utility.TextFormatting;
@@ -32,9 +33,12 @@ public class Add extends CommandAbstract {
     @Override
     public Object execute(String aArg) {
         if (aArg.equals("")) {
-            collectionManager.add(studyGroupFactory.createStudyGroup());
 
-            return TextFormatting.getGreenText("\n\tSuccessful\n\n");
+            StudyGroup studyGroup = studyGroupFactory.createStudyGroup();
+
+            if (studyGroup != null) collectionManager.add(studyGroup);
+
+            return TextFormatting.getGreenText("\n\tSuccessful\n");
         } else {
             return TextFormatting.getRedText("\tCommand arguments entered incorrectly!\n");
         }
