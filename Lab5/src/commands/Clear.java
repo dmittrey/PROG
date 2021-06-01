@@ -1,6 +1,7 @@
 package commands;
 
 import utility.CollectionManager;
+import utility.Interfaces.CollectionManagerInterface;
 import utility.TextFormatting;
 
 /**
@@ -8,7 +9,7 @@ import utility.TextFormatting;
  */
 public class Clear extends CommandAbstract {
 
-    private final CollectionManager collectionManager;
+    private final CollectionManagerInterface collectionManager;
 
     /**
      * Class constructor
@@ -21,7 +22,7 @@ public class Clear extends CommandAbstract {
     }
 
     /**
-     * We return status of execute
+     * We return status of execute and main collection
      *
      * (in future we can return empty collection)
      */

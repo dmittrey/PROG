@@ -1,6 +1,7 @@
 package commands;
 
 import utility.CollectionManager;
+import utility.Interfaces.CollectionManagerInterface;
 import utility.TextFormatting;
 
 /**
@@ -8,7 +9,7 @@ import utility.TextFormatting;
  */
 public class Info extends CommandAbstract {
 
-    private final CollectionManager collectionManager;
+    private final CollectionManagerInterface collectionManager;
 
     /**
      * Class constructor

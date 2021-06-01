@@ -18,21 +18,4 @@ public interface ObjectValidator extends FieldsProtectorInterface {
                 getGroupAdminWeightCorrectStatus(String.valueOf(aStudyGroup.getGroupAdmin().getWeight())) &&
                 getGroupAdminHairColorCorrectStatus(String.valueOf(aStudyGroup.getGroupAdmin().getHairColor()));
     }
-
-    default boolean validateFields(Object studyGroupName, Object studyGroupCoordinates,
-                                   Object studyGroupStudentsCount, Object studyGroupAverageMark,
-                                   Object studyGroupFormOfEducation, Object studyGroupSemesterEnum,
-                                   Object studyGroupAdminName, Object studyGroupAdminWeight,
-                                   Object studyGroupAdminHairColor) {
-
-        return getNameCorrectStatus(String.valueOf(studyGroupName)) &&
-                (studyGroupCoordinates != null) &&
-                getStudentsCountCorrectStatus(String.valueOf(studyGroupStudentsCount)) &&
-                getAverageMarkCorrectStatus(String.valueOf(studyGroupAverageMark)) &&
-                getFormOfEducationCorrectStatus(String.valueOf(studyGroupFormOfEducation)) &&
-                getSemesterEnumCorrectStatus(String.valueOf(studyGroupSemesterEnum)) &&
-                getNameCorrectStatus(String.valueOf(studyGroupAdminName)) &&
-                getGroupAdminWeightCorrectStatus(String.valueOf(studyGroupAdminWeight)) &&
-                getGroupAdminHairColorCorrectStatus(String.valueOf(studyGroupAdminHairColor));
-    }
 }

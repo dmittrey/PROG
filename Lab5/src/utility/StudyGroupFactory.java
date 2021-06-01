@@ -1,6 +1,8 @@
 package utility;
 
 import data.*;
+import utility.Interfaces.CollectionManagerInterface;
+import utility.Interfaces.FieldsReceiverInterface;
 import utility.Interfaces.ObjectValidator;
 import utility.Interfaces.StudyGroupFactoryInterface;
 
@@ -12,8 +14,8 @@ import java.util.Date;
 public class StudyGroupFactory implements StudyGroupFactoryInterface, ObjectValidator {
 
     private int id = 1;
-    private final FieldsReceiver fieldsReceiver;
-    private final CollectionManager collectionManager;
+    private final FieldsReceiverInterface fieldsReceiver;
+    private final CollectionManagerInterface collectionManager;
 
     public StudyGroupFactory(FieldsReceiver aFieldsReceiver, CollectionManager aCollectionManager) {
 

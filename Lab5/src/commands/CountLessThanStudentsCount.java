@@ -3,34 +3,33 @@ package commands;
 import data.StudyGroup;
 import utility.CollectionManager;
 import utility.FieldsReceiver;
+import utility.Interfaces.CollectionManagerInterface;
+import utility.Interfaces.FieldsProtectorInterface;
 import utility.TextFormatting;
 
 import java.util.HashSet;
 
 /**
- * Class for count elements whose less than specified variable
+ * Class for count elements whose less than specified amount of students count
  */
-public class CountLessThanStudentsCount extends CommandAbstract {
+public class CountLessThanStudentsCount extends CommandAbstract implements FieldsProtectorInterface {
 
-    private final CollectionManager collectionManager;
-    private final FieldsReceiver fieldsReceiver;
+    private final CollectionManagerInterface collectionManager;
 
     /**
      * Class constructor
      *
      * @param aCollectionManager - Class to work with collection
-     * @param aFieldsReceiver    - Class to read fields and check them for correctness
      */
-    public CountLessThanStudentsCount(CollectionManager aCollectionManager, FieldsReceiver aFieldsReceiver) {
+    public CountLessThanStudentsCount(CollectionManager aCollectionManager) {
         super("count_less_than_students_count", "print the number of elements whose "
                 + "studentsCount field value is less than the specified one" +
                 TextFormatting.getBlueText("\n\tYou should to enter students count after entering a command"));
         collectionManager = aCollectionManager;
-        fieldsReceiver = aFieldsReceiver;
     }
 
     /**
-     * We return status of execute
+     * We return count of study groups in string representation
      *
      * (In future we can return Integer number or error message)
      */
@@ -40,7 +39,7 @@ public class CountLessThanStudentsCount extends CommandAbstract {
 
         if (collection.size() == 0) return TextFormatting.getRedText("\tCollection is empty!\n");
 
-        if (fieldsReceiver.isPositiveInt(aArg)) {
+        if (isPositiveInt(aArg)) {
             int i = 0;
             for (StudyGroup studyGroup : collection) {
                 if (studyGroup.getStudentsCount() < Integer.parseInt(aArg)) i++;

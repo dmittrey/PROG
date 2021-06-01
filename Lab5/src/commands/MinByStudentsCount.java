@@ -1,6 +1,7 @@
 package commands;
 
 import utility.CollectionManager;
+import utility.Interfaces.CollectionManagerInterface;
 import utility.TextFormatting;
 
 /**
@@ -8,7 +9,7 @@ import utility.TextFormatting;
  */
 public class MinByStudentsCount extends CommandAbstract {
 
-    CollectionManager collectionManager;
+    private final CollectionManagerInterface collectionManager;
 
     /**
      * Class constructor
@@ -29,7 +30,8 @@ public class MinByStudentsCount extends CommandAbstract {
     @Override
     public Object execute(String aArg) {
         if (aArg.equals("")) {
-            if (collectionManager.getMin() != null) return collectionManager.getMin().toString();
+            if (collectionManager.getMinStudentsCount() != null) return collectionManager.getMinStudentsCount().
+                    toString();
             else return TextFormatting.getRedText("\tThere are no study groups in the collection yet!\n");
         } else {
             return TextFormatting.getRedText("\tArguments entered incorrectly!\n");

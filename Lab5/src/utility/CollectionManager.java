@@ -14,8 +14,7 @@ import java.util.*;
 public class CollectionManager implements CollectionManagerInterface {
 
     private HashSet<data.StudyGroup> studyGroups;
-    private HashSet<Integer> usedId;
-
+    private final HashSet<Integer> usedId;
     private final String initTime;
 
     public CollectionManager() {
@@ -70,6 +69,22 @@ public class CollectionManager implements CollectionManagerInterface {
     @Override
     public void remove(StudyGroup studyGroup) {
         studyGroups.remove(studyGroup);
+    }
+
+    @Override
+    public StudyGroup getMinStudentsCount() {
+        if (studyGroups.size() == 0) return null;
+
+        StudyGroup minimalGroup = null;
+
+        for (StudyGroup studyGroup : studyGroups) {
+            if (minimalGroup == null) {
+                minimalGroup = studyGroup;
+            } else if (studyGroup.getStudentsCount() < minimalGroup.getStudentsCount()) {
+                minimalGroup = studyGroup;
+            }
+        }
+        return minimalGroup;
     }
 
     @Override

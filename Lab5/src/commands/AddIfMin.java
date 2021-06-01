@@ -2,6 +2,8 @@ package commands;
 
 import data.StudyGroup;
 import utility.CollectionManager;
+import utility.Interfaces.CollectionManagerInterface;
+import utility.Interfaces.StudyGroupFactoryInterface;
 import utility.StudyGroupFactory;
 import utility.TextFormatting;
 
@@ -10,8 +12,8 @@ import utility.TextFormatting;
  */
 public class AddIfMin extends CommandAbstract {
 
-    private final StudyGroupFactory studyGroupFactory;
-    private final CollectionManager collectionManager;
+    private final StudyGroupFactoryInterface studyGroupFactory;
+    private final CollectionManagerInterface collectionManager;
 
     /**
      * Class constructor
@@ -28,7 +30,7 @@ public class AddIfMin extends CommandAbstract {
     }
 
     /**
-     * We return status of execute
+     * We return status of execute and add minimal element in main collection
      *
      * (In future we can return collection with added object or error message)
      */
@@ -43,7 +45,7 @@ public class AddIfMin extends CommandAbstract {
             }
 
             collectionManager.add(inputStudyGroup);
-            return TextFormatting.getGreenText("\n\n\tSuccessful!\n\n");
+            return TextFormatting.getGreenText("\n\n\tStudy group has been added!\n\n");
         } else {
             return TextFormatting.getRedText("Command arguments entered incorrectly!\n");
         }

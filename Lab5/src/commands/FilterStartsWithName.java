@@ -25,22 +25,22 @@ public class FilterStartsWithName extends CommandAbstract {
     }
 
     /**
-     * We return execute status
-     *
+     * We return list of study groups in string representation
+     * <p>
      * (In future we can return ArrayList of names or error message)
      */
     public Object execute(String aArg) {
         if (!aArg.equals("")) {
-            if (collection.size() == 0) {
-                return TextFormatting.getRedText("\tCollection is empty!\n");
-            } else {
-                StringBuilder sb = new StringBuilder();
-                for (StudyGroup studyGroup : collection) {
-                    if (studyGroup.getName().startsWith(aArg)) sb.append(studyGroup).append("------\n");
-                }
-                if (sb.toString().equals("")) return TextFormatting.getRedText("\tNo objects found!\n");
-                else return sb.toString();
+            if (collection.size() == 0) return TextFormatting.getRedText("\tCollection is empty!\n");
+
+            StringBuilder sb = new StringBuilder();
+            for (StudyGroup studyGroup : collection) {
+                if (studyGroup.getName().startsWith(aArg)) sb.append(studyGroup).append("------\n");
             }
+            if (sb.toString().equals("")) return TextFormatting.getRedText("\tNo objects found!\n");
+
+            return sb.toString();
+
         } else {
             return TextFormatting.getRedText("\tSubstring should be not empty!\n");
         }

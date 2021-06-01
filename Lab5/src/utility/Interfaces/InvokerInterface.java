@@ -1,5 +1,7 @@
 package utility.Interfaces;
 
+import utility.Console;
+
 public interface InvokerInterface {
 
     /**
@@ -16,4 +18,9 @@ public interface InvokerInterface {
      * Method to remove script path from executed scripts
      */
     void removeScriptPath(String anArg);
+
+    /**
+     * Method to get console from invoker
+     */
+    Console getConsole();
 }

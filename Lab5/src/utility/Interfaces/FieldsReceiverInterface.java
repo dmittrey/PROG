@@ -4,12 +4,11 @@ import data.Coordinates;
 import data.FormOfEducation;
 import data.Person;
 import data.Semester;
-import utility.Console;
 import utility.TextFormatting;
 
 public interface FieldsReceiverInterface {
 
-    default String getFirstRequest(String requestField, Console console){
+    default String getFirstRequest(String requestField, ConsoleInterface console){
         StringBuilder sb = new StringBuilder();
         sb.append("\n-------------------\n");
         sb.append(requestField.toUpperCase()).append("\n");
@@ -19,7 +18,7 @@ public interface FieldsReceiverInterface {
         return console.read();
     }
 
-    default String getUniversalRequest(String requestField, String options, Console console) {
+    default String getUniversalRequest(String requestField, String options, ConsoleInterface console) {
         StringBuilder sb = new StringBuilder();
         sb.append("\t").append(TextFormatting.getRedText(TextFormatting.capitalize(requestField))).
                 append(TextFormatting.getRedText(" should be ")).append(TextFormatting.getRedText(options)).
@@ -29,7 +28,7 @@ public interface FieldsReceiverInterface {
         return console.read();
     }
 
-    default String getFirstEnumRequest(String requestField, String enumerateList, Console console) {
+    default String getFirstEnumRequest(String requestField, String enumerateList, ConsoleInterface console) {
         StringBuilder sb = new StringBuilder();
         sb.append("\n-------------------\n");
         sb.append(requestField.toUpperCase()).append("\n");
@@ -41,7 +40,7 @@ public interface FieldsReceiverInterface {
         return console.read();
     }
 
-    default String getUniversalEnumRequest(String requestField, Console console) {
+    default String getUniversalEnumRequest(String requestField, ConsoleInterface console) {
         StringBuilder sb = new StringBuilder();
         sb.append(TextFormatting.getRedText("\tIt's incorrect ")).
                 append(TextFormatting.getRedText(requestField)).append(TextFormatting.getRedText("!"));

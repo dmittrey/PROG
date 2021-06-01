@@ -1,6 +1,8 @@
 package utility;
 
 import utility.Interfaces.CommandReaderInterface;
+import utility.Interfaces.ConsoleInterface;
+import utility.Interfaces.InvokerInterface;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -10,14 +12,14 @@ import java.util.regex.Pattern;
  */
 public class CommandReader implements CommandReaderInterface {
 
-    private final Console console;
-    private final Invoker invoker;
+    private final ConsoleInterface console;
+    private final InvokerInterface invoker;
     private final Pattern commandName;
     private final Pattern argName;
     private final boolean scriptExecutionStatus;
 
 
-    public CommandReader(Invoker aInvoker, boolean aScriptExecutionStatus) {
+    public CommandReader(InvokerInterface aInvoker, boolean aScriptExecutionStatus) {
         console = aInvoker.getConsole();
 
         invoker = aInvoker;

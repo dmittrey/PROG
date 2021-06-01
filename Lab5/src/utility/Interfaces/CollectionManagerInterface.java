@@ -14,17 +14,17 @@ public interface CollectionManagerInterface {
     String getInfo();
 
     /**
-     * Give collection of used id
-     */
-    HashSet<Integer> getUsedId();
-
-    /**
      * Give collection
      *
      * @see commands.CountLessThanStudentsCount#execute
      * @see commands.FilterStartsWithName#execute
      */
     HashSet<StudyGroup> getCollection();
+
+    /**
+     * Give collection of used id
+     */
+    HashSet<Integer> getUsedId();
 
     /**
      * Set new collection
@@ -46,6 +46,13 @@ public interface CollectionManagerInterface {
      * @see commands.RemoveById#execute
      */
     void remove(StudyGroup studyGroup);
+
+    /**
+     * Method returns study group with less amount of students
+     *
+     * @see commands.MinByStudentsCount#execute
+     */
+    StudyGroup getMinStudentsCount();
 
     /**
      * Get minimal element in collection

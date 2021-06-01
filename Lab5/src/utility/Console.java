@@ -18,22 +18,27 @@ public class Console implements ConsoleInterface {
         exeStatus = anExeStatus;
     }
 
+    @Override
     public void setScanner(Scanner aScanner){
         scanner = aScanner;
     }
 
+    @Override
     public Scanner getScanner() {
         return scanner;
     }
 
+    @Override
     public void enableExeStatus(){
         exeStatus = true;
     }
 
+    @Override
     public void disableExeStatus(){
         exeStatus = false;
     }
 
+    @Override
     public boolean getExeStatus(){
         return exeStatus;
     }
@@ -62,6 +67,7 @@ public class Console implements ConsoleInterface {
         return line.trim();
     }
 
+    @Override
     public boolean hasNextLine() {
         return scanner.hasNextLine();
     }

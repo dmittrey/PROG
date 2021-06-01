@@ -1,12 +1,13 @@
 package commands;
 
 import utility.FileWorker;
+import utility.Interfaces.FileWorkerInterface;
 
 /**
  * Class to save collection in xml file
  */
 public class Save extends CommandAbstract {
-    private final FileWorker fileWorker;
+    private final FileWorkerInterface fileWorker;
 
     /**
      * Class constructor

@@ -1,5 +1,8 @@
 package utility;
 
+import utility.Interfaces.CollectionManagerInterface;
+import utility.Interfaces.CollectionValidatorInterface;
+import utility.Interfaces.ConsoleInterface;
 import utility.Interfaces.FileWorkerInterface;
 
 import javax.xml.bind.JAXBContext;
@@ -12,13 +15,13 @@ import java.io.*;
  * FileWorker is used to operate with file
  */
 public class FileWorker implements FileWorkerInterface {
-    private final CollectionManager collectionManager;
-    private final CollectionValidator collectionValidator;
-    private final Console console;
+    private final CollectionManagerInterface collectionManager;
+    private final CollectionValidatorInterface collectionValidator;
+    private final ConsoleInterface console;
 
     public FileWorker(CollectionManager aCollectionManager, Console aConsole) {
         collectionManager = aCollectionManager;
-        collectionValidator = new CollectionValidator(collectionManager);
+        collectionValidator = new CollectionValidator(aCollectionManager);
         console = aConsole;
     }
 

@@ -1,7 +1,7 @@
 package commands;
 
 /**
- * Abstract class for commands with main methods
+ * Abstract class for commands
  */
 public abstract class CommandAbstract implements CommandInterface {
 

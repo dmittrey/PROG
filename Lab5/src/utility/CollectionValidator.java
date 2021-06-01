@@ -1,6 +1,8 @@
 package utility;
 
 import data.StudyGroup;
+import utility.Interfaces.CollectionManagerInterface;
+import utility.Interfaces.CollectionValidatorInterface;
 import utility.Interfaces.FieldsProtectorInterface;
 import utility.Interfaces.ObjectValidator;
 
@@ -9,9 +11,9 @@ import java.util.HashSet;
 /**
  * Class to validate objects from xml file and add correct study groups in collection
  */
-public class CollectionValidator implements ObjectValidator {
+public class CollectionValidator implements CollectionValidatorInterface, ObjectValidator {
 
-    CollectionManager collectionManager;
+    CollectionManagerInterface collectionManager;
 
     /**
      * Class constructor
@@ -22,6 +24,7 @@ public class CollectionValidator implements ObjectValidator {
         collectionManager = aCollectionManager;
     }
 
+    @Override
     public String validateCollection(HashSet<StudyGroup> inputCollection) {
 
         for (StudyGroup studyGroup : inputCollection) {

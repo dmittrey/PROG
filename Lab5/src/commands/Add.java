@@ -2,6 +2,8 @@ package commands;
 
 import data.StudyGroup;
 import utility.CollectionManager;
+import utility.Interfaces.CollectionManagerInterface;
+import utility.Interfaces.StudyGroupFactoryInterface;
 import utility.StudyGroupFactory;
 import utility.TextFormatting;
 
@@ -10,8 +12,8 @@ import utility.TextFormatting;
  */
 public class Add extends CommandAbstract {
 
-    private final StudyGroupFactory studyGroupFactory;
-    private final CollectionManager collectionManager;
+    private final StudyGroupFactoryInterface studyGroupFactory;
+    private final CollectionManagerInterface collectionManager;
 
     /**
      * Class constructor
@@ -38,7 +40,7 @@ public class Add extends CommandAbstract {
 
             if (studyGroup != null) collectionManager.add(studyGroup);
 
-            return TextFormatting.getGreenText("\n\tSuccessful\n");
+            return TextFormatting.getGreenText("\n\tObject has been added!\n\n");
         } else {
             return TextFormatting.getRedText("\tCommand arguments entered incorrectly!\n");
         }

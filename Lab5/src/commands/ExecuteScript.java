@@ -1,6 +1,10 @@
 package commands;
 
-import utility.*;
+import utility.CommandReader;
+import utility.Interfaces.CommandReaderInterface;
+import utility.Interfaces.InvokerInterface;
+import utility.Invoker;
+import utility.TextFormatting;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -11,7 +15,7 @@ import java.util.Scanner;
  */
 public class ExecuteScript extends CommandAbstract {
 
-    private final Invoker invoker;
+    private final InvokerInterface invoker;
 
     /**
      * Class constructor
@@ -39,25 +43,22 @@ public class ExecuteScript extends CommandAbstract {
             invoker.addScriptPath(aArg);
             try {
                 Scanner previousScanner = invoker.getConsole().getScanner();
-
                 Scanner scriptScanner = new Scanner(new File(aArg));
                 invoker.getConsole().setScanner(scriptScanner);
                 invoker.getConsole().enableExeStatus();
 
-                //console.disablePrintPermissionStatus();
-                CommandReader commandReader = new CommandReader(invoker, true);
+                CommandReaderInterface commandReader = new CommandReader(invoker, true);
                 commandReader.enable();
 
+                invoker.getConsole().disableExeStatus();
                 invoker.getConsole().getScanner().close();
                 invoker.getConsole().setScanner(previousScanner);
-
-                //console.enablePrintPermission();
-                //invoker.setNewConsole(console);
             } catch (FileNotFoundException exception) {
                 return TextFormatting.getRedText("\tFile not found!\n");
             }
+
             invoker.removeScriptPath(aArg);
-            return TextFormatting.getGreenText("\n\tThe script " + aArg + " was processed successfully!\n");
+            return TextFormatting.getGreenText("\tThe script " + aArg + " was processed successfully!\n");
         }
     }
 }
