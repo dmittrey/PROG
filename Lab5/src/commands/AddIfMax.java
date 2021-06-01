@@ -30,7 +30,7 @@ public class AddIfMax extends CommandAbstract {
 
     /**
      * We return status of execute and add maximal element in main collection
-     *
+     * <p>
      * (In future we can return collection with added object or error message)
      */
     @Override

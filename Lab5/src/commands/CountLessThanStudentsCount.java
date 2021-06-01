@@ -30,7 +30,7 @@ public class CountLessThanStudentsCount extends CommandAbstract implements Field
 
     /**
      * We return count of study groups in string representation
-     *
+     * <p>
      * (In future we can return Integer number or error message)
      */
     @Override

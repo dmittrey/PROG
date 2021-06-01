@@ -23,7 +23,7 @@ public class History extends CommandAbstract {
 
     /**
      * We return execute status
-     *
+     * <p>
      * (in future we can return queue of last 14 commands and print on client)
      */
     @Override

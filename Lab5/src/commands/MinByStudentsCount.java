@@ -24,7 +24,7 @@ public class MinByStudentsCount extends CommandAbstract {
 
     /**
      * We return execute status
-     *
+     * <p>
      * (In future we can return min object from collection and print on client)
      */
     @Override

@@ -8,7 +8,7 @@ import utility.TextFormatting;
 
 public interface FieldsReceiverInterface {
 
-    default String getFirstRequest(String requestField, ConsoleInterface console){
+    default String getFirstRequest(String requestField, ConsoleInterface console) {
         StringBuilder sb = new StringBuilder();
         sb.append("\n-------------------\n");
         sb.append(requestField.toUpperCase()).append("\n");

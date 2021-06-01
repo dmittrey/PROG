@@ -23,7 +23,7 @@ public class Help extends CommandAbstract {
 
     /**
      * We return list of commands
-     *
+     * <p>
      * (In future we can return map of commands and their descriptions)
      */
     @Override

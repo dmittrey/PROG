@@ -21,7 +21,7 @@ public class Invoker implements InvokerInterface {
     /**
      * Class construct
      *
-     * @param aConsole - Class to print and read information
+     * @param aConsole           - Class to print and read information
      * @param aCollectionManager - Class for add new element into collection
      */
     public Invoker(Console aConsole, CollectionManager aCollectionManager) {
@@ -61,7 +61,7 @@ public class Invoker implements InvokerInterface {
     }
 
     @Override
-    public Console getConsole(){
+    public Console getConsole() {
         return console;
     }
 

@@ -31,7 +31,7 @@ public class AddIfMin extends CommandAbstract {
 
     /**
      * We return status of execute and add minimal element in main collection
-     *
+     * <p>
      * (In future we can return collection with added object or error message)
      */
     @Override

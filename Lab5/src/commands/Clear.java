@@ -23,7 +23,7 @@ public class Clear extends CommandAbstract {
 
     /**
      * We return status of execute and main collection
-     *
+     * <p>
      * (in future we can return empty collection)
      */
     @Override

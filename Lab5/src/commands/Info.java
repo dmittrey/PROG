@@ -24,7 +24,7 @@ public class Info extends CommandAbstract {
 
     /**
      * We return execute status
-     *
+     * <p>
      * (In future we can return map of properties and their values)
      */
     @Override

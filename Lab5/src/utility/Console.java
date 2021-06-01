@@ -19,7 +19,7 @@ public class Console implements ConsoleInterface {
     }
 
     @Override
-    public void setScanner(Scanner aScanner){
+    public void setScanner(Scanner aScanner) {
         scanner = aScanner;
     }
 
@@ -29,17 +29,17 @@ public class Console implements ConsoleInterface {
     }
 
     @Override
-    public void enableExeStatus(){
+    public void enableExeStatus() {
         exeStatus = true;
     }
 
     @Override
-    public void disableExeStatus(){
+    public void disableExeStatus() {
         exeStatus = false;
     }
 
     @Override
-    public boolean getExeStatus(){
+    public boolean getExeStatus() {
         return exeStatus;
     }
 

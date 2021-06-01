@@ -24,7 +24,7 @@ public class Show extends CommandAbstract {
 
     /**
      * We return execute status
-     *
+     * <p>
      * (In future we can return collection and print on client)
      */
     @Override

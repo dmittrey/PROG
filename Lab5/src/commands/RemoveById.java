@@ -26,7 +26,7 @@ public class RemoveById extends CommandAbstract implements FieldsProtectorInterf
 
     /**
      * We return execute status
-     *
+     * <p>
      * (In future we can return collection without removed object)
      */
     @Override
@@ -39,7 +39,7 @@ public class RemoveById extends CommandAbstract implements FieldsProtectorInterf
             else return TextFormatting.getRedText("\tAn object with this id does not exist!\n");
 
             return TextFormatting.getGreenText("\n\tObject has been removed!\n\n");
-            }
+        }
 
         return TextFormatting.getRedText("\tId should be not null positive integer!\n");
     }

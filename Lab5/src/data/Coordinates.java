@@ -23,17 +23,17 @@ public class Coordinates {
     /**
      * Class constructor for Xml parser
      */
-    public Coordinates(){
+    public Coordinates() {
         x = 0;
         y = null;
     }
 
     @XmlElement(name = "CoordinateX")
-    public void setX(int aX){
+    public void setX(int aX) {
         x = aX;
     }
 
-    @XmlElement (name = "CoordinateY")
+    @XmlElement(name = "CoordinateY")
     public void setY(Double aY) {
         y = aY;
     }

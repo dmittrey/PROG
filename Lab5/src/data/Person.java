@@ -15,8 +15,8 @@ public class Person {
     /**
      * Class constructor
      *
-     * @param aName - admin name
-     * @param aWeight - admin weight
+     * @param aName      - admin name
+     * @param aWeight    - admin weight
      * @param aHairColor - admin color
      */
     public Person(String aName, Long aWeight, Color aHairColor) {
@@ -28,24 +28,24 @@ public class Person {
     /**
      * Class constructor for Xml parser
      */
-    public Person(){
+    public Person() {
         name = null;
         weight = null;
         hairColor = null;
     }
 
     @XmlElement
-    public void setName(String aName){
+    public void setName(String aName) {
         name = aName;
     }
 
     @XmlElement
-    public void setWeight(Long aWeight){
+    public void setWeight(Long aWeight) {
         weight = aWeight;
     }
 
     @XmlElement
-    public void setHairColor(Color aHairColor){
+    public void setHairColor(Color aHairColor) {
         hairColor = aHairColor;
     }
 
@@ -62,7 +62,7 @@ public class Person {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return "name = " + name + ", " +
                 "weight = " + weight + ", " +
                 "hair color = " + hairColor;
