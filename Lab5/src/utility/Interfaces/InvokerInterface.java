@@ -1,5 +1,6 @@
 package utility.Interfaces;
 
+import utility.CommandInit;
 import utility.Console;
 
 public interface InvokerInterface {
@@ -7,7 +8,7 @@ public interface InvokerInterface {
     /**
      * Method to execute command
      */
-    void execute(String aCommand, String anArg);
+    void execute(CommandInit commandInit);
 
     /**
      * Method to add script path in executed scripts to catch recursion

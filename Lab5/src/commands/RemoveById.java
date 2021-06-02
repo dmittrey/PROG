@@ -4,24 +4,30 @@ import data.StudyGroup;
 import utility.CollectionManager;
 import utility.Interfaces.CollectionManagerInterface;
 import utility.Interfaces.FieldsProtectorInterface;
+import utility.Interfaces.QueueController;
 import utility.TextFormatting;
+
+import java.util.Queue;
 
 /**
  * Class that remove object with current id from collection
  */
-public class RemoveById extends CommandAbstract implements FieldsProtectorInterface {
+public class RemoveById extends CommandAbstract implements FieldsProtectorInterface, QueueController {
 
     private final CollectionManagerInterface collectionManager;
+    private final Queue<String> previousCommands;
 
     /**
      * Class constructor
      *
      * @param aCollectionManager - Class to work with collection
+     * @param aPreviousCommands  - Variable to control previous commands
      */
-    public RemoveById(CollectionManager aCollectionManager) {
+    public RemoveById(CollectionManager aCollectionManager, Queue<String> aPreviousCommands) {
         super("remove_by_id", "remove an element from the collection by ID." +
                 TextFormatting.getBlueText("\n\tYou should to enter ID after entering a command"));
         collectionManager = aCollectionManager;
+        previousCommands = aPreviousCommands;
     }
 
     /**
@@ -32,6 +38,7 @@ public class RemoveById extends CommandAbstract implements FieldsProtectorInterf
     @Override
     public Object execute(String aArg) {
         if (isPositiveInt(aArg)) {
+            controlQueue(previousCommands, "remove_by_id");
 
             StudyGroup studyGroup = collectionManager.getId(Integer.parseInt(aArg));
 

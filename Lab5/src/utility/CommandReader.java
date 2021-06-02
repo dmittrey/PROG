@@ -14,59 +14,57 @@ public class CommandReader implements CommandReaderInterface {
 
     private final ConsoleInterface console;
     private final InvokerInterface invoker;
-    private final Pattern commandName;
-    private final Pattern argName;
-    private final boolean scriptExecutionStatus;
 
 
-    public CommandReader(InvokerInterface aInvoker, boolean aScriptExecutionStatus) {
+    public CommandReader(InvokerInterface aInvoker) {
         console = aInvoker.getConsole();
 
         invoker = aInvoker;
-
-        scriptExecutionStatus = aScriptExecutionStatus;
-
-        commandName = Pattern.compile("^\\w+\\s+");
-
-        argName = Pattern.compile("^.+");
     }
 
     @Override
     public void enable() {
 
-        String nextLine;
-        String exitSave = "";
-        String command;
-        String arg;
+        String nextLine = "";
 
-        while (!exitSave.equals("exit ")) {
+        while (!nextLine.equals("exit ")) {
 
-            if (scriptExecutionStatus && !console.hasNextLine()) break;
-
-            if (!scriptExecutionStatus) console.print("Enter the command: ");
+            console.print("Enter the command: ");
 
             nextLine = console.read() + " ";
-            exitSave = nextLine;
 
-            Matcher matcher = commandName.matcher(nextLine);
+            CommandInit newCommand = readCommand(nextLine);
 
-            if (matcher.find()) {
-                command = matcher.group();
-            } else {
-                console.print(TextFormatting.getRedText("\tCommand is incorrect. Please, try again!\n"));
-                continue;
-            }
-
-            nextLine = nextLine.substring(command.length());
-            matcher = argName.matcher(nextLine);
-
-            arg = matcher.find() ? matcher.group() : "";
-
-            if (!command.equals("exit ")) invoker.execute(command.trim(), arg.trim());
-            else {
+            if (newCommand == null) console.print(TextFormatting.getRedText("\tCommand entered incorrectly!\n"));
+            else if (newCommand.getCommandName().equals("exit") && newCommand.getArgName().equals("")) {
                 console.print(TextFormatting.getGreenText("\tThank you for working in this program!\n"));
                 System.exit(0);
-            }
+            } else invoker.execute(newCommand);
         }
+    }
+
+    @Override
+    public CommandInit readCommand(String anInputString) {
+
+        String command;
+        String arg;
+        String inputString = anInputString;
+        Pattern commandName = Pattern.compile("^\\w+\\s+");
+        Pattern argName = Pattern.compile("^.+");
+
+        Matcher matcher = commandName.matcher(inputString);
+
+        if (matcher.find()) {
+            command = matcher.group();
+        } else {
+            return null;
+        }
+
+        inputString = inputString.substring(command.length());
+        matcher = argName.matcher(inputString);
+
+        arg = matcher.find() ? matcher.group() : "";
+
+        return new CommandInit(command.trim(), arg.trim());
     }
 }

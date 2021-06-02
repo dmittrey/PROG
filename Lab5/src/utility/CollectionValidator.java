@@ -3,7 +3,6 @@ package utility;
 import data.StudyGroup;
 import utility.Interfaces.CollectionManagerInterface;
 import utility.Interfaces.CollectionValidatorInterface;
-import utility.Interfaces.FieldsProtectorInterface;
 import utility.Interfaces.ObjectValidator;
 
 import java.util.HashSet;

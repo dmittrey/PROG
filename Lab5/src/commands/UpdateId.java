@@ -2,32 +2,37 @@ package commands;
 
 import data.StudyGroup;
 import utility.CollectionManager;
-import utility.FieldsReceiver;
 import utility.Interfaces.CollectionManagerInterface;
 import utility.Interfaces.FieldsProtectorInterface;
+import utility.Interfaces.QueueController;
 import utility.Interfaces.StudyGroupFactoryInterface;
 import utility.StudyGroupFactory;
 import utility.TextFormatting;
 
+import java.util.Queue;
+
 /**
  * Class to update study groups in collection by id(set new fields)
  */
-public class UpdateId extends CommandAbstract implements FieldsProtectorInterface {
+public class UpdateId extends CommandAbstract implements FieldsProtectorInterface, QueueController {
 
     private final StudyGroupFactoryInterface studyGroupFactory;
     private final CollectionManagerInterface collectionManager;
+    private final Queue<String> previousCommands;
 
     /**
      * Class constructor
      *
      * @param aStudyGroupFactory - Class to create new study group
      * @param aCollectionManager - Class to work with collection
+     * @param aPreviousCommands  - Variable to control previous commands
      */
-    public UpdateId(StudyGroupFactory aStudyGroupFactory, CollectionManager aCollectionManager) {
+    public UpdateId(StudyGroupFactory aStudyGroupFactory, CollectionManager aCollectionManager, Queue<String> aPreviousCommands) {
         super("update", "update the element`s value, whose ID is equal to the given. " +
                 TextFormatting.getBlueText("\n\tYou should to enter ID after entering a command"));
         studyGroupFactory = aStudyGroupFactory;
         collectionManager = aCollectionManager;
+        previousCommands = aPreviousCommands;
     }
 
     /**
@@ -38,6 +43,8 @@ public class UpdateId extends CommandAbstract implements FieldsProtectorInterfac
     @Override
     public Object execute(String aArg) {
         if (isPositiveInt(aArg)) {
+            controlQueue(previousCommands, "update");
+
             StudyGroup studyGroup = collectionManager.getId(Integer.parseInt(aArg));
 
             if (studyGroup != null) collectionManager.remove(studyGroup);

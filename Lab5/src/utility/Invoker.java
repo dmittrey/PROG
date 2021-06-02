@@ -1,6 +1,7 @@
 package utility;
 
 import commands.*;
+import utility.Interfaces.FieldsProtectorInterface;
 import utility.Interfaces.InvokerInterface;
 
 import java.util.*;
@@ -8,7 +9,7 @@ import java.util.*;
 /**
  * Proxy class to redirect commands and write the executed commands to the queue
  */
-public class Invoker implements InvokerInterface {
+public class Invoker implements InvokerInterface, FieldsProtectorInterface {
 
     private final Console console;
     private final CollectionManager collectionManager;
@@ -38,11 +39,11 @@ public class Invoker implements InvokerInterface {
     }
 
     @Override
-    public void execute(String aCommand, String aArg) {
+    public void execute(CommandInit newCommand) {
+        String aCommand = newCommand.getCommandName();
+        String aArg = newCommand.getArgName();
 
         if (commands.containsKey(aCommand)) {
-            if (previousCommands.size() > 13) previousCommands.remove();
-            previousCommands.add(aCommand);
 
             console.print(commands.get(aCommand).execute(aArg));
         } else {
@@ -52,6 +53,7 @@ public class Invoker implements InvokerInterface {
 
     @Override
     public boolean addScriptPath(String anArg) {
+
         return executedScripts.add(anArg);
     }
 
@@ -66,20 +68,21 @@ public class Invoker implements InvokerInterface {
     }
 
     private void initMap() {
-        commands.put("help", new Help(commands));
-        commands.put("info", new Info(collectionManager));
-        commands.put("show", new Show(collectionManager));
-        commands.put("add", new Add(studyGroupFactory, collectionManager));
-        commands.put("update", new UpdateId(studyGroupFactory, collectionManager));
-        commands.put("remove_by_id", new RemoveById(collectionManager));
-        commands.put("clear", new Clear(collectionManager));
-        commands.put("save", new Save(fileWorker));
-        commands.put("execute_script", new ExecuteScript(this));
-        commands.put("add_if_max", new AddIfMax(studyGroupFactory, collectionManager));
-        commands.put("add_if_min", new AddIfMin(studyGroupFactory, collectionManager));
+        commands.put("help", new Help(commands, previousCommands));
+        commands.put("info", new Info(collectionManager, previousCommands));
+        commands.put("show", new Show(collectionManager, previousCommands));
+        commands.put("add", new Add(studyGroupFactory, collectionManager, previousCommands));
+        commands.put("update", new UpdateId(studyGroupFactory, collectionManager, previousCommands));
+        commands.put("remove_by_id", new RemoveById(collectionManager, previousCommands));
+        commands.put("clear", new Clear(collectionManager, previousCommands));
+        commands.put("save", new Save(fileWorker, previousCommands));
+        commands.put("execute_script", new ExecuteScript(this, previousCommands));
+        commands.put("add_if_max", new AddIfMax(studyGroupFactory, collectionManager, previousCommands));
+        commands.put("add_if_min", new AddIfMin(studyGroupFactory, collectionManager, previousCommands));
         commands.put("history", new History(previousCommands));
-        commands.put("min_by_students_count", new MinByStudentsCount(collectionManager));
-        commands.put("count_less_than_students_count", new CountLessThanStudentsCount(collectionManager));
-        commands.put("filter_starts_with_name", new FilterStartsWithName(collectionManager));
+        commands.put("min_by_students_count", new MinByStudentsCount(collectionManager, previousCommands));
+        commands.put("count_less_than_students_count", new CountLessThanStudentsCount(collectionManager,
+                previousCommands));
+        commands.put("filter_starts_with_name", new FilterStartsWithName(collectionManager, previousCommands));
     }
 }

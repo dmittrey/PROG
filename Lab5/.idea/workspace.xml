@@ -6,37 +6,36 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1461d5a-1468-409c-901e-7897f657ae79" name="Default Changelist" comment="execute_script can exit in interactive">
-      <change afterPath="$PROJECT_DIR$/src/utility/Interfaces/CollectionValidatorInterface.java" afterDir="false" />
+    <list default="true" id="a1461d5a-1468-409c-901e-7897f657ae79" name="Default Changelist" comment="formatting">
+      <change afterPath="$PROJECT_DIR$/src/utility/CommandInit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utility/Interfaces/QueueController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utility/ScriptReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/commands/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/Add.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/commands/AddIfMax.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/AddIfMax.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/commands/AddIfMin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/AddIfMin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/commands/Clear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/Clear.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/CommandAbstract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/CommandAbstract.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/commands/CountLessThanStudentsCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/CountLessThanStudentsCount.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/commands/ExecuteScript.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/ExecuteScript.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/commands/FilterStartsWithName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/FilterStartsWithName.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/Help.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/Help.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/History.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/History.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/commands/Info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/Info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/commands/MinByStudentsCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/MinByStudentsCount.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/commands/RemoveById.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/RemoveById.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/commands/Save.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/Save.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/commands/Show.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/Show.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/commands/UpdateId.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/UpdateId.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utility/CollectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/CollectionManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utility/CollectionValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/CollectionValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utility/CommandReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/CommandReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utility/Console.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Console.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utility/FieldsReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/FieldsReceiver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utility/FileWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/FileWorker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utility/Interfaces/CollectionManagerInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Interfaces/CollectionManagerInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utility/Interfaces/CommandReaderInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Interfaces/CommandReaderInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utility/Interfaces/ConsoleInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Interfaces/ConsoleInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utility/Interfaces/FieldsReceiverInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Interfaces/FieldsReceiverInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utility/Interfaces/InvokerInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Interfaces/InvokerInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utility/Interfaces/ObjectValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Interfaces/ObjectValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utility/Invoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/Invoker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utility/StudyGroupFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/StudyGroupFactory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,8 +45,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -217,20 +216,8 @@
       <workItem from="1622220562251" duration="25601000" />
       <workItem from="1622318690808" duration="2518000" />
       <workItem from="1622458985323" duration="8327000" />
-    </task>
-    <task id="LOCAL-00020" summary="Show and Clear">
-      <created>1620926358827</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1620926358827</updated>
-    </task>
-    <task id="LOCAL-00021" summary="History and MinByStudentsCount">
-      <created>1620958033919</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1620958033920</updated>
+      <workItem from="1622552565702" duration="537000" />
+      <workItem from="1622555028518" duration="26003000" />
     </task>
     <task id="LOCAL-00022" summary="Update id">
       <created>1620983671247</created>
@@ -561,7 +548,21 @@
       <option name="project" value="LOCAL" />
       <updated>1622499029977</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="refactor and execute_script upgrading">
+      <created>1622508978507</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1622508978507</updated>
+    </task>
+    <task id="LOCAL-00070" summary="formatting">
+      <created>1622509142983</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1622509142983</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -580,8 +581,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Trouble with exit from script" />
-    <MESSAGE value="file manager" />
     <MESSAGE value="Refactor and add Javadoc" />
     <MESSAGE value="XML parser" />
     <MESSAGE value="Work with XML file" />
@@ -605,7 +604,9 @@
     <MESSAGE value="refactor scriptReader" />
     <MESSAGE value="refactor" />
     <MESSAGE value="execute_script can exit in interactive" />
-    <option name="LAST_COMMIT_MESSAGE" value="execute_script can exit in interactive" />
+    <MESSAGE value="refactor and execute_script upgrading" />
+    <MESSAGE value="formatting" />
+    <option name="LAST_COMMIT_MESSAGE" value="formatting" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

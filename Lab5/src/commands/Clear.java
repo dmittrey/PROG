@@ -2,23 +2,29 @@ package commands;
 
 import utility.CollectionManager;
 import utility.Interfaces.CollectionManagerInterface;
+import utility.Interfaces.QueueController;
 import utility.TextFormatting;
+
+import java.util.Queue;
 
 /**
  * Class for remove all elements from collection
  */
-public class Clear extends CommandAbstract {
+public class Clear extends CommandAbstract implements QueueController {
 
     private final CollectionManagerInterface collectionManager;
+    private final Queue<String> previousCommands;
 
     /**
      * Class constructor
      *
      * @param aCollectionManager - Class for work with collection
+     * @param aPreviousCommands  - Variable to control previous commands
      */
-    public Clear(CollectionManager aCollectionManager) {
+    public Clear(CollectionManager aCollectionManager, Queue<String> aPreviousCommands) {
         super("clear", "clear the collection");
         collectionManager = aCollectionManager;
+        previousCommands = aPreviousCommands;
     }
 
     /**
@@ -29,6 +35,9 @@ public class Clear extends CommandAbstract {
     @Override
     public Object execute(String aArg) {
         if (aArg.equals("")) {
+
+            controlQueue(previousCommands, "clear");
+
             collectionManager.clear();
             return TextFormatting.getGreenText("\n\tSuccessful!\n\n");
         } else {

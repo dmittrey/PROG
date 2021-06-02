@@ -1,39 +1,25 @@
 package utility.Interfaces;
 
-import commands.ExecuteScript;
 import utility.FieldsReceiver;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
 
 public interface ConsoleInterface {
 
     /**
-     * Set new scanner in console
-     *
-     * @see ExecuteScript#execute
+     * Method to read fields from script
      */
-    void setScanner(Scanner aScanner);
+    String readline();
 
     /**
-     * Returns scanner from console to save
-     *
-     * @see ExecuteScript#execute
+     * Method to set console in script mode
      */
-    Scanner getScanner();
+    void setScriptMode(BufferedReader aScriptReader);
 
     /**
-     * Enable script execution status in console to read fields using another way
-     *
-     * @see FieldsReceiver
+     * Method to set console to Interactive mode
      */
-    void enableExeStatus();
-
-    /**
-     * Disable script execution status in console to work in interactive
-     *
-     * @see FieldsReceiver
-     */
-    void disableExeStatus();
+    void setInteractiveStatus();
 
     /**
      * Return script execution status to understand how we should receive fields

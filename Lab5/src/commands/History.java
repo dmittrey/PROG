@@ -1,5 +1,6 @@
 package commands;
 
+import utility.Interfaces.QueueController;
 import utility.TextFormatting;
 
 import java.util.Queue;
@@ -7,7 +8,7 @@ import java.util.Queue;
 /**
  * Class for displaying last 14 commands
  */
-public class History extends CommandAbstract {
+public class History extends CommandAbstract implements QueueController {
 
     Queue<String> previousCommands;
 
@@ -15,6 +16,7 @@ public class History extends CommandAbstract {
      * Class constructor
      *
      * @param aPreviousCommands - Queue of last 14 commands
+     * @param aPreviousCommands - Variable to control previous commands
      */
     public History(Queue<String> aPreviousCommands) {
         super("history", "print the last 14 commands (without their arguments)");
@@ -29,8 +31,11 @@ public class History extends CommandAbstract {
     @Override
     public Object execute(String aArg) {
         if (aArg.equals("")) {
+            controlQueue(previousCommands, "history");
+
             int i = 0;
             StringBuilder sb = new StringBuilder();
+            sb.append("\n");
             for (String command : previousCommands) {
                 sb.append(++i).append(") ").append(command).append("\n");
             }

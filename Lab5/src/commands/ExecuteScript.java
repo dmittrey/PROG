@@ -1,31 +1,33 @@
 package commands;
 
-import utility.CommandReader;
-import utility.Interfaces.CommandReaderInterface;
 import utility.Interfaces.InvokerInterface;
+import utility.Interfaces.QueueController;
 import utility.Invoker;
+import utility.ScriptReader;
 import utility.TextFormatting;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
+import java.io.*;
+import java.util.Queue;
 
 /**
- * Class for execute script and check it for recursion
+ * Class for validation script path, check script status and check it for recursion
  */
-public class ExecuteScript extends CommandAbstract {
+public class ExecuteScript extends CommandAbstract implements QueueController {
 
     private final InvokerInterface invoker;
+    private final Queue<String> previousCommands;
 
     /**
      * Class constructor
      *
-     * @param aInvoker - Proxy class for call command's classes
+     * @param aInvoker          - Proxy class for call command's classes
+     * @param aPreviousCommands - Variable to control previous commands
      */
-    public ExecuteScript(Invoker aInvoker) {
+    public ExecuteScript(Invoker aInvoker, Queue<String> aPreviousCommands) {
         super("execute_script", "Read and execute script from entered file" +
                 TextFormatting.getBlueText("\n\tYou should to enter script name after entering a command"));
         invoker = aInvoker;
+        previousCommands = aPreviousCommands;
     }
 
     /**
@@ -36,29 +38,32 @@ public class ExecuteScript extends CommandAbstract {
     @Override
     public Object execute(String aArg) {
         if (aArg.equals("")) return TextFormatting.getRedText("\tYou should write script path!\n");
-        else if (!(invoker.addScriptPath(aArg))) return TextFormatting.getRedText("\n\tRecursion has been found in " +
-                "command: execute_script " + aArg + "!\n" +
-                "\tPlease correct your script!\n");
         else {
-            invoker.addScriptPath(aArg);
-            try {
-                Scanner previousScanner = invoker.getConsole().getScanner();
-                Scanner scriptScanner = new Scanner(new File(aArg));
-                invoker.getConsole().setScanner(scriptScanner);
-                invoker.getConsole().enableExeStatus();
+            File file = new File(aArg);
+            if (file.exists() && !file.canRead())
+                return "Невозможно выполнить данную команду, так как у указанного файла отсутвуют права на чтение";
 
-                CommandReaderInterface commandReader = new CommandReader(invoker, true);
-                commandReader.enable();
+            if (!(invoker.addScriptPath(aArg))) return TextFormatting.getRedText("\n\tRecursion has been found in " +
+                    "command: execute_script " + aArg + "!" +
+                    " Please correct your script!\n\n");
+            else {
+                invoker.addScriptPath(aArg);
 
-                invoker.getConsole().disableExeStatus();
-                invoker.getConsole().getScanner().close();
-                invoker.getConsole().setScanner(previousScanner);
-            } catch (FileNotFoundException exception) {
-                return TextFormatting.getRedText("\tFile not found!\n");
+                try {
+                    BufferedReader scriptBufferedReader = new BufferedReader(new FileReader(aArg));
+                    ScriptReader scriptReader = new ScriptReader(scriptBufferedReader, invoker);
+                    controlQueue(previousCommands, "execute_script");
+                    scriptReader.read();
+                    scriptBufferedReader.close();
+                } catch (FileNotFoundException e) {
+                    return TextFormatting.getRedText("\tFile not found!\n");
+                } catch (IOException e) {
+                    return TextFormatting.getRedText("\n\tInput or Output error!\n");
+                }
+                invoker.removeScriptPath(aArg);
+                invoker.getConsole().setInteractiveStatus();
+                return TextFormatting.getGreenText("\n\tThe script " + aArg + " was processed successfully!\n\n");
             }
-
-            invoker.removeScriptPath(aArg);
-            return TextFormatting.getGreenText("\tThe script " + aArg + " was processed successfully!\n");
         }
     }
 }

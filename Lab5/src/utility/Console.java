@@ -2,6 +2,8 @@ package utility;
 
 import utility.Interfaces.ConsoleInterface;
 
+import java.io.BufferedReader;
+import java.io.IOException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
@@ -9,33 +11,40 @@ import java.util.Scanner;
  * Console helps us to read and print information
  */
 public class Console implements ConsoleInterface {
-    private Scanner scanner;
+    private final Scanner scanner;
     private boolean exeStatus;
+    private BufferedReader scriptReader;
 
-    public Console(Scanner aScanner, boolean anExeStatus) {
+    public Console(Scanner aScanner) {
 
-        scanner = aScanner;
-        exeStatus = anExeStatus;
-    }
-
-    @Override
-    public void setScanner(Scanner aScanner) {
-        scanner = aScanner;
-    }
-
-    @Override
-    public Scanner getScanner() {
-        return scanner;
-    }
-
-    @Override
-    public void enableExeStatus() {
-        exeStatus = true;
-    }
-
-    @Override
-    public void disableExeStatus() {
         exeStatus = false;
+        scanner = aScanner;
+        scriptReader = null;
+    }
+
+    @Override
+    public String readline() {
+        try {
+            return scriptReader.readLine();
+        } catch (IOException e) {
+            return TextFormatting.getRedText("\n\tInput or Output error!\n");
+        }
+    }
+
+    @Override
+    public void setScriptMode(BufferedReader aScriptReader) {
+        exeStatus = true;
+        scriptReader = aScriptReader;
+    }
+
+    @Override
+    public void setInteractiveStatus() {
+        exeStatus = false;
+        try {
+            scriptReader.close();
+        } catch (IOException e) {
+            print(TextFormatting.getRedText("\n\tInput or Output error!\n"));
+        }
     }
 
     @Override

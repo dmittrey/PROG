@@ -22,14 +22,10 @@ public class FieldsReceiver implements FieldsReceiverInterface, FieldsProtectorI
     public String getName() {
         String line;
         if (console.getExeStatus()) {
-
-            if (!console.hasNextLine()) return null;
-            line = console.read();
-
-            while (!getNameCorrectStatus(line)) {
-                if (!console.hasNextLine()) return null;
-                line = console.read();
-            }
+            do {
+                line = console.readline();
+                if (line == null || line.isEmpty()) return null;
+            } while (!getNameCorrectStatus(line));
         } else {
             line = getFirstRequest("group name", console);
             while (!getNameCorrectStatus(line)) {
@@ -47,22 +43,17 @@ public class FieldsReceiver implements FieldsReceiverInterface, FieldsProtectorI
         double y;
 
         if (console.getExeStatus()) {
-            if (!console.hasNextLine()) return null;
-            line = console.read();
-
-            while (!getCoordinateXCorrectStatus(line)) {
-                if (!console.hasNextLine()) return null;
-                line = console.read();
-            }
+            do {
+                line = console.readline();
+                if (line == null || line.isEmpty()) return null;
+            } while (!getCoordinateXCorrectStatus(line));
             x = Integer.parseInt(line);
 
-            if (!console.hasNextLine()) return null;
-            line = console.read();
+            do {
+                line = console.readline();
+                if (line == null || line.isEmpty()) return null;
+            } while (!getCoordinateYCorrectStatus(line));
 
-            while (!getCoordinateYCorrectStatus(line)) {
-                if (!console.hasNextLine()) return null;
-                line = console.read();
-            }
         } else {
             console.print("\n-------------------\n" +
                     "GROUP'S COORDINATES\n" +
@@ -90,14 +81,13 @@ public class FieldsReceiver implements FieldsReceiverInterface, FieldsProtectorI
     public Integer getStudentsCount() {
         String line;
 
-        if (console.getExeStatus()) {
-            if (!console.hasNextLine()) return null;
-            line = console.read();
 
-            while (!getStudentsCountCorrectStatus(line)) {
-                if (!console.hasNextLine()) return null;
-                line = console.read();
-            }
+        if (console.getExeStatus()) {
+            do {
+                line = console.readline();
+                if (line == null || line.isEmpty()) return null;
+            } while (!getStudentsCountCorrectStatus(line));
+
         } else {
             line = getFirstRequest("group students count", console);
 
@@ -114,13 +104,11 @@ public class FieldsReceiver implements FieldsReceiverInterface, FieldsProtectorI
         String line;
 
         if (console.getExeStatus()) {
-            if (!console.hasNextLine()) return null;
-            line = console.read();
+            do {
+                line = console.readline();
+                if (line == null || line.isEmpty()) return null;
+            } while (!getAverageMarkCorrectStatus(line));
 
-            while (!getAverageMarkCorrectStatus(line)) {
-                if (!console.hasNextLine()) return null;
-                line = console.read();
-            }
         } else {
             line = getFirstRequest("group average mark", console);
 
@@ -138,13 +126,11 @@ public class FieldsReceiver implements FieldsReceiverInterface, FieldsProtectorI
         String line;
 
         if (console.getExeStatus()) {
-            if (!console.hasNextLine()) return null;
-            line = console.read();
+            do {
+                line = console.readline();
+                if (line == null || line.isEmpty()) return null;
+            } while (!getFormOfEducationCorrectStatus(line));
 
-            while (!getFormOfEducationCorrectStatus(line)) {
-                if (!console.hasNextLine()) return null;
-                line = console.read();
-            }
         } else {
             line = getFirstEnumRequest("form of education", Arrays.toString(FormOfEducation.values())
                     + TextFormatting.getBlueText("\n-----")
@@ -166,13 +152,11 @@ public class FieldsReceiver implements FieldsReceiverInterface, FieldsProtectorI
         String line;
 
         if (console.getExeStatus()) {
-            if (!console.hasNextLine()) return null;
-            line = console.read();
+            do {
+                line = console.readline();
+                if (line == null || line.isEmpty()) return null;
+            } while (!getSemesterEnumCorrectStatus(line));
 
-            while (!getSemesterEnumCorrectStatus(line)) {
-                if (!console.hasNextLine()) return null;
-                line = console.read();
-            }
         } else {
             line = getFirstEnumRequest("group semester", Arrays.toString(Semester.values())
                     + TextFormatting.getBlueText("\n-----")
@@ -194,13 +178,11 @@ public class FieldsReceiver implements FieldsReceiverInterface, FieldsProtectorI
         Color hairColor;
 
         if (console.getExeStatus()) {
-            if (!console.hasNextLine()) return null;
-            line = console.read();
+            do {
+                line = console.readline();
+                if (line == null || line.isEmpty()) return null;
+            } while (!getNameCorrectStatus(line));
 
-            while (!getNameCorrectStatus(line)) {
-                if (!console.hasNextLine()) return null;
-                line = console.read();
-            }
         } else {
             console.print("\n-------------------\n" +
                     TextFormatting.getBlueText("\tGROUP ADMIN\n") +
@@ -214,13 +196,11 @@ public class FieldsReceiver implements FieldsReceiverInterface, FieldsProtectorI
         name = line;
 
         if (console.getExeStatus()) {
-            if (!console.hasNextLine()) return null;
-            line = console.read();
+            do {
+                line = console.readline();
+                if (line == null || line.isEmpty()) return null;
+            } while (!getGroupAdminWeightCorrectStatus(line));
 
-            while (!getGroupAdminWeightCorrectStatus(line)) {
-                if (!console.hasNextLine()) return null;
-                line = console.read();
-            }
         } else {
             line = getFirstRequest("group admin weight", console);
 
@@ -231,13 +211,11 @@ public class FieldsReceiver implements FieldsReceiverInterface, FieldsProtectorI
         weight = Long.parseLong(line);
 
         if (console.getExeStatus()) {
-            if (!console.hasNextLine()) return null;
-            line = console.read();
+            do {
+                line = console.readline();
+                if (line == null || line.isEmpty()) return null;
+            } while (!getGroupAdminHairColorCorrectStatus(line));
 
-            while (!getGroupAdminHairColorCorrectStatus(line)) {
-                if (!console.hasNextLine()) return null;
-                line = console.read();
-            }
         } else {
             line = getFirstEnumRequest("group admin hair color", Arrays.toString(Color.values())
                     + TextFormatting.getBlueText("\n-----")

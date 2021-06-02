@@ -31,8 +31,8 @@ public class FileWorker implements FileWorkerInterface {
     @Override
     public String getFromXmlFormat() {
 
-        //String filePath = System.getenv("FILE_PATH");
-        String filePath = "/Users/apple/Desktop/PROG/Lab5/Test.xml";
+        String filePath = System.getenv("FILE_PATH");
+        //String filePath = "/Users/apple/Desktop/PROG/Lab5/Test.xml";
 
         if (filePath == null) {
             console.print(TextFormatting.getRedText("\n\tProgram can't find xml file. " +
@@ -67,8 +67,8 @@ public class FileWorker implements FileWorkerInterface {
     @Override
     public String saveToXml() {
 
-        //String filePath = System.getenv("FILE_PATH");
-        String filePath = "/Users/apple/Desktop/PROG/Lab5/Test.xml";
+        String filePath = System.getenv("FILE_PATH");
+        //String filePath = "/Users/apple/Desktop/PROG/Lab5/Test.xml";
 
         if (filePath == null) return TextFormatting.getRedText("\tProgram can't find xml file. " +
                 "Change environmental variable!\n\n");
@@ -98,7 +98,4 @@ public class FileWorker implements FileWorkerInterface {
         }
         return TextFormatting.getGreenText("\tCollection recorded successfully!\n");
     }
-    /**
-     * Неправильная реакция на ошибку(когда файл запривачен+ не выходим почему-то)
-     */
 }
