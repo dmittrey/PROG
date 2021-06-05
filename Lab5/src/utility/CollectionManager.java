@@ -52,18 +52,11 @@ public class CollectionManager implements CollectionManagerInterface {
     @Override
     public void add(StudyGroup studyGroup) {
 
-        boolean existInCollection = false;
+        if (!usedId.add(studyGroup.getId())) studyGroups.remove(this.getId(studyGroup.getId()));
 
-        for (StudyGroup currentStudyGroup : studyGroups) {
+        if (studyGroups.add(studyGroup)) usedId.add(studyGroup.getId());
+        else usedId.remove(studyGroup.getId());
 
-            if (currentStudyGroup.getId().equals(studyGroup.getId())) remove(currentStudyGroup);
-            else if (currentStudyGroup.equals(studyGroup)) existInCollection = true;
-        }
-
-        if (!existInCollection) {
-            usedId.add(studyGroup.getId());
-            studyGroups.add(studyGroup);
-        }
     }
 
     @Override

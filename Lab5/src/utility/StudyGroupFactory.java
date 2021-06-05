@@ -30,10 +30,12 @@ public class StudyGroupFactory implements StudyGroupFactoryInterface, ObjectVali
      */
     @Override
     public StudyGroup createStudyGroup() {
-        int id = getId();
-        while (!collectionManager.getUsedId().add(id)) {
-            id = getId();
+        int anId = getId();
+        while (!collectionManager.getUsedId().add(anId)) {
+            anId = getId();
         }
+        collectionManager.getUsedId().remove(anId);
+        id--;
         String name = fieldsReceiver.getName();
         Coordinates coordinates = fieldsReceiver.getCoordinates();
         Integer studentsCount = fieldsReceiver.getStudentsCount();
@@ -47,7 +49,7 @@ public class StudyGroupFactory implements StudyGroupFactoryInterface, ObjectVali
                 (studentsCount != null) &&
                 (semester != null) &&
                 (groupAdmin != null)) {
-            return new StudyGroup(id, name, coordinates, new Date(), studentsCount,
+            return new StudyGroup(anId, name, coordinates, new Date(), studentsCount,
                     averageMark, formOfEducation, semester, groupAdmin);
         }
         return null;

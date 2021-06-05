@@ -1,6 +1,7 @@
 package data;
 
 import javax.xml.bind.annotation.XmlElement;
+import java.util.Objects;
 
 /**
  * Class for study group coordinates
@@ -49,5 +50,10 @@ public class Coordinates {
     @Override
     public String toString() {
         return getX() + ", " + getY();
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(x, y);
     }
 }

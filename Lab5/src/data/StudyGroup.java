@@ -11,6 +11,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.text.SimpleDateFormat;
 
 import java.util.Date;
+import java.util.Objects;
 
 /**
  * Class to study group
@@ -195,6 +196,11 @@ public class StudyGroup implements Comparable<StudyGroup>, FieldsProtectorInterf
     }
 
     @Override
+    public int hashCode() {
+        return Objects.hash(name, coordinates, studentsCount, averageMark, formOfEducation, semesterEnum, groupAdmin);
+    }
+
+    @Override
     public boolean equals(Object otherObject) {
         if (this == otherObject) return true;
 
@@ -218,6 +224,10 @@ public class StudyGroup implements Comparable<StudyGroup>, FieldsProtectorInterf
                 && this.getCoordinates().getX() == other.getCoordinates().getX()
                 && this.getCoordinates().getY().equals(other.getCoordinates().getY())
                 && this.getStudentsCount().equals(other.getStudentsCount())
+                && ((this.getAverageMark() == null && other.getAverageMark() == null) ||
+                this.getAverageMark().equals(other.getAverageMark()))
+                && ((this.getFormOfEducation() == null && other.getFormOfEducation() == null) ||
+                this.getFormOfEducation().equals(other.getFormOfEducation()))
                 && this.getSemesterEnum().equals(other.getSemesterEnum())
                 && this.getGroupAdmin().getName().equals(other.getGroupAdmin().getName())
                 && this.getGroupAdmin().getWeight().equals(other.getGroupAdmin().getWeight())

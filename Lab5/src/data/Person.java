@@ -2,6 +2,7 @@ package data;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import java.util.Objects;
 
 /**
  * Class for study group admin
@@ -66,5 +67,10 @@ public class Person {
         return "name = " + name + ", " +
                 "weight = " + weight + ", " +
                 "hair color = " + hairColor;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, weight, hairColor);
     }
 }
